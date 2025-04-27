@@ -48,37 +48,34 @@ body {
     padding-left: 20px;
 }
 
-#answer-buttons li {
+#answer-buttons {
+    padding-left: 0;
+}
+
+#answer-buttons .btn {
     background: #fff;
     color: #222;
     font-weight: 500;
     border: 1px solid #222;
-    padding: 10px;
+    padding: 15px;
     margin: 10px 0;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    box-sizing: border-box;
+    display: block;
 }
 
-#answer-buttons li.correct {
+#answer-buttons .btn.correct {
     background: #9aeabc;
     border-color: #009432;
 }
 
-#answer-buttons li.incorrect {
+#answer-buttons .btn.incorrect {
     background: #ff9393;
     border-color: #ff0000;
 }
 
-#next-btn {
-    background: #001e4d;
-    color: #fff;
-    font-weight: 500;
-    width: 150px;
-    border: 0;
-    padding: 10px;
-    margin: 20px auto 0;
-    border-radius: 4px;
-    cursor: pointer;
-    display: none;
-}
