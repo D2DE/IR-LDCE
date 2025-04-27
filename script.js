@@ -1,3 +1,12 @@
+// Get manual code from URL parameter (e.g., ?manual=irwm)
+const urlParams = new URLSearchParams(window.location.search);
+const manual = urlParams.get('manual');
+
+// Build the JSON file URL (hosted on GitHub Pages)
+const jsonFile = manual
+    ? `https://d2de.github.io/IR-LDCE/${manual}-questions.json`
+    : null;
+
 let questions = [];
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
@@ -5,15 +14,20 @@ const nextButton = document.getElementById("next-btn");
 let currentQuestionIndex = 0;
 let score = 0;
 
-// Fetch questions from the GitHub JSON file
+// Fetch questions from JSON file
 async function loadQuestions() {
+    if (!jsonFile) {
+        questionElement.innerHTML = "No manual selected.<br><a href='index.html'>Go back</a>";
+        nextButton.style.display = "none";
+        return;
+    }
     try {
-        const response = await fetch('https://raw.githubusercontent.com/D2DE/IR-LDCE/refs/heads/main/irwm-questions.json');
+        const response = await fetch(jsonFile);
         if (!response.ok) throw new Error('Could not load questions');
         questions = await response.json();
         startQuiz();
     } catch (error) {
-        questionElement.innerHTML = "Failed to load questions. Please try again later.";
+        questionElement.innerHTML = "Failed to load questions. Please try again later.<br><a href='index.html'>Go back</a>";
         nextButton.style.display = "none";
         console.error(error);
     }
@@ -71,7 +85,7 @@ function selectAnswer(e) {
 
 function showScore() {
     resetState();
-    questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
+    questionElement.innerHTML = `You scored ${score} out of ${questions.length}!<br><a href="index.html">Back to Manuals</a>`;
     nextButton.innerHTML = "Play Again";
     nextButton.style.display = "block";
 }
