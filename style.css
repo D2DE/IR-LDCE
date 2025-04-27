@@ -44,11 +44,6 @@ body {
 }
 
 #answer-buttons {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-#answer-buttons {
     padding-left: 0;
 }
 
@@ -78,4 +73,3 @@ body {
     background: #ff9393;
     border-color: #ff0000;
 }
-
