@@ -1,3 +1,16 @@
+// Manual code to full name mapping
+const manualNames = {
+    irwm: "Indian Railway Works Manual",
+    irpwm: "Indian Railway P-way Manual",
+    irdim: "Indian Railway Schedule of Dimensions",
+    irec: "Indian Railway Engineering Code",
+    stm: "Small Track Machine Manual",
+    usfd: "USFD Manual",
+    fbwm: "FBW Manual",
+    store: "Store Manual",
+    account: "Account Manual"
+};
+
 // Get manual code from URL parameter (e.g., ?manual=irwm)
 const urlParams = new URLSearchParams(window.location.search);
 const manual = urlParams.get('manual');
@@ -13,6 +26,14 @@ const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 let currentQuestionIndex = 0;
 let score = 0;
+
+// Dynamically set the heading
+const headingElement = document.querySelector('.app h1');
+if (manual && manualNames[manual]) {
+    headingElement.textContent = manualNames[manual] + " Quiz";
+} else {
+    headingElement.textContent = "Quiz";
+}
 
 // Fetch questions from JSON file
 async function loadQuestions() {
@@ -44,7 +65,7 @@ function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+    questionElement.innerHTML = `<strong>${questionNo}. ${currentQuestion.question}</strong>`;
 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
