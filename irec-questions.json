@@ -1,0 +1,47 @@
+[
+  {
+    "question": "What is the primary purpose of the Indian Railways Engineering Code?",
+    "answers": [
+      { "text": "To provide rules for operating trains", "correct": false },
+      { "text": "To lay down standards for engineering works and maintenance", "correct": true },
+      { "text": "To regulate staff recruitment", "correct": false },
+      { "text": "To specify ticketing procedures", "correct": false }
+    ]
+  },
+  {
+    "question": "Who is responsible for the maintenance of permanent way according to the Engineering Code?",
+    "answers": [
+      { "text": "Station Master", "correct": false },
+      { "text": "Permanent Way Inspector (PWI)", "correct": true },
+      { "text": "Chief Commercial Manager", "correct": false },
+      { "text": "Loco Pilot", "correct": false }
+    ]
+  },
+  {
+    "question": "Which document is referred to for the execution of works and contracts in Indian Railways?",
+    "answers": [
+      { "text": "General Code", "correct": false },
+      { "text": "Engineering Code", "correct": true },
+      { "text": "Commercial Manual", "correct": false },
+      { "text": "Operating Manual", "correct": false }
+    ]
+  },
+  {
+    "question": "What is the main responsibility of the Divisional Engineer as per the Engineering Code?",
+    "answers": [
+      { "text": "Supervision of ticketing staff", "correct": false },
+      { "text": "Ensuring proper maintenance and safety of all engineering assets", "correct": true },
+      { "text": "Managing catering services", "correct": false },
+      { "text": "Operating train schedules", "correct": false }
+    ]
+  },
+  {
+    "question": "According to the Engineering Code, what must be maintained for all engineering works?",
+    "answers": [
+      { "text": "Daily logbook", "correct": false },
+      { "text": "Accurate and up-to-date records", "correct": true },
+      { "text": "Passenger complaint register", "correct": false },
+      { "text": "Menu card", "correct": false }
+    ]
+  }
+]
