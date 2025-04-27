@@ -1,3 +1,7 @@
+const questions = [
+    // Your questions array remains the same
+];
+
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
@@ -17,17 +21,15 @@ function showQuestion() {
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
-    // Create a bulleted list for answers
-    const ul = document.createElement("ul");
-    ul.className = "answer-list";
-    currentQuestion.answers.forEach((answer, idx) => {
+    currentQuestion.answers.forEach(answer => {
         const li = document.createElement("li");
         li.innerHTML = answer.text;
-        li.dataset.correct = answer.correct;
+        if (answer.correct) {
+            li.dataset.correct = answer.correct;
+        }
         li.addEventListener("click", selectAnswer);
-        ul.appendChild(li);
+        answerButtons.appendChild(li);
     });
-    answerButtons.appendChild(ul);
 }
 
 function resetState() {
@@ -39,20 +41,16 @@ function resetState() {
 
 function selectAnswer(e) {
     const selectedLi = e.target;
-    const ul = selectedLi.parentElement;
-    const lis = ul.querySelectorAll("li");
-    lis.forEach(li => {
-        if (li.dataset.correct === "true") {
-            li.classList.add("correct");
-        } else {
-            li.classList.add("incorrect");
-        }
-        li.classList.add("disabled");
-        li.removeEventListener("click", selectAnswer);
+    const isCorrect = selectedLi.dataset.correct === "true";
+    
+    // Highlight all answers
+    Array.from(answerButtons.children).forEach(li => {
+        const isAnswerCorrect = li.dataset.correct === "true";
+        li.classList.add(isAnswerCorrect ? "correct" : "incorrect");
+        li.style.cursor = "not-allowed";
     });
-    if (selectedLi.dataset.correct === "true") {
-        score++;
-    }
+
+    if (isCorrect) score++;
     nextButton.style.display = "block";
 }
 
@@ -80,5 +78,4 @@ nextButton.addEventListener("click", () => {
     }
 });
 
-// If you use dynamic question loading, call loadQuestions(); else call startQuiz();
 startQuiz();
