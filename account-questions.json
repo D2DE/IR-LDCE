@@ -1,0 +1,47 @@
+[
+  {
+    "question": "What is the primary purpose of the Account Manual in Indian Railways?",
+    "answers": [
+      { "text": "To provide guidelines for train operations", "correct": false },
+      { "text": "To lay down procedures for accounting and financial management", "correct": true },
+      { "text": "To regulate passenger amenities", "correct": false },
+      { "text": "To supervise track maintenance", "correct": false }
+    ]
+  },
+  {
+    "question": "Who is responsible for maintaining the cash book in a railway division?",
+    "answers": [
+      { "text": "Station Master", "correct": false },
+      { "text": "Divisional Accounts Officer", "correct": true },
+      { "text": "Permanent Way Inspector", "correct": false },
+      { "text": "Chief Engineer", "correct": false }
+    ]
+  },
+  {
+    "question": "Which document is used to authorize expenditure in Indian Railways?",
+    "answers": [
+      { "text": "Material Issue Note", "correct": false },
+      { "text": "Work Order", "correct": true },
+      { "text": "Stock Register", "correct": false },
+      { "text": "Gate Pass", "correct": false }
+    ]
+  },
+  {
+    "question": "What is the purpose of a reconciliation statement in railway accounts?",
+    "answers": [
+      { "text": "To recruit staff", "correct": false },
+      { "text": "To match departmental records with bank statements", "correct": true },
+      { "text": "To maintain cleanliness", "correct": false },
+      { "text": "To supervise train schedules", "correct": false }
+    ]
+  },
+  {
+    "question": "Which of the following is NOT a type of account maintained in Indian Railways?",
+    "answers": [
+      { "text": "Personal Account", "correct": false },
+      { "text": "Works Account", "correct": false },
+      { "text": "Passenger Account", "correct": true },
+      { "text": "Deposit Account", "correct": false }
+    ]
+  }
+]
