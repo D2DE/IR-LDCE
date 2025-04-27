@@ -19,6 +19,13 @@
             <button class="manual-btn" data-manual="iraccount">9. Account Manual</button>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+      document.querySelectorAll('.manual-btn').forEach(button => {
+          button.addEventListener('click', () => {
+              const manual = button.dataset.manual;
+              window.location.href = `quiz.html?manual=${manual}`;
+          });
+      });
+    </script>
 </body>
 </html>
