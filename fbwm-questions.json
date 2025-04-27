@@ -1,0 +1,47 @@
+[
+  {
+    "question": "What does FBW stand for in railway track maintenance?",
+    "answers": [
+      { "text": "Friction Bonded Welding", "correct": false },
+      { "text": "Flash Butt Welding", "correct": true },
+      { "text": "Fastened Bridge Welding", "correct": false },
+      { "text": "Flexible Base Welding", "correct": false }
+    ]
+  },
+  {
+    "question": "Which is the main advantage of Flash Butt Welding over Alumino Thermit Welding?",
+    "answers": [
+      { "text": "Requires no electricity", "correct": false },
+      { "text": "Provides superior weld quality and consistency", "correct": true },
+      { "text": "Can be done in any weather", "correct": false },
+      { "text": "Easier to transport", "correct": false }
+    ]
+  },
+  {
+    "question": "What is essential before starting the FBW process on rails?",
+    "answers": [
+      { "text": "Painting the rails", "correct": false },
+      { "text": "Cleaning and aligning the rail ends", "correct": true },
+      { "text": "Cooling the rails with water", "correct": false },
+      { "text": "Oiling the rail surface", "correct": false }
+    ]
+  },
+  {
+    "question": "Which equipment is primarily used for Flash Butt Welding?",
+    "answers": [
+      { "text": "Thermit crucible", "correct": false },
+      { "text": "FBW welding machine", "correct": true },
+      { "text": "Track gauge", "correct": false },
+      { "text": "Ballast regulator", "correct": false }
+    ]
+  },
+  {
+    "question": "After completion of FBW, what is the next important step?",
+    "answers": [
+      { "text": "Immediate painting", "correct": false },
+      { "text": "Inspection and grinding of the weld", "correct": true },
+      { "text": "Lubrication of the weld", "correct": false },
+      { "text": "Covering with ballast", "correct": false }
+    ]
+  }
+]
