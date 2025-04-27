@@ -1,0 +1,47 @@
+[
+  {
+    "question": "What is the main objective of the Store Manual in Indian Railways?",
+    "answers": [
+      { "text": "To regulate train operations", "correct": false },
+      { "text": "To provide guidelines for procurement, custody, and issue of stores", "correct": true },
+      { "text": "To manage passenger amenities", "correct": false },
+      { "text": "To supervise track maintenance", "correct": false }
+    ]
+  },
+  {
+    "question": "Who is responsible for the safe custody of stores in a depot?",
+    "answers": [
+      { "text": "Chief Engineer", "correct": false },
+      { "text": "Depot Store Keeper", "correct": true },
+      { "text": "Station Master", "correct": false },
+      { "text": "Permanent Way Inspector", "correct": false }
+    ]
+  },
+  {
+    "question": "Which document is used to record the issue of materials from stores?",
+    "answers": [
+      { "text": "Material Issue Note (MIN)", "correct": true },
+      { "text": "Gate Pass", "correct": false },
+      { "text": "Purchase Order", "correct": false },
+      { "text": "Stock Ledger", "correct": false }
+    ]
+  },
+  {
+    "question": "What is the purpose of a Stock Verification in stores?",
+    "answers": [
+      { "text": "To check train timings", "correct": false },
+      { "text": "To ensure physical stock matches with book balance", "correct": true },
+      { "text": "To recruit staff", "correct": false },
+      { "text": "To maintain cleanliness", "correct": false }
+    ]
+  },
+  {
+    "question": "Which of the following is NOT a type of store in Indian Railways?",
+    "answers": [
+      { "text": "General Store", "correct": false },
+      { "text": "Permanent Way Store", "correct": false },
+      { "text": "Running Room Store", "correct": true },
+      { "text": "Locomotive Store", "correct": false }
+    ]
+  }
+]
