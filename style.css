@@ -1,48 +1,32 @@
-/* Existing styles */
-body {
-    background: #001e4d;
-    font-family: 'Poppins', sans-serif;
+ul.answer-list {
+    list-style-type: disc;
+    padding-left: 24px;
+    margin: 0 0 20px 0;
 }
 
-.app {
-    background: #fff;
-    width: 90%;
-    max-width: 800px;
-    margin: 80px auto 0;
-    border-radius: 10px;
-    padding: 30px;
-}
-
-.app h1 {
-    font-size: 25px;
-    color: #001e4d;
-    font-weight: 600;
-    border-bottom: 1px solid #333;
-    padding-bottom: 30px;
-    text-align: center;
-}
-
-.quiz-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.manual-btn {
+ul.answer-list li {
     background: #fff;
     color: #222;
     font-weight: 500;
     border: 1px solid #222;
-    padding: 15px;
+    padding: 10px;
+    margin: 10px 0;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s;
 }
 
-.manual-btn:hover {
-    background: #001e4d;
-    color: #fff;
+ul.answer-list li.correct {
+    background: #9aeabc;
+    color: #222;
 }
 
-/* Keep existing quiz styles for when questions are shown */
+ul.answer-list li.incorrect {
+    background: #ff9393;
+    color: #222;
+}
+
+ul.answer-list li.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+}
