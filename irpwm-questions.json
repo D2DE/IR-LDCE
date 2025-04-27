@@ -1,0 +1,47 @@
+[
+  {
+    "question": "What is the standard gauge used in Indian Railways for broad gauge tracks?",
+    "answers": [
+      { "text": "1435 mm", "correct": false },
+      { "text": "1676 mm", "correct": true },
+      { "text": "1000 mm", "correct": false },
+      { "text": "762 mm", "correct": false }
+    ]
+  },
+  {
+    "question": "Which component is used to hold rails to sleepers in Indian Railways?",
+    "answers": [
+      { "text": "Fish plates", "correct": false },
+      { "text": "Pandrol clips", "correct": true },
+      { "text": "Turnouts", "correct": false },
+      { "text": "Ballast", "correct": false }
+    ]
+  },
+  {
+    "question": "What is the minimum depth of ballast cushion below sleepers for broad gauge tracks?",
+    "answers": [
+      { "text": "150 mm", "correct": false },
+      { "text": "200 mm", "correct": false },
+      { "text": "250 mm", "correct": true },
+      { "text": "300 mm", "correct": false }
+    ]
+  },
+  {
+    "question": "Which tool is primarily used for measuring track gauge?",
+    "answers": [
+      { "text": "Track gauge", "correct": true },
+      { "text": "Spirit level", "correct": false },
+      { "text": "Ballast fork", "correct": false },
+      { "text": "Fish bolt spanner", "correct": false }
+    ]
+  },
+  {
+    "question": "What is the main function of ballast in railway tracks?",
+    "answers": [
+      { "text": "To support the rails", "correct": false },
+      { "text": "To provide drainage and distribute load", "correct": true },
+      { "text": "To connect sleepers", "correct": false },
+      { "text": "To fasten rails to sleepers", "correct": false }
+    ]
+  }
+]
