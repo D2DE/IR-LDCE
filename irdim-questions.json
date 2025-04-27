@@ -1,0 +1,47 @@
+[
+  {
+    "question": "What is the standard minimum horizontal distance from the center of track to any structure for Broad Gauge (BG) as per SOD?",
+    "answers": [
+      { "text": "1600 mm", "correct": false },
+      { "text": "2135 mm", "correct": true },
+      { "text": "2000 mm", "correct": false },
+      { "text": "2210 mm", "correct": false }
+    ]
+  },
+  {
+    "question": "What is the maximum height above rail level for BG rolling stock as per SOD?",
+    "answers": [
+      { "text": "4250 mm", "correct": false },
+      { "text": "4725 mm", "correct": true },
+      { "text": "4000 mm", "correct": false },
+      { "text": "5000 mm", "correct": false }
+    ]
+  },
+  {
+    "question": "What is the minimum vertical clearance above rail level for overhead structures on BG tracks?",
+    "answers": [
+      { "text": "5250 mm", "correct": false },
+      { "text": "5486 mm", "correct": true },
+      { "text": "5000 mm", "correct": false },
+      { "text": "6000 mm", "correct": false }
+    ]
+  },
+  {
+    "question": "As per SOD, what is the minimum width of a platform for a BG station?",
+    "answers": [
+      { "text": "3.66 m", "correct": true },
+      { "text": "2.44 m", "correct": false },
+      { "text": "4.00 m", "correct": false },
+      { "text": "5.00 m", "correct": false }
+    ]
+  },
+  {
+    "question": "What is the minimum distance between centers of two parallel BG tracks?",
+    "answers": [
+      { "text": "4265 mm", "correct": true },
+      { "text": "3000 mm", "correct": false },
+      { "text": "5000 mm", "correct": false },
+      { "text": "3500 mm", "correct": false }
+    ]
+  }
+]
