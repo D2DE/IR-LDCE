@@ -1,0 +1,47 @@
+[
+  {
+    "question": "What is the primary purpose of USFD in Indian Railways?",
+    "answers": [
+      { "text": "To clean the rails", "correct": false },
+      { "text": "To detect internal flaws in rails", "correct": true },
+      { "text": "To measure track gauge", "correct": false },
+      { "text": "To lubricate rail joints", "correct": false }
+    ]
+  },
+  {
+    "question": "Which type of defect is most commonly detected by USFD?",
+    "answers": [
+      { "text": "Surface cracks", "correct": false },
+      { "text": "Internal cracks and inclusions", "correct": true },
+      { "text": "Rust formation", "correct": false },
+      { "text": "Loose fastenings", "correct": false }
+    ]
+  },
+  {
+    "question": "How often should USFD testing of rails be carried out on main lines?",
+    "answers": [
+      { "text": "Once a month", "correct": false },
+      { "text": "As per the frequency specified in the USFD Manual", "correct": true },
+      { "text": "Once in five years", "correct": false },
+      { "text": "Only after accidents", "correct": false }
+    ]
+  },
+  {
+    "question": "Which of the following is NOT a component of a USFD equipment?",
+    "answers": [
+      { "text": "Transducer", "correct": false },
+      { "text": "Oscilloscope", "correct": false },
+      { "text": "Ballast regulator", "correct": true },
+      { "text": "Couplant", "correct": false }
+    ]
+  },
+  {
+    "question": "What action should be taken if a rail flaw is detected during USFD testing?",
+    "answers": [
+      { "text": "Ignore and continue testing", "correct": false },
+      { "text": "Mark the location and report for immediate attention", "correct": true },
+      { "text": "Paint the rail", "correct": false },
+      { "text": "Replace all sleepers in the section", "correct": false }
+    ]
+  }
+]
