@@ -1,0 +1,47 @@
+[
+  {
+    "question": "What is the primary function of a Small Track Machine (STM) in railway maintenance?",
+    "answers": [
+      { "text": "To lay new rails", "correct": false },
+      { "text": "To mechanize and speed up track maintenance", "correct": true },
+      { "text": "To signal train movement", "correct": false },
+      { "text": "To monitor passenger safety", "correct": false }
+    ]
+  },
+  {
+    "question": "Which of the following is a tamping machine classified as?",
+    "answers": [
+      { "text": "Measuring equipment", "correct": false },
+      { "text": "Small Track Machine", "correct": true },
+      { "text": "Signaling device", "correct": false },
+      { "text": "Ballast cleaning machine", "correct": false }
+    ]
+  },
+  {
+    "question": "What safety gear is mandatory for operating Small Track Machines?",
+    "answers": [
+      { "text": "Reflective jacket and safety helmet", "correct": true },
+      { "text": "Tie and formal shoes", "correct": false },
+      { "text": "Raincoat", "correct": false },
+      { "text": "None required", "correct": false }
+    ]
+  },
+  {
+    "question": "Who is responsible for the daily inspection of Small Track Machines before use?",
+    "answers": [
+      { "text": "Divisional Engineer", "correct": false },
+      { "text": "Operator of the machine", "correct": true },
+      { "text": "Station Master", "correct": false },
+      { "text": "Train Guard", "correct": false }
+    ]
+  },
+  {
+    "question": "Which document must be maintained for each Small Track Machine?",
+    "answers": [
+      { "text": "Machine Log Book", "correct": true },
+      { "text": "Passenger Register", "correct": false },
+      { "text": "Timetable", "correct": false },
+      { "text": "Signal Register", "correct": false }
+    ]
+  }
+]
