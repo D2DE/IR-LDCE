@@ -16,6 +16,29 @@
             <button id="next-btn">Next</button>
         </div>
     </div>
+    <!-- Firebase SDKs: Place these before your main JS -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+    <!-- Your Firebase config -->
+    <script>
+      // Replace with your actual config
+      const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_AUTH_DOMAIN",
+        projectId: "YOUR_PROJECT_ID",
+        // ...other config values
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      // Auth check: block access if not logged in
+      firebase.auth().onAuthStateChanged((user) => {
+        if (!user) {
+          alert('You must log in to access this quiz.');
+          window.location.href = 'login.html';
+        }
+      });
+    </script>
+    <!-- Your quiz logic -->
     <script src="script.js"></script>
 </body>
 </html>
