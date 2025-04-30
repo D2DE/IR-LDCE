@@ -1,6 +1,236 @@
-<form id="loginForm">
-  <input type="email" id="email" placeholder="Email" required>
-  <input type="password" id="password" placeholder="Password" required>
-  <button type="submit">Login</button>
-</form>
-<p>New user? <a href="register.html">Register here</a></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Log In</title>
+  <style>
+    body {
+      background: #fafafa;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 420px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      padding: 32px 24px 24px 24px;
+      position: relative;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 6px;
+      font-size: 2em;
+      font-weight: bold;
+    }
+    .subtitle {
+      text-align: center;
+      color: #333;
+      margin-bottom: 22px;
+      font-size: 1.1em;
+    }
+    .subtitle b {
+      font-weight: bold;
+    }
+    .social-btn {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 14px;
+      border: 1.5px solid #222;
+      border-radius: 5px;
+      background: #fff;
+      font-size: 1.1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-weight: bold;
+      letter-spacing: 0.02em;
+    }
+    .social-btn img {
+      height: 22px;
+      margin-right: 12px;
+    }
+    .social-btn:hover {
+      background: #f0f0f0;
+    }
+    .small-note {
+      text-align: center;
+      font-size: 0.98em;
+      margin-bottom: 18px;
+      color: #222;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 18px 0 14px 0;
+      color: #888;
+      font-size: 1em;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1.5px solid #ddd;
+    }
+    .divider:not(:empty)::before {
+      margin-right: .75em;
+    }
+    .divider:not(:empty)::after {
+      margin-left: .75em;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      font-size: 1em;
+      margin-bottom: 4px;
+      font-weight: bold;
+      color: #222;
+    }
+    input[type="email"], input[type="text"], input[type="password"] {
+      padding: 13px;
+      margin-bottom: 14px;
+      border: 1.5px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+      background: #f5f5f5;
+    }
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 1em;
+    }
+    .checkbox-row input[type="checkbox"] {
+      margin-right: 7px;
+      accent-color: #f9a825;
+    }
+    .forgot {
+      margin-left: auto;
+      font-size: 1em;
+      color: #222;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+    .forgot:hover {
+      color: #f9a825;
+      text-decoration: underline;
+    }
+    .required-note {
+      font-size: 0.92em;
+      color: #888;
+      margin-top: 6px;
+      margin-bottom: -6px;
+      text-align: right;
+    }
+    .actions-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 18px;
+    }
+    .join-btn {
+      background: none;
+      border: none;
+      color: #222;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 0;
+      text-decoration: underline;
+      margin-right: 10px;
+    }
+    .login-btn {
+      background: #f9a825;
+      color: #fff;
+      border: none;
+      padding: 13px 32px;
+      border-radius: 4px;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-left: 10px;
+    }
+    .login-btn:hover {
+      background: #e6a100;
+    }
+    @media (max-width: 500px) {
+      .container {
+        max-width: 95vw;
+        padding: 14px 4vw 18px 4vw;
+      }
+    }
+  </style>
+  <!-- Google Sign-In JS -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <div class="container" id="loginModal">
+    <h2>Log In</h2>
+    <div class="subtitle">
+      By continuing you agree to our <b>Community Guidelines</b>
+    </div>
+    <!-- Google Button -->
+    <div id="g_id_onload"
+         data-client_id="YOUR_GOOGLE_CLIENT_ID"
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="true">
+    </div>
+    <div class="g_id_signin"
+         data-type="standard"
+         data-size="large"
+         data-theme="outline"
+         data-text="sign_in_with"
+         data-shape="rectangular"
+         data-logo_alignment="left">
+    </div>
+    <!-- Apple Button (for appearance only) -->
+    <button class="social-btn" style="margin-bottom:18px;">
+      <img src="https://img.icons8.com/ios-filled/50/000000/mac-os.png" alt="Apple logo">
+      CONTINUE WITH APPLE
+    </button>
+    <div class="small-note">
+      Created your account with Facebook? <a href="#">Go Here</a>
+    </div>
+    <div class="divider">or</div>
+    <form id="loginForm">
+      <label for="email">Email Address or Username<span style="color:#f9a825">*</span></label>
+      <input type="text" id="email" placeholder="" required>
+      <label for="password">Password<span style="color:#f9a825">*</span></label>
+      <input type="password" id="password" placeholder="" required>
+      <div class="checkbox-row">
+        <input type="checkbox" id="staySignedIn" checked>
+        <label for="staySignedIn" style="margin:0;">Stay signed in</label>
+        <a class="forgot" href="#">Forgot Password?</a>
+      </div>
+      <div class="required-note">* indicates a required field</div>
+      <div class="actions-row">
+        <button type="button" class="join-btn" onclick="window.location.href='register.html'">Join Sporcle for Free</button>
+        <button type="submit" class="login-btn">LOG IN</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    // Replace with your actual Google Client ID
+    // The prompt will show automatically on page load due to data-auto_prompt="true"
+    function handleCredentialResponse(response) {
+      // You get the Google token here
+      // For now, just show a message (in real app, send token to your server)
+      alert("Google login successful!\nToken: " + response.credential);
+    }
+
+    // Optional: Prevent form submit for demo
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Normal login form submitted (demo only)');
+    });
+  </script>
+</body>
+</html>
