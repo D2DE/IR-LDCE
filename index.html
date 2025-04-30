@@ -1,53 +1,154 @@
-<!-- HEADER START -->
-<!-- Topbar -->
-<div class="topbar">
-  <div class="topbar-left">
-    <a href="index.html"><span class="icon-home">&#8962;</span> QUIZZES</a>
-    <a href="#">EVENTS</a>
-    <a href="#">QUIZ CREATION</a>
-    <a href="#">COMMUNITY</a>
-    <a href="#">VIDEOS</a>
-    <a href="#">PRIVATE EVENTS</a>
-  </div>
-  <div class="topbar-right">
-    <a href="#">REMOVE ADS</a>
-    <a href="login.html">SIGN IN</a>
-    <span class="avatar"></span>
-  </div>
-</div>
-<!-- Main Navigation -->
-<nav class="mainnav">
-  <button class="hamburger" id="hamburgerBtn" aria-label="Menu">&#9776;</button>
-  <div class="mainnav-logo">
-    <img src="logo.png" alt="Logo">
-    <span class="brand">IR-LDCE</span>
-  </div>
-  <div class="mainnav-links" id="mainnavLinks">
-    <a href="#">CATEGORIES</a>
-    <a href="#">QUIZ TYPES</a>
-    <a href="#">BADGES</a>
-    <a href="#">PLAYLISTS</a>
-    <a href="#">DAILY DOSE</a>
-    <a href="#">CREATE</a>
-    <a href="#">QUIZ LAB</a>
-    <a href="#">LESSONS</a>
-    <a href="#">SPORCLECON</a>
-  </div>
-  <div class="mainnav-right">
-    <button class="random-quiz-btn">RANDOM QUIZ</button>
-    <span class="search-icon">&#128269;</span>
-  </div>
-</nav>
-<!-- HEADER END -->
-
-<!-- Place the rest of your page content below this -->
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Indian Railway Manuals Quiz</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* === HEADER STYLES === */
+        .site-header {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            position: sticky;
+        }
+        .header-topbar {
+            background: #f9a825;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 15px;
+            height: 36px;
+            padding: 0 16px;
+        }
+        .header-topbar a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 18px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        .header-topbar a:last-child { margin-right: 0; }
+        .header-main {
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            height: 56px;
+        }
+        .header-hamburger {
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-right: 18px;
+            display: none;
+        }
+        .header-logo {
+            display: flex;
+            align-items: center;
+            margin-right: 28px;
+            text-decoration: none;
+        }
+        .header-logo img {
+            height: 40px;
+            width: auto;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .header-logo span {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #001e4d;
+            letter-spacing: 1px;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex: 1;
+        }
+        .header-nav a {
+            color: #222;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            padding: 6px 0;
+        }
+        .header-nav a:hover {
+            color: #f9a825;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .header-btn {
+            background: #f9a825;
+            color: #fff;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .header-btn:hover {
+            background: #e6a100;
+        }
+        .header-search {
+            font-size: 22px;
+            cursor: pointer;
+            color: #222;
+            margin-left: 6px;
+        }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .header-nav {
+                display: none;
+                position: absolute;
+                left: 0;
+                top: 92px;
+                width: 100%;
+                background: #fff;
+                flex-direction: column;
+                gap: 0;
+                border-bottom: 1px solid #eee;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+                z-index: 20;
+            }
+            .header-nav.open {
+                display: flex;
+            }
+            .header-nav a {
+                padding: 14px 18px;
+                border-bottom: 1px solid #f3f3f3;
+            }
+            .header-hamburger {
+                display: block;
+            }
+            .header-main {
+                height: 56px;
+            }
+        }
+        @media (max-width: 600px) {
+            .header-logo img {
+                height: 28px;
+            }
+            .header-logo span {
+                font-size: 1em;
+            }
+            .header-btn {
+                padding: 6px 8px;
+                font-size: 13px;
+            }
+            .header-main, .header-topbar {
+                padding: 0 6px;
+            }
+        }
         /* Added auth button styling */
         .auth-buttons {
             margin: 20px 0;
@@ -73,6 +174,48 @@
     </style>
 </head>
 <body>
+    <!-- HEADER START -->
+    <header class="site-header">
+      <div class="header-topbar">
+        <div>
+          <a href="index.html">HOME</a>
+          <a href="#">QUIZZES</a>
+          <a href="#">EVENTS</a>
+          <a href="#">QUIZ CREATION</a>
+          <a href="#">COMMUNITY</a>
+          <a href="#">VIDEOS</a>
+          <a href="#">PRIVATE EVENTS</a>
+        </div>
+        <div>
+          <a href="#">REMOVE ADS</a>
+          <a href="login.html">SIGN IN</a>
+        </div>
+      </div>
+      <div class="header-main">
+        <button class="header-hamburger" id="headerHamburger" aria-label="Menu">&#9776;</button>
+        <a href="index.html" class="header-logo">
+          <img src="logo.png" alt="Logo">
+          <span>IR-LDCE</span>
+        </a>
+        <nav class="header-nav" id="headerNav">
+          <a href="#">CATEGORIES</a>
+          <a href="#">QUIZ TYPES</a>
+          <a href="#">BADGES</a>
+          <a href="#">PLAYLISTS</a>
+          <a href="#">DAILY DOSE</a>
+          <a href="#">CREATE</a>
+          <a href="#">QUIZ LAB</a>
+          <a href="#">LESSONS</a>
+          <a href="#">SPORCLECON</a>
+        </nav>
+        <div class="header-actions">
+          <button class="header-btn">RANDOM QUIZ</button>
+          <span class="header-search">&#128269;</span>
+        </div>
+      </div>
+    </header>
+    <!-- HEADER END -->
+
     <div class="app">
         <h1>Indian Railway Manuals Quiz</h1>
         
@@ -115,7 +258,7 @@
             projectId: "quiz-app-1b48b",
             storageBucket: "quiz-app-1b48b.firebasestorage.app",
             messagingSenderId: "765334603137",
-            appId: "1:765334603137:web:1c8a13f6086a6773c2d480"
+            appId: "1:765334603137:web:1c8a13f6086a6773c2d480",
             measurementId: "G-YQJQWJ12N7"
         };
         firebase.initializeApp(firebaseConfig);
@@ -149,12 +292,26 @@
             });
         });
 
-        // Original quiz button functionality
+        // Quiz button functionality
         document.querySelectorAll('.manual-btn').forEach(button => {
             button.addEventListener('click', () => {
                 const manual = button.dataset.manual;
                 window.location.href = `quiz.html?manual=${manual}`;
             });
+        });
+
+        // Hamburger menu toggle
+        document.getElementById('headerHamburger').onclick = function(e) {
+            e.stopPropagation();
+            document.getElementById('headerNav').classList.toggle('open');
+        };
+        // Optional: close menu when clicking outside (for mobile UX)
+        document.addEventListener('click', function(e) {
+            var nav = document.getElementById('headerNav');
+            var burger = document.getElementById('headerHamburger');
+            if (!nav.contains(e.target) && !burger.contains(e.target)) {
+                nav.classList.remove('open');
+            }
         });
     </script>
 </body>
