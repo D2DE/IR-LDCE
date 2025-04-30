@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Dashboard</title>
+  <style>
+    body {
+      background: #fafafa;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .dashboard-container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      padding: 32px 24px 24px 24px;
+      position: relative;
+    }
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+    .dashboard-header h2 {
+      font-size: 2em;
+      margin: 0;
+    }
+    .logout-btn {
+      background: #f9a825;
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .logout-btn:hover {
+      background: #e6a100;
+    }
+    .welcome {
+      font-size: 1.2em;
+      margin-bottom: 24px;
+    }
+    .dashboard-section {
+      margin-bottom: 32px;
+    }
+    .dashboard-section h3 {
+      margin-bottom: 10px;
+      font-size: 1.15em;
+      color: #222;
+    }
+    .dashboard-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .dashboard-list li {
+      background: #f5f5f5;
+      border-radius: 4px;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      color: #333;
+      font-size: 1em;
+    }
+    @media (max-width: 800px) {
+      .dashboard-container {
+        max-width: 96vw;
+        padding: 16px 4vw 22px 4vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <h2>Welcome, <span id="dashboard-username">User</span>!</h2>
+      <button class="logout-btn" onclick="logout()">Log Out</button>
+    </div>
+    <div class="welcome">
+      This is your dashboard. Here you can see your recent activity and manage your account.
+    </div>
+
+    <div class="dashboard-section">
+      <h3>Recent Activity</h3>
+      <ul class="dashboard-list">
+        <li>You registered an account.</li>
+        <li>Welcome to the Quiz App!</li>
+      </ul>
+    </div>
+
+    <div class="dashboard-section">
+      <h3>Account Details</h3>
+      <ul class="dashboard-list">
+        <li><b>Username:</b> <span id="account-username">User</span></li>
+        <li><b>Email:</b> <span id="account-email">user@example.com</span></li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    // Example: Get username/email from localStorage (set after login/register)
+    // In a real app, use your backend or authentication data!
+    const username = localStorage.getItem('username') || 'User';
+    const email = localStorage.getItem('email') || 'user@example.com';
+
+    document.getElementById('dashboard-username').textContent = username;
+    document.getElementById('account-username').textContent = username;
+    document.getElementById('account-email').textContent = email;
+
+    function logout() {
+      // Clear stored data (for demo)
+      localStorage.removeItem('username');
+      localStorage.removeItem('email');
+      // Redirect to login page
+      window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>
