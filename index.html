@@ -1,146 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Indian Railway Manuals Quiz</title>
-
-  <!-- Font Awesome for the Home icon -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-pO1...YourIntegrityHash..."
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #002147;
-      color: #333;
-    }
-
-    /* Top orange bar */
-    .header-top {
-      background: #FFA500;
-      padding: 8px 0;
-    }
-    .header-top .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-    .header-top a, .header-top span {
-      color: #fff;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-    .header-top .left-group a,
-    .header-top .left-group span {
-      margin-right: 0.5rem;
-    }
-
-    /* White navbar under orange bar */
-    .navbar-main {
-      background: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .navbar-main .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 8px 16px;
-    }
-    .navbar-main .logo {
-      display: flex;
-      align-items: center;
-    }
-    .navbar-main .logo img {
-      height: 40px;
-    }
-    .navbar-main .logo span {
-      margin-left: 8px;
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: #002147;
-    }
-    .navbar-main .nav-links {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-    .navbar-main .nav-links li + li {
-      margin-left: 1.5rem;
-    }
-    .navbar-main .nav-links a {
-      color: #002147;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-    .navbar-main .btn-random {
-      background: #FFA500;
-      border: none;
-      color: #fff;
-      padding: 8px 16px;
-      font-size: 0.95rem;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    /* Main quiz app container */
-    .app {
-      background: #fff;
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 2rem;
-      border-radius: 8px;
-      text-align: center;
-    }
-    #logoutButton {
-      margin: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-      border: none;
-      border-radius: 4px;
-      background: #dc3545;
-      color: #fff;
-      display: none;
-    }
-    .quiz-list {
-      margin-top: 1.5rem;
-    }
-    .quiz-list button {
-      display: block;
-      width: 100%;
-      text-align: left;
-      background: #f0f0f0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 0.75rem;
-      margin-bottom: 0.5rem;
-      cursor: pointer;
-    }
-    .quiz-list button:hover {
-      background: #e0e0e0;
-    }
-    #loginPrompt {
-      margin-top: 1rem;
-      font-style: italic;
-      color: #666;
-    }
-  </style>
-</head>
+<div id="include-header"></div>
 <body>
 
   <!-- Orange top bar -->
@@ -248,5 +106,17 @@
       });
     });
   <script src="script.js"></script>
+  <script>
+  async function includeHeader() {
+    try {
+      const resp = await fetch('header.html');
+      if (!resp.ok) throw new Error('Header not found');
+      document.getElementById('include-header').innerHTML = await resp.text();
+    } catch (e) {
+      console.error(e);
+    }
+  }
+  includeHeader();
+</script>
 </body>
 </html>
