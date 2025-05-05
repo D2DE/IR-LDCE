@@ -1,234 +1,120 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Indian Railway Manuals Quiz</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* === HEADER STYLES === */
-        .site-header {
-            background: #fff;
-            border-bottom: 1px solid #eee;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 10;
-            position: sticky;
-        }
-        .header-topbar {
-            background: #f9a825;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 15px;
-            height: 36px;
-            padding: 0 16px;
-        }
-        .header-topbar a {
-            color: #fff;
-            text-decoration: none;
-            margin-right: 18px;
-            font-weight: 600;
-            font-size: 15px;
-        }
-        .header-topbar a:last-child { margin-right: 0; }
-        .header-main {
-            display: flex;
-            align-items: center;
-            padding: 0 16px;
-            height: 56px;
-        }
-        .header-hamburger {
-            font-size: 28px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            margin-right: 18px;
-            display: none;
-        }
-        .header-logo {
-            display: flex;
-            align-items: center;
-            margin-right: 28px;
-            text-decoration: none;
-        }
-        .header-logo img {
-            height: 40px;
-            width: auto;
-            margin-right: 10px;
-            vertical-align: middle;
-        }
-        .header-logo span {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #001e4d;
-            letter-spacing: 1px;
-        }
-        .header-nav {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            flex: 1;
-        }
-        .header-nav a {
-            color: #222;
-            font-weight: 600;
-            font-size: 15px;
-            text-decoration: none;
-            padding: 6px 0;
-        }
-        .header-nav a:hover {
-            color: #f9a825;
-        }
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .header-btn {
-            background: #f9a825;
-            color: #fff;
-            border: none;
-            padding: 8px 14px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 15px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .header-btn:hover {
-            background: #e6a100;
-        }
-        .header-search {
-            font-size: 22px;
-            cursor: pointer;
-            color: #222;
-            margin-left: 6px;
-        }
-        /* Responsive */
-        @media (max-width: 900px) {
-            .header-nav {
-                display: none;
-                position: absolute;
-                left: 0;
-                top: 92px;
-                width: 100%;
-                background: #fff;
-                flex-direction: column;
-                gap: 0;
-                border-bottom: 1px solid #eee;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-                z-index: 20;
-            }
-            .header-nav.open {
-                display: flex;
-            }
-            .header-nav a {
-                padding: 14px 18px;
-                border-bottom: 1px solid #f3f3f3;
-            }
-            .header-hamburger {
-                display: block;
-            }
-            .header-main {
-                height: 56px;
-            }
-        }
-        @media (max-width: 600px) {
-            .header-logo img {
-                height: 28px;
-            }
-            .header-logo span {
-                font-size: 1em;
-            }
-            .header-btn {
-                padding: 6px 8px;
-                font-size: 13px;
-            }
-            .header-main, .header-topbar {
-                padding: 0 6px;
-            }
-        }
-        /* Added auth button styling */
-        .auth-buttons {
-            margin: 20px 0;
-            text-align: center;
-        }
-        .auth-buttons button {
-            padding: 10px 20px;
-            margin: 0 10px;
-            background: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #logoutButton {
-            background: #dc3545;
-        }
-        #loginPrompt {
-            text-align: center;
-            margin: 20px 0;
-            color: #666;
-        }
-    </style>
-</head>
-<body>
-    <!-- HEADER START -->
-    <header class="site-header">
-      <div class="header-topbar">
-        <div>
-          <a href="index.html">HOME</a>
-         <div>
-          <a href="https://indianrailways.gov.in/">Railway Official Website</a>
-        </div>
-          <a href="faq.html">FAQ</a>
-          <a href="free.html">Free Tests</a>
-          <a href="Privacy.html">Privacy Policy</a>
-          <a href="contact.html">Contact Us</a>
-        </div>
-        <div>
-          <a href="about.html">About Us</a>
-          <a href="login.html">SIGN IN</a>
-        </div>
-      </div>
-      <div class="header-main">
-        <button class="header-hamburger" id="headerHamburger" aria-label="Menu">&#9776;</button>
-        <a href="index.html" class="header-logo">
-          <img src="logo.png" alt="Logo">
-          <span>IR-LDCE</span>
-        </a>
-        <nav class="header-nav" id="headerNav">
-          <a href="categories.html">CATEGORIES</a>
-          <a href="daily.html">DAILY DOSE</a>
-        </nav>
-        <div class="header-actions">
-          <button class="header-btn">RANDOM QUIZ</button>
-        </div>
-      </div>
-    </header>
-    <!-- HEADER END -->
-
-    <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Indian Railway Manuals Quiz</title>
+
+  <!-- Font Awesome for the Home icon -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pO1...YourIntegrityHash..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
   <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #002147;
+      color: #333;
+    }
+
+    /* Top orange bar */
+    .header-top {
+      background: #FFA500;
+      padding: 8px 0;
+    }
+    .header-top .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .header-top a, .header-top span {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .header-top .left-group a,
+    .header-top .left-group span {
+      margin-right: 0.5rem;
+    }
+
+    /* White navbar under orange bar */
+    .navbar-main {
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .navbar-main .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 8px 16px;
+    }
+    .navbar-main .logo {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-main .logo img {
+      height: 40px;
+    }
+    .navbar-main .logo span {
+      margin-left: 8px;
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #002147;
+    }
+    .navbar-main .nav-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .navbar-main .nav-links li + li {
+      margin-left: 1.5rem;
+    }
+    .navbar-main .nav-links a {
+      color: #002147;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .navbar-main .btn-random {
+      background: #FFA500;
+      border: none;
+      color: #fff;
+      padding: 8px 16px;
+      font-size: 0.95rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* Main quiz app container */
     .app {
+      background: #fff;
       max-width: 600px;
       margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 8px;
       text-align: center;
-      font-family: Arial, sans-serif;
     }
-    .auth-buttons button,
-    .quiz-list button,
     #logoutButton {
       margin: 0.5rem;
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
       cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      background: #dc3545;
+      color: #fff;
+      display: none;
     }
     .quiz-list {
       margin-top: 1.5rem;
@@ -240,24 +126,70 @@
       background: #f0f0f0;
       border: 1px solid #ccc;
       border-radius: 4px;
+      padding: 0.75rem;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
     }
     .quiz-list button:hover {
       background: #e0e0e0;
     }
+    #loginPrompt {
+      margin-top: 1rem;
+      font-style: italic;
+      color: #666;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Orange top bar -->
+  <div class="header-top">
+    <div class="container">
+      <div class="left-group">
+        <a href="index.html">
+          <i class="fas fa-home"></i> Home
+        </a>
+        <span>&nbsp;&nbsp;II&nbsp;&nbsp;</span>
+        <a href="https://indianrail.gov.in" target="_blank">Railway Official Website</a>
+      </div>
+      <div>
+        <a href="about.html">About Us</a>
+        <a href="register.html">Register</a>
+        <a href="login.html">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- White navbar -->
+  <nav class="navbar-main">
+    <div class="container">
+      <div class="logo">
+        <img src="assets/logo.png" alt="IR-LDCE Logo"/>
+        <span>IR-LDCE</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="categories.html">CATEGORIES</a></li>
+        <li><a href="daily-dose.html">DAILY DOSE</a></li>
+      </ul>
+      <button class="btn-random" onclick="location.href='random-quiz.html'">
+        RANDOM QUIZ
+      </button>
+    </div>
+  </nav>
+
+  <!-- Quiz App -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Indian Railway Manuals Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
   <div class="app">
     <h1>Indian Railway Manuals Quiz</h1>
+    <hr class="title-divider">
 
-    <!-- Auth Buttons -->
-    <div class="auth-buttons" id="authButtons">
-      <button onclick="window.location.href='register.html'">Register</button>
-      <button onclick="window.location.href='login.html'">Login</button>
-    </div>
-
-    <!-- Logout Button -->
-    <button id="logoutButton" style="display: none;">Logout</button>
+    <!-- Logout Button (shown if logged in) -->
+    <button id="logoutButton">Logout</button>
 
     <!-- Quiz List (always visible) -->
     <div class="quiz-list" id="quizList">
@@ -272,7 +204,6 @@
       <button class="manual-btn" data-manual="account">9. Account Manual</button>
     </div>
 
-    <!-- Login Prompt -->
     <div id="loginPrompt">
       <p>Please login or register to access the quizzes</p>
     </div>
@@ -282,7 +213,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
   <script>
-    // Your Firebase configuration
+    // Firebase config
     const firebaseConfig = {
       apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
       authDomain: "quiz-app-1b48b.firebaseapp.com",
@@ -294,41 +225,24 @@
     };
     firebase.initializeApp(firebaseConfig);
 
-    const authButtons  = document.getElementById('authButtons');
-    const logoutButton = document.getElementById('logoutButton');
-    const loginPrompt  = document.getElementById('loginPrompt');
+    const logoutBtn = document.getElementById('logoutButton');
 
-    // Toggle UI based on auth state
+    // Show/hide logout button based on auth state
     firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        authButtons.style.display  = 'none';
-        logoutButton.style.display = 'inline-block';
-        loginPrompt.style.display  = 'none';
-      } else {
-        authButtons.style.display  = 'block';
-        logoutButton.style.display = 'none';
-        loginPrompt.style.display  = 'block';
-      }
+      logoutBtn.style.display = user ? 'inline-block' : 'none';
     });
 
     // Logout action
-    logoutButton.addEventListener('click', () => {
-      firebase.auth().signOut().then(() => {
-        window.location.reload();
-      });
+    logoutBtn.addEventListener('click', () => {
+      firebase.auth().signOut().then(() => location.reload());
     });
 
-    // Quiz button click handler
-    document.querySelectorAll('.manual-btn').forEach(button => {
-      button.addEventListener('click', () => {
-        const manual = button.dataset.manual;
-        if (firebase.auth().currentUser) {
-          window.location.href = `quiz.html?manual=${manual}`;
-        } else {
-          window.location.href = 'login.html';
-        }
+    // Make each manual clickable → redirect to login page
+    document.querySelectorAll('.manual-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        window.location.href = 'login.html';
       });
     });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
