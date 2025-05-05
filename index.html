@@ -209,103 +209,126 @@
     </header>
     <!-- HEADER END -->
 
-    <div class="app">
-        <h1>Indian Railway Manuals Quiz</h1>
-        
-        <!-- Auth Buttons -->
-        <div class="auth-buttons" id="authButtons">
-            <button onclick="window.location.href='register.html'">Register</button>
-            <button onclick="window.location.href='login.html'">Login</button>
-        </div>
-        
-        <!-- Logout Button (hidden by default) -->
-        <button id="logoutButton" style="display: none;">Logout</button>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Indian Railway Manuals Quiz</title>
+  <style>
+    .app {
+      max-width: 600px;
+      margin: 2rem auto;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    .auth-buttons button,
+    .quiz-list button,
+    #logoutButton {
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .quiz-list {
+      margin-top: 1.5rem;
+    }
+    .quiz-list button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .quiz-list button:hover {
+      background: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <h1>Indian Railway Manuals Quiz</h1>
 
-        <!-- Quiz List (hidden until login) -->
-        <div class="quiz-list" id="quizList" style="display: none;">
-            <button class="manual-btn" data-manual="irwm">1. Indian Railway Works Manual</button>
-            <button class="manual-btn" data-manual="irpwm">2. Indian Railway P-way Manual</button>
-            <button class="manual-btn" data-manual="irdim">3. Indian Railway Schedule of Dimensions</button>
-            <button class="manual-btn" data-manual="irec">4. Indian Railway Engineering Code</button>
-            <button class="manual-btn" data-manual="stm">5. Small Track Machine Manual</button>
-            <button class="manual-btn" data-manual="usfd">6. USFD Manual</button>
-            <button class="manual-btn" data-manual="fbwm">7. FBW Manual</button>
-            <button class="manual-btn" data-manual="store">8. Store Manual</button>
-            <button class="manual-btn" data-manual="account">9. Account Manual</button>
-        </div>
-
-        <!-- Login Prompt -->
-        <div id="loginPrompt">
-            <p>Please login or register to access the quizzes</p>
-        </div>
+    <!-- Auth Buttons -->
+    <div class="auth-buttons" id="authButtons">
+      <button onclick="window.location.href='register.html'">Register</button>
+      <button onclick="window.location.href='login.html'">Login</button>
     </div>
 
-    <!-- Firebase Integration -->
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
-    <script>
-        // Replace with your Firebase config
-        const firebaseConfig = {
-            apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
-            authDomain: "quiz-app-1b48b.firebaseapp.com",
-            projectId: "quiz-app-1b48b",
-            storageBucket: "quiz-app-1b48b.firebasestorage.app",
-            messagingSenderId: "765334603137",
-            appId: "1:765334603137:web:1c8a13f6086a6773c2d480",
-            measurementId: "G-YQJQWJ12N7"
-        };
-        firebase.initializeApp(firebaseConfig);
+    <!-- Logout Button -->
+    <button id="logoutButton" style="display: none;">Logout</button>
 
-        // Auth state listener
-        firebase.auth().onAuthStateChanged((user) => {
-            const quizList = document.getElementById('quizList');
-            const authButtons = document.getElementById('authButtons');
-            const logoutButton = document.getElementById('logoutButton');
-            const loginPrompt = document.getElementById('loginPrompt');
+    <!-- Quiz List (always visible) -->
+    <div class="quiz-list" id="quizList">
+      <button class="manual-btn" data-manual="irwm">1. Indian Railway Works Manual</button>
+      <button class="manual-btn" data-manual="irpwm">2. Indian Railway P-way Manual</button>
+      <button class="manual-btn" data-manual="irdim">3. Indian Railway Schedule of Dimensions</button>
+      <button class="manual-btn" data-manual="irec">4. Indian Railway Engineering Code</button>
+      <button class="manual-btn" data-manual="stm">5. Small Track Machine Manual</button>
+      <button class="manual-btn" data-manual="usfd">6. USFD Manual</button>
+      <button class="manual-btn" data-manual="fbwm">7. FBW Manual</button>
+      <button class="manual-btn" data-manual="store">8. Store Manual</button>
+      <button class="manual-btn" data-manual="account">9. Account Manual</button>
+    </div>
 
-            if (user) {
-                // User is logged in
-                quizList.style.display = 'block';
-                authButtons.style.display = 'none';
-                logoutButton.style.display = 'inline-block';
-                loginPrompt.style.display = 'none';
-            } else {
-                // User is logged out
-                quizList.style.display = 'none';
-                authButtons.style.display = 'block';
-                logoutButton.style.display = 'none';
-                loginPrompt.style.display = 'block';
-            }
-        });
+    <!-- Login Prompt -->
+    <div id="loginPrompt">
+      <p>Please login or register to access the quizzes</p>
+    </div>
+  </div>
 
-        // Logout functionality
-        document.getElementById('logoutButton').addEventListener('click', () => {
-            firebase.auth().signOut().then(() => {
-                window.location.href = 'index.html';
-            });
-        });
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+  <script>
+    // Your Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
+      authDomain: "quiz-app-1b48b.firebaseapp.com",
+      projectId: "quiz-app-1b48b",
+      storageBucket: "quiz-app-1b48b.firebasestorage.app",
+      messagingSenderId: "765334603137",
+      appId: "1:765334603137:web:1c8a13f6086a6773c2d480",
+      measurementId: "G-YQJQWJ12N7"
+    };
+    firebase.initializeApp(firebaseConfig);
 
-        // Quiz button functionality
-        document.querySelectorAll('.manual-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const manual = button.dataset.manual;
-                window.location.href = `quiz.html?manual=${manual}`;
-            });
-        });
+    const authButtons  = document.getElementById('authButtons');
+    const logoutButton = document.getElementById('logoutButton');
+    const loginPrompt  = document.getElementById('loginPrompt');
 
-        // Hamburger menu toggle
-        document.getElementById('headerHamburger').onclick = function(e) {
-            e.stopPropagation();
-            document.getElementById('headerNav').classList.toggle('open');
-        };
-        // Optional: close menu when clicking outside (for mobile UX)
-        document.addEventListener('click', function(e) {
-            var nav = document.getElementById('headerNav');
-            var burger = document.getElementById('headerHamburger');
-            if (!nav.contains(e.target) && !burger.contains(e.target)) {
-                nav.classList.remove('open');
-            }
-        });
-    </script>
+    // Toggle UI based on auth state
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        authButtons.style.display  = 'none';
+        logoutButton.style.display = 'inline-block';
+        loginPrompt.style.display  = 'none';
+      } else {
+        authButtons.style.display  = 'block';
+        logoutButton.style.display = 'none';
+        loginPrompt.style.display  = 'block';
+      }
+    });
+
+    // Logout action
+    logoutButton.addEventListener('click', () => {
+      firebase.auth().signOut().then(() => {
+        window.location.reload();
+      });
+    });
+
+    // Quiz button click handler
+    document.querySelectorAll('.manual-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const manual = button.dataset.manual;
+        if (firebase.auth().currentUser) {
+          window.location.href = `quiz.html?manual=${manual}`;
+        } else {
+          window.location.href = 'login.html';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
