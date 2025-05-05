@@ -33,6 +33,27 @@ body {
     margin-top: 20px;
 }
 
+/* Smartphones: one column */
+@media (max-width: 600px) {
+  .quiz-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablets: two columns */
+@media (min-width: 601px) and (max-width: 992px) {
+  .quiz-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktops: three columns */
+@media (min-width: 993px) {
+  .quiz-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .manual-btn {
     /* compact, outlined buttons */
     width: auto;
