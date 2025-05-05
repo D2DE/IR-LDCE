@@ -1,130 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us &ndash; IR Manuals Quiz</title>
-  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Your global stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
   <style>
-    .about-header h1 {
-      font-size: 28px;
-      color: #001e4d;
-      margin-bottom: 0.5rem;
-      text-align: center;
-    }
-    .about-header .title-divider {
-      border: none;
-      border-top: 1px solid #ccc;
-      width: 60%;
-      margin: 0.5rem auto 2rem;
-    }
-    .about-content {
-      line-height: 1.6;
-      color: #333;
-    }
-    .about-content img {
-      display: block;
-      max-width: 100%;
+    /* Make the about graphic fill the width and scale its height */
+    .about-hero {
+      width: 100%;
       height: auto;
-      margin: 1.5rem auto;
-      border-radius: 8px;
+      display: block;
+      margin: 0;
+      padding: 0;
     }
-    .about-content ul {
-      list-style: disc inside;
-      margin: 1rem 0;
-    }
-    .about-content a {
-      color: #001e4d;
-      text-decoration: underline;
-    }
-    .about-content a:hover {
-      color: #000;
+
+    /* Optional container to center & pad */
+    .hero-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
   </style>
 </head>
 <body>
-  <!-- reuse your orange top bar -->
-  <div class="header-top">
-    <div class="container">
-      <div class="left-group">
-        <a href="index.html"><i class="fas fa-home"></i> Home</a>
-        <span>&nbsp;&nbsp;II&nbsp;&nbsp;</span>
-        <a href="https://indianrail.gov.in" target="_blank">Railway Official Website</a>
-      </div>
-      <div>
-        <a href="about.html">About Us</a>
-        <a href="register.html">Register</a>
-        <a href="login.html">Login</a>
-      </div>
-    </div>
+
+  <!-- Placeholder for header.html -->
+  <div id="include-header"></div>
+
+  <!-- Hero image with your About-Us content baked in -->
+  <div class="hero-container">
+    <img src="about.png" alt="About Us" class="about-hero"/>
   </div>
 
-  <!-- reuse your white navbar -->
-  <nav class="navbar-main">
-    <div class="container">
-      <div class="logo">
-        <img src="logo.png" alt="IR-LDCE Logo"/>
-        <span>IR-LDCE</span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="categories.html">CATEGORIES</a></li>
-        <li><a href="daily-dose.html">DAILY DOSE</a></li>
-      </ul>
-      <button class="btn-random" onclick="location.href='random-quiz.html'">
-        RANDOM QUIZ
-      </button>
-    </div>
-  </nav>
-
-  <!-- Main About section -->
-  <div class="app">
-    <header class="about-header">
-      <h1>About Us</h1>
-      <hr class="title-divider"/>
-    </header>
-
-    <div class="about-content">
-      <img
-        src="https://images.unsplash.com/photo-1577494943391-6a79c966f8a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
-        alt="Indian Railway Track"
-      />
-
-      <p>
-        We are here to provide unlimited practice question sets targeting the Indian Railway Limited departmental competitive examination for the
-        <strong>AEN</strong> post only. In future we will cover all posts (including
-        <strong>ACM, AEE, AFA, AME, AMM, AOM, APO, ASTE</strong>).
-      </p>
-
-      <p>
-        Questions will draw from the latest Indian Railway manuals and core‐subject material. You’ll also find a dedicated
-        <strong>Current Affairs &amp; GK</strong> section to keep you sharp on general topics.
-      </p>
-
-      <p>
-        This site is maintained by an AEN‐post aspirant as part of his personal preparation. Once the developer secures the AEN position, the website
-        will be opened for public use.
-      </p>
-
-      <h3>Image Sources</h3>
-      <ul>
-        <li>
-          “Indian Railway Track” by <a href="https://unsplash.com/@railwaylover" target="_blank">Railway Lover</a>, on
-          <a href="https://unsplash.com" target="_blank">Unsplash</a>
-        </li>
-        <li>
-          “Train on Bridge” by <a href="https://unsplash.com/@transportpics" target="_blank">Transport Pics</a>, on
-          <a href="https://unsplash.com" target="_blank">Unsplash</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Font Awesome for the Home icon -->
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-pO1...YourIntegrityHash..."
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
+  <!-- Include header.html (no footer) -->
+  <script>
+    async function includeHeader() {
+      const resp = await fetch('header.html');
+      if (resp.ok) {
+        document.getElementById('include-header').innerHTML = await resp.text();
+      } else {
+        console.error('Could not load header.html');
+      }
+    }
+    includeHeader();
+  </script>
 </body>
 </html>
