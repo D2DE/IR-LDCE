@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Indian Railway Manuals Quiz</title>
 
-  <!-- Font Awesome for the Home icon -->
+  <!-- Font Awesome for icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -13,71 +13,17 @@
     referrerpolicy="no-referrer"
   />
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #002147;
-      color: #333;
-      padding: 0;
-    }
-
-    /* Main quiz app container */
-    .app {
-      background: #fff;
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 2rem;
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    #logoutButton {
-      margin: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-      border: none;
-      border-radius: 4px;
-      background: #dc3545;
-      color: #fff;
-      display: none;
-    }
-
-    .quiz-list {
-      margin-top: 1.5rem;
-    }
-    .quiz-list button {
-      display: block;
-      width: 100%;
-      text-align: left;
-      background: #f0f0f0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 0.75rem;
-      margin-bottom: 0.5rem;
-      cursor: pointer;
-    }
-    .quiz-list button:hover {
-      background: #e0e0e0;
-    }
-
-    #loginPrompt {
-      margin-top: 1rem;
-      font-style: italic;
-      color: #666;
-    }
-  </style>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HEADER WILL BE INJECTED HERE -->
+  <!-- HEADER INJECTION -->
   <div id="include-header"></div>
 
-  <!-- Your existing quiz app markup -->
+  <!-- Quiz App -->
   <div class="app">
     <h1>Indian Railway Manuals Quiz</h1>
-    <hr class="title-divider">
 
     <button id="logoutButton">Logout</button>
 
@@ -101,8 +47,9 @@
   <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+
   <script>
-    // --- Header include logic ---
+    // Load header.html dynamically
     async function includeHeader() {
       try {
         const resp = await fetch('header.html');
@@ -114,23 +61,26 @@
     }
     includeHeader();
 
-    // --- Firebase & quiz logic (unchanged) ---
+    // Firebase config
     const logoutBtn = document.getElementById('logoutButton');
     firebase.initializeApp({
       apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
       authDomain: "quiz-app-1b48b.firebaseapp.com",
       projectId: "quiz-app-1b48b",
-      storageBucket: "quiz-app-1b48b.firebasestorage.app",
+      storageBucket: "quiz-app-1b48b.appspot.com",
       messagingSenderId: "765334603137",
       appId: "1:765334603137:web:1c8a13f6086a6773c2d480",
       measurementId: "G-YQJQWJ12N7"
     });
+
     firebase.auth().onAuthStateChanged(user => {
       logoutBtn.style.display = user ? 'inline-block' : 'none';
     });
+
     logoutBtn.addEventListener('click', () => {
       firebase.auth().signOut().then(() => location.reload());
     });
+
     document.querySelectorAll('.manual-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         window.location.href = 'login.html';
