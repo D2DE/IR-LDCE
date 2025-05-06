@@ -8,8 +8,9 @@
       </div>
       <div class="right-group">
         <a href="about.html">About Us</a>
-        <a href="register.html">Register</a>
-        <a href="login.html">Login</a>
+        <a href="register.html" id="registerLink">Register</a>
+        <a href="login.html" id="loginLink">Login</a>
+        <button id="logoutButton">Logout</button>
       </div>
       <button class="hamburger" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
@@ -33,9 +34,12 @@
 
   <script>
     // Toggle mobile menu
-    document.querySelector('.hamburger').addEventListener('click', () => {
-      document.querySelector('.header-top .header-container').classList.toggle('open');
-      document.querySelector('.navbar-main .header-container').classList.toggle('open');
+    const hamburger = document.querySelector('.hamburger');
+    const topBar    = document.querySelector('.header-top .header-container');
+    const navBar    = document.querySelector('.navbar-main .header-container');
+    hamburger.addEventListener('click', () => {
+      topBar.classList.toggle('open');
+      navBar.classList.toggle('open');
     });
   </script>
 </header>
