@@ -1,4 +1,3 @@
-<!-- header.html -->
 <header class="site-header">
   <!-- Top orange bar -->
   <div class="header-top">
@@ -35,9 +34,8 @@
   <script>
     // Toggle mobile menu
     document.querySelector('.hamburger').addEventListener('click', () => {
-      document.querySelectorAll('.header-container').forEach(el => {
-        el.classList.toggle('open');
-      });
+      document.querySelector('.header-top .header-container').classList.toggle('open');
+      document.querySelector('.navbar-main .header-container').classList.toggle('open');
     });
   </script>
 </header>
