@@ -5,42 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Indian Railway Manuals Quiz</title>
 
-  <!-- Font Awesome for icons -->
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-
-  <!-- External CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- HEADER INJECTION -->
+  <!-- Inject header -->
   <div id="include-header"></div>
 
   <!-- Quiz App -->
   <div class="app">
     <h1>Indian Railway Manuals Quiz</h1>
 
-  
-
-    <div class="quiz-list" id="quizList">
-      <button class="manual-btn" data-manual="irwm">1. Indian Railway Works Manual</button>
-      <button class="manual-btn" data-manual="irpwm">2. Indian Railway P-way Manual</button>
-      <button class="manual-btn" data-manual="irdim">3. Indian Railway Schedule of Dimensions</button>
-      <button class="manual-btn" data-manual="irec">4. Indian Railway Engineering Code</button>
-      <button class="manual-btn" data-manual="stm">5. Small Track Machine Manual</button>
-      <button class="manual-btn" data-manual="usfd">6. USFD Manual</button>
-      <button class="manual-btn" data-manual="fbwm">7. FBW Manual</button>
-      <button class="manual-btn" data-manual="store">8. Store Manual</button>
-      <button class="manual-btn" data-manual="account">9. Account Manual</button>
-    </div>
-
-    <div id="loginPrompt">
-      <p>Please login or register to access the quizzes</p>
+    <div id="quizContainer">
+      <div class="quiz-list" id="quizList">
+        <button class="manual-btn" data-manual="irwm">1. Indian Railway Works Manual</button>
+        <button class="manual-btn" data-manual="irpwm">2. Indian Railway P-way Manual</button>
+        <button class="manual-btn" data-manual="irdim">3. Indian Railway Schedule of Dimensions</button>
+        <button class="manual-btn" data-manual="irec">4. Indian Railway Engineering Code</button>
+        <button class="manual-btn" data-manual="stm">5. Small Track Machine Manual</button>
+        <button class="manual-btn" data-manual="usfd">6. USFD Manual</button>
+        <button class="manual-btn" data-manual="fbwm">7. FBW Manual</button>
+        <button class="manual-btn" data-manual="store">8. Store Manual</button>
+        <button class="manual-btn" data-manual="account">9. Account Manual</button>
+      </div>
     </div>
   </div>
 
@@ -49,43 +42,60 @@
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
 
   <script>
-    // Load header.html dynamically
+    let currentUser = null;
+
     async function includeHeader() {
-      try {
-        const resp = await fetch('header.html');
-        if (!resp.ok) throw new Error('Could not load header.html');
-        document.getElementById('include-header').innerHTML = await resp.text();
-      } catch (err) {
-        console.error(err);
-      }
+      const resp = await fetch('header.html');
+      document.getElementById('include-header').innerHTML = await resp.text();
     }
-    includeHeader();
 
-    // Firebase config
-    const logoutBtn = document.getElementById('logoutButton');
-    firebase.initializeApp({
-      apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
-      authDomain: "quiz-app-1b48b.firebaseapp.com",
-      projectId: "quiz-app-1b48b",
-      storageBucket: "quiz-app-1b48b.appspot.com",
-      messagingSenderId: "765334603137",
-      appId: "1:765334603137:web:1c8a13f6086a6773c2d480",
-      measurementId: "G-YQJQWJ12N7"
-    });
-
-    firebase.auth().onAuthStateChanged(user => {
-      logoutBtn.style.display = user ? 'inline-block' : 'none';
-    });
-
-    logoutBtn.addEventListener('click', () => {
-      firebase.auth().signOut().then(() => location.reload());
-    });
-
-    document.querySelectorAll('.manual-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        window.location.href = 'login.html';
+    function initApp() {
+      // Firebase init
+      firebase.initializeApp({
+        apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
+        authDomain: "quiz-app-1b48b.firebaseapp.com",
+        projectId: "quiz-app-1b48b",
+        storageBucket: "quiz-app-1b48b.appspot.com",
+        messagingSenderId: "765334603137",
+        appId: "1:765334603137:web:1c8a13f6086a6773c2d480",
+        measurementId: "G-YQJWJ12N7"
       });
-    });
+
+      const logoutBtn   = document.getElementById('logoutButton');
+      const loginLink   = document.getElementById('loginLink');
+      const registerLink= document.getElementById('registerLink');
+
+      firebase.auth().onAuthStateChanged(user => {
+        currentUser = user;
+        if (user) {
+          logoutBtn.style.display = 'inline-block';
+          loginLink.style.display = 'none';
+          registerLink.style.display = 'none';
+        } else {
+          logoutBtn.style.display = 'none';
+          loginLink.style.display = 'inline-block';
+          registerLink.style.display = 'inline-block';
+        }
+      });
+
+      logoutBtn.addEventListener('click', () => {
+        firebase.auth().signOut().then(() => location.reload());
+      });
+
+      // Quiz button handlers
+      document.querySelectorAll('.manual-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (currentUser) {
+            window.location.href = `quiz.html?manual=${btn.dataset.manual}`;
+          } else {
+            window.location.href = 'login.html';
+          }
+        });
+      });
+    }
+
+    // Load header then init app
+    includeHeader().then(initApp);
   </script>
 </body>
 </html>
