@@ -12,26 +12,24 @@
 .header-top {
   background: #FFA500;
 }
-
 .header-top .left-group,
 .header-top .right-group {
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
-
 .header-top a {
   color: #fff;
   text-decoration: none;
   font-size: 0.95rem;
 }
-
-.hamburger {
+#logoutButton {
   display: none;
   background: none;
-  border: none;
+  border: 1px solid #fff;
   color: #fff;
-  font-size: 1.25rem;
+  padding: 4px 8px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
@@ -40,27 +38,22 @@
   background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
 .navbar-main .header-container {
   padding: 8px 16px;
 }
-
 .navbar-main .logo {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-
 .navbar-main .logo img {
   height: 40px;
 }
-
 .navbar-main .logo span {
   font-size: 1.25rem;
   font-weight: bold;
   color: #002147;
 }
-
 .navbar-main .nav-links {
   display: flex;
   list-style: none;
@@ -68,7 +61,6 @@
   margin: 0;
   padding: 0;
 }
-
 .navbar-main .nav-links a {
   color: #002147;
   text-decoration: none;
@@ -76,35 +68,67 @@
   font-size: 0.95rem;
 }
 
-/* Responsive behavior */
+/* Quiz grid */
+.quiz-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+  margin-top: 1.5rem;
+}
+@media (min-width: 600px) {
+  .quiz-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .quiz-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.manual-btn {
+  padding: 0.75rem;
+  border: 2px solid #003366;
+  background: #fff;
+  color: #003366;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  width: 100%;
+  text-align: left;
+}
+.manual-btn:hover {
+  background: #003366;
+  color: #fff;
+}
+
+/* Responsive header */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
 @media (max-width: 800px) {
-  .header-top .header-container,
-  .navbar-main .header-container {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
   .header-top .left-group,
-  .header-top .right-group {
+  .header-top .right-group,
+  .navbar-main .nav-links {
     display: none;
   }
-
   .header-top .header-container.open .left-group,
   .header-top .header-container.open .right-group {
     display: flex;
-  }
-
-  .navbar-main .nav-links {
-    display: none;
     flex-direction: column;
-    width: 100%;
+    gap: 8px;
   }
-
   .navbar-main .header-container.open .nav-links {
     display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+  .hamburger {
+    display: block;
   }
 }
