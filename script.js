@@ -130,3 +130,16 @@ nextButton.addEventListener("click", () => {
 
 // Start the quiz by loading questions from JSON
 loadQuestions();
+
+// Confirmation before leaving quiz
+window.addEventListener('DOMContentLoaded', () => {
+    const backBtn = document.getElementById('backToDashboardBtn');
+    if (backBtn) {
+        backBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (confirm('Are you sure you want to leave this quiz and return to the dashboard?')) {
+                window.location.href = 'dashboard.html';
+            }
+        });
+    }
+});
