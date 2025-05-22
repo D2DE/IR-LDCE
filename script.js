@@ -70,16 +70,26 @@ window.initQuiz = function() {
         let questionNo = currentQuestionIndex + 1;
         questionElement.innerHTML = `<strong>${questionNo}. ${currentQuestion.question}</strong>`;
 
+        // Clear previous answers and create a bulleted list
+        answerButtons.innerHTML = "";
+        const ul = document.createElement('ul');
+        ul.style.listStyleType = 'disc';
+        ul.style.paddingLeft = '24px';
+
         currentQuestion.answers.forEach(answer => {
-            const button = document.createElement("button");
+            const li = document.createElement('li');
+            const button = document.createElement('button');
             button.innerHTML = answer.text;
-            button.classList.add("btn");
+            button.classList.add('btn');
             if (answer.correct) {
                 button.dataset.correct = answer.correct;
             }
-            button.addEventListener("click", selectAnswer);
-            answerButtons.appendChild(button);
+            button.addEventListener('click', selectAnswer);
+            li.appendChild(button);
+            ul.appendChild(li);
         });
+
+        answerButtons.appendChild(ul);
     }
 
     function resetState() {
@@ -98,7 +108,7 @@ window.initQuiz = function() {
         } else {
             selectedBtn.classList.add("incorrect");
         }
-        Array.from(answerButtons.children).forEach(button => {
+        Array.from(answerButtons.querySelectorAll('button')).forEach(button => {
             if (button.dataset.correct === "true") {
                 button.classList.add("correct");
             }
