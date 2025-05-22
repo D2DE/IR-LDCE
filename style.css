@@ -2,7 +2,7 @@
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* Center horizontally */
   max-width: 960px;
   margin: 0 auto;
   padding: 0 16px;
@@ -40,17 +40,20 @@
 }
 .navbar-main .header-container {
   padding: 8px 16px;
+  justify-content: center; /* Center nav links */
 }
 .navbar-main .logo {
   display: flex;
   align-items: center;
   gap: 8px;
+  justify-content: center; /* Center logo */
+  width: 100%;
 }
 .navbar-main .logo img {
   height: 40px;
 }
 .navbar-main .logo span {
-  font-size: 1.25rem;
+  font-size: 1.5rem; /* Increased font size */
   font-weight: bold;
   color: #002147;
 }
@@ -60,12 +63,14 @@
   gap: 1.5rem;
   margin: 0;
   padding: 0;
+  justify-content: center; /* Center nav links */
+  width: 100%;
 }
 .navbar-main .nav-links a {
   color: #002147;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
+  font-weight: 600;
+  font-size: 1.1rem; /* Increased font size */
 }
 
 /* Quiz grid */
@@ -74,6 +79,7 @@
   gap: 1rem;
   grid-template-columns: repeat(1, 1fr);
   margin-top: 1.5rem;
+  justify-content: center; /* Center grid */
 }
 @media (min-width: 600px) {
   .quiz-list {
@@ -86,42 +92,89 @@
   }
 }
 .manual-btn {
-  padding: 0.75rem;
+  padding: 1rem;
   border: 2px solid #003366;
   background: #fff;
   color: #003366;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   width: 100%;
-  text-align: left;
+  text-align: center; /* Center text */
+  font-size: 1.2rem; /* Increased font size */
+  font-weight: 600;
 }
 .manual-btn:hover {
   background: #003366;
   color: #fff;
 }
 
-/* Bulleted quiz answer options */
+/* Center the whole quiz app content */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+/* Center the quiz header */
+.app h1 {
+  text-align: center;
+  width: 100%;
+  font-size: 2.8rem; /* Increased font size */
+  margin-bottom: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Center the question text and make it larger */
+.quiz #question {
+  text-align: center;
+  font-size: 1.8rem; /* Increased font size */
+  margin-bottom: 28px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Center the answer options and increase font size */
+#answer-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 #answer-buttons ul {
   list-style-type: disc;
-  padding-left: 24px;
+  padding-left: 0;
   margin: 0 0 16px 0;
+  text-align: center;
 }
+
 #answer-buttons li {
-  margin-bottom: 10px;
+  margin-bottom: 18px;
+  list-style-position: inside;
 }
+
+/* Style answer buttons: bigger and centered */
 #answer-buttons .btn {
   display: inline-block;
   background: none;
   border: none;
   color: #1976d2;
-  text-align: left;
-  font-size: 1em;
+  text-align: center;
+  font-size: 1.4rem; /* Increased font size */
   cursor: pointer;
-  padding: 6px 0;
-  border-radius: 4px;
+  padding: 12px 36px;
+  border-radius: 6px;
   transition: background 0.2s, color 0.2s;
+  min-width: 260px;
+  font-weight: 600;
 }
+
 #answer-buttons .btn:hover:not(:disabled) {
   background: #e3f0fd;
   color: #003366;
@@ -139,6 +192,24 @@
 #answer-buttons .btn:disabled {
   cursor: not-allowed;
   opacity: 0.8;
+}
+
+/* Center the Next button */
+#next-btn {
+  display: block;
+  margin: 32px auto 0 auto;
+  font-size: 1.3rem; /* Increased font size */
+  padding: 14px 40px;
+  border-radius: 6px;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#next-btn:hover {
+  background: #1565c0;
 }
 
 /* Responsive header */
