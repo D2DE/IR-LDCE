@@ -116,21 +116,6 @@ body {
   object-fit: cover;
   border: 3px solid #1976d2;
 }
-#avatarUpload {
-  display: none;
-}
-.upload-label {
-  position: absolute;
-  bottom: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #1976d2;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.9em;
-}
 /* Quiz history table styles */
 .quiz-history table {
   width: 100%;
