@@ -2,291 +2,119 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Log In</title>
+  <title>Login - Quiz App</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
-      background: #fafafa;
+      background: #f5f7fa;
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
     }
-    .container {
-      width: 400px;
-      margin: 40px auto;
+    .login-container {
+      max-width: 360px;
+      margin: 60px auto;
       background: #fff;
       border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      padding: 32px 24px 24px 24px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 32px 24px;
     }
-    h2 {
+    .login-container h2 {
       text-align: center;
-      margin-top: 0;
-      margin-bottom: 8px;
-      font-size: 28px;
-      font-weight: 600;
-    }
-    .subtitle {
-      text-align: center;
-      color: #555;
       margin-bottom: 24px;
-      font-size: 15px;
+      font-size: 1.6em;
     }
-    .social-btn {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 12px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      background: #fff;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-weight: 600;
-    }
-    .social-btn img, .social-btn svg {
-      height: 20px;
-      margin-right: 10px;
-    }
-    .small-note {
-      text-align: center;
-      font-size: 14px;
-      margin: 8px 0 16px 0;
-    }
-    .divider {
-      display: flex;
-      align-items: center;
-      text-align: center;
-      margin: 20px 0;
-      color: #777;
-    }
-    .divider::before, .divider::after {
-      content: '';
-      flex: 1;
-      border-bottom: 1px solid #ddd;
-    }
-    .divider:not(:empty)::before {
-      margin-right: 16px;
-    }
-    .divider:not(:empty)::after {
-      margin-left: 16px;
-    }
-    form {
+    .login-container form {
       display: flex;
       flex-direction: column;
+      gap: 16px;
     }
-    label {
-      font-size: 14px;
-      margin-bottom: 6px;
-      font-weight: 600;
+    .login-container label {
+      font-weight: bold;
+      margin-bottom: 4px;
     }
-    input[type="email"], input[type="text"], input[type="password"] {
-      padding: 12px;
-      margin-bottom: 16px;
-      border: 1px solid #ddd;
+    .login-container input[type="email"],
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      padding: 10px;
+      border: 1px solid #ccc;
       border-radius: 4px;
-      font-size: 14px;
-      background: #f0f0f0;
+      font-size: 1em;
     }
-    .checkbox-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-    }
-    .stay-signed {
-      display: flex;
-      align-items: center;
-    }
-    .checkbox-row input[type="checkbox"] {
-      margin-right: 6px;
-    }
-    .forgot {
-      color: #000;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-    }
-    .forgot:hover {
-      text-decoration: underline;
-    }
-    .required-note {
-      font-size: 13px;
-      color: #888;
-      text-align: right;
-      margin-bottom: 16px;
-    }
-    .actions-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .join-btn {
-      background: none;
-      border: none;
-      color: #000;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      padding: 0;
-    }
-    .login-btn {
-      background: #f9a825;
+    .login-container button {
+      background: #1976d2;
       color: #fff;
       border: none;
-      padding: 10px 24px;
-      border-radius: it;4px;
-      font-size: 14px;
-      font-weight: 600;
+      padding: 12px 0;
+      border-radius: 4px;
+      font-size: 1em;
+      font-weight: bold;
       cursor: pointer;
+      transition: background 0.2s;
     }
-    .modal {
+    .login-container button:hover {
+      background: #1565c0;
+    }
+    .login-container .signup-link {
+      margin-top: 16px;
+      text-align: center;
+    }
+    .login-container .signup-link a {
+      color: #1976d2;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .login-container .signup-link a:hover {
+      text-decoration: underline;
+    }
+    .error-message {
+      color: #b00;
+      background: #ffe0e0;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      text-align: center;
       display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
-    }
-    .modal-content {
-      background-color: white;
-      margin: 15% auto;
-      padding: 20px;
-      width: 350px;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    }
-    .modal h3 {
-      margin-top: 0;
-      margin-bottom: 16px;
     }
   </style>
-  <!-- Google Sign-In JS -->
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
-  <div class="container">
-    <h2>Log In</h2>
-    <div class="subtitle">By continuing you agree to our <b>Community Guidelines</b></div>
-
-    <!-- Google Button -->
-    <div id="g_id_onload"
-         data-client_id="765334603137-e10kbh7ifqm6fhkelapt7qjdo00vmcuh.apps.googleusercontent.com"
-         data-callback="handleCredentialResponse"
-         data-auto_prompt="true">
-    </div>
-    <div class="g_id_signin"
-         data-type="standard"
-         data-shape="rectangular"
-         data-theme="outline"
-         data-text="continue_with"
-         data-size="large"
-         data-logo_alignment="left">
-    </div>
-
-    <!-- Apple Button (non-functional) -->
-    <button class="social-btn">
-      <svg viewBox="0 0 384 512" width="20" height="20"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-      CONTINUE WITH APPLE
-    </button>
-
-    
-    <div class="divider">or</div>
-    
-    <form id="loginForm">
-      <label for="email">Email Address or Username<span style="color:#f9a825">*</span></label>
-      <input type="text" id="email" required>
-      
-      <label for="password">Password<span style="color:#f9a825">*</span></label>
-      <input type="password" id="password" required>
-      
-      <div class="checkbox-row">
-        <div class="stay-signed">
-          <input type="checkbox" id="staySignedIn" checked>
-          <label for="staySignedIn" style="margin:0;font-weight:normal;">Stay signed in</label>
-        </div>
-        <a class="forgot" href="#">Forgot Password?</a>
-      </div>
-      
-      <div class="required-note">* indicates a required field</div>
-      
-      <div class="actions-row">
-        <button type="button" class="join-btn" onclick="window.location.href='register.html'">Register for Free</button>
-        <button type="submit" class="login-btn">LOG IN</button>
-      </div>
+  <div class="login-container">
+    <h2>Login to Quiz App</h2>
+    <div id="error-message" class="error-message"></div>
+    <form id="loginForm" autocomplete="on">
+      <label for="email">Email</label>
+      <input type="email" id="email" required placeholder="Enter your email" autocomplete="username">
+      <label for="password">Password</label>
+      <input type="password" id="password" required placeholder="Enter your password" autocomplete="current-password">
+      <button type="submit">Login</button>
     </form>
-  </div>
-
-  <!-- Username Modal -->
-  <div id="usernameModal" class="modal">
-    <div class="modal-content">
-      <h3>Choose a Username</h3>
-      <form id="usernameForm">
-        <input type="text" id="modalUsername" placeholder="Username*" required>
-        <p class="small-note">This username will be visible to other users</p>
-        <button type="submit" class="login-btn" style="width:100%">SAVE USERNAME</button>
-      </form>
+    <div class="signup-link">
+      Don't have an account? <a href="register.html">Sign up</a>
     </div>
   </div>
-
   <script>
-    // Google Sign-In Handler
-    function handleCredentialResponse(response) {
-      // Decode the JWT token to get user info
-      const responsePayload = parseJwt(response.credential);
-      const email = responsePayload.email;
-      
-      // For demo purposes, show username prompt for all Google logins
-      // In a real app, check if user exists in your database first
-      const suggestedUsername = email.split('@')[0];
-      
-      // Show username modal
-      document.getElementById('modalUsername').value = suggestedUsername;
-      document.getElementById('usernameModal').style.display = 'block';
-    }
-    
-    // Parse JWT token
-    function parseJwt(token) {
-      const base64Url = token.split('.')[1];
-      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-      const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-      }).join(''));
-      return JSON.parse(jsonPayload);
-    }
-    
-    // Handle username form submission
-    document.getElementById('usernameForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const username = document.getElementById('modalUsername').value;
-      
-      // Store user info (in real app, send to your server)
-      localStorage.setItem('username', username);
-      localStorage.setItem('email', email || '');
-      
-      // Hide the modal
-      document.getElementById('usernameModal').style.display = 'none';
-      
-      // Redirect to dashboard
-      window.location.href = 'dashboard.html';
-    });
-    
-    // Handle regular login
+    // Demo login: accepts any email/password, stores in localStorage
     document.getElementById('loginForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      const email = document.getElementById('email').value;
-      
-      // In a real app, you would verify credentials with your server
-      // For demo, just store and redirect
-      localStorage.setItem('username', email.split('@')[0] || email);
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const errorDiv = document.getElementById('error-message');
+
+      // Simple validation
+      if (!email || !password) {
+        errorDiv.textContent = "Please enter both email and password.";
+        errorDiv.style.display = "block";
+        return;
+      }
+
+      // In real app: verify credentials with backend or Firebase Auth here
+      // For demo, just store username/email in localStorage
+      localStorage.setItem('username', email.split('@')[0]);
       localStorage.setItem('email', email);
-      
-      window.location.href = 'dashboard.html';
+
+      // Handle redirect
+      const urlParams = new URLSearchParams(window.location.search);
+      const redirect = urlParams.get('redirect');
+      window.location.href = redirect || 'dashboard.html';
     });
   </script>
 </body>
