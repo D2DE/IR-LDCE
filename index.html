@@ -28,6 +28,14 @@
   <!-- Quiz App -->
   <div class="app">
     <h1>Indian Railway Manuals Quiz</h1>
+
+    <!-- Dashboard Button (hidden by default) -->
+    <div id="dashboardBtnContainer" style="text-align:center; margin-bottom:24px; display:none;">
+      <button id="dashboardBtn" class="manual-btn" style="width:auto; font-size:1.1em;">
+        <i class="fa fa-user-circle"></i> Dashboard
+      </button>
+    </div>
+
     <div class="quiz-list" id="quizList">
       <button class="manual-btn" data-manual="irwm" aria-label="Start quiz for Indian Railway Works Manual">1. Indian Railway Works Manual</button>
       <button class="manual-btn" data-manual="irpwm" aria-label="Start quiz for Indian Railway P-way Manual">2. Indian Railway P-way Manual</button>
@@ -41,7 +49,7 @@
     </div>
   </div>
 
-  <!-- Firebase “compat” SDKs to expose the old firebase.* globals -->
+  <!-- Firebase compat SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
 
@@ -59,7 +67,6 @@
 
     // 2) Initialize Firebase & wire everything up
     function initApp() {
-      // Restore your existing namespaced API
       firebase.initializeApp({
         apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
         authDomain: "quiz-app-1b48b.firebaseapp.com",
@@ -74,8 +81,10 @@
       const logoutBtn    = document.getElementById('logoutButton');
       const loginLink    = document.getElementById('loginLink');
       const registerLink = document.getElementById('registerLink');
+      const dashboardBtnContainer = document.getElementById('dashboardBtnContainer');
+      const dashboardBtn = document.getElementById('dashboardBtn');
 
-      // 3) Toggle header links on auth change
+      // 3) Toggle header links and dashboard button on auth change
       firebase.auth().onAuthStateChanged(user => {
         if (logoutBtn && loginLink && registerLink) {
           if (user) {
@@ -88,6 +97,10 @@
             registerLink.style.display = 'inline-block';
           }
         }
+        // Show dashboard button only if logged in
+        if (dashboardBtnContainer) {
+          dashboardBtnContainer.style.display = user ? 'block' : 'none';
+        }
       });
 
       // 4) Logout handler
@@ -97,7 +110,14 @@
         );
       }
 
-      // 5) Quiz button click → check real‐time auth then redirect
+      // 5) Dashboard button handler
+      if (dashboardBtn) {
+        dashboardBtn.addEventListener('click', () => {
+          window.location.href = 'dashboard.html';
+        });
+      }
+
+      // 6) Quiz button click → check real‐time auth then redirect
       document.querySelectorAll('.manual-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           const user = firebase.auth().currentUser;
@@ -105,13 +125,13 @@
             window.location.href = `quiz.html?manual=${btn.dataset.manual}`;
           } else {
             // Pass redirect info for smoother UX after login
-            window.location.href = `login.html?redirect=quiz&manual=${btn.dataset.manual}`;
+            window.location.href = `login.html?redirect=quiz.html?manual=${btn.dataset.manual}`;
           }
         });
       });
     }
 
-    // 6) Kick it off: inject header, then init app
+    // 7) Kick it off: inject header, then init app
     includeHeader().then(initApp);
   </script>
 </body>
