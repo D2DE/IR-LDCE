@@ -3,57 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>User Dashboard</title>
-  <style>
-    /* ... (keep existing styles) ... */
-
-    /* New profile section styles */
-    .profile-section {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-    .avatar-container {
-      position: relative;
-    }
-    #userAvatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #1976d2;
-    }
-    #avatarUpload {
-      display: none;
-    }
-    .upload-label {
-      position: absolute;
-      bottom: -25px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #1976d2;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.9em;
-    }
-
-    /* Quiz history table styles */
-    .quiz-history table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 15px;
-    }
-    .quiz-history th, .quiz-history td {
-      padding: 12px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-    .quiz-history th {
-      background-color: #f5f5f5;
-    }
-  </style>
+  <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
   <div class="dashboard-container">
@@ -64,13 +14,13 @@
     <!-- Profile Section -->
     <div class="profile-section">
       <div class="avatar-container">
+        <!-- Default avatar, no upload -->
         <img id="userAvatar" src="default-avatar.png" alt="Profile Picture">
-        <label for="avatarUpload" class="upload-label">Change Avatar</label>
-        <input type="file" id="avatarUpload" accept="image/*">
       </div>
       <div class="profile-info">
         <h2>Welcome, <span id="dashboard-username">User</span>!</h2>
         <p>Email: <span id="account-email">user@example.com</span></p>
+        <button class="logout-btn" id="logoutBtn" aria-label="Log out of your account">Log Out</button>
       </div>
     </div>
 
@@ -86,7 +36,7 @@
           </tr>
         </thead>
         <tbody id="quizHistoryBody">
-          <!-- Dynamically populated -->
+          <!-- Populated by JS -->
         </tbody>
       </table>
     </div>
@@ -95,100 +45,19 @@
     <div class="dashboard-section" id="quiz-section">
       <h3>Available Quizzes</h3>
       <div class="quiz-list">
-        <!-- ... (keep existing quiz buttons) ... -->
+        <button class="manual-btn" data-manual="irwm" aria-label="Start quiz for Indian Railway Works Manual">1. Indian Railway Works Manual</button>
+        <button class="manual-btn" data-manual="irpwm" aria-label="Start quiz for Indian Railway P-way Manual">2. Indian Railway P-way Manual</button>
+        <button class="manual-btn" data-manual="irdim" aria-label="Start quiz for Indian Railway Schedule of Dimensions">3. Indian Railway Schedule of Dimensions</button>
+        <button class="manual-btn" data-manual="irec" aria-label="Start quiz for Indian Railway Engineering Code">4. Indian Railway Engineering Code</button>
+        <button class="manual-btn" data-manual="stm" aria-label="Start quiz for Small Track Machine Manual">5. Small Track Machine Manual</button>
+        <button class="manual-btn" data-manual="usfd" aria-label="Start quiz for USFD Manual">6. USFD Manual</button>
+        <button class="manual-btn" data-manual="fbwm" aria-label="Start quiz for FBW Manual">7. FBW Manual</button>
+        <button class="manual-btn" data-manual="store" aria-label="Start quiz for Store Manual">8. Store Manual</button>
+        <button class="manual-btn" data-manual="account" aria-label="Start quiz for Account Manual">9. Account Manual</button>
       </div>
     </div>
   </div>
-
-  <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js"></script>
-
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
-      authDomain: "quiz-app-1b48b.firebaseapp.com",
-      projectId: "quiz-app-1b48b",
-      storageBucket: "quiz-app-1b48b.appspot.com",
-      messagingSenderId: "765334603137",
-      appId: "1:765334603137:web:1c8a13f6086a6773c2d480"
-    };
-
-    // Initialize Firebase
-    const app = firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-    const db = firebase.firestore();
-    const storage = firebase.storage();
-
-    // Auth state listener
-    auth.onAuthStateChanged(async (user) => {
-      const errorDiv = document.getElementById('error-message');
-      if (!user) {
-        errorDiv.style.display = 'block';
-        document.querySelector('.dashboard-container').style.display = 'none';
-        return;
-      }
-
-      // Load user data
-      const userDoc = await db.collection('users').doc(user.uid).get();
-      if (userDoc.exists) {
-        const userData = userDoc.data();
-        document.getElementById('dashboard-username').textContent = userData.username || user.email;
-        document.getElementById('account-email').textContent = user.email;
-        
-        // Load avatar
-        if (userData.avatarUrl) {
-          document.getElementById('userAvatar').src = userData.avatarUrl;
-        }
-      }
-
-      // Load quiz history
-      const querySnapshot = await db.collection('users').doc(user.uid)
-        .collection('quizHistory').orderBy('timestamp', 'desc').get();
-      
-      const historyBody = document.getElementById('quizHistoryBody');
-      historyBody.innerHTML = querySnapshot.docs.map(doc => {
-        const data = doc.data();
-        return `
-          <tr>
-            <td>${new Date(data.timestamp?.toDate()).toLocaleDateString()}</td>
-            <td>${data.manual}</td>
-            <td>${data.score}/${data.totalQuestions}</td>
-          </tr>
-        `;
-      }).join('');
-
-      // Avatar upload handler
-      document.getElementById('avatarUpload').addEventListener('change', async (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
-
-        const storageRef = storage.ref(`avatars/${user.uid}`);
-        await storageRef.put(file);
-        const avatarUrl = await storageRef.getDownloadURL();
-        
-        await db.collection('users').doc(user.uid).update({
-          avatarUrl: avatarUrl
-        });
-        document.getElementById('userAvatar').src = avatarUrl;
-      });
-    });
-
-    // Logout handler
-    function logout() {
-      auth.signOut().then(() => {
-        window.location.href = 'login.html';
-      });
-    }
-
-    // Quiz button handlers
-    document.querySelectorAll('.manual-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        window.location.href = `quiz.html?manual=${btn.dataset.manual}`;
-      });
-    });
-  </script>
+  <!-- Firebase dashboard.js as module -->
+  <script type="module" src="dashboard.js"></script>
 </body>
 </html>
