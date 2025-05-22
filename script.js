@@ -25,8 +25,6 @@ let questionElement, answerButtons, nextButton, headingElement;
 let currentQuestionIndex = 0;
 let score = 0;
 
-// Wait for DOM and authentication before running quiz logic
-document.addEventListener('DOMContentLoaded', function() {
     // Only run if quiz content is visible (i.e., user is authenticated)
     if (!document.querySelector('.app') || document.querySelector('.app').style.display === 'none') return;
 
