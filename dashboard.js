@@ -1,7 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore, doc, getDoc, collection, query, orderBy, getDocs, updateDoc, setDoc, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+import { getFirestore, doc, getDoc, collection, query, orderBy, getDocs, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 // Your Firebase config
 const firebaseConfig = {
@@ -16,7 +15,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-const storage = getStorage(app);
 
 // Utility: Format date
 function formatDate(ts) {
@@ -40,12 +38,12 @@ onAuthStateChanged(auth, async (user) => {
   const userRef = doc(db, "users", user.uid);
   let userSnap = await getDoc(userRef);
   if (!userSnap.exists()) {
-    // Create user doc if not exists
+    // Create user doc if not exists, with default avatar
     await setDoc(userRef, {
       email: user.email,
       username: user.email.split('@')[0],
       createdAt: serverTimestamp(),
-      avatarUrl: ""
+      avatarUrl: "default-avatar.png" // Use your static/default avatar path or a random avatar URL here
     });
     userSnap = await getDoc(userRef);
   }
@@ -53,17 +51,6 @@ onAuthStateChanged(auth, async (user) => {
   document.getElementById('dashboard-username').textContent = userData.username || user.email.split('@')[0];
   document.getElementById('account-email').textContent = user.email;
   document.getElementById('userAvatar').src = userData.avatarUrl || "default-avatar.png";
-
-  // Avatar upload
-  document.getElementById('avatarUpload').addEventListener('change', async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const storageRef = ref(storage, `avatars/${user.uid}`);
-    await uploadBytes(storageRef, file);
-    const avatarUrl = await getDownloadURL(storageRef);
-    await updateDoc(userRef, { avatarUrl });
-    document.getElementById('userAvatar').src = avatarUrl;
-  });
 
   // Load quiz history
   const q = query(collection(db, "users", user.uid, "quizHistory"), orderBy("timestamp", "desc"));
