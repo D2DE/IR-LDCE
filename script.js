@@ -11,29 +11,27 @@ const manualNames = {
     account: "Account Manual"
 };
 
-// Get manual code from URL parameter (e.g., ?manual=irwm)
-const urlParams = new URLSearchParams(window.location.search);
-const manual = urlParams.get('manual');
+// Quiz initialization function
+window.initQuiz = function() {
+    // Get manual code from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const manual = urlParams.get('manual');
 
-// Build the JSON file URL (hosted on GitHub Pages)
-const jsonFile = manual
-    ? `https://d2de.github.io/IR-LDCE/${manual}-questions.json`
-    : null;
+    // Build JSON URL
+    const jsonFile = manual 
+        ? `https://d2de.github.io/IR-LDCE/${manual}-questions.json`
+        : null;
 
-let questions = [];
-let questionElement, answerButtons, nextButton, headingElement;
-let currentQuestionIndex = 0;
-let score = 0;
+    // Quiz variables
+    let questions = [];
+    const questionElement = document.getElementById("question");
+    const answerButtons = document.getElementById("answer-buttons");
+    const nextButton = document.getElementById("next-btn");
+    const headingElement = document.querySelector('.app h1');
+    let currentQuestionIndex = 0;
+    let score = 0;
 
-    // Only run if quiz content is visible (i.e., user is authenticated)
-    if (!document.querySelector('.app') || document.querySelector('.app').style.display === 'none') return;
-
-    questionElement = document.getElementById("question");
-    answerButtons = document.getElementById("answer-buttons");
-    nextButton = document.getElementById("next-btn");
-    headingElement = document.querySelector('.app h1');
-
-    // Dynamically set the heading
+    // Set quiz heading
     if (manual && manualNames[manual]) {
         headingElement.childNodes[0].textContent = manualNames[manual] + " Quiz ";
     } else {
@@ -146,4 +144,4 @@ let score = 0;
             }
         });
     }
-});
+};
