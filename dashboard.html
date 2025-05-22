@@ -70,22 +70,70 @@
       color: #333;
       font-size: 1em;
     }
+    .quiz-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .manual-btn {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 4px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-align: left;
+    }
+    .manual-btn:hover {
+      background: #1565c0;
+    }
     @media (max-width: 800px) {
       .dashboard-container {
         max-width: 96vw;
         padding: 16px 4vw 22px 4vw;
       }
     }
+    .error-message {
+      background: #ffe0e0;
+      color: #b00;
+      padding: 1em;
+      border-radius: 4px;
+      margin-bottom: 1em;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <div class="dashboard-container">
+    <div id="error-message" class="error-message" style="display:none;">
+      You are not logged in. <a href="login.html">Go to login</a>
+    </div>
     <div class="dashboard-header">
       <h2>Welcome, <span id="dashboard-username">User</span>!</h2>
-      <button class="logout-btn" onclick="logout()">Log Out</button>
+      <button class="logout-btn" aria-label="Log out of your account" onclick="logout()">Log Out</button>
     </div>
     <div class="welcome">
       This is your dashboard. Here you can see your recent activity and manage your account.
+    </div>
+
+    <!-- Quiz List: Only visible to logged-in users -->
+    <div class="dashboard-section" id="quiz-section" style="display:none;">
+      <h3>Available Quizzes</h3>
+      <div class="quiz-list">
+        <button class="manual-btn" data-manual="irwm" aria-label="Start quiz for Indian Railway Works Manual">1. Indian Railway Works Manual</button>
+        <button class="manual-btn" data-manual="irpwm" aria-label="Start quiz for Indian Railway P-way Manual">2. Indian Railway P-way Manual</button>
+        <button class="manual-btn" data-manual="irdim" aria-label="Start quiz for Indian Railway Schedule of Dimensions">3. Indian Railway Schedule of Dimensions</button>
+        <button class="manual-btn" data-manual="irec" aria-label="Start quiz for Indian Railway Engineering Code">4. Indian Railway Engineering Code</button>
+        <button class="manual-btn" data-manual="stm" aria-label="Start quiz for Small Track Machine Manual">5. Small Track Machine Manual</button>
+        <button class="manual-btn" data-manual="usfd" aria-label="Start quiz for USFD Manual">6. USFD Manual</button>
+        <button class="manual-btn" data-manual="fbwm" aria-label="Start quiz for FBW Manual">7. FBW Manual</button>
+        <button class="manual-btn" data-manual="store" aria-label="Start quiz for Store Manual">8. Store Manual</button>
+        <button class="manual-btn" data-manual="account" aria-label="Start quiz for Account Manual">9. Account Manual</button>
+      </div>
     </div>
 
     <div class="dashboard-section">
@@ -105,17 +153,34 @@
     </div>
   </div>
   <script>
-    // Example: Get username/email from localStorage (set after login/register)
-    // In a real app, use your backend or authentication data!
-    const username = localStorage.getItem('username') || 'User';
-    const email = localStorage.getItem('email') || 'user@example.com';
+    // Get username/email from localStorage (set after login/register)
+    const username = localStorage.getItem('username');
+    const email = localStorage.getItem('email');
+    const errorDiv = document.getElementById('error-message');
+    const quizSection = document.getElementById('quiz-section');
 
-    document.getElementById('dashboard-username').textContent = username;
-    document.getElementById('account-username').textContent = username;
-    document.getElementById('account-email').textContent = email;
+    if (!username || !email) {
+      // Not logged in: show error and hide dashboard content
+      errorDiv.style.display = 'block';
+      document.querySelector('.dashboard-header').style.display = 'none';
+      document.querySelector('.welcome').style.display = 'none';
+      document.querySelectorAll('.dashboard-section').forEach(el => el.style.display = 'none');
+    } else {
+      document.getElementById('dashboard-username').textContent = username;
+      document.getElementById('account-username').textContent = username;
+      document.getElementById('account-email').textContent = email;
+      quizSection.style.display = 'block';
+
+      // Quiz button handlers: go to quiz.html with manual param
+      document.querySelectorAll('.manual-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          window.location.href = `quiz.html?manual=${btn.dataset.manual}`;
+        });
+      });
+    }
 
     function logout() {
-      // Clear stored data (for demo)
+      // Clear stored data
       localStorage.removeItem('username');
       localStorage.removeItem('email');
       // Redirect to login page
