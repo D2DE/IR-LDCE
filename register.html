@@ -8,9 +8,71 @@
   <!-- Font Awesome for the Apple icon -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-  <!-- Firebase compat SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <!-- Firebase Modular SDKs -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    // Your Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
+      authDomain: "quiz-app-1b48b.firebaseapp.com",
+      projectId: "quiz-app-1b48b",
+      storageBucket: "quiz-app-1b48b.appspot.com",
+      messagingSenderId: "765334603137",
+      appId: "1:765334603137:web:1c8a13f6086a6773c2d480",
+      measurementId: "G-YQJQWJ12N7"
+    };
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // Registration handler
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('registerForm')
+        .addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const form = e.target;
+          const email    = form.email.value.trim();
+          const username = form.username.value.trim();
+          const password = form.password.value;
+          const msg = document.getElementById('message');
+
+          // disable inputs during processing
+          form.querySelectorAll('input, button').forEach(el => el.disabled = true);
+
+          try {
+            // 1. Create account
+            const { user } = await createUserWithEmailAndPassword(auth, email, password);
+
+            // 2. Generate random avatar URL (DiceBear)
+            const avatarUrl = `https://api.dicebear.com/7.x/pixel-art/svg?seed=${encodeURIComponent(username)}`;
+
+            // 3. Create Firestore user profile
+            await setDoc(doc(db, "users", user.uid), {
+              email: email,
+              username: username,
+              createdAt: serverTimestamp(),
+              avatarUrl: avatarUrl
+            });
+
+            // 4. Send verification email
+            await sendEmailVerification(user, {
+              url: window.location.origin + '/login.html'
+            });
+
+            // 5. Show confirmation message
+            msg.textContent = `A verification link has been sent to ${email}. Please check your inbox to activate your account.`;
+            msg.style.display = 'block';
+            form.reset();
+          } catch (err) {
+            alert(err.message);
+            form.querySelectorAll('input, button').forEach(el => el.disabled = false);
+          }
+        });
+    });
+  </script>
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0;}
@@ -203,56 +265,5 @@
 
     <div id="message" class="info-message" style="display:none;"></div>
   </div>
-
-  <script>
-    // Initialize Firebase
-    const firebaseConfig = {
-      apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
-      authDomain: "quiz-app-1b48b.firebaseapp.com",
-      projectId: "quiz-app-1b48b",
-      storageBucket: "quiz-app-1b48b.appspot.com",
-      messagingSenderId: "765334603137",
-      appId: "1:765334603137:web:1c8a13f6086a6773c2d480",
-      measurementId: "G-YQJQWJ12N7"
-    };
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-
-    // Handle registration
-    document.getElementById('registerForm')
-      .addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const email    = form.email.value.trim();
-        const username = form.username.value.trim();
-        const password = form.password.value;
-
-        // disable inputs during processing
-        form.querySelectorAll('input, button').forEach(el => el.disabled = true);
-
-        try {
-          // 1. Create account
-          const { user } = await auth.createUserWithEmailAndPassword(email, password);
-
-          // (Optional) Save `username` in your database here
-
-          // 2. Send verification email
-          await user.sendEmailVerification({
-            url: window.location.origin + '/login.html'
-          });
-
-          // 3. Show confirmation message
-          const msg = document.getElementById('message');
-          msg.textContent = `A verification link has been sent to ${email}. Please check your inbox to activate your account.`;
-          msg.style.display = 'block';
-
-          // clear form
-          form.reset();
-        } catch (err) {
-          alert(err.message);
-          form.querySelectorAll('input, button').forEach(el => el.disabled = false);
-        }
-      });
-  </script>
 </body>
 </html>
