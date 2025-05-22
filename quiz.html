@@ -38,6 +38,11 @@
     </style>
 </head>
 <body>
+    <noscript>
+      <div style="color:#b00; background:#ffe0e0; padding:1em; text-align:center;">
+        This quiz requires JavaScript to function. Please enable JavaScript in your browser.
+      </div>
+    </noscript>
     <div id="loading">Checking authentication...</div>
     <div class="app" style="display:none;">
         <h1>
@@ -64,20 +69,17 @@
       };
       firebase.initializeApp(firebaseConfig);
 
-      // Auth check: block access if not logged in
       firebase.auth().onAuthStateChanged((user) => {
         if (!user) {
-          // Redirect to login with return url
-          const returnUrl = encodeURIComponent(window.location.href);
+          // Use pathname + search for redirect (safer for static hosting)
+          const returnUrl = encodeURIComponent(window.location.pathname + window.location.search);
           window.location.href = `login.html?redirect=${returnUrl}`;
         } else {
-          // Show quiz content
           document.getElementById('loading').style.display = 'none';
           document.querySelector('.app').style.display = 'block';
         }
       });
     </script>
-    <!-- Your quiz logic -->
     <script src="script.js"></script>
 </body>
 </html>
