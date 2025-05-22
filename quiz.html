@@ -56,30 +56,42 @@
             <button id="next-btn">Next</button>
         </div>
     </div>
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
-    <script>
-      // Replace with your actual config
+
+    <!-- Firebase Modular SDK -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
       const firebaseConfig = {
         apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
         authDomain: "quiz-app-1b48b.firebaseapp.com",
         projectId: "quiz-app-1b48b",
-        // ...other config values
+        storageBucket: "quiz-app-1b48b.firebasestorage.app",
+        messagingSenderId: "765334603137",
+        appId: "1:765334603137:web:1c8a13f6086a6773c2d480",
+        measurementId: "G-YQJQWJ12N7"
       };
-      firebase.initializeApp(firebaseConfig);
 
-      firebase.auth().onAuthStateChanged((user) => {
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      onAuthStateChanged(auth, (user) => {
         if (!user) {
-          // Use pathname + search for redirect (safer for static hosting)
           const returnUrl = encodeURIComponent(window.location.pathname + window.location.search);
           window.location.href = `login.html?redirect=${returnUrl}`;
         } else {
           document.getElementById('loading').style.display = 'none';
           document.querySelector('.app').style.display = 'block';
+          
+          // Initialize quiz after auth confirmation
+          if (typeof initQuiz === 'function') {
+            initQuiz();
+          }
         }
       });
     </script>
+
+    <!-- Quiz Logic (loaded after auth check) -->
     <script src="script.js"></script>
 </body>
 </html>
