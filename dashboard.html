@@ -6,6 +6,9 @@
   <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
+  <!-- Shared header (Home, Login, Logout) -->
+  <div id="include-header"></div>
+
   <div class="dashboard-container">
     <div id="error-message" class="error-message" style="display:none;">
       You are not logged in. <a href="login.html">Go to login</a>
@@ -14,13 +17,13 @@
     <!-- Profile Section -->
     <div class="profile-section">
       <div class="avatar-container">
-        <!-- Default avatar, no upload -->
+        <!-- High-quality avatar: update avatarUrl in Firestore to use e.g. Avataaars -->
         <img id="userAvatar" src="default-avatar.png" alt="Profile Picture">
       </div>
       <div class="profile-info">
         <h2>Welcome, <span id="dashboard-username">User</span>!</h2>
         <p>Email: <span id="account-email">user@example.com</span></p>
-        <button class="logout-btn" id="logoutBtn" aria-label="Log out of your account">Log Out</button>
+        <!-- No logout button here; handled by header -->
       </div>
     </div>
 
@@ -30,7 +33,7 @@
       <table>
         <thead>
           <tr>
-            <th>Date</th>
+            <th>Date & Time</th>
             <th>Manual</th>
             <th>Score</th>
           </tr>
@@ -57,6 +60,19 @@
       </div>
     </div>
   </div>
+  <script type="module">
+    // Inject header.html (same as your index.html logic)
+    (async function includeHeader() {
+      try {
+        const resp = await fetch('header.html');
+        if (!resp.ok) throw new Error('Header not found');
+        document.getElementById('include-header').innerHTML = await resp.text();
+      } catch (e) {
+        document.getElementById('include-header').innerHTML =
+          '<div class="error" style="background:#ffe0e0;color:#b00;padding:1em;">Header failed to load.</div>';
+      }
+    })();
+  </script>
   <!-- Firebase dashboard.js as module -->
   <script type="module" src="dashboard.js"></script>
 </body>
