@@ -10,7 +10,7 @@
         <a href="about.html">About Us</a>
         <a href="register.html" id="registerLink">Register</a>
         <a href="login.html" id="loginLink">Login</a>
-        <button id="logoutButton">Logout</button>
+        <button id="logoutButton" style="display:none;">Logout</button>
       </div>
       <button class="hamburger" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
@@ -22,7 +22,7 @@
   <nav class="navbar-main">
     <div class="header-container">
       <div class="logo">
-        <img src="logo.png" alt="IR-LDCE Logo"/>
+        <img src="logo.png" alt="IR-LDCE Logo" style="height:48px;max-width:120px;width:auto;object-fit:contain;display:inline-block;"/>
         <span>IR-LDCE</span>
       </div>
       <ul class="nav-links">
@@ -32,7 +32,7 @@
     </div>
   </nav>
 
-  <script>
+  <script type="module">
     // Toggle mobile menu
     const hamburger = document.querySelector('.hamburger');
     const topBar    = document.querySelector('.header-top .header-container');
@@ -41,5 +41,12 @@
       topBar.classList.toggle('open');
       navBar.classList.toggle('open');
     });
-  </script>
-</header>
+
+    // Auth state logic for login/logout/register
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    const auth = getAuth();
+    const loginLink = document.getElementById('loginLink');
+    const registerLink = document.getElementById('registerLink');
+    const logoutButton = document.getElementById('logoutButton');
+
+    function update
