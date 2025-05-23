@@ -117,11 +117,43 @@ window.initQuiz = function() {
         nextButton.style.display = "block";
     }
 
-    function showScore() {
+    // Save quiz result to Firestore
+    async function saveQuizResult() {
+        try {
+            // Import Firebase modules dynamically
+            const { getFirestore, collection, addDoc, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
+            const { getAuth } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js');
+
+            const db = getFirestore();
+            const auth = getAuth();
+            const user = auth.currentUser;
+
+            if (!user) {
+                console.log('User not logged in, cannot save quiz result');
+                return;
+            }
+
+            await addDoc(collection(db, "users", user.uid, "quizHistory"), {
+                manual: manual,
+                score: score,
+                totalQuestions: questions.length,
+                timestamp: serverTimestamp()
+            });
+
+            console.log('Quiz result saved successfully!');
+        } catch (error) {
+            console.error('Error saving quiz result:', error);
+        }
+    }
+
+    async function showScore() {
         resetState();
         questionElement.innerHTML = `You scored ${score} out of ${questions.length}!<br><a href="index.html">Back to Manuals</a>`;
         nextButton.innerHTML = "Play Again";
         nextButton.style.display = "block";
+
+        // Save the quiz result to Firestore
+        await saveQuizResult();
     }
 
     function handleNextButton() {
