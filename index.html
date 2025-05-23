@@ -13,6 +13,35 @@
     referrerpolicy="no-referrer"
   />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .quiz-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    #dashboardBtnContainer {
+      display: none;
+    }
+    #dashboardBtn {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 4px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    #dashboardBtn:hover {
+      background: #1565c0;
+    }
+  </style>
 </head>
 <body>
   <!-- Injected header -->
@@ -27,13 +56,13 @@
 
   <!-- Quiz App -->
   <div class="app">
-    <h1>Indian Railway Manuals Quiz</h1>
-
-    <!-- Dashboard Button (hidden by default) -->
-    <div id="dashboardBtnContainer" style="text-align:center; margin-bottom:24px; display:none;">
-      <button id="dashboardBtn" class="manual-btn" style="width:auto; font-size:1.1em;">
-        <i class="fa fa-user-circle"></i> Dashboard
-      </button>
+    <div class="quiz-header-row">
+      <h1 style="margin: 0;">Indian Railway Manuals Quiz</h1>
+      <div id="dashboardBtnContainer">
+        <button id="dashboardBtn" type="button">
+          <i class="fa fa-user-circle"></i> Dashboard
+        </button>
+      </div>
     </div>
 
     <div class="quiz-list" id="quizList">
@@ -110,11 +139,11 @@
         );
       }
 
-      // 5) Dashboard button handler
+      // 5) Dashboard button handler (robust: always attach if present)
       if (dashboardBtn) {
-        dashboardBtn.addEventListener('click', () => {
+        dashboardBtn.onclick = () => {
           window.location.href = 'dashboard.html';
-        });
+        };
       }
 
       // 6) Quiz button click → check real‐time auth then redirect
