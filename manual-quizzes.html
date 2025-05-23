@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manual Based Quizzes</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .quiz-category-main {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+    .quiz-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div id="include-header"></div>
+  <div class="quiz-category-main">
+    <h2 style="text-align:center; margin-top:32px; color:#1976d2;">Manual Based Quizzes</h2>
+    <div class="dashboard-section">
+      <h3>MCQ Based</h3>
+      <div class="quiz-list" id="mcqList">
+        <button class="manual-btn" data-manual="irwm" aria-label="Start quiz for Indian Railway Works Manual">1. Indian Railway Works Manual</button>
+        <button class="manual-btn" data-manual="irpwm" aria-label="Start quiz for Indian Railway P-way Manual">2. Indian Railway P-way Manual</button>
+        <button class="manual-btn" data-manual="irdim" aria-label="Start quiz for Indian Railway Schedule of Dimensions">3. Indian Railway Schedule of Dimensions</button>
+        <button class="manual-btn" data-manual="irec" aria-label="Start quiz for Indian Railway Engineering Code">4. Indian Railway Engineering Code</button>
+      </div>
+    </div>
+  </div>
+  <script type="module">
+    // Inject header.html
+    (async function includeHeader() {
+      try {
+        const resp = await fetch('header.html');
+        if (!resp.ok) throw new Error('Header not found');
+        document.getElementById('include-header').innerHTML = await resp.text();
+      } catch (e) {
+        document.getElementById('include-header').innerHTML =
+          '<div class="error" style="background:#ffe0e0;color:#b00;padding:1em;">Header failed to load.</div>';
+      }
+    })();
+
+    // Quiz button handlers
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.manual-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          window.location.href = `quiz.html?manual=${btn.dataset.manual}`;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
