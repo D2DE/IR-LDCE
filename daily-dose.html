@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Dose</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .daily-dose-main {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+    .daily-section {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 24px 20px;
+      margin-bottom: 28px;
+    }
+    .daily-section h3 {
+      color: #1976d2;
+      margin-bottom: 12px;
+    }
+    .daily-quote {
+      font-size: 1.15em;
+      color: #333;
+      margin-bottom: 10px;
+      text-align: center;
+      font-style: italic;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="include-header"></div>
+  <div class="daily-dose-main">
+    <div class="daily-section">
+      <h3>Motivational Quote</h3>
+      <div class="daily-quote" id="daily-quote">Loading quote...</div>
+    </div>
+    <!-- You can add more daily content sections here if needed -->
+  </div>
+  <script type="module">
+    // Inject header.html
+    (async function includeHeader() {
+      try {
+        const resp = await fetch('header.html');
+        if (!resp.ok) throw new Error('Header not found');
+        document.getElementById('include-header').innerHTML = await resp.text();
+      } catch (e) {
+        document.getElementById('include-header').innerHTML =
+          '<div class="error" style="background:#ffe0e0;color:#b00;padding:1em;">Header failed to load.</div>';
+      }
+    })();
+  </script>
+  <script>
+    // Fetch a random motivational quote from Quotable API
+    document.addEventListener('DOMContentLoaded', () => {
+      const quoteElement = document.getElementById('daily-quote');
+      fetch('https://api.quotable.io/random')
+        .then(response => response.json())
+        .then(data => {
+          quoteElement.textContent = `"${data.content}" – ${data.author}`;
+        })
+        .catch(() => {
+          quoteElement.textContent = '“Success is not final, failure is not fatal: It is the courage to continue that counts.” – Winston Churchill';
+        });
+    });
+  </script>
+</body>
+</html>
