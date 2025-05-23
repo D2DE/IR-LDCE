@@ -2,7 +2,7 @@
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* Center horizontally */
   max-width: 960px;
   margin: 0 auto;
   padding: 0 16px;
@@ -40,13 +40,13 @@
 }
 .navbar-main .header-container {
   padding: 8px 16px;
-  justify-content: center;
+  justify-content: center; /* Center nav links */
 }
 .navbar-main .logo {
   display: flex;
   align-items: center;
   gap: 8px;
-  justify-content: center;
+  justify-content: center; /* Center logo */
   width: 100%;
 }
 .navbar-main .logo img {
@@ -57,7 +57,7 @@
   display: inline-block;
 }
 .navbar-main .logo span {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Increased font size */
   font-weight: bold;
   color: #002147;
 }
@@ -67,43 +67,45 @@
   gap: 1.5rem;
   margin: 0;
   padding: 0;
-  justify-content: center;
+  justify-content: center; /* Center nav links */
   width: 100%;
 }
 .navbar-main .nav-links a {
   color: #002147;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.1rem; /* Increased font size */
 }
 
-/* Main dashboard content container (matches homepage width) */
-.dashboard-main-content,
+/* Dashboard card/container */
 .dashboard-container {
-  max-width: 960px;
-  margin: 32px auto 0 auto;
-  padding: 0 16px;
-  width: 100%;
-  background: none;
-  box-shadow: none;
-  border-radius: 0;
-  min-width: 0;
-}
-
-/* Profile section (dashboard) */
-.profile-section {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 32px;
-  justify-content: flex-start;
+  max-width: 420px;
+  margin: 48px auto;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-  padding: 24px;
+  padding: 32px 24px 24px 24px;
+  position: relative;
+  min-width: 320px;
+}
+@media (max-width: 600px) {
+  .dashboard-container {
+    max-width: 98vw;
+    min-width: 0;
+    padding: 12px 4vw 22px 4vw;
+  }
+}
+
+/* Profile section styles */
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  justify-content: center;
 }
 .avatar-container {
-  flex-shrink: 0;
+  position: relative;
 }
 #userAvatar {
   width: 90px;
@@ -124,13 +126,9 @@
   color: #222;
 }
 
-/* Dashboard sections (quiz history, quiz list) */
+/* Dashboard section and quiz history */
 .dashboard-section {
   margin-bottom: 32px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-  padding: 24px;
 }
 .dashboard-section h3 {
   margin-bottom: 10px;
@@ -153,12 +151,12 @@
   color: #002147;
 }
 
-/* Quiz grid (homepage and dashboard) */
+/* Quiz grid (for homepage/index) */
 .quiz-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 .quiz-list .manual-btn,
 .manual-btn {
@@ -205,7 +203,7 @@
 .app h1 {
   text-align: center;
   width: 100%;
-  font-size: 2.8rem;
+  font-size: 2.8rem; /* Increased font size */
   margin-bottom: 24px;
   font-weight: bold;
   letter-spacing: 1px;
@@ -243,7 +241,7 @@
 /* Center the question text and make it larger */
 .quiz #question {
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.8rem; /* Increased font size */
   margin-bottom: 28px;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -256,23 +254,27 @@
   align-items: center;
   width: 100%;
 }
+
 #answer-buttons ul {
   list-style-type: disc;
   padding-left: 0;
   margin: 0 0 16px 0;
   text-align: center;
 }
+
 #answer-buttons li {
   margin-bottom: 18px;
   list-style-position: inside;
 }
+
+/* Style answer buttons: bigger and centered */
 #answer-buttons .btn {
   display: inline-block;
   background: none;
   border: none;
   color: #1976d2;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.4rem; /* Increased font size */
   cursor: pointer;
   padding: 12px 36px;
   border-radius: 6px;
@@ -280,6 +282,7 @@
   min-width: 260px;
   font-weight: 600;
 }
+
 #answer-buttons .btn:hover:not(:disabled) {
   background: #e3f0fd;
   color: #003366;
@@ -303,7 +306,7 @@
 #next-btn {
   display: block;
   margin: 32px auto 0 auto;
-  font-size: 1.3rem;
+  font-size: 1.3rem; /* Increased font size */
   padding: 14px 40px;
   border-radius: 6px;
   background: #1976d2;
@@ -337,7 +340,7 @@
   background: #f5f5f5;
 }
 
-/* Responsive header and dashboard */
+/* Responsive header */
 .hamburger {
   display: none;
   background: none;
@@ -367,7 +370,6 @@
   .hamburger {
     display: block;
   }
-  .dashboard-main-content,
   .dashboard-container {
     max-width: 98vw;
     min-width: 0;
@@ -375,15 +377,10 @@
   }
   .profile-section {
     flex-direction: column;
-    align-items: flex-start;
     gap: 10px;
-    padding: 12px 8px;
   }
   #userAvatar {
     width: 70px;
     height: 70px;
-  }
-  .dashboard-section {
-    padding: 12px 8px;
   }
 }
