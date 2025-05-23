@@ -64,15 +64,16 @@
     })();
   </script>
   <script>
-    // Fetch a random motivational quote from Indian Quotes API (CORS enabled)
+    // Fetch a random motivational quote from QuoteSlate API (CORS enabled)
     document.addEventListener('DOMContentLoaded', () => {
       const quoteElement = document.getElementById('daily-quote');
       const authorElement = document.getElementById('daily-author');
-      fetch('https://indian-quotes-api.vercel.app/api/quotes/random')
+      fetch('https://quoteslate.vercel.app/api/quotes/random')
         .then(response => response.json())
         .then(data => {
+          // API returns: { quote: "...", author: "..." }
           quoteElement.textContent = `“${data.quote}”`;
-          authorElement.textContent = data.author?.name ? `– ${data.author.name}` : '';
+          authorElement.textContent = data.author ? `– ${data.author}` : '';
         })
         .catch(() => {
           quoteElement.textContent = '“Success is not final, failure is not fatal: It is the courage to continue that counts.”';
