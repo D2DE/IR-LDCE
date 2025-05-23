@@ -11,14 +11,13 @@ const manualNames = {
     account: "Account Manual"
 };
 
-// Quiz initialization function
 window.initQuiz = function() {
     // Get manual code from URL parameter
     const urlParams = new URLSearchParams(window.location.search);
     const manual = urlParams.get('manual');
 
     // Build JSON URL
-    const jsonFile = manual 
+    const jsonFile = manual
         ? `https://d2de.github.io/IR-LDCE/${manual}-questions.json`
         : null;
 
@@ -120,18 +119,18 @@ window.initQuiz = function() {
     // Save quiz result to Firestore
     async function saveQuizResult() {
         try {
-            // Import Firebase modules dynamically
-            const { getFirestore, collection, addDoc, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
-            const { getAuth } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js');
-
-            const db = getFirestore();
-            const auth = getAuth();
+            // Use the Firebase instances from the global window object
+            const auth = window.firebaseAuth;
+            const db = window.firebaseDb;
             const user = auth.currentUser;
 
             if (!user) {
-                console.log('User not logged in, cannot save quiz result');
+                console.error('❌ No authenticated user found');
                 return;
             }
+
+            // Import addDoc and serverTimestamp
+            const { collection, addDoc, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
 
             await addDoc(collection(db, "users", user.uid, "quizHistory"), {
                 manual: manual,
@@ -140,9 +139,9 @@ window.initQuiz = function() {
                 timestamp: serverTimestamp()
             });
 
-            console.log('Quiz result saved successfully!');
+            console.log('✅ Quiz result saved for user:', user.uid);
         } catch (error) {
-            console.error('Error saving quiz result:', error);
+            console.error('❌ Error saving quiz result:', error);
         }
     }
 
