@@ -32,6 +32,12 @@
       align-items: center;
       justify-content: center;
     }
+    .daily-author {
+      text-align: center;
+      color: #555;
+      font-size: 1em;
+      margin-top: 6px;
+    }
   </style>
 </head>
 <body>
@@ -40,6 +46,7 @@
     <div class="daily-section">
       <h3>Motivational Quote</h3>
       <div class="daily-quote" id="daily-quote">Loading quote...</div>
+      <div class="daily-author" id="daily-author"></div>
     </div>
     <!-- You can add more daily content sections here if needed -->
   </div>
@@ -57,18 +64,19 @@
     })();
   </script>
   <script>
-    // Fetch a random motivational quote from ZenQuotes API
+    // Fetch a random motivational quote from Indian Quotes API (CORS enabled)
     document.addEventListener('DOMContentLoaded', () => {
       const quoteElement = document.getElementById('daily-quote');
-      fetch('https://zenquotes.io/api/random')
+      const authorElement = document.getElementById('daily-author');
+      fetch('https://indian-quotes-api.vercel.app/api/quotes/random')
         .then(response => response.json())
         .then(data => {
-          const quote = data[0].q;
-          const author = data[0].a;
-          quoteElement.textContent = `"${quote}" – ${author}`;
+          quoteElement.textContent = `“${data.quote}”`;
+          authorElement.textContent = data.author?.name ? `– ${data.author.name}` : '';
         })
         .catch(() => {
-          quoteElement.textContent = '“Success is not final, failure is not fatal: It is the courage to continue that counts.” – Winston Churchill';
+          quoteElement.textContent = '“Success is not final, failure is not fatal: It is the courage to continue that counts.”';
+          authorElement.textContent = '– Winston Churchill';
         });
     });
   </script>
