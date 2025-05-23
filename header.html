@@ -6,13 +6,13 @@
         <a href="index.html"><i class="fas fa-home"></i> Home</a>
         <a href="https://indianrail.gov.in" target="_blank">Railway Official Website</a>
       </div>
-      <div class="right-group">
+      <div class="right-group" id="header-right-group">
         <a href="about.html">About Us</a>
         <a href="register.html" id="registerLink">Register</a>
         <a href="login.html" id="loginLink">Login</a>
         <button id="logoutButton" style="display:none;">Logout</button>
       </div>
-      <button class="hamburger" aria-label="Toggle menu">
+      <button class="hamburger" aria-label="Toggle menu" id="hamburger-btn">
         <i class="fas fa-bars"></i>
       </button>
     </div>
@@ -32,9 +32,58 @@
     </div>
   </nav>
 
+  <style>
+    /* Responsive header styles for mobile */
+    .header-top .header-container,
+    .navbar-main .header-container {
+      flex-wrap: wrap;
+    }
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5em;
+      margin-left: auto;
+      cursor: pointer;
+    }
+    @media (max-width: 800px) {
+      .header-top .left-group,
+      .header-top .right-group,
+      .navbar-main .nav-links {
+        display: none;
+      }
+      .header-top .header-container.open .left-group,
+      .header-top .header-container.open .right-group {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        background: #FFA500;
+        width: 100%;
+        margin-top: 8px;
+        padding-bottom: 8px;
+      }
+      .navbar-main .header-container.open .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        background: #fff;
+        margin-top: 8px;
+        padding-bottom: 8px;
+      }
+      .hamburger {
+        display: block;
+      }
+      .logo img {
+        height: 40px !important;
+      }
+    }
+  </style>
+
   <script type="module">
-    // Toggle mobile menu
-    const hamburger = document.querySelector('.hamburger');
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger-btn');
     const topBar    = document.querySelector('.header-top .header-container');
     const navBar    = document.querySelector('.navbar-main .header-container');
     hamburger.addEventListener('click', () => {
@@ -42,11 +91,52 @@
       navBar.classList.toggle('open');
     });
 
-    // Auth state logic for login/logout/register
+    // Firebase Auth state logic for login/logout/register
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
     import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
+      authDomain: "quiz-app-1b48b.firebaseapp.com",
+      projectId: "quiz-app-1b48b",
+      storageBucket: "quiz-app-1b48b.appspot.com",
+      messagingSenderId: "765334603137",
+      appId: "1:765334603137:web:1c8a13f6086a6773c2d480",
+      measurementId: "G-YQJQWJ12N7"
+    };
+
+    // Prevent re-initialization if already initialized
+    let app;
+    try {
+      app = initializeApp(firebaseConfig);
+    } catch (e) {
+      // already initialized
+    }
     const auth = getAuth();
+
     const loginLink = document.getElementById('loginLink');
     const registerLink = document.getElementById('registerLink');
     const logoutButton = document.getElementById('logoutButton');
 
-    function update
+    function updateHeaderAuth(user) {
+      if (user) {
+        if (loginLink) loginLink.style.display = "none";
+        if (registerLink) registerLink.style.display = "none";
+        if (logoutButton) logoutButton.style.display = "inline-block";
+      } else {
+        if (loginLink) loginLink.style.display = "inline-block";
+        if (registerLink) registerLink.style.display = "inline-block";
+        if (logoutButton) logoutButton.style.display = "none";
+      }
+    }
+    onAuthStateChanged(auth, updateHeaderAuth);
+
+    if (logoutButton) {
+      logoutButton.onclick = () => {
+        signOut(auth).then(() => {
+          window.location.href = "login.html";
+        });
+      };
+    }
+  </script>
+</header>
