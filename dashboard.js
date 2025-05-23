@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { getFirestore, doc, getDoc, collection, query, orderBy, getDocs, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 // Your Firebase config
@@ -16,14 +16,15 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Utility: Format date
-function formatDate(ts) {
+// Utility: Format date and time
+function formatDateTime(ts) {
   if (!ts) return "";
   const d = ts.toDate ? ts.toDate() : new Date(ts);
-  return d.toLocaleDateString();
+  // Example: "23/05/2025, 20:37"
+  return d.toLocaleDateString() + ", " +
+         d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
 }
 
-// Auth state
 onAuthStateChanged(auth, async (user) => {
   const errorDiv = document.getElementById('error-message');
   if (!user) {
@@ -38,12 +39,12 @@ onAuthStateChanged(auth, async (user) => {
   const userRef = doc(db, "users", user.uid);
   let userSnap = await getDoc(userRef);
   if (!userSnap.exists()) {
-    // Create user doc if not exists, with default avatar
+    // Create user doc if not exists, with default avatar (use a good avatar API here if you wish)
     await setDoc(userRef, {
       email: user.email,
       username: user.email.split('@')[0],
       createdAt: serverTimestamp(),
-      avatarUrl: "default-avatar.png" // Use your static/default avatar path or a random avatar URL here
+      avatarUrl: `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(user.email.split('@')[0])}`
     });
     userSnap = await getDoc(userRef);
   }
@@ -61,7 +62,7 @@ onAuthStateChanged(auth, async (user) => {
     const data = docSnap.data();
     historyBody.innerHTML += `
       <tr>
-        <td>${formatDate(data.timestamp)}</td>
+        <td>${formatDateTime(data.timestamp)}</td>
         <td>${data.manual}</td>
         <td>${data.score}/${data.totalQuestions}</td>
       </tr>
@@ -75,10 +76,5 @@ onAuthStateChanged(auth, async (user) => {
     });
   });
 
-  // Logout handler
-  document.getElementById('logoutBtn').onclick = function() {
-    signOut(auth).then(() => {
-      window.location.href = 'login.html';
-    });
-  };
+  // No manual logout button here; handled by header
 });
