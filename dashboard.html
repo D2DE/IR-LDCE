@@ -3,16 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>User Dashboard</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Optionally, you can add dashboard-specific tweaks here, but all main styles are in style.css */
-  </style>
+  <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
   <!-- Shared header (Home, Login, Logout) -->
   <div id="include-header"></div>
 
-  <div class="dashboard-main-content">
+  <div class="dashboard-container">
     <div id="error-message" class="error-message" style="display:none;">
       You are not logged in. <a href="login.html">Go to login</a>
     </div>
@@ -20,11 +17,13 @@
     <!-- Profile Section -->
     <div class="profile-section">
       <div class="avatar-container">
+        <!-- High-quality avatar: update avatarUrl in Firestore to use e.g. Avataaars -->
         <img id="userAvatar" src="default-avatar.png" alt="Profile Picture">
       </div>
       <div class="profile-info">
         <h2>Welcome, <span id="dashboard-username">User</span>!</h2>
         <p>Email: <span id="account-email">user@example.com</span></p>
+        <!-- No logout button here; handled by header -->
       </div>
     </div>
 
@@ -49,15 +48,15 @@
     <div class="dashboard-section" id="quiz-section">
       <h3>Available Quizzes</h3>
       <div class="quiz-list">
-        <button class="manual-btn" data-manual="irwm">1. Indian Railway Works Manual</button>
-        <button class="manual-btn" data-manual="irpwm">2. Indian Railway P-way Manual</button>
-        <button class="manual-btn" data-manual="irdim">3. Indian Railway Schedule of Dimensions</button>
-        <button class="manual-btn" data-manual="irec">4. Indian Railway Engineering Code</button>
-        <button class="manual-btn" data-manual="stm">5. Small Track Machine Manual</button>
-        <button class="manual-btn" data-manual="usfd">6. USFD Manual</button>
-        <button class="manual-btn" data-manual="fbwm">7. FBW Manual</button>
-        <button class="manual-btn" data-manual="store">8. Store Manual</button>
-        <button class="manual-btn" data-manual="account">9. Account Manual</button>
+        <button class="manual-btn" data-manual="irwm" aria-label="Start quiz for Indian Railway Works Manual">1. Indian Railway Works Manual</button>
+        <button class="manual-btn" data-manual="irpwm" aria-label="Start quiz for Indian Railway P-way Manual">2. Indian Railway P-way Manual</button>
+        <button class="manual-btn" data-manual="irdim" aria-label="Start quiz for Indian Railway Schedule of Dimensions">3. Indian Railway Schedule of Dimensions</button>
+        <button class="manual-btn" data-manual="irec" aria-label="Start quiz for Indian Railway Engineering Code">4. Indian Railway Engineering Code</button>
+        <button class="manual-btn" data-manual="stm" aria-label="Start quiz for Small Track Machine Manual">5. Small Track Machine Manual</button>
+        <button class="manual-btn" data-manual="usfd" aria-label="Start quiz for USFD Manual">6. USFD Manual</button>
+        <button class="manual-btn" data-manual="fbwm" aria-label="Start quiz for FBW Manual">7. FBW Manual</button>
+        <button class="manual-btn" data-manual="store" aria-label="Start quiz for Store Manual">8. Store Manual</button>
+        <button class="manual-btn" data-manual="account" aria-label="Start quiz for Account Manual">9. Account Manual</button>
       </div>
     </div>
   </div>
