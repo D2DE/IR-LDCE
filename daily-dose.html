@@ -57,13 +57,15 @@
     })();
   </script>
   <script>
-    // Fetch a random motivational quote from Quotable API
+    // Fetch a random motivational quote from ZenQuotes API
     document.addEventListener('DOMContentLoaded', () => {
       const quoteElement = document.getElementById('daily-quote');
-      fetch('https://api.quotable.io/random')
+      fetch('https://zenquotes.io/api/random')
         .then(response => response.json())
         .then(data => {
-          quoteElement.textContent = `"${data.content}" – ${data.author}`;
+          const quote = data[0].q;
+          const author = data[0].a;
+          quoteElement.textContent = `"${quote}" – ${author}`;
         })
         .catch(() => {
           quoteElement.textContent = '“Success is not final, failure is not fatal: It is the courage to continue that counts.” – Winston Churchill';
