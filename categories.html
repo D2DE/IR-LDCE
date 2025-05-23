@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Categories</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .categories-main {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .category-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      padding: 32px 24px;
+      text-align: center;
+      transition: box-shadow 0.2s;
+      cursor: pointer;
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #1976d2;
+      text-decoration: none;
+      display: block;
+    }
+    .category-card:hover {
+      box-shadow: 0 4px 16px rgba(25,118,210,0.15);
+      background: #f5f7fa;
+      color: #003366;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header included at the top -->
+  <div id="include-header"></div>
+  <div class="categories-main">
+    <a href="manual-quizzes.html" class="category-card">Manual Based Quiz</a>
+    <a href="pyq-quizzes.html" class="category-card">PYQ Based Quiz</a>
+  </div>
+  <script type="module">
+    // Inject header.html (same as on other pages)
+    (async function includeHeader() {
+      try {
+        const resp = await fetch('header.html');
+        if (!resp.ok) throw new Error('Header not found');
+        document.getElementById('include-header').innerHTML = await resp.text();
+      } catch (e) {
+        document.getElementById('include-header').innerHTML =
+          '<div class="error" style="background:#ffe0e0;color:#b00;padding:1em;">Header failed to load.</div>';
+      }
+    })();
+  </script>
+</body>
+</html>
