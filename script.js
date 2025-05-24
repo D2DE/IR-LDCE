@@ -72,14 +72,17 @@ window.initQuiz = function() {
         // Clear previous answers and create a bulleted list
         answerButtons.innerHTML = "";
         const ul = document.createElement('ul');
-        ul.style.listStyleType = 'disc';
-        ul.style.paddingLeft = '24px';
+        ul.className = "list-unstyled"; // Bootstrap class for cleaner look
 
-        currentQuestion.answers.forEach(answer => {
+        currentQuestion.answers.forEach((answer, idx) => {
             const li = document.createElement('li');
+            li.className = "mb-2";
             const button = document.createElement('button');
             button.innerHTML = answer.text;
-            button.classList.add('btn');
+            button.type = "button";
+            button.className = "btn btn-outline-primary w-100 text-start"; // Bootstrap classes
+            button.setAttribute('tabindex', 0);
+            button.setAttribute('aria-label', answer.text);
             if (answer.correct) {
                 button.dataset.correct = answer.correct;
             }
@@ -102,18 +105,22 @@ window.initQuiz = function() {
         const selectedBtn = e.target;
         const isCorrect = selectedBtn.dataset.correct === "true";
         if (isCorrect) {
-            selectedBtn.classList.add("correct");
+            selectedBtn.classList.remove("btn-outline-primary");
+            selectedBtn.classList.add("btn-success");
             score++;
         } else {
-            selectedBtn.classList.add("incorrect");
+            selectedBtn.classList.remove("btn-outline-primary");
+            selectedBtn.classList.add("btn-danger");
         }
         Array.from(answerButtons.querySelectorAll('button')).forEach(button => {
             if (button.dataset.correct === "true") {
-                button.classList.add("correct");
+                button.classList.remove("btn-outline-primary");
+                button.classList.add("btn-success");
             }
             button.disabled = true;
         });
         nextButton.style.display = "block";
+        nextButton.focus();
     }
 
     // Save quiz result to Firestore
@@ -147,7 +154,12 @@ window.initQuiz = function() {
 
     async function showScore() {
         resetState();
-        questionElement.innerHTML = `You scored ${score} out of ${questions.length}!<br><a href="index.html">Back to Manuals</a>`;
+        questionElement.innerHTML = `
+            <div class="alert alert-info" role="alert">
+                You scored <strong>${score}</strong> out of <strong>${questions.length}</strong>!
+            </div>
+            <a href="index.html" class="btn btn-secondary mt-2">Back to Manuals</a>
+        `;
         nextButton.innerHTML = "Play Again";
         nextButton.style.display = "block";
 
