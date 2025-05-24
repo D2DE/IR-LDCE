@@ -96,7 +96,7 @@ img {
 
 /* === DASHBOARD CARD/CONTAINER === */
 .dashboard-container {
-  max-width: 420px;
+  max-width: 1200px;
   margin: 48px auto;
   background: #fff;
   border-radius: 8px;
@@ -106,6 +106,14 @@ img {
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
+}
+@media (max-width: 900px) {
+  .dashboard-container {
+    max-width: 98vw;
+    margin: 12px auto 0 auto;
+    padding: 12px 4vw 22px 4vw;
+    border-radius: 8px;
+  }
 }
 @media (max-width: 600px) {
   .dashboard-container {
@@ -127,13 +135,21 @@ img {
   justify-content: center;
   min-height: 70vh;
   width: 100%;
-  max-width: 650px;
+  max-width: 1200px;
   margin: 36px auto 0 auto;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.07);
   padding: 36px 28px 28px 28px;
   box-sizing: border-box;
+}
+@media (max-width: 900px) {
+  .app {
+    max-width: 98vw;
+    margin: 12px auto 0 auto;
+    padding: 12px 4vw 22px 4vw;
+    border-radius: 8px;
+  }
 }
 @media (max-width: 600px) {
   .app {
@@ -205,16 +221,15 @@ img {
   color: #002147;
 }
 
-/* === QUIZ GRID: FORCED 3-COLUMN LAYOUT === */
+/* === QUIZ GRID: RESPONSIVE AUTO-FIT GRID === */
 .quiz-list {
   display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
   gap: 14px !important;
   margin-bottom: 20px !important;
   padding: 0 8px !important;
   width: 100% !important;
   box-sizing: border-box !important;
-  overflow-x: auto !important;
 }
 .quiz-list .manual-btn,
 .manual-btn {
@@ -232,7 +247,7 @@ img {
   transition: background 0.2s !important;
   text-align: center !important;
   box-sizing: border-box !important;
-  white-space: nowrap !important;
+  white-space: normal !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
 }
@@ -241,11 +256,12 @@ img {
   background: #1565c0 !important;
 }
 
-/* On very small screens, allow horizontal scroll if needed */
+/* On very small screens, reduce min column width */
 @media (max-width: 600px) {
   .quiz-list {
-    overflow-x: auto !important;
-    min-width: 300px !important;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+    gap: 8px !important;
+    padding: 0 2px !important;
   }
   .quiz-list .manual-btn,
   .manual-btn {
