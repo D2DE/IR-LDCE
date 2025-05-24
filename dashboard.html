@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>User Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bootstrap CSS for modern buttons/table -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome (if you use icons in header) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Your custom styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,31 +23,31 @@
     <!-- Profile Section -->
     <div class="profile-section">
       <div class="avatar-container">
-        <!-- High-quality avatar: update avatarUrl in Firestore to use e.g. Avataaars -->
         <img id="userAvatar" src="default-avatar.png" alt="Profile Picture">
       </div>
       <div class="profile-info">
         <h2>Welcome, <span id="dashboard-username">User</span>!</h2>
         <p>Email: <span id="account-email">user@example.com</span></p>
-        <!-- No logout button here; handled by header -->
       </div>
     </div>
 
     <!-- Quiz History -->
     <div class="dashboard-section quiz-history">
       <h3>Quiz History</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Date & Time</th>
-            <th>Manual</th>
-            <th>Score</th>
-          </tr>
-        </thead>
-        <tbody id="quizHistoryBody">
-          <!-- Populated by JS -->
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="table table-striped align-middle">
+          <thead>
+            <tr>
+              <th>Date & Time</th>
+              <th>Manual</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody id="quizHistoryBody">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <!-- Available Quizzes -->
@@ -60,8 +66,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Header injection -->
   <script type="module">
-    // Inject header.html (same as your index.html logic)
     (async function includeHeader() {
       try {
         const resp = await fetch('header.html');
@@ -73,6 +80,8 @@
       }
     })();
   </script>
+  <!-- Bootstrap JS Bundle (for responsive tables/buttons if needed) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Firebase dashboard.js as module -->
   <script type="module" src="dashboard.js"></script>
 </body>
