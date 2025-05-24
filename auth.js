@@ -1,49 +1,30 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { 
-  getAuth, 
-  signInWithEmailAndPassword,
-  setPersistence,
-  browserLocalPersistence
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+document.addEventListener("DOMContentLoaded", function () {
+  const loginLink = document.getElementById("login-link");
+  const registerLink = document.getElementById("register-link");
+  const logoutButton = document.getElementById("logout-button");
+  const dashboardLink = document.getElementById("dashboard-link");
 
-// Your Firebase config
-const firebaseConfig = {
-  apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
-  authDomain: "quiz-app-1b48b.firebaseapp.com",
-  projectId: "quiz-app-1b48b",
-  // ...other config values
-};
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-setPersistence(auth, browserLocalPersistence);
+  const user = localStorage.getItem("user"); // assume user login info is stored here
 
-const loginForm = document.getElementById('loginForm');
-if (loginForm) {
-  loginForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
-    const errorDiv = document.getElementById('error-message');
-    errorDiv.style.display = "none";
+  if (user) {
+    loginLink.style.display = "none";
+    registerLink.style.display = "none";
+    logoutButton.style.display = "inline-block";
+    dashboardLink.style.display = "inline-block";
+  } else {
+    loginLink.style.display = "inline-block";
+    registerLink.style.display = "inline-block";
+    logoutButton.style.display = "none";
+    dashboardLink.style.display = "none";
 
-    if (!email || !password) {
-      errorDiv.textContent = "Please enter both email and password.";
-      errorDiv.style.display = "block";
-      return;
+    // if user is not logged in, redirect from dashboard
+    if (window.location.pathname.includes("dashboard.html")) {
+      window.location.href = "login.html";
     }
+  }
 
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      const urlParams = new URLSearchParams(window.location.search);
-      const redirect = urlParams.get('redirect');
-      window.location.href = redirect || 'dashboard.html';
-    } catch (error) {
-      let msg = "Login failed. Please try again.";
-      if (error.code === 'auth/user-not-found') msg = "No user found with this email.";
-      else if (error.code === 'auth/wrong-password') msg = "Incorrect password.";
-      else if (error.code === 'auth/invalid-email') msg = "Invalid email address.";
-      errorDiv.textContent = msg;
-      errorDiv.style.display = "block";
-    }
+  logoutButton.addEventListener("click", function () {
+    localStorage.removeItem("user");
+    window.location.href = "index.html";
   });
-}
+});
