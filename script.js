@@ -24,8 +24,11 @@ window.initQuiz = function () {
 
     let currentQuestionIndex = 0;
     let score = 0;
-    let countdown;
-    const timePerQuestion = 30; // seconds
+
+    // Total quiz timer variables
+    const quizDuration = 600; // total quiz time in seconds (10 minutes)
+    let totalTimeLeft = quizDuration;
+    let totalTimer;
 
     if (manual && manualNames[manual]) {
         headingElement.textContent = `${manualNames[manual]} Quiz`;
@@ -50,16 +53,36 @@ window.initQuiz = function () {
         }
     }
 
+    function startTotalTimer() {
+        totalTimeLeft = quizDuration;
+        updateTimerDisplay();
+        totalTimer = setInterval(() => {
+            totalTimeLeft--;
+            updateTimerDisplay();
+            if (totalTimeLeft <= 0) {
+                clearInterval(totalTimer);
+                alert("Time is up! Quiz will be submitted.");
+                showScore();
+            }
+        }, 1000);
+    }
+
+    function updateTimerDisplay() {
+        const mins = Math.floor(totalTimeLeft / 60);
+        const secs = totalTimeLeft % 60;
+        timerElement.textContent = `🕒 Time left: ${mins}:${secs.toString().padStart(2, '0')}`;
+    }
+
     function startQuiz() {
         currentQuestionIndex = 0;
         score = 0;
         nextButton.innerHTML = "Next";
+        startTotalTimer();  // start total quiz timer here
         showQuestion();
     }
 
     function showQuestion() {
         resetState();
-        startTimer();
 
         const currentQuestion = questions[currentQuestionIndex];
         const questionNo = currentQuestionIndex + 1;
@@ -95,20 +118,24 @@ window.initQuiz = function () {
     }
 
     function resetState() {
-        clearInterval(countdown);
+        // We do NOT clear the total quiz timer here anymore
         nextButton.style.display = "none";
         answerButtons.innerHTML = "";
-        timerElement.textContent = `⏱️ ${timePerQuestion}s`;
+        // Do NOT reset timerElement here, it shows total timer
     }
 
     function selectAnswer(e) {
-        clearInterval(countdown);
         const selectedBtn = e.target.closest("button");
         const isCorrect = selectedBtn.dataset.correct === "true";
 
         selectedBtn.classList.remove("btn-outline-primary");
         selectedBtn.classList.add(isCorrect ? "btn-success" : "btn-danger");
-        if (isCorrect) score++;
+
+        if (isCorrect) {
+            score += 1;
+        } else {
+            score -= 1 / 3;  // subtract 1/3 point for wrong answer
+        }
 
         const allButtons = answerButtons.querySelectorAll("button");
         allButtons.forEach(button => {
@@ -123,47 +150,19 @@ window.initQuiz = function () {
         nextButton.focus();
     }
 
-    function autoSelectOnTimeout() {
-        const correctButton = answerButtons.querySelector("button[data-correct='true']");
-        if (correctButton) {
-            correctButton.classList.remove("btn-outline-primary");
-            correctButton.classList.add("btn-success");
-        }
-
-        const allButtons = answerButtons.querySelectorAll("button");
-        allButtons.forEach(button => {
-            if (button !== correctButton) button.classList.add("btn-secondary");
-            button.disabled = true;
-        });
-
-        nextButton.style.display = "block";
-    }
-
-    function startTimer() {
-        let timeLeft = timePerQuestion;
-        timerElement.textContent = `⏱️ ${timeLeft}s`;
-        countdown = setInterval(() => {
-            timeLeft--;
-            timerElement.textContent = `⏱️ ${timeLeft}s`;
-            if (timeLeft <= 0) {
-                clearInterval(countdown);
-                autoSelectOnTimeout();
-            }
-        }, 1000);
-    }
-
-    async function showScore() {
+    function showScore() {
+        clearInterval(totalTimer);  // stop the total timer when quiz ends
         resetState();
         questionElement.innerHTML = `
             <div class="alert alert-info" role="alert">
-                You scored <strong>${score}</strong> out of <strong>${questions.length}</strong>!
+                You scored <strong>${score.toFixed(2)}</strong> out of <strong>${questions.length}</strong>!
             </div>
             <a href="index.html" class="btn btn-secondary mt-2">Back to Manuals</a>
         `;
         nextButton.innerHTML = "Play Again";
         nextButton.style.display = "block";
 
-        await saveQuizResult();
+        saveQuizResult();
     }
 
     function handleNextButton() {
