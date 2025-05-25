@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { getFirestore, doc, getDoc, collection, query, orderBy, getDocs, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// Your Firebase config
+// Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
   authDomain: "quiz-app-1b48b.firebaseapp.com",
@@ -16,82 +16,101 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Utility: Format date and time
+// Format Firestore timestamp into readable string
 function formatDateTime(ts) {
   if (!ts) return "";
   const d = ts.toDate ? ts.toDate() : new Date(ts);
-  // Example: "23/05/2025, 20:37"
   return d.toLocaleDateString() + ", " +
          d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
 }
 
+// DOM references
+const errorDiv = document.getElementById('error-message');
+const dashboardContainer = document.querySelector('.dashboard-container');
+const usernameSpan = document.getElementById('dashboard-username');
+const emailSpan = document.getElementById('account-email');
+const avatarImg = document.getElementById('userAvatar');
+const historyBody = document.getElementById('quizHistoryBody');
+
+// Handle auth state
 onAuthStateChanged(auth, async (user) => {
-  const errorDiv = document.getElementById('error-message');
-  const dashboardContainer = document.querySelector('.dashboard-container');
   if (!user) {
     errorDiv.style.display = 'block';
-    if (dashboardContainer) dashboardContainer.style.display = 'none';
+    dashboardContainer && (dashboardContainer.style.display = 'none');
     return;
   }
-  if (dashboardContainer) dashboardContainer.style.display = 'block';
-  errorDiv.style.display = 'none';
 
-  // Load user profile
+  errorDiv.style.display = 'none';
+  dashboardContainer && (dashboardContainer.style.display = 'block');
+
+  // Load profile
   try {
     const userRef = doc(db, "users", user.uid);
     let userSnap = await getDoc(userRef);
+
     if (!userSnap.exists()) {
-      // Create user doc if not exists, with default avatar (using DiceBear Avataaars)
+      const username = user.email.split('@')[0];
+      const avatarUrl = `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(username)}`;
       await setDoc(userRef, {
         email: user.email,
-        username: user.email.split('@')[0],
+        username,
         createdAt: serverTimestamp(),
-        avatarUrl: `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(user.email.split('@')[0])}`
+        avatarUrl
       });
-      userSnap = await getDoc(userRef);
+      userSnap = await getDoc(userRef); // re-fetch
     }
+
     const userData = userSnap.data();
-    document.getElementById('dashboard-username').textContent = userData.username || user.email.split('@')[0];
-    document.getElementById('account-email').textContent = user.email;
-    document.getElementById('userAvatar').src = userData.avatarUrl || "default-avatar.png";
+    usernameSpan.textContent = userData.username || user.email.split('@')[0];
+    emailSpan.textContent = user.email;
+    avatarImg.src = userData.avatarUrl || "default-avatar.png";
+
+    // Optional: fallback in case avatar fails to load
+    avatarImg.onerror = () => {
+      avatarImg.src = "default-avatar.png";
+    };
   } catch (err) {
-    errorDiv.style.display = 'block';
+    console.error("Profile load error:", err);
     errorDiv.innerHTML = 'Failed to load user profile. Please <a href="login.html">login again</a>.';
-    if (dashboardContainer) dashboardContainer.style.display = 'none';
+    errorDiv.style.display = 'block';
+    dashboardContainer && (dashboardContainer.style.display = 'none');
     return;
   }
 
   // Load quiz history
   try {
-    const q = query(collection(db, "users", user.uid, "quizHistory"), orderBy("timestamp", "desc"));
-    const snapshot = await getDocs(q);
-    const historyBody = document.getElementById('quizHistoryBody');
+    const quizQuery = query(
+      collection(db, "users", user.uid, "quizHistory"),
+      orderBy("timestamp", "desc")
+    );
+    const snapshot = await getDocs(quizQuery);
     historyBody.innerHTML = "";
+
     if (snapshot.empty) {
-      historyBody.innerHTML = `<tr><td colspan="3" style="text-align:center;color:#888;">No quiz attempts yet.</td></tr>`;
+      historyBody.innerHTML = `<tr><td colspan="3" class="text-center text-muted">No quiz attempts yet.</td></tr>`;
     } else {
       snapshot.forEach(docSnap => {
         const data = docSnap.data();
         historyBody.innerHTML += `
           <tr>
             <td>${formatDateTime(data.timestamp)}</td>
-            <td>${data.manual}</td>
+            <td>${data.manual || '-'}</td>
             <td>${data.score}/${data.totalQuestions}</td>
-          </tr>
-        `;
+          </tr>`;
       });
     }
   } catch (err) {
-    const historyBody = document.getElementById('quizHistoryBody');
-    historyBody.innerHTML = `<tr><td colspan="3" style="color:#b00;">Failed to load quiz history.</td></tr>`;
+    console.error("Quiz history error:", err);
+    historyBody.innerHTML = `<tr><td colspan="3" class="text-danger">Failed to load quiz history.</td></tr>`;
   }
 
-  // Quiz button handlers
+  // Setup quiz buttons
   document.querySelectorAll('.manual-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      window.location.href = `quiz.html?manual=${btn.dataset.manual}`;
+      const manual = btn.dataset.manual;
+      if (manual) {
+        window.location.href = `quiz.html?manual=${encodeURIComponent(manual)}`;
+      }
     });
   });
-
-  // No manual logout button here; handled by header
 });
