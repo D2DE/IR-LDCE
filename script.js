@@ -1,4 +1,3 @@
-// Manual code to full name mapping
 const manualNames = {
     irwm: "Indian Railway Works Manual",
     irpwm: "Indian Railway P-way Manual",
@@ -11,33 +10,29 @@ const manualNames = {
     account: "Account Manual"
 };
 
-window.initQuiz = function() {
-    // Get manual code from URL parameter
+window.initQuiz = function () {
     const urlParams = new URLSearchParams(window.location.search);
     const manual = urlParams.get('manual');
+    const jsonFile = manual ? `https://d2de.github.io/IR-LDCE/${manual}-questions.json` : null;
 
-    // Build JSON URL
-    const jsonFile = manual
-        ? `https://d2de.github.io/IR-LDCE/${manual}-questions.json`
-        : null;
-
-    // Quiz variables
     let questions = [];
     const questionElement = document.getElementById("question");
     const answerButtons = document.getElementById("answer-buttons");
     const nextButton = document.getElementById("next-btn");
     const headingElement = document.querySelector('.app h1');
+    const timerElement = document.getElementById("timer");
+
     let currentQuestionIndex = 0;
     let score = 0;
+    let countdown;
+    const timePerQuestion = 30; // seconds
 
-    // Set quiz heading
     if (manual && manualNames[manual]) {
-        headingElement.childNodes[0].textContent = manualNames[manual] + " Quiz ";
+        headingElement.textContent = `${manualNames[manual]} Quiz`;
     } else {
-        headingElement.childNodes[0].textContent = "Quiz ";
+        headingElement.textContent = "Quiz";
     }
 
-    // Fetch questions from JSON file
     async function loadQuestions() {
         if (!jsonFile) {
             questionElement.innerHTML = "No manual selected.<br><a href='index.html'>Go back</a>";
@@ -46,12 +41,11 @@ window.initQuiz = function() {
         }
         try {
             const response = await fetch(jsonFile);
-            if (!response.ok) throw new Error('Could not load questions');
+            if (!response.ok) throw new Error("Failed to load questions");
             questions = await response.json();
             startQuiz();
         } catch (error) {
-            questionElement.innerHTML = "Failed to load questions. Please try again later.<br><a href='index.html'>Go back</a>";
-            nextButton.style.display = "none";
+            questionElement.innerHTML = "Error loading questions.<br><a href='index.html'>Go back</a>";
             console.error(error);
         }
     }
@@ -65,28 +59,34 @@ window.initQuiz = function() {
 
     function showQuestion() {
         resetState();
-        let currentQuestion = questions[currentQuestionIndex];
-        let questionNo = currentQuestionIndex + 1;
-        questionElement.innerHTML = `<strong>${questionNo}. ${currentQuestion.question}</strong>`;
+        startTimer();
 
-        // Clear previous answers and create a bulleted list
-        answerButtons.innerHTML = "";
-        const ul = document.createElement('ul');
-        ul.className = "list-unstyled"; // Bootstrap class for cleaner look
+        const currentQuestion = questions[currentQuestionIndex];
+        const questionNo = currentQuestionIndex + 1;
+        let html = `<strong>${questionNo}. ${currentQuestion.question}</strong>`;
+        if (currentQuestion.image) {
+            html += `<div><img src="${currentQuestion.image}" alt="question image" class="img-fluid my-2" style="max-height:200px;"></div>`;
+        }
+        questionElement.innerHTML = html;
 
-        currentQuestion.answers.forEach((answer, idx) => {
-            const li = document.createElement('li');
+        const ul = document.createElement("ul");
+        ul.className = "list-unstyled";
+
+        currentQuestion.answers.forEach(answer => {
+            const li = document.createElement("li");
             li.className = "mb-2";
-            const button = document.createElement('button');
-            button.innerHTML = answer.text;
+
+            const button = document.createElement("button");
             button.type = "button";
-            button.className = "btn btn-outline-primary w-100 text-start"; // Bootstrap classes
-            button.setAttribute('tabindex', 0);
-            button.setAttribute('aria-label', answer.text);
-            if (answer.correct) {
-                button.dataset.correct = answer.correct;
-            }
-            button.addEventListener('click', selectAnswer);
+            button.className = "btn btn-outline-primary w-100 text-start d-flex align-items-center";
+            button.setAttribute("tabindex", 0);
+            button.setAttribute("aria-label", answer.text);
+            button.innerHTML = answer.image
+                ? `<span>${answer.text}</span><img src="${answer.image}" alt="option image" class="ms-auto" style="max-height:40px;">`
+                : answer.text;
+
+            if (answer.correct) button.dataset.correct = "true";
+            button.addEventListener("click", selectAnswer);
             li.appendChild(button);
             ul.appendChild(li);
         });
@@ -95,61 +95,61 @@ window.initQuiz = function() {
     }
 
     function resetState() {
+        clearInterval(countdown);
         nextButton.style.display = "none";
-        while (answerButtons.firstChild) {
-            answerButtons.removeChild(answerButtons.firstChild);
-        }
+        answerButtons.innerHTML = "";
+        timerElement.textContent = `⏱️ ${timePerQuestion}s`;
     }
 
     function selectAnswer(e) {
-        const selectedBtn = e.target;
+        clearInterval(countdown);
+        const selectedBtn = e.target.closest("button");
         const isCorrect = selectedBtn.dataset.correct === "true";
-        if (isCorrect) {
-            selectedBtn.classList.remove("btn-outline-primary");
-            selectedBtn.classList.add("btn-success");
-            score++;
-        } else {
-            selectedBtn.classList.remove("btn-outline-primary");
-            selectedBtn.classList.add("btn-danger");
-        }
-        Array.from(answerButtons.querySelectorAll('button')).forEach(button => {
+
+        selectedBtn.classList.remove("btn-outline-primary");
+        selectedBtn.classList.add(isCorrect ? "btn-success" : "btn-danger");
+        if (isCorrect) score++;
+
+        const allButtons = answerButtons.querySelectorAll("button");
+        allButtons.forEach(button => {
             if (button.dataset.correct === "true") {
                 button.classList.remove("btn-outline-primary");
                 button.classList.add("btn-success");
             }
             button.disabled = true;
         });
+
         nextButton.style.display = "block";
         nextButton.focus();
     }
 
-    // Save quiz result to Firestore
-    async function saveQuizResult() {
-        try {
-            // Use the Firebase instances from the global window object
-            const auth = window.firebaseAuth;
-            const db = window.firebaseDb;
-            const user = auth.currentUser;
-
-            if (!user) {
-                console.error('❌ No authenticated user found');
-                return;
-            }
-
-            // Import addDoc and serverTimestamp
-            const { collection, addDoc, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
-
-            await addDoc(collection(db, "users", user.uid, "quizHistory"), {
-                manual: manual,
-                score: score,
-                totalQuestions: questions.length,
-                timestamp: serverTimestamp()
-            });
-
-            console.log('✅ Quiz result saved for user:', user.uid);
-        } catch (error) {
-            console.error('❌ Error saving quiz result:', error);
+    function autoSelectOnTimeout() {
+        const correctButton = answerButtons.querySelector("button[data-correct='true']");
+        if (correctButton) {
+            correctButton.classList.remove("btn-outline-primary");
+            correctButton.classList.add("btn-success");
         }
+
+        const allButtons = answerButtons.querySelectorAll("button");
+        allButtons.forEach(button => {
+            if (button !== correctButton) button.classList.add("btn-secondary");
+            button.disabled = true;
+        });
+
+        nextButton.style.display = "block";
+    }
+
+    function startTimer() {
+        let timeLeft = timePerQuestion;
+        timerElement.textContent = `⏱️ ${timeLeft}s`;
+        countdown = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = `⏱️ ${timeLeft}s`;
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                autoSelectOnTimeout();
+            }
+        }, 1000);
     }
 
     async function showScore() {
@@ -163,7 +163,6 @@ window.initQuiz = function() {
         nextButton.innerHTML = "Play Again";
         nextButton.style.display = "block";
 
-        // Save the quiz result to Firestore
         await saveQuizResult();
     }
 
@@ -184,17 +183,25 @@ window.initQuiz = function() {
         }
     });
 
-    // Start the quiz by loading questions from JSON
-    loadQuestions();
+    async function saveQuizResult() {
+        try {
+            const auth = window.firebaseAuth;
+            const db = window.firebaseDb;
+            const user = auth.currentUser;
+            if (!user) return;
 
-    // Confirmation before leaving quiz
-    const backBtn = document.getElementById('backToDashboardBtn');
-    if (backBtn) {
-        backBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (confirm('Are you sure you want to leave this quiz and return to the dashboard?')) {
-                window.location.href = 'dashboard.html';
-            }
-        });
+            const { collection, addDoc, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
+
+            await addDoc(collection(db, "users", user.uid, "quizHistory"), {
+                manual: manual,
+                score: score,
+                totalQuestions: questions.length,
+                timestamp: serverTimestamp()
+            });
+        } catch (err) {
+            console.warn("Skipping Firebase saving:", err.message);
+        }
     }
+
+    loadQuestions();
 };
