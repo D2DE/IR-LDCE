@@ -7,7 +7,8 @@ const manualNames = {
     usfd: "USFD Manual",
     fbwm: "FBW Manual",
     store: "Store Manual",
-    account: "Account Manual"
+    account: "Account Manual",
+    pyq2021: "PYQ 30% Main 2021"
 };
 
 window.initQuiz = function () {
