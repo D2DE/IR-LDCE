@@ -1,0 +1,3677 @@
+[
+  {
+    "question": "The reduced bearing at a place is measured as N25°47'W. The whole circle bearing will be",
+    "answers": [
+      {
+        "text": "25° 47'",
+        "correct": false
+      },
+      {
+        "text": "225° 47'",
+        "correct": false
+      },
+      {
+        "text": "154° 13'",
+        "correct": false
+      },
+      {
+        "text": "334° 13'",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "For the beam shown above, the value of reactions at the Support \"A\" and \"B\" will be",
+    "answers": [
+      {
+        "text": "A: 6.75 kN, B: 9.25 kN",
+        "correct": false
+      },
+      {
+        "text": "A: 9.75 kN, B: 6.25 kN",
+        "correct": false
+      },
+      {
+        "text": "A: 9.25 kN, B: 6.75 kN",
+        "correct": false
+      },
+      {
+        "text": "A: 6.25 kN, B: 9.75 kN",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "For the beam shown above, the maximum value of Shear Force and its location will be",
+    "answers": [
+      {
+        "text": "5.25 kN, from \"A\" to \"C\"",
+        "correct": false
+      },
+      {
+        "text": "4.75 kN, from \"A\" to \"C\"",
+        "correct": false
+      },
+      {
+        "text": "5.75 kN, from \"B\" to \"C\"",
+        "correct": false
+      },
+      {
+        "text": "6.75 kN, from \"B\" to \"C\"",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "For the beam shown above, the maximum value of Bending Moment and its location will be",
+    "answers": [
+      {
+        "text": "17 kN-m, at \"A\"",
+        "correct": false
+      },
+      {
+        "text": "21 kN-m, at \"C\"",
+        "correct": false
+      },
+      {
+        "text": "18 kN-m, at \"B\"",
+        "correct": false
+      },
+      {
+        "text": "17 kN-m, at \"C\"",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When the bolts are subjected to reversal of stresses, the most suitable type of bolt is",
+    "answers": [
+      {
+        "text": "Black Bolt",
+        "correct": false
+      },
+      {
+        "text": "Ordinary Bolt",
+        "correct": false
+      },
+      {
+        "text": "Turned and Fitted Bolt",
+        "correct": false
+      },
+      {
+        "text": "HSFG Bolt",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The ratio of lateral strain to linear strain is known as",
+    "answers": [
+      {
+        "text": "Modulus of Rigidity",
+        "correct": false
+      },
+      {
+        "text": "Elastic Limit",
+        "correct": false
+      },
+      {
+        "text": "Poisson's Ratio",
+        "correct": false
+      },
+      {
+        "text": "Modulus of Elasticity",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Plasticity Index of any soil will be",
+    "answers": [
+      {
+        "text": "Liquid limit - Plastic Limit",
+        "correct": false
+      },
+      {
+        "text": "Liquid limit - Shrinkage limit",
+        "correct": false
+      },
+      {
+        "text": "Plastic limit - Shrinkage limit",
+        "correct": false
+      },
+      {
+        "text": "Plastic limit - Final limit",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Value of Froude Number for critical flow in any open channel should be",
+    "answers": [
+      {
+        "text": "< 1",
+        "correct": false
+      },
+      {
+        "text": "1",
+        "correct": false
+      },
+      {
+        "text": "> 1",
+        "correct": false
+      },
+      {
+        "text": "< 0.9",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following is not a property of any catchment area",
+    "answers": [
+      {
+        "text": "Area of the catchment",
+        "correct": false
+      },
+      {
+        "text": "Average slope of the longest stream",
+        "correct": false
+      },
+      {
+        "text": "Length of the longest stream",
+        "correct": false
+      },
+      {
+        "text": "Maximum rainfall in that area",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Hydrograph is a graph showing correlation between",
+    "answers": [
+      {
+        "text": "Catchment area and Time",
+        "correct": false
+      },
+      {
+        "text": "Return period and Time",
+        "correct": false
+      },
+      {
+        "text": "Discharge and Time",
+        "correct": false
+      },
+      {
+        "text": "Maximum rainfall and Time",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Orthotolidine test is used for checking the concentration of",
+    "answers": [
+      {
+        "text": "Dissolved oxygen",
+        "correct": false
+      },
+      {
+        "text": "Residual chlorine",
+        "correct": false
+      },
+      {
+        "text": "Biochemical Oxygen Demand",
+        "correct": false
+      },
+      {
+        "text": "Dose of coagulant",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In water treatment, aeration of water is effective in removal of",
+    "answers": [
+      {
+        "text": "Heavy metals",
+        "correct": false
+      },
+      {
+        "text": "Viruses",
+        "correct": false
+      },
+      {
+        "text": "Bacteria",
+        "correct": false
+      },
+      {
+        "text": "Dissolved gases",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "COD values are generally ______ BOD values for the same sample.",
+    "answers": [
+      {
+        "text": "Higher than",
+        "correct": false
+      },
+      {
+        "text": "Lower than",
+        "correct": false
+      },
+      {
+        "text": "Equal to",
+        "correct": false
+      },
+      {
+        "text": "None of these",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Pre-investment decision for a Railway Project are made based on which report.",
+    "answers": [
+      {
+        "text": "Final Location Survey",
+        "correct": false
+      },
+      {
+        "text": "Hydrographic survey",
+        "correct": false
+      },
+      {
+        "text": "Astronomical survey",
+        "correct": false
+      },
+      {
+        "text": "Preliminary Engineering cum Traffic Survey",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The depth of 60 kg Rail is",
+    "answers": [
+      {
+        "text": "150 mm",
+        "correct": false
+      },
+      {
+        "text": "156 mm",
+        "correct": false
+      },
+      {
+        "text": "172 mm",
+        "correct": false
+      },
+      {
+        "text": "180 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Complete overhaul of the track shall normally be completed within a period of",
+    "answers": [
+      {
+        "text": "3 to 5 year",
+        "correct": false
+      },
+      {
+        "text": "4 to 6 years",
+        "correct": false
+      },
+      {
+        "text": "2 to 4 years",
+        "correct": false
+      },
+      {
+        "text": "1 to 3 years",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Night Foot Plate Inspection should be done by the Assistant Divisional Engineer between",
+    "answers": [
+      {
+        "text": "23:00 to 03:00 Hrs.",
+        "correct": false
+      },
+      {
+        "text": "00:00 to 04:00 Hrs.",
+        "correct": false
+      },
+      {
+        "text": "01:00 to 05:00 Hrs.",
+        "correct": false
+      },
+      {
+        "text": "02:00 to 06:00 Hrs.",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The tolerances of finished AT welds, the vertical alignment measured at the end of one-metre straight edge should not be more than",
+    "answers": [
+      {
+        "text": "+1.0 mm, 0.0 mm",
+        "correct": false
+      },
+      {
+        "text": "+0.5 mm, -0.5 mm",
+        "correct": false
+      },
+      {
+        "text": "+0.4 mm, 0.0 mm",
+        "correct": false
+      },
+      {
+        "text": "+0.3 mm, -0.3 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "OMS does not give",
+    "answers": [
+      {
+        "text": "Lateral and Vertical acceleration",
+        "correct": false
+      },
+      {
+        "text": "Track parameters",
+        "correct": false
+      },
+      {
+        "text": "Ride Index",
+        "correct": false
+      },
+      {
+        "text": "Speed of the train",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The Side Slopes of the embankment do not depend on",
+    "answers": [
+      {
+        "text": "Bearing capacity of the soil",
+        "correct": false
+      },
+      {
+        "text": "Shear Strength Parameters of the soil",
+        "correct": false
+      },
+      {
+        "text": "Height of the embankment",
+        "correct": false
+      },
+      {
+        "text": "Location of water table",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the frequency of calibration of USFD machine.",
+    "answers": [
+      {
+        "text": "Daily",
+        "correct": false
+      },
+      {
+        "text": "Once in 3 days",
+        "correct": false
+      },
+      {
+        "text": "Once in a week",
+        "correct": false
+      },
+      {
+        "text": "Once in 15 days",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which property of 60 Kg/90 UTS rail is different from 60 Kg/R260 rails.",
+    "answers": [
+      {
+        "text": "Fatigue Strength",
+        "correct": false
+      },
+      {
+        "text": "Ultimate Tensile Strength",
+        "correct": false
+      },
+      {
+        "text": "Yield Strength",
+        "correct": false
+      },
+      {
+        "text": "Crack Strength",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Overall length of turnout is measured from",
+    "answers": [
+      {
+        "text": "Stock Rail Joint to Theoretical Nose of Crossing",
+        "correct": false
+      },
+      {
+        "text": "Stock Rail Joint to Heel of Crossing",
+        "correct": false
+      },
+      {
+        "text": "Stock Rail Joint to Actual Nose of Crossing",
+        "correct": false
+      },
+      {
+        "text": "Heel of Switch to Heel of Crossing",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The recommended formation width of new double line cutting for Broad Gauge is",
+    "answers": [
+      {
+        "text": "11555 mm",
+        "correct": false
+      },
+      {
+        "text": "10975 mm",
+        "correct": false
+      },
+      {
+        "text": "10820 mm",
+        "correct": false
+      },
+      {
+        "text": "13160 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Camber is generally provided in steel girders of span more than",
+    "answers": [
+      {
+        "text": "45.7 m",
+        "correct": false
+      },
+      {
+        "text": "18.3 m",
+        "correct": false
+      },
+      {
+        "text": "30.5 m",
+        "correct": false
+      },
+      {
+        "text": "24.4 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "A CRN of \"6\", given after inspection of a bridge, indicates",
+    "answers": [
+      {
+        "text": "Bridge in Sound Condition",
+        "correct": false
+      },
+      {
+        "text": "Bridge not existing",
+        "correct": false
+      },
+      {
+        "text": "Inspection not done",
+        "correct": false
+      },
+      {
+        "text": "Inspection not applicable",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When the Railway line crosses a deep valley without perennial water, it is called",
+    "answers": [
+      {
+        "text": "Aqueduct",
+        "correct": false
+      },
+      {
+        "text": "Causeway",
+        "correct": false
+      },
+      {
+        "text": "Viaduct",
+        "correct": false
+      },
+      {
+        "text": "River crossing",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Specially trained Hill Gangs are required to inspect cuttings of height more than",
+    "answers": [
+      {
+        "text": "25 m",
+        "correct": false
+      },
+      {
+        "text": "20 m",
+        "correct": false
+      },
+      {
+        "text": "15 m",
+        "correct": false
+      },
+      {
+        "text": "10 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Identification of vulnerable cuttings by Senior Divisional Engineer/ Divisional Engineer is done",
+    "answers": [
+      {
+        "text": "Every year",
+        "correct": false
+      },
+      {
+        "text": "Once in 3 years",
+        "correct": false
+      },
+      {
+        "text": "Once in 5 years",
+        "correct": false
+      },
+      {
+        "text": "Once in 7 years",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who uploads the TRC results in the TMS",
+    "answers": [
+      {
+        "text": "SSE in-charge of TRC",
+        "correct": false
+      },
+      {
+        "text": "SSE (P.Way) in-charge of the Section",
+        "correct": false
+      },
+      {
+        "text": "Assistant Divisional Engineer",
+        "correct": false
+      },
+      {
+        "text": "Divisional Engineer",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Any addition or alteration to the Standard Measurement Register is done with the approval of",
+    "answers": [
+      {
+        "text": "Divisional Railway Manager",
+        "correct": false
+      },
+      {
+        "text": "Assistant Divisional Engineer",
+        "correct": false
+      },
+      {
+        "text": "Senior Divisional Engineer",
+        "correct": false
+      },
+      {
+        "text": "Principal Chief Engineer",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Periodicity of white washing in kitchen of the officer's quarter is",
+    "answers": [
+      {
+        "text": "Once in a year",
+        "correct": false
+      },
+      {
+        "text": "Once in two years",
+        "correct": false
+      },
+      {
+        "text": "There is no periodicity",
+        "correct": false
+      },
+      {
+        "text": "Once in three years",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following seismic zone does not exist now.",
+    "answers": [
+      {
+        "text": "IV",
+        "correct": false
+      },
+      {
+        "text": "III",
+        "correct": false
+      },
+      {
+        "text": "II",
+        "correct": false
+      },
+      {
+        "text": "I",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Coordinator of Colony Inspection Group (CIG) for the colonies located at the ADEN HQ Station is",
+    "answers": [
+      {
+        "text": "Assistant Divisional Medical Officer",
+        "correct": false
+      },
+      {
+        "text": "Assistant Divisional Engineer",
+        "correct": false
+      },
+      {
+        "text": "Assistant Personal Officer",
+        "correct": false
+      },
+      {
+        "text": "Senior most Officer at that Station",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "For determining the flow of water through an aquifer, the most commonly used formula is",
+    "answers": [
+      {
+        "text": "Slichter's law",
+        "correct": false
+      },
+      {
+        "text": "Darcy's law",
+        "correct": false
+      },
+      {
+        "text": "Hazen's law",
+        "correct": false
+      },
+      {
+        "text": "Lacey's law",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The main cause of corrosion of steel in concrete is",
+    "answers": [
+      {
+        "text": "Chloride attack",
+        "correct": false
+      },
+      {
+        "text": "Sulphate attack",
+        "correct": false
+      },
+      {
+        "text": "Carbonation",
+        "correct": false
+      },
+      {
+        "text": "Alkali-aggregate reaction",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The most suitable soil for embankment construction is",
+    "answers": [
+      {
+        "text": "Clay",
+        "correct": false
+      },
+      {
+        "text": "Silt",
+        "correct": false
+      },
+      {
+        "text": "Sand",
+        "correct": false
+      },
+      {
+        "text": "Gravel",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The main function of ballast in railway track is",
+    "answers": [
+      {
+        "text": "Provide elasticity",
+        "correct": false
+      },
+      {
+        "text": "Distribute load",
+        "correct": false
+      },
+      {
+        "text": "Provide drainage",
+        "correct": false
+      },
+      {
+        "text": "All of the above",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The maximum super elevation on Broad Gauge is",
+    "answers": [
+      {
+        "text": "150 mm",
+        "correct": false
+      },
+      {
+        "text": "165 mm",
+        "correct": false
+      },
+      {
+        "text": "100 mm",
+        "correct": false
+      },
+      {
+        "text": "75 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum curve radius for Broad Gauge is",
+    "answers": [
+      {
+        "text": "175 m",
+        "correct": false
+      },
+      {
+        "text": "220 m",
+        "correct": false
+      },
+      {
+        "text": "300 m",
+        "correct": false
+      },
+      {
+        "text": "400 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The maximum permissible gradient in station yards is",
+    "answers": [
+      {
+        "text": "1 in 200",
+        "correct": false
+      },
+      {
+        "text": "1 in 400",
+        "correct": false
+      },
+      {
+        "text": "1 in 1000",
+        "correct": false
+      },
+      {
+        "text": "1 in 500",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum length of platform for a passenger train is",
+    "answers": [
+      {
+        "text": "280 m",
+        "correct": false
+      },
+      {
+        "text": "350 m",
+        "correct": false
+      },
+      {
+        "text": "400 m",
+        "correct": false
+      },
+      {
+        "text": "500 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum width of ballast cushion under sleeper for BG track is",
+    "answers": [
+      {
+        "text": "150 mm",
+        "correct": false
+      },
+      {
+        "text": "200 mm",
+        "correct": false
+      },
+      {
+        "text": "250 mm",
+        "correct": false
+      },
+      {
+        "text": "300 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum depth of foundation for a bridge pier is",
+    "answers": [
+      {
+        "text": "1.5 m",
+        "correct": false
+      },
+      {
+        "text": "2.5 m",
+        "correct": false
+      },
+      {
+        "text": "3.0 m",
+        "correct": false
+      },
+      {
+        "text": "5.0 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum freeboard for a railway bridge above HFL is",
+    "answers": [
+      {
+        "text": "0.5 m",
+        "correct": false
+      },
+      {
+        "text": "1.0 m",
+        "correct": false
+      },
+      {
+        "text": "1.5 m",
+        "correct": false
+      },
+      {
+        "text": "2.0 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The maximum span of a slab culvert is",
+    "answers": [
+      {
+        "text": "2 m",
+        "correct": false
+      },
+      {
+        "text": "6 m",
+        "correct": false
+      },
+      {
+        "text": "8 m",
+        "correct": false
+      },
+      {
+        "text": "10 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum thickness of RCC slab for a foot over bridge is",
+    "answers": [
+      {
+        "text": "100 mm",
+        "correct": false
+      },
+      {
+        "text": "120 mm",
+        "correct": false
+      },
+      {
+        "text": "150 mm",
+        "correct": false
+      },
+      {
+        "text": "200 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum width of a foot over bridge for passenger traffic is",
+    "answers": [
+      {
+        "text": "2.0 m",
+        "correct": false
+      },
+      {
+        "text": "2.5 m",
+        "correct": false
+      },
+      {
+        "text": "3.0 m",
+        "correct": false
+      },
+      {
+        "text": "3.5 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum height of a foot over bridge above rail level is",
+    "answers": [
+      {
+        "text": "4.5 m",
+        "correct": false
+      },
+      {
+        "text": "5.0 m",
+        "correct": false
+      },
+      {
+        "text": "5.5 m",
+        "correct": false
+      },
+      {
+        "text": "6.0 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum clear distance between two tracks for BG is",
+    "answers": [
+      {
+        "text": "4.265 m",
+        "correct": false
+      },
+      {
+        "text": "4.275 m",
+        "correct": false
+      },
+      {
+        "text": "4.295 m",
+        "correct": false
+      },
+      {
+        "text": "4.325 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum width of a railway platform is",
+    "answers": [
+      {
+        "text": "3.0 m",
+        "correct": false
+      },
+      {
+        "text": "4.0 m",
+        "correct": false
+      },
+      {
+        "text": "5.0 m",
+        "correct": false
+      },
+      {
+        "text": "6.0 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum height of a platform above rail level for BG is",
+    "answers": [
+      {
+        "text": "760 mm",
+        "correct": false
+      },
+      {
+        "text": "840 mm",
+        "correct": false
+      },
+      {
+        "text": "920 mm",
+        "correct": false
+      },
+      {
+        "text": "1000 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum width of a road over bridge for two lane traffic is",
+    "answers": [
+      {
+        "text": "7.0 m",
+        "correct": false
+      },
+      {
+        "text": "7.5 m",
+        "correct": false
+      },
+      {
+        "text": "8.0 m",
+        "correct": false
+      },
+      {
+        "text": "8.5 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum vertical clearance for a road under bridge is",
+    "answers": [
+      {
+        "text": "4.0 m",
+        "correct": false
+      },
+      {
+        "text": "4.5 m",
+        "correct": false
+      },
+      {
+        "text": "5.0 m",
+        "correct": false
+      },
+      {
+        "text": "5.5 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum thickness of ballast under sleeper for MG track is",
+    "answers": [
+      {
+        "text": "100 mm",
+        "correct": false
+      },
+      {
+        "text": "150 mm",
+        "correct": false
+      },
+      {
+        "text": "200 mm",
+        "correct": false
+      },
+      {
+        "text": "250 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum width of formation for BG single line is",
+    "answers": [
+      {
+        "text": "6.1 m",
+        "correct": false
+      },
+      {
+        "text": "6.7 m",
+        "correct": false
+      },
+      {
+        "text": "7.0 m",
+        "correct": false
+      },
+      {
+        "text": "7.5 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum width of formation for BG double line is",
+    "answers": [
+      {
+        "text": "11.0 m",
+        "correct": false
+      },
+      {
+        "text": "11.5 m",
+        "correct": false
+      },
+      {
+        "text": "12.0 m",
+        "correct": false
+      },
+      {
+        "text": "12.5 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum depth of ballast under points and crossings is",
+    "answers": [
+      {
+        "text": "150 mm",
+        "correct": false
+      },
+      {
+        "text": "200 mm",
+        "correct": false
+      },
+      {
+        "text": "250 mm",
+        "correct": false
+      },
+      {
+        "text": "300 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum height of embankment for BG track is",
+    "answers": [
+      {
+        "text": "0.5 m",
+        "correct": false
+      },
+      {
+        "text": "1.0 m",
+        "correct": false
+      },
+      {
+        "text": "1.5 m",
+        "correct": false
+      },
+      {
+        "text": "2.0 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum width of ballast section for BG track is",
+    "answers": [
+      {
+        "text": "3.35 m",
+        "correct": false
+      },
+      {
+        "text": "3.50 m",
+        "correct": false
+      },
+      {
+        "text": "3.60 m",
+        "correct": false
+      },
+      {
+        "text": "3.75 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum width of a subway for pedestrian traffic is",
+    "answers": [
+      {
+        "text": "1.5 m",
+        "correct": false
+      },
+      {
+        "text": "2.0 m",
+        "correct": false
+      },
+      {
+        "text": "2.5 m",
+        "correct": false
+      },
+      {
+        "text": "3.0 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum height of a subway above floor level is",
+    "answers": [
+      {
+        "text": "2.2 m",
+        "correct": false
+      },
+      {
+        "text": "2.4 m",
+        "correct": false
+      },
+      {
+        "text": "2.6 m",
+        "correct": false
+      },
+      {
+        "text": "2.8 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum thickness of RCC slab for a subway is",
+    "answers": [
+      {
+        "text": "100 mm",
+        "correct": false
+      },
+      {
+        "text": "120 mm",
+        "correct": false
+      },
+      {
+        "text": "150 mm",
+        "correct": false
+      },
+      {
+        "text": "200 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum width of a level crossing for a single line is",
+    "answers": [
+      {
+        "text": "3.0 m",
+        "correct": false
+      },
+      {
+        "text": "3.5 m",
+        "correct": false
+      },
+      {
+        "text": "4.0 m",
+        "correct": false
+      },
+      {
+        "text": "4.5 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum width of a level crossing for a double line is",
+    "answers": [
+      {
+        "text": "6.0 m",
+        "correct": false
+      },
+      {
+        "text": "6.5 m",
+        "correct": false
+      },
+      {
+        "text": "7.0 m",
+        "correct": false
+      },
+      {
+        "text": "7.5 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum width of a cattle guard for BG track is",
+    "answers": [
+      {
+        "text": "2.0 m",
+        "correct": false
+      },
+      {
+        "text": "2.5 m",
+        "correct": false
+      },
+      {
+        "text": "3.0 m",
+        "correct": false
+      },
+      {
+        "text": "3.5 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum width of a gang hut is",
+    "answers": [
+      {
+        "text": "2.5 m",
+        "correct": false
+      },
+      {
+        "text": "3.0 m",
+        "correct": false
+      },
+      {
+        "text": "3.5 m",
+        "correct": false
+      },
+      {
+        "text": "4.0 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum height of a gang hut above ground level is",
+    "answers": [
+      {
+        "text": "2.0 m",
+        "correct": false
+      },
+      {
+        "text": "2.2 m",
+        "correct": false
+      },
+      {
+        "text": "2.4 m",
+        "correct": false
+      },
+      {
+        "text": "2.6 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum width of a bridge inspection ladder is",
+    "answers": [
+      {
+        "text": "300 mm",
+        "correct": false
+      },
+      {
+        "text": "350 mm",
+        "correct": false
+      },
+      {
+        "text": "400 mm",
+        "correct": false
+      },
+      {
+        "text": "450 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The minimum width of a bridge inspection platform is",
+    "answers": [
+      {
+        "text": "600 mm",
+        "correct": false
+      },
+      {
+        "text": "700 mm",
+        "correct": false
+      },
+      {
+        "text": "800 mm",
+        "correct": false
+      },
+      {
+        "text": "900 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In case of temporary diversion, the super elevation provided is",
+    "answers": [
+      {
+        "text": "50 mm",
+        "correct": false
+      },
+      {
+        "text": "30 mm",
+        "correct": false
+      },
+      {
+        "text": "20 mm",
+        "correct": false
+      },
+      {
+        "text": "Zero",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The speed potential of an existing BG section is to be increased to 110 kmph. The sanction can be granted by",
+    "answers": [
+      {
+        "text": "PCE of Railway",
+        "correct": false
+      },
+      {
+        "text": "PCSO of Railway",
+        "correct": false
+      },
+      {
+        "text": "PCOM of Railway",
+        "correct": false
+      },
+      {
+        "text": "CRS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "For existing lines, minimum distance centre to centre of straight tracks is ___ mm.",
+    "answers": [
+      {
+        "text": "4265 mm",
+        "correct": false
+      },
+      {
+        "text": "4425 mm",
+        "correct": false
+      },
+      {
+        "text": "4695 mm",
+        "correct": false
+      },
+      {
+        "text": "5300 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Maximum horizontal distance from centre of track to face of passenger platform coping shall be ___ mm.",
+    "answers": [
+      {
+        "text": "1780 mm",
+        "correct": false
+      },
+      {
+        "text": "1700 mm",
+        "correct": false
+      },
+      {
+        "text": "1680 mm",
+        "correct": false
+      },
+      {
+        "text": "1750 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which parameter is not directly measured by Track Recording Car, but calculated from some other measured values:",
+    "answers": [
+      {
+        "text": "Vertical acceleration",
+        "correct": false
+      },
+      {
+        "text": "Unevenness",
+        "correct": false
+      },
+      {
+        "text": "Alignment",
+        "correct": false
+      },
+      {
+        "text": "Twist",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Based on TRC and OMS recording results, the Urgent Maintenance Limit (UML) for Peak Vertical Acceleration for speeds 110–130 kmph is",
+    "answers": [
+      {
+        "text": "0.25 g",
+        "correct": false
+      },
+      {
+        "text": "0.20 g",
+        "correct": false
+      },
+      {
+        "text": "0.15 g",
+        "correct": false
+      },
+      {
+        "text": "0.30 g",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The life of detonators can be extended from 5 years to 8 years, on a ___ basis, subject to testing as per the stipulated procedure.",
+    "answers": [
+      {
+        "text": "3 monthly",
+        "correct": false
+      },
+      {
+        "text": "6 monthly",
+        "correct": false
+      },
+      {
+        "text": "Yearly",
+        "correct": false
+      },
+      {
+        "text": "One time",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the minimum level of functionary authorised to issue Competency Certificate to Motor Trolley Driver for using Motor Trolley?",
+    "answers": [
+      {
+        "text": "SSE/P.Way (in-charge)",
+        "correct": false
+      },
+      {
+        "text": "ADEN",
+        "correct": false
+      },
+      {
+        "text": "Sr.DEN",
+        "correct": false
+      },
+      {
+        "text": "Sr.DSO",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Maintenance of the level crossings located within the outermost stop signals is done by:",
+    "answers": [
+      {
+        "text": "Engineering Department",
+        "correct": false
+      },
+      {
+        "text": "Safety Department",
+        "correct": false
+      },
+      {
+        "text": "Commercial Department",
+        "correct": false
+      },
+      {
+        "text": "Operating Department",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Maximum temperature of air inside tunnels needs to be limited to ___ °C, considering passengers and workmen comfort.",
+    "answers": [
+      {
+        "text": "40 °C",
+        "correct": false
+      },
+      {
+        "text": "50 °C",
+        "correct": false
+      },
+      {
+        "text": "45 °C",
+        "correct": false
+      },
+      {
+        "text": "60 °C",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Each cutting should be inspected by the ADEN ___.",
+    "answers": [
+      {
+        "text": "After monsoon once a year",
+        "correct": false
+      },
+      {
+        "text": "Anytime in a year",
+        "correct": false
+      },
+      {
+        "text": "Once every 2 years",
+        "correct": false
+      },
+      {
+        "text": "Before onset of rains once a year",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following tamping machines has a satellite unit?",
+    "answers": [
+      {
+        "text": "08-32 DUOMATIC",
+        "correct": false
+      },
+      {
+        "text": "09-275 UNIMAT",
+        "correct": false
+      },
+      {
+        "text": "09-32 CSM",
+        "correct": false
+      },
+      {
+        "text": "VPR-02M",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Minimum clean ballast cushion required for quality output from tamping machine is ___.",
+    "answers": [
+      {
+        "text": "150 mm",
+        "correct": false
+      },
+      {
+        "text": "200 mm",
+        "correct": false
+      },
+      {
+        "text": "250 mm",
+        "correct": false
+      },
+      {
+        "text": "100 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Lifting of track up to ___ in one pass can be done by ballast cleaning machines presently available on Indian Railways.",
+    "answers": [
+      {
+        "text": "50 mm",
+        "correct": false
+      },
+      {
+        "text": "150 mm",
+        "correct": false
+      },
+      {
+        "text": "100 mm",
+        "correct": false
+      },
+      {
+        "text": "200 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The gauge of auxiliary track in track relaying by PQRS machine is:",
+    "answers": [
+      {
+        "text": "3100 mm",
+        "correct": false
+      },
+      {
+        "text": "3200 mm",
+        "correct": false
+      },
+      {
+        "text": "3300 mm",
+        "correct": false
+      },
+      {
+        "text": "3400 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which was the first city in India to launch a common mobility card for rides on public buses and the metro?",
+    "answers": [
+      {
+        "text": "Bengaluru",
+        "correct": false
+      },
+      {
+        "text": "Hyderabad",
+        "correct": false
+      },
+      {
+        "text": "Lucknow",
+        "correct": false
+      },
+      {
+        "text": "Delhi",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who cannot vote in election for the President of India?",
+    "answers": [
+      {
+        "text": "Nominated members of either house of Parliament",
+        "correct": false
+      },
+      {
+        "text": "Vice President",
+        "correct": false
+      },
+      {
+        "text": "Members of State Legislative Assembly",
+        "correct": false
+      },
+      {
+        "text": "Members of Rajya Sabha",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Where is the original Ashoka Stambh located?",
+    "answers": [
+      {
+        "text": "Gaya",
+        "correct": false
+      },
+      {
+        "text": "Varanasi",
+        "correct": false
+      },
+      {
+        "text": "Sarnath",
+        "correct": false
+      },
+      {
+        "text": "Sanchi",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was the Chief Architect of the Taj Mahal?",
+    "answers": [
+      {
+        "text": "Shah Jahan",
+        "correct": false
+      },
+      {
+        "text": "Ustad Ahmad Lahori",
+        "correct": false
+      },
+      {
+        "text": "Ustad Amir Khusro",
+        "correct": false
+      },
+      {
+        "text": "Ustad Vilayat Ali Khan",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When does the Lunar Eclipse occur?",
+    "answers": [
+      {
+        "text": "When Sun is between Moon and Earth",
+        "correct": false
+      },
+      {
+        "text": "When Earth is between Moon and Sun",
+        "correct": false
+      },
+      {
+        "text": "When Moon is between Earth and Sun",
+        "correct": false
+      },
+      {
+        "text": "When Earth is between Sun and Venus",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which Indian actress and model won the title of Miss Universe 2021?",
+    "answers": [
+      {
+        "text": "Harnaz Kaur Sandhu",
+        "correct": false
+      },
+      {
+        "text": "Sini Shetty",
+        "correct": false
+      },
+      {
+        "text": "Rubal Shekhawat",
+        "correct": false
+      },
+      {
+        "text": "Manushi Chillar",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was the first Asian person to become the Secretary General of United Nations?",
+    "answers": [
+      {
+        "text": "Ban Kee-Moon",
+        "correct": false
+      },
+      {
+        "text": "Boutras Boutras Ghali",
+        "correct": false
+      },
+      {
+        "text": "Gladwyn Jebb",
+        "correct": false
+      },
+      {
+        "text": "U Thant",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was not recipient of the Bharat Ratna award in year 2019?",
+    "answers": [
+      {
+        "text": "Bhupen Hazarika",
+        "correct": false
+      },
+      {
+        "text": "Atal Bihari Vajpayee",
+        "correct": false
+      },
+      {
+        "text": "Pranab Mukherjee",
+        "correct": false
+      },
+      {
+        "text": "Nanaji Deshmukh",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was not a recipient of \"Param Veer Chakra\" for the bravery shown in the Kargill War of Year 1999?",
+    "answers": [
+      {
+        "text": "Captain Vikram Batra",
+        "correct": false
+      },
+      {
+        "text": "Major Ramaswamy Parameswaran",
+        "correct": false
+      },
+      {
+        "text": "Grenadier Yogendra Singh Yadav",
+        "correct": false
+      },
+      {
+        "text": "Rifleman Sanjay Kumar",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was the first Chairman of Indian Space Research Organisation (ISRO)?",
+    "answers": [
+      {
+        "text": "Dr. Homi Jahangir Bhabha",
+        "correct": false
+      },
+      {
+        "text": "Prof. Satish Dhawan",
+        "correct": false
+      },
+      {
+        "text": "Prof. M. G. K. Menon",
+        "correct": false
+      },
+      {
+        "text": "Dr. Vikram Sarabhai",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which Indian batsman scored 10000 runs in the least number of One Day International cricket matches?",
+    "answers": [
+      {
+        "text": "Virat Kohli",
+        "correct": false
+      },
+      {
+        "text": "Sachin Tendulkar",
+        "correct": false
+      },
+      {
+        "text": "Saurav Ganguli",
+        "correct": false
+      },
+      {
+        "text": "Mahindra Singh Dhoni",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was the first woman Prime Minister of any country?",
+    "answers": [
+      {
+        "text": "Mrs. Margaret Thatcher",
+        "correct": false
+      },
+      {
+        "text": "Mrs. Indira Gandhi",
+        "correct": false
+      },
+      {
+        "text": "Mrs. S. Bandaranaike",
+        "correct": false
+      },
+      {
+        "text": "Mrs. Benazir Bhutto",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which was the first talkie film of India?",
+    "answers": [
+      {
+        "text": "Alam Ara",
+        "correct": false
+      },
+      {
+        "text": "Naujwan",
+        "correct": false
+      },
+      {
+        "text": "Raja Harishchandra",
+        "correct": false
+      },
+      {
+        "text": "Muthu Maharaja",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the capital of the Union Territory Lakshadweep?",
+    "answers": [
+      {
+        "text": "Port Blair",
+        "correct": false
+      },
+      {
+        "text": "Kavaratti",
+        "correct": false
+      },
+      {
+        "text": "Havelock Island",
+        "correct": false
+      },
+      {
+        "text": "Male",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In terms of area, which is the largest state of India?",
+    "answers": [
+      {
+        "text": "Uttar Pradesh",
+        "correct": false
+      },
+      {
+        "text": "Madhya Pradesh",
+        "correct": false
+      },
+      {
+        "text": "Rajasthan",
+        "correct": false
+      },
+      {
+        "text": "Maharashtra",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is the highest mountain peak in India?",
+    "answers": [
+      {
+        "text": "Nanda Devi",
+        "correct": false
+      },
+      {
+        "text": "Hardeol",
+        "correct": false
+      },
+      {
+        "text": "Trishul",
+        "correct": false
+      },
+      {
+        "text": "Kanchenjunga",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is largest continent of the world?",
+    "answers": [
+      {
+        "text": "Africa",
+        "correct": false
+      },
+      {
+        "text": "Asia",
+        "correct": false
+      },
+      {
+        "text": "Europe",
+        "correct": false
+      },
+      {
+        "text": "Australia",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who is the current Chairman of the National Commission for Minorities?",
+    "answers": [
+      {
+        "text": "Syed Ghayorul Hasan Rizvi",
+        "correct": false
+      },
+      {
+        "text": "George Kurian",
+        "correct": false
+      },
+      {
+        "text": "Mrs Rinchen Lamho",
+        "correct": false
+      },
+      {
+        "text": "Iqbal Singh Lalpura",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Whose statue has been installed recently at India Gate in Delhi?",
+    "answers": [
+      {
+        "text": "Sardar Vallabh Bhai Patel",
+        "correct": false
+      },
+      {
+        "text": "Shaheed Bhagat Singh",
+        "correct": false
+      },
+      {
+        "text": "Netaji Subhash Chandra Bose",
+        "correct": false
+      },
+      {
+        "text": "Mahatma Gandhi",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Recently N. Chandrasekaran was appointed the new Chief Executive Officer and Managing Director of",
+    "answers": [
+      {
+        "text": "Air India",
+        "correct": false
+      },
+      {
+        "text": "Vistara",
+        "correct": false
+      },
+      {
+        "text": "IndiGo",
+        "correct": false
+      },
+      {
+        "text": "SpiceJet",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The largest Ocean in the world is",
+    "answers": [
+      {
+        "text": "Atlantic Ocean",
+        "correct": false
+      },
+      {
+        "text": "Indian Ocean",
+        "correct": false
+      },
+      {
+        "text": "Pacific Ocean",
+        "correct": false
+      },
+      {
+        "text": "Arabian Ocean",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was the winner of first T20 World Cup in Cricket?",
+    "answers": [
+      {
+        "text": "England",
+        "correct": false
+      },
+      {
+        "text": "West Indies",
+        "correct": false
+      },
+      {
+        "text": "Australia",
+        "correct": false
+      },
+      {
+        "text": "India",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Lala Lajpat Rai was also known as",
+    "answers": [
+      {
+        "text": "Shan-e-Bengal",
+        "correct": false
+      },
+      {
+        "text": "Sher-e-Punjab",
+        "correct": false
+      },
+      {
+        "text": "Sher-e-Kashmir",
+        "correct": false
+      },
+      {
+        "text": "Maharashtra Gaurav",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Neeraj Chopra won ___ in the World Athletics Championship 2022.",
+    "answers": [
+      {
+        "text": "Silver Medal",
+        "correct": false
+      },
+      {
+        "text": "Gold Medal",
+        "correct": false
+      },
+      {
+        "text": "Bronze Medal",
+        "correct": false
+      },
+      {
+        "text": "None of the given options",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Where is the Headquarter of International Monetary Fund (IMF) located?",
+    "answers": [
+      {
+        "text": "Geneva",
+        "correct": false
+      },
+      {
+        "text": "Rome",
+        "correct": false
+      },
+      {
+        "text": "Paris",
+        "correct": false
+      },
+      {
+        "text": "Washington DC",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When was the first election for Lok Sabha held in India?",
+    "answers": [
+      {
+        "text": "1951-1952",
+        "correct": false
+      },
+      {
+        "text": "1947-1948",
+        "correct": false
+      },
+      {
+        "text": "1950-1951",
+        "correct": false
+      },
+      {
+        "text": "1954-1955",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was the first lady judge of Supreme Court in India?",
+    "answers": [
+      {
+        "text": "Justice Sujata V. Manohar",
+        "correct": false
+      },
+      {
+        "text": "Justice Indu Malhotra",
+        "correct": false
+      },
+      {
+        "text": "Justice Ranjana Desai",
+        "correct": false
+      },
+      {
+        "text": "Justice Fathima Beewi",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When was the first passenger Railway line opened in India?",
+    "answers": [
+      {
+        "text": "1857",
+        "correct": false
+      },
+      {
+        "text": "1853",
+        "correct": false
+      },
+      {
+        "text": "1848",
+        "correct": false
+      },
+      {
+        "text": "1860",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is the train with longest route in India?",
+    "answers": [
+      {
+        "text": "Himsagar Express",
+        "correct": false
+      },
+      {
+        "text": "Gurudev Express",
+        "correct": false
+      },
+      {
+        "text": "Vivek Express",
+        "correct": false
+      },
+      {
+        "text": "Basuki Express",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is the fastest train in India?",
+    "answers": [
+      {
+        "text": "Rajdhani Express",
+        "correct": false
+      },
+      {
+        "text": "Duronto Express",
+        "correct": false
+      },
+      {
+        "text": "Gatiman Express",
+        "correct": false
+      },
+      {
+        "text": "Vande Bharat Express",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In which national park of India, cheetah was brought recently?",
+    "answers": [
+      {
+        "text": "Bandhavgarh national park",
+        "correct": false
+      },
+      {
+        "text": "Kuno national park",
+        "correct": false
+      },
+      {
+        "text": "Kanha national park",
+        "correct": false
+      },
+      {
+        "text": "Pench national park",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is the longest dam in India?",
+    "answers": [
+      {
+        "text": "Tehri dam",
+        "correct": false
+      },
+      {
+        "text": "Narmada sagar dam",
+        "correct": false
+      },
+      {
+        "text": "Hirakud dam",
+        "correct": false
+      },
+      {
+        "text": "Bhakra nangal dam",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Area wise, which is the smallest country in the world?",
+    "answers": [
+      {
+        "text": "Vatican city",
+        "correct": false
+      },
+      {
+        "text": "Monaco",
+        "correct": false
+      },
+      {
+        "text": "Naaru",
+        "correct": false
+      },
+      {
+        "text": "Tuwalu",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was recently appointed as Attorney General of India?",
+    "answers": [
+      {
+        "text": "K. K. Venugopal",
+        "correct": false
+      },
+      {
+        "text": "Mukul Rohatgi",
+        "correct": false
+      },
+      {
+        "text": "R. Venkataramani",
+        "correct": false
+      },
+      {
+        "text": "Tushar Mehta",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When was the first war of independence fought in India?",
+    "answers": [
+      {
+        "text": "1857",
+        "correct": false
+      },
+      {
+        "text": "1877",
+        "correct": false
+      },
+      {
+        "text": "1870",
+        "correct": false
+      },
+      {
+        "text": "1854",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is the only Indian state with English as its' official language?",
+    "answers": [
+      {
+        "text": "Goa",
+        "correct": false
+      },
+      {
+        "text": "Puducherry",
+        "correct": false
+      },
+      {
+        "text": "Mizoram",
+        "correct": false
+      },
+      {
+        "text": "Nagaland",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who has the right to adopt a language as the official language of the state?",
+    "answers": [
+      {
+        "text": "Both houses of Parliament",
+        "correct": false
+      },
+      {
+        "text": "State Legislature",
+        "correct": false
+      },
+      {
+        "text": "President",
+        "correct": false
+      },
+      {
+        "text": "Prime Minister",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following languages is not in the 8th Schedule of the Constitution?",
+    "answers": [
+      {
+        "text": "Urdu",
+        "correct": false
+      },
+      {
+        "text": "Konkani",
+        "correct": false
+      },
+      {
+        "text": "Santhali",
+        "correct": false
+      },
+      {
+        "text": "Rajasthani",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Where is the Central Institute of Indian Languages located?",
+    "answers": [
+      {
+        "text": "Lucknow",
+        "correct": false
+      },
+      {
+        "text": "Hyderabad",
+        "correct": false
+      },
+      {
+        "text": "Mysuru",
+        "correct": false
+      },
+      {
+        "text": "Patna",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was the first Chairman of the Official Language Commission?",
+    "answers": [
+      {
+        "text": "B. G. Kher",
+        "correct": false
+      },
+      {
+        "text": "G. B. Pant",
+        "correct": false
+      },
+      {
+        "text": "Lalit Narayan Mishra",
+        "correct": false
+      },
+      {
+        "text": "Ramdhari Singh Dinkar",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When is Hindi Day celebrated?",
+    "answers": [
+      {
+        "text": "2025-06-18 00:00:00",
+        "correct": false
+      },
+      {
+        "text": "2025-01-15 00:00:00",
+        "correct": false
+      },
+      {
+        "text": "2025-09-14 00:00:00",
+        "correct": false
+      },
+      {
+        "text": "2025-11-27 00:00:00",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which award is given by Railway Board for poetic writing in Hindi?",
+    "answers": [
+      {
+        "text": "Maithili Sharan Gupt Award",
+        "correct": false
+      },
+      {
+        "text": "Prem Chand Award",
+        "correct": false
+      },
+      {
+        "text": "Lal Bahadur Shastri Award",
+        "correct": false
+      },
+      {
+        "text": "Jai Shankar Prasad Award",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "According to the Official Language Rules 1976, Andaman and Nicobar Islands fall in which region of the linguistic area?",
+    "answers": [
+      {
+        "text": "\"Gha\" Region",
+        "correct": false
+      },
+      {
+        "text": "\"Ga\" Region",
+        "correct": false
+      },
+      {
+        "text": "\"Kha\" Region",
+        "correct": false
+      },
+      {
+        "text": "\"Ka\" Region",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "According to Rule 11 of the Official Language Rules 1976, manuals, codes, procedures related literature, stationery etc. should be in which languages?",
+    "answers": [
+      {
+        "text": "Hindi and Local language",
+        "correct": false
+      },
+      {
+        "text": "Hindi and English",
+        "correct": false
+      },
+      {
+        "text": "Only English",
+        "correct": false
+      },
+      {
+        "text": "Only Hindi",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the target of the original correspondence in Hindi from a Central Government office located in \"Ka\" region to state government offices located in \"Ka\" region?",
+    "answers": [
+      {
+        "text": "0.5",
+        "correct": false
+      },
+      {
+        "text": "0.6",
+        "correct": false
+      },
+      {
+        "text": "0.75",
+        "correct": false
+      },
+      {
+        "text": "1",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the script of the official language Hindi of the Union?",
+    "answers": [
+      {
+        "text": "Devnagri",
+        "correct": false
+      },
+      {
+        "text": "Roman",
+        "correct": false
+      },
+      {
+        "text": "Brahami",
+        "correct": false
+      },
+      {
+        "text": "Pali",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "How many languages are listed in the 8th Schedule of the Constitution of India?",
+    "answers": [
+      {
+        "text": "18",
+        "correct": false
+      },
+      {
+        "text": "20",
+        "correct": false
+      },
+      {
+        "text": "22",
+        "correct": false
+      },
+      {
+        "text": "24",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the frequency of meetings of official language implementation committee of any office?",
+    "answers": [
+      {
+        "text": "Once in a month",
+        "correct": false
+      },
+      {
+        "text": "Once in three months",
+        "correct": false
+      },
+      {
+        "text": "Once in six months",
+        "correct": false
+      },
+      {
+        "text": "Once in twelve months",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who is the Chairman of Central Hindi Committee?",
+    "answers": [
+      {
+        "text": "President",
+        "correct": false
+      },
+      {
+        "text": "Prime Minister",
+        "correct": false
+      },
+      {
+        "text": "Home Minister",
+        "correct": false
+      },
+      {
+        "text": "Cabinet Secretary",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is the official language of the Indian Union?",
+    "answers": [
+      {
+        "text": "Hindi",
+        "correct": false
+      },
+      {
+        "text": "English",
+        "correct": false
+      },
+      {
+        "text": "Both Hindi and English",
+        "correct": false
+      },
+      {
+        "text": "None of the above",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is the language used for official purposes of the Union?",
+    "answers": [
+      {
+        "text": "Hindi",
+        "correct": false
+      },
+      {
+        "text": "English",
+        "correct": false
+      },
+      {
+        "text": "Both Hindi and English",
+        "correct": false
+      },
+      {
+        "text": "None of the above",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which article of the Constitution deals with the official language of the Union?",
+    "answers": [
+      {
+        "text": "Article 343",
+        "correct": false
+      },
+      {
+        "text": "Article 344",
+        "correct": false
+      },
+      {
+        "text": "Article 345",
+        "correct": false
+      },
+      {
+        "text": "Article 346",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which article of the Constitution deals with the official language of a State?",
+    "answers": [
+      {
+        "text": "Article 343",
+        "correct": false
+      },
+      {
+        "text": "Article 344",
+        "correct": false
+      },
+      {
+        "text": "Article 345",
+        "correct": false
+      },
+      {
+        "text": "Article 346",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which article of the Constitution deals with the language to be used in the Supreme Court and High Courts?",
+    "answers": [
+      {
+        "text": "Article 348",
+        "correct": false
+      },
+      {
+        "text": "Article 349",
+        "correct": false
+      },
+      {
+        "text": "Article 350",
+        "correct": false
+      },
+      {
+        "text": "Article 351",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which article of the Constitution deals with the special directive for the development of the Hindi language?",
+    "answers": [
+      {
+        "text": "Article 351",
+        "correct": false
+      },
+      {
+        "text": "Article 352",
+        "correct": false
+      },
+      {
+        "text": "Article 353",
+        "correct": false
+      },
+      {
+        "text": "Article 354",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which was the first city in India to launch a common mobility card for rides on public buses and the metro?",
+    "answers": [
+      {
+        "text": "Bengaluru",
+        "correct": false
+      },
+      {
+        "text": "Hyderabad",
+        "correct": false
+      },
+      {
+        "text": "Lucknow",
+        "correct": false
+      },
+      {
+        "text": "Delhi",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who cannot vote in election for the President of India?",
+    "answers": [
+      {
+        "text": "Nominated members of either house of Parliament",
+        "correct": false
+      },
+      {
+        "text": "Vice President",
+        "correct": false
+      },
+      {
+        "text": "Members of State Legislative Assembly",
+        "correct": false
+      },
+      {
+        "text": "Members of Rajya Sabha",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Where is the original Ashoka Stambh located?",
+    "answers": [
+      {
+        "text": "Gaya",
+        "correct": false
+      },
+      {
+        "text": "Varanasi",
+        "correct": false
+      },
+      {
+        "text": "Sarnath",
+        "correct": false
+      },
+      {
+        "text": "Sanchi",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was the Chief Architect of the Taj Mahal?",
+    "answers": [
+      {
+        "text": "Shah Jahan",
+        "correct": false
+      },
+      {
+        "text": "Ustad Ahmad Lahori",
+        "correct": false
+      },
+      {
+        "text": "Ustad Amir Khusro",
+        "correct": false
+      },
+      {
+        "text": "Ustad Vilayat Ali Khan",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When does the Lunar Eclipse occur?",
+    "answers": [
+      {
+        "text": "When Sun is between Moon and Earth",
+        "correct": false
+      },
+      {
+        "text": "When Earth is between Moon and Sun",
+        "correct": false
+      },
+      {
+        "text": "When Moon is between Earth and Sun",
+        "correct": false
+      },
+      {
+        "text": "When Earth is between Sun and Venus",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which Indian actress and model won the title of Miss Universe 2021?",
+    "answers": [
+      {
+        "text": "Harnaz Kaur Sandhu",
+        "correct": false
+      },
+      {
+        "text": "Sini Shetty",
+        "correct": false
+      },
+      {
+        "text": "Rubal Shekhawat",
+        "correct": false
+      },
+      {
+        "text": "Manushi Chillar",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was the first Asian person to become the Secretary General of United Nations?",
+    "answers": [
+      {
+        "text": "Ban Kee-Moon",
+        "correct": false
+      },
+      {
+        "text": "Boutras Boutras Ghali",
+        "correct": false
+      },
+      {
+        "text": "Gladwyn Jebb",
+        "correct": false
+      },
+      {
+        "text": "U Thant",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was not recipient of the Bharat Ratna award in year 2019?",
+    "answers": [
+      {
+        "text": "Bhupen Hazarika",
+        "correct": false
+      },
+      {
+        "text": "Atal Bihari Vajpayee",
+        "correct": false
+      },
+      {
+        "text": "Pranab Mukherjee",
+        "correct": false
+      },
+      {
+        "text": "Nanaji Deshmukh",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was not a recipient of \"Param Veer Chakra\" for the bravery shown in the Kargill War of Year 1999?",
+    "answers": [
+      {
+        "text": "Captain Vikram Batra",
+        "correct": false
+      },
+      {
+        "text": "Major Ramaswamy Parameswaran",
+        "correct": false
+      },
+      {
+        "text": "Grenadier Yogendra Singh Yadav",
+        "correct": false
+      },
+      {
+        "text": "Rifleman Sanjay Kumar",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was the first Chairman of Indian Space Research Organisation (ISRO)?",
+    "answers": [
+      {
+        "text": "Dr. Homi Jahangir Bhabha",
+        "correct": false
+      },
+      {
+        "text": "Prof. Satish Dhawan",
+        "correct": false
+      },
+      {
+        "text": "Prof. M. G. K. Menon",
+        "correct": false
+      },
+      {
+        "text": "Dr. Vikram Sarabhai",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which Indian batsman scored 10000 runs in the least number of One Day International cricket matches?",
+    "answers": [
+      {
+        "text": "Virat Kohli",
+        "correct": false
+      },
+      {
+        "text": "Sachin Tendulkar",
+        "correct": false
+      },
+      {
+        "text": "Saurav Ganguli",
+        "correct": false
+      },
+      {
+        "text": "Mahindra Singh Dhoni",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was the first woman Prime Minister of any country?",
+    "answers": [
+      {
+        "text": "Mrs. Margaret Thatcher",
+        "correct": false
+      },
+      {
+        "text": "Mrs. Indira Gandhi",
+        "correct": false
+      },
+      {
+        "text": "Mrs. S. Bandaranaike",
+        "correct": false
+      },
+      {
+        "text": "Mrs. Benazir Bhutto",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which was the first talkie film of India?",
+    "answers": [
+      {
+        "text": "Alam Ara",
+        "correct": false
+      },
+      {
+        "text": "Naujwan",
+        "correct": false
+      },
+      {
+        "text": "Raja Harishchandra",
+        "correct": false
+      },
+      {
+        "text": "Muthu Maharaja",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the capital of the Union Territory Lakshadweep?",
+    "answers": [
+      {
+        "text": "Port Blair",
+        "correct": false
+      },
+      {
+        "text": "Kavaratti",
+        "correct": false
+      },
+      {
+        "text": "Havelock Island",
+        "correct": false
+      },
+      {
+        "text": "Male",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In terms of area, which is the largest state of India?",
+    "answers": [
+      {
+        "text": "Uttar Pradesh",
+        "correct": false
+      },
+      {
+        "text": "Madhya Pradesh",
+        "correct": false
+      },
+      {
+        "text": "Rajasthan",
+        "correct": false
+      },
+      {
+        "text": "Maharashtra",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is the highest mountain peak in India?",
+    "answers": [
+      {
+        "text": "Nanda Devi",
+        "correct": false
+      },
+      {
+        "text": "Hardeol",
+        "correct": false
+      },
+      {
+        "text": "Trishul",
+        "correct": false
+      },
+      {
+        "text": "Kanchenjunga",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is largest continent of the world?",
+    "answers": [
+      {
+        "text": "Africa",
+        "correct": false
+      },
+      {
+        "text": "Asia",
+        "correct": false
+      },
+      {
+        "text": "Europe",
+        "correct": false
+      },
+      {
+        "text": "Australia",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who is the current Chairman of the National Commission for Minorities?",
+    "answers": [
+      {
+        "text": "Syed Ghayorul Hasan Rizvi",
+        "correct": false
+      },
+      {
+        "text": "George Kurian",
+        "correct": false
+      },
+      {
+        "text": "Mrs Rinchen Lamho",
+        "correct": false
+      },
+      {
+        "text": "Iqbal Singh Lalpura",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Whose statue has been installed recently at India Gate in Delhi?",
+    "answers": [
+      {
+        "text": "Sardar Vallabh Bhai Patel",
+        "correct": false
+      },
+      {
+        "text": "Shaheed Bhagat Singh",
+        "correct": false
+      },
+      {
+        "text": "Netaji Subhash Chandra Bose",
+        "correct": false
+      },
+      {
+        "text": "Mahatma Gandhi",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Recently N. Chandrasekaran was appointed the new Chief Executive Officer and Managing Director of",
+    "answers": [
+      {
+        "text": "Air India",
+        "correct": false
+      },
+      {
+        "text": "Vistara",
+        "correct": false
+      },
+      {
+        "text": "IndiGo",
+        "correct": false
+      },
+      {
+        "text": "SpiceJet",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The largest Ocean in the world is",
+    "answers": [
+      {
+        "text": "Atlantic Ocean",
+        "correct": false
+      },
+      {
+        "text": "Indian Ocean",
+        "correct": false
+      },
+      {
+        "text": "Pacific Ocean",
+        "correct": false
+      },
+      {
+        "text": "Arabian Ocean",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was the winner of first T20 World Cup in Cricket?",
+    "answers": [
+      {
+        "text": "England",
+        "correct": false
+      },
+      {
+        "text": "West Indies",
+        "correct": false
+      },
+      {
+        "text": "Australia",
+        "correct": false
+      },
+      {
+        "text": "India",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Lala Lajpat Rai was also known as",
+    "answers": [
+      {
+        "text": "Shan-e-Bengal",
+        "correct": false
+      },
+      {
+        "text": "Sher-e-Punjab",
+        "correct": false
+      },
+      {
+        "text": "Sher-e-Kashmir",
+        "correct": false
+      },
+      {
+        "text": "Maharashtra Gaurav",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Neeraj Chopra won ___ in the World Athletics Championship 2022.",
+    "answers": [
+      {
+        "text": "Silver Medal",
+        "correct": false
+      },
+      {
+        "text": "Gold Medal",
+        "correct": false
+      },
+      {
+        "text": "Bronze Medal",
+        "correct": false
+      },
+      {
+        "text": "None of the given options",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Where is the Headquarter of International Monetary Fund (IMF) located?",
+    "answers": [
+      {
+        "text": "Geneva",
+        "correct": false
+      },
+      {
+        "text": "Rome",
+        "correct": false
+      },
+      {
+        "text": "Paris",
+        "correct": false
+      },
+      {
+        "text": "Washington DC",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When was the first election for Lok Sabha held in India?",
+    "answers": [
+      {
+        "text": "1951-1952",
+        "correct": false
+      },
+      {
+        "text": "1947-1948",
+        "correct": false
+      },
+      {
+        "text": "1950-1951",
+        "correct": false
+      },
+      {
+        "text": "1954-1955",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was the first lady judge of Supreme Court in India?",
+    "answers": [
+      {
+        "text": "Justice Sujata V. Manohar",
+        "correct": false
+      },
+      {
+        "text": "Justice Indu Malhotra",
+        "correct": false
+      },
+      {
+        "text": "Justice Ranjana Desai",
+        "correct": false
+      },
+      {
+        "text": "Justice Fathima Beewi",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When was the first passenger Railway line opened in India?",
+    "answers": [
+      {
+        "text": "1857",
+        "correct": false
+      },
+      {
+        "text": "1853",
+        "correct": false
+      },
+      {
+        "text": "1848",
+        "correct": false
+      },
+      {
+        "text": "1860",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is the train with longest route in India?",
+    "answers": [
+      {
+        "text": "Himsagar Express",
+        "correct": false
+      },
+      {
+        "text": "Gurudev Express",
+        "correct": false
+      },
+      {
+        "text": "Vivek Express",
+        "correct": false
+      },
+      {
+        "text": "Basuki Express",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is the fastest train in India?",
+    "answers": [
+      {
+        "text": "Rajdhani Express",
+        "correct": false
+      },
+      {
+        "text": "Duronto Express",
+        "correct": false
+      },
+      {
+        "text": "Gatiman Express",
+        "correct": false
+      },
+      {
+        "text": "Vande Bharat Express",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In which national park of India, cheetah was brought recently?",
+    "answers": [
+      {
+        "text": "Bandhavgarh national park",
+        "correct": false
+      },
+      {
+        "text": "Kuno national park",
+        "correct": false
+      },
+      {
+        "text": "Kanha national park",
+        "correct": false
+      },
+      {
+        "text": "Pench national park",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is the longest dam in India?",
+    "answers": [
+      {
+        "text": "Tehri dam",
+        "correct": false
+      },
+      {
+        "text": "Narmada sagar dam",
+        "correct": false
+      },
+      {
+        "text": "Hirakud dam",
+        "correct": false
+      },
+      {
+        "text": "Bhakra nangal dam",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Area wise, which is the smallest country in the world?",
+    "answers": [
+      {
+        "text": "Vatican city",
+        "correct": false
+      },
+      {
+        "text": "Monaco",
+        "correct": false
+      },
+      {
+        "text": "Naaru",
+        "correct": false
+      },
+      {
+        "text": "Tuwalu",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was recently appointed as Attorney General of India?",
+    "answers": [
+      {
+        "text": "K. K. Venugopal",
+        "correct": false
+      },
+      {
+        "text": "Mukul Rohatgi",
+        "correct": false
+      },
+      {
+        "text": "R. Venkataramani",
+        "correct": false
+      },
+      {
+        "text": "Tushar Mehta",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When was the first war of independence fought in India?",
+    "answers": [
+      {
+        "text": "1857",
+        "correct": false
+      },
+      {
+        "text": "1877",
+        "correct": false
+      },
+      {
+        "text": "1870",
+        "correct": false
+      },
+      {
+        "text": "1854",
+        "correct": false
+      }
+    ]
+  }
+]
