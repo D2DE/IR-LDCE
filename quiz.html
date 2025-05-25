@@ -119,7 +119,7 @@
 
       try {
         // Load questions JSON file from same directory e.g. "irwm.json"
-        const response = await fetch(`${manual}.json`);
+        const response = await fetch(`${manual}-questions.json`);
         if (!response.ok) throw new Error(`Failed to load ${manual}.json`);
 
         questions = await response.json();
