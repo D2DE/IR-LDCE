@@ -18,13 +18,28 @@
 
   <!-- Dynamic Header -->
   <div id="include-header"></div>
+   <div id="dashboardBtnContainer">
+        <button id="dashboardBtn" type="button">
+          <i class="fa fa-user-circle"></i> Dashboard
+        </button>
+      </div>
 
   <!-- Main Content -->
   <main class="container mt-5">
     <h1>Welcome to IR-LDCE</h1>
     <p>This is the landing page for the LDCE exam portal.</p>
   </main>
-
+    <div class="quiz-list" id="quizList">
+      <button class="manual-btn" data-manual="irwm" aria-label="Start quiz for Indian Railway Works Manual">1. Indian Railway Works Manual</button>
+      <button class="manual-btn" data-manual="irpwm" aria-label="Start quiz for Indian Railway P-way Manual">2. Indian Railway P-way Manual</button>
+      <button class="manual-btn" data-manual="irdim" aria-label="Start quiz for Indian Railway Schedule of Dimensions">3. Indian Railway Schedule of Dimensions</button>
+      <button class="manual-btn" data-manual="irec" aria-label="Start quiz for Indian Railway Engineering Code">4. Indian Railway Engineering Code</button>
+      <button class="manual-btn" data-manual="stm" aria-label="Start quiz for Small Track Machine Manual">5. Small Track Machine Manual</button>
+      <button class="manual-btn" data-manual="usfd" aria-label="Start quiz for USFD Manual">6. USFD Manual</button>
+      <button class="manual-btn" data-manual="fbwm" aria-label="Start quiz for FBW Manual">7. FBW Manual</button>
+      <button class="manual-btn" data-manual="store" aria-label="Start quiz for Store Manual">8. Store Manual</button>
+      <button class="manual-btn" data-manual="account" aria-label="Start quiz for Account Manual">9. Account Manual</button>
+    </div>
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
