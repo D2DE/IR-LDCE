@@ -28,18 +28,21 @@
     .answer-btn {
       margin: 5px 0;
       padding: 10px 15px;
+      width: 100%;
       font-size: 1em;
+      border-radius: 6px;
+      border: 1px solid #ccc;
       cursor: pointer;
+      text-align: left;
+      background-color: #f8f9fa;
+      transition: background-color 0.2s;
+    }
+    .answer-btn:hover:not(:disabled) {
+      background-color: #e0e0e0;
     }
     .answer-btn:disabled {
-      cursor: not-allowed;
+      cursor: default;
       opacity: 0.7;
-    }
-    #next-btn {
-      margin-top: 15px;
-      padding: 10px 20px;
-      font-size: 1em;
-      cursor: pointer;
     }
   </style>
 </head>
@@ -91,7 +94,7 @@
         const userSnap = await getDoc(userRef);
         if (userSnap.exists()) {
           const userData = userSnap.data();
-          // You can use userData here if needed
+          // you can use userData if needed
         }
 
         if (typeof initQuiz === 'function') {
@@ -103,46 +106,35 @@
 
   <!-- Main Quiz Logic -->
   <script>
-    let questions = [];
+    // Updated questions with your JSON format
+    const questions = [
+      {
+        question: "Which is the largest animal in the world?",
+        answers: [
+          { text: "Shark", correct: false },
+          { text: "Blue Whale", correct: true },
+          { text: "Elephant", correct: false },
+          { text: "Giraffe", correct: false }
+        ]
+      },
+      {
+        question: "Which is the smallest continent in the world?",
+        answers: [
+          { text: "Asia", correct: false },
+          { text: "Australia", correct: true },
+          { text: "Arctic", correct: false },
+          { text: "Africa", correct: false }
+        ]
+      }
+      // Add more questions here...
+    ];
+
     let currentIndex = 0;
     let score = 0;
-    let quizDuration = 60; // seconds total quiz time
+    let quizDuration = 60; // total time in seconds
     let timerInterval;
 
-    function getManualFromURL() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get('manual');
-    }
-
-    async function loadQuestions(manual) {
-      if (!manual) {
-        alert('Manual parameter missing in URL!');
-        return [];
-      }
-      try {
-        // Adjust URL if your JSON files are in a different location
-        const url = `https://d2de.github.io/IR-LDCE/${manual}-questions.json`;
-        const response = await fetch(url);
-        if (!response.ok) throw new Error('Failed to load questions JSON');
-        const data = await response.json();
-        return data;
-      } catch (err) {
-        alert('Error loading questions: ' + err.message);
-        return [];
-      }
-    }
-
-    async function initQuiz() {
-      const manual = getManualFromURL();
-      questions = await loadQuestions(manual);
-
-      if (questions.length === 0) {
-        document.querySelector('.quiz').innerHTML = '<p>No questions found for this manual.</p>';
-        return;
-      }
-
-      currentIndex = 0;
-      score = 0;
+    function initQuiz() {
       showQuestion();
       startTimer();
     }
@@ -155,36 +147,41 @@
 
       q.answers.forEach((answer, idx) => {
         const btn = document.createElement("button");
-        btn.textContent = answer;
+        btn.textContent = answer.text;
         btn.classList.add("answer-btn");
         btn.disabled = false;
-        btn.style.backgroundColor = ""; // reset color
+        btn.style.backgroundColor = "";
         btn.onclick = () => selectAnswer(idx);
         answersDiv.appendChild(btn);
       });
 
-      document.getElementById("next-btn").disabled = true; // disable Next until answer selected
+      document.getElementById("next-btn").disabled = true;
       document.getElementById("result").textContent = "";
     }
 
     function selectAnswer(selectedIndex) {
       const q = questions[currentIndex];
-      if (selectedIndex === q.correct) {
-        score += 1;
-      } else {
-        score -= 1 / 3;
-      }
 
+      // Disable all buttons
       document.querySelectorAll(".answer-btn").forEach((btn, idx) => {
         btn.disabled = true;
-        if (idx === q.correct) {
-          btn.style.backgroundColor = "#4caf50"; // green correct
+
+        if (q.answers[idx].correct) {
+          btn.style.backgroundColor = "#4caf50";  // green correct
         } else if (idx === selectedIndex) {
-          btn.style.backgroundColor = "#f44336"; // red wrong
+          btn.style.backgroundColor = "#f44336";  // red wrong selected
         }
       });
 
-      document.getElementById("next-btn").disabled = false; // enable Next
+      // Score calculation
+      if (q.answers[selectedIndex].correct) {
+        score += 1;
+      } else {
+        score -= 1/3;
+      }
+
+      // Enable next button after answer selection
+      document.getElementById("next-btn").disabled = false;
     }
 
     document.getElementById("next-btn").addEventListener("click", () => {
