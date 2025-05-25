@@ -1,199 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Indian Railway Manuals Quiz</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .quiz-header-row {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 18px;
-      margin-bottom: 24px;
-    }
-    #dashboardBtnContainer {
-      display: none;
-    }
-    #dashboardBtn {
-      background: #1976d2;
-      color: #fff;
-      border: none;
-      padding: 8px 18px;
-      border-radius: 4px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    #dashboardBtn:hover {
-      background: #1565c0;
-    }
-    .quiz-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-    .manual-btn {
-      padding: 12px 18px;
-      font-size: 1.1rem;
-      border: none;
-      border-radius: 6px;
-      background: #f8f9fa;
-      color: #333;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-      transition: background 0.2s, color 0.2s;
-      text-align: left;
-      cursor: pointer;
-    }
-    .manual-btn:hover, .manual-btn:focus {
-      background: #1976d2;
-      color: #fff;
-      outline: none;
-    }
-    .app {
-      margin: 36px auto 0 auto;
-      max-width: 650px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      padding: 36px 28px 28px 28px;
-    }
-    body {
-      background: #f4f6fa;
-    }
-    .manual-btn[disabled] {
-      cursor: not-allowed;
-      background: #ccc;
-      color: #666;
-    }
-  </style>
-</head>
-<body>
-  <!-- Injected header -->
-  <div id="include-header"></div>
-
-  <!-- No-JS fallback -->
-  <noscript>
-    <div class="error" style="background:#ffe0e0;color:#b00;padding:1em;margin:1em 0;">
-      This quiz app requires JavaScript to function properly.
-    </div>
-    <style>
-      .manual-btn { display: none !important; }
-    </style>
-  </noscript>
-
-  <!-- Quiz App -->
-  <div class="app">
-    <div class="quiz-header-row">
-      <h1 class="mb-0">IR-LDCE MCQ</h1>
-      <div id="dashboardBtnContainer">
-        <button id="dashboardBtn" type="button">
-          <i class="fa fa-user-circle"></i> Dashboard
-        </button>
+<!-- header.html -->
+<header class="site-header">
+  <!-- Top orange bar -->
+  <div class="bg-warning py-2">
+    <div class="container header-container d-flex justify-content-between align-items-center flex-wrap">
+      <div class="left-group">
+        <a href="index.html" class="text-dark me-3"><i class="fas fa-home"></i> Home</a>
+        <a href="https://indianrail.gov.in" target="_blank" class="text-dark">Railway Official Website</a>
       </div>
-    </div>
-
-    <div class="quiz-list" id="quizList">
-      <button class="manual-btn" data-manual="irwm" aria-label="Start quiz for Indian Railway Works Manual">1. Indian Railway Works Manual</button>
-      <button class="manual-btn" data-manual="irpwm" aria-label="Start quiz for Indian Railway P-way Manual">2. Indian Railway P-way Manual</button>
-      <button class="manual-btn" data-manual="irdim" aria-label="Start quiz for Indian Railway Schedule of Dimensions">3. Indian Railway Schedule of Dimensions</button>
-      <button class="manual-btn" data-manual="irec" aria-label="Start quiz for Indian Railway Engineering Code">4. Indian Railway Engineering Code</button>
-      <button class="manual-btn" data-manual="stm" aria-label="Start quiz for Small Track Machine Manual">5. Small Track Machine Manual</button>
-      <button class="manual-btn" data-manual="usfd" aria-label="Start quiz for USFD Manual">6. USFD Manual</button>
-      <button class="manual-btn" data-manual="fbwm" aria-label="Start quiz for FBW Manual">7. FBW Manual</button>
-      <button class="manual-btn" data-manual="store" aria-label="Start quiz for Store Manual">8. Store Manual</button>
-      <button class="manual-btn" data-manual="account" aria-label="Start quiz for Account Manual">9. Account Manual</button>
+      <div class="right-group">
+        <a href="about.html" class="text-dark me-3">About Us</a>
+        <a href="register.html" id="registerLink" class="text-dark me-3">Register</a>
+        <a href="login.html" id="loginLink" class="text-dark me-3">Login</a>
+        <button id="logoutButton" class="btn btn-outline-dark btn-sm" style="display:none;">Logout</button>
+      </div>
+      <button class="hamburger navbar-toggler d-lg-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
   </div>
 
-  <!-- Firebase compat SDKs -->
-  <script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-  <script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-
-  <!-- Bootstrap JS Bundle -->
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script defer>
-    async function includeHeader() {
-      try {
-        const resp = await fetch('header.html');
-        if (!resp.ok) throw new Error('Header not found');
-        document.getElementById('include-header').innerHTML = await resp.text();
-      } catch (e) {
-        document.getElementById('include-header').innerHTML = '<div class="error" style="background:#ffe0e0;color:#b00;padding:1em;">Header failed to load.</div>';
-      }
-    }
-
-    function initApp() {
-      firebase.initializeApp({
-        apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
-        authDomain: "quiz-app-1b48b.firebaseapp.com",
-        projectId: "quiz-app-1b48b",
-        storageBucket: "quiz-app-1b48b.appspot.com",
-        messagingSenderId: "765334603137",
-        appId: "1:765334603137:web:1c8a13f6086a6773c2d480",
-        measurementId: "G-YQJQWJ12N7"
-      });
-
-      const logoutBtn    = document.getElementById('logoutButton');
-      const loginLink    = document.getElementById('loginLink');
-      const registerLink = document.getElementById('registerLink');
-      const dashboardBtnContainer = document.getElementById('dashboardBtnContainer');
-      const dashboardBtn = document.getElementById('dashboardBtn');
-
-      firebase.auth().onAuthStateChanged(user => {
-        if (logoutBtn && loginLink && registerLink) {
-          logoutBtn.style.display    = user ? 'inline-block' : 'none';
-          loginLink.style.display    = user ? 'none' : 'inline-block';
-          registerLink.style.display = user ? 'none' : 'inline-block';
-        }
-
-        if (dashboardBtnContainer) {
-          dashboardBtnContainer.style.display = user ? 'block' : 'none';
-        }
-      });
-
-      if (logoutBtn) {
-        logoutBtn.addEventListener('click', () =>
-          firebase.auth().signOut().then(() => location.reload())
-        );
-      }
-
-      if (dashboardBtn) {
-        dashboardBtn.onclick = () => {
-          window.location.href = 'dashboard.html';
-        };
-      }
-
-      document.querySelectorAll('.manual-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const user = firebase.auth().currentUser;
-          const redirect = `quiz.html?manual=${btn.dataset.manual}`;
-          if (user) {
-            window.location.href = redirect;
-          } else {
-            window.location.href = `login.html?redirect=${encodeURIComponent(redirect)}`;
-          }
-        });
-      });
-    }
-
-    includeHeader().then(initApp);
-  </script>
-</body>
-</html>
+  <!-- White navbar under orange bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-main">
+    <div class="container header-container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="logo.png" alt="IR-LDCE Logo" style="height:48px;max-width:120px;width:auto;object-fit:contain;display:inline-block;" />
+        <span class="ms-2 fw-bold">IR-LDCE</span>
+      </a>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-links">
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">CATEGORIES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="daily-dose.html">DAILY DOSE</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
