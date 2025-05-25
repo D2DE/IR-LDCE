@@ -2,19 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Register – IR-LDCE Quiz</title>
+  <title>Register - Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: #f5f7fa;
+      font-family: Arial, sans-serif;
+    }
+    .register-container {
+      max-width: 360px;
+      margin: 60px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 32px 24px;
+    }
+    .register-container h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: 1.6em;
+    }
+    .register-container form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .register-container label {
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .register-container input[type="email"],
+    .register-container input[type="password"],
+    .register-container input[type="text"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    .register-container button {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      padding: 12px 0;
+      border-radius: 4px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .register-container button:hover {
+      background: #1565c0;
+    }
+    .register-container .login-link {
+      margin-top: 16px;
+      text-align: center;
+    }
+    .register-container .login-link a {
+      color: #1976d2;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .register-container .login-link a:hover {
+      text-decoration: underline;
+    }
+    .error-message {
+      color: #b00;
+      background: #ffe0e0;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <noscript>
+    <div style="color:#b00; background:#ffe0e0; padding:1em; text-align:center;">
+      This page requires JavaScript to function. Please enable JavaScript in your browser.
+    </div>
+  </noscript>
 
-  <!-- Font Awesome for the Apple/Google icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <div class="register-container">
+    <h2>Create Your Account</h2>
+    <div id="error-message" class="error-message"></div>
+    <form id="registerForm" autocomplete="on">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required placeholder="Your full name" autocomplete="name" />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required placeholder="Enter your email" autocomplete="email" />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required placeholder="Choose a password" autocomplete="new-password" />
+      <button type="submit">Register</button>
+    </form>
+    <div class="login-link">
+      Already have an account? <a href="login.html">Login here</a>
+    </div>
+  </div>
 
-  <!-- Firebase Modular SDKs -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-    import { getFirestore, doc, setDoc, serverTimestamp, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+    import { getAuth, createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-    // Your Firebase config
     const firebaseConfig = {
       apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
       authDomain: "quiz-app-1b48b.firebaseapp.com",
@@ -24,320 +114,43 @@
       appId: "1:765334603137:web:1c8a13f6086a6773c2d480",
       measurementId: "G-YQJQWJ12N7"
     };
+
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
     const db = getFirestore(app);
 
-    // Registration handler
-    window.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('registerForm')
-        .addEventListener('submit', async (e) => {
-          e.preventDefault();
-          const form = e.target;
-          const email    = form.email.value.trim();
-          const username = form.username.value.trim();
-          const password = form.password.value;
-          const gender   = form.gender.value || "male";
-          const msg = document.getElementById('message');
-          const avatarUrl = `https://xsgames.co/randomusers/avatar.php?g=${gender}`;
+    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = e.target.name.value.trim();
+      const email = e.target.email.value.trim();
+      const password = e.target.password.value;
+      const errorDiv = document.getElementById('error-message');
+      errorDiv.style.display = "none";
 
-          // disable inputs during processing
-          form.querySelectorAll('input, button').forEach(el => el.disabled = true);
+      if (password.length < 6) {
+        errorDiv.textContent = "Password must be at least 6 characters.";
+        errorDiv.style.display = "block";
+        return;
+      }
 
-          try {
-            // 1. Create account
-            const { user } = await createUserWithEmailAndPassword(auth, email, password);
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        // Update display name
+        await updateProfile(userCredential.user, { displayName: name });
 
-            // 2. Create Firestore user profile
-            await setDoc(doc(db, "users", user.uid), {
-              email: email,
-              username: username,
-              createdAt: serverTimestamp(),
-              avatarUrl: avatarUrl
-            });
-
-            // 3. Send verification email
-            await sendEmailVerification(user, {
-              url: window.location.origin + '/login.html'
-            });
-
-            // 4. Show confirmation message
-            msg.textContent = `A verification link has been sent to ${email}. Please check your inbox to activate your account.`;
-            msg.style.display = 'block';
-            form.reset();
-          } catch (err) {
-            alert(err.message);
-            form.querySelectorAll('input, button').forEach(el => el.disabled = false);
-          }
+        // Save user data in Firestore
+        await setDoc(doc(db, "users", userCredential.user.uid), {
+          name,
+          email,
+          createdAt: serverTimestamp(),
         });
 
-      // Google sign-in
-      const googleBtn = document.getElementById("googleBtn");
-      if (googleBtn) {
-        googleBtn.addEventListener("click", async () => {
-          const provider = new GoogleAuthProvider();
-          provider.setCustomParameters({ prompt: "select_account" }); // Always show account picker
-
-          try {
-            const result = await signInWithPopup(auth, provider);
-            const user = result.user;
-
-            // Prompt for gender (simple prompt, you can use a modal for better UX)
-            let gender = prompt("Choose avatar gender: male or female", "male");
-            gender = (gender && gender.toLowerCase() === "female") ? "female" : "male";
-            const avatarUrl = `https://xsgames.co/randomusers/avatar.php?g=${gender}`;
-
-            // Use displayName or email prefix as username
-            const username = user.displayName ? user.displayName : user.email.split('@')[0];
-
-            // Save to Firestore if new user
-            const userDoc = doc(db, "users", user.uid);
-            const userSnap = await getDoc(userDoc);
-            if (!userSnap.exists()) {
-              await setDoc(userDoc, {
-                email: user.email,
-                username: username,
-                createdAt: serverTimestamp(),
-                avatarUrl: avatarUrl
-              });
-            }
-
-            // Redirect to dashboard
-            window.location.href = "dashboard.html";
-          } catch (err) {
-            alert("Google Sign-In failed: " + err.message);
-          }
-        });
+        window.location.href = "dashboard.html";
+      } catch (error) {
+        errorDiv.textContent = error.message;
+        errorDiv.style.display = "block";
       }
     });
   </script>
-
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0;}
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      padding: 40px 0;
-    }
-    .register-container {
-      background: #fff;
-      width: 100%;
-      max-width: 400px;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .register-container h1 {
-      text-align: center;
-      margin-bottom: 8px;
-      color: #003366;
-    }
-    .subtext {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 20px;
-    }
-    .subtext a {
-      color: #003366;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .social-btn.apple, .social-btn.google {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      justify-content: center;
-    }
-    .social-btn.apple {
-      background: #000;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-    .social-btn.google {
-      background: #fff;
-      color: #444;
-      border: 1px solid #ccc;
-    }
-    .social-btn.google:hover {
-      background: #f5f5f5;
-    }
-    .divider {
-      position: relative;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .divider span {
-      background: #fff;
-      padding: 0 10px;
-      color: #666;
-      font-size: 0.9rem;
-    }
-    .divider::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: #ccc;
-      transform: translateY(-50%);
-    }
-    .form-group {
-      margin-bottom: 16px;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: bold;
-      color: #333;
-      font-size: 0.9rem;
-    }
-    .form-group input[type="email"],
-    .form-group input[type="text"],
-    .form-group input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 0.9rem;
-    }
-    .gender-group {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 16px;
-      align-items: center;
-    }
-    .gender-group label {
-      font-weight: normal;
-      font-size: 0.95em;
-      color: #333;
-    }
-    .checkbox-group {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-    .forgot-link {
-      display: block;
-      text-align: right;
-      font-size: 0.85rem;
-      color: #007bff;
-      text-decoration: none;
-      margin-bottom: 12px;
-    }
-    .required-note {
-      font-size: 0.8rem;
-      color: #777;
-      margin-bottom: 20px;
-    }
-    .actions-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .btn-link {
-      background: none;
-      border: none;
-      color: #007bff;
-      text-decoration: underline;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
-    .btn-submit {
-      padding: 10px 20px;
-      background: #003366;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
-    .info-message {
-      margin-top: 24px;
-      padding: 12px;
-      background: #e0f7fa;
-      color: #00796b;
-      border: 1px solid #00796b;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-  <div class="register-container">
-    <h1>Register</h1>
-    <p class="subtext">
-      By continuing you agree to our
-      <a href="#">Community Guidelines</a>
-    </p>
-
-    <button id="appleBtn" class="social-btn apple" type="button">
-      <i class="fab fa-apple"></i> CONTINUE WITH APPLE
-    </button>
-    <button id="googleBtn" class="social-btn google" type="button">
-      <i class="fab fa-google"></i> CONTINUE WITH GOOGLE
-    </button>
-
-    <div class="divider"><span>or</span></div>
-
-    <form id="registerForm">
-      <div class="form-group">
-        <label for="email">Email Address <span>*</span></label>
-        <input type="email" id="email" required />
-      </div>
-
-      <div class="form-group">
-        <label for="username">Username <span>*</span></label>
-        <input type="text" id="username" required />
-      </div>
-
-      <div class="form-group">
-        <label for="password">Password <span>*</span></label>
-        <input type="password" id="password" required />
-      </div>
-
-      <div class="form-group">
-        <label>Avatar Gender <span>*</span></label>
-        <div class="gender-group">
-          <label><input type="radio" name="gender" value="male" checked> Male</label>
-          <label><input type="radio" name="gender" value="female"> Female</label>
-        </div>
-      </div>
-
-      <div class="checkbox-group">
-        <input type="checkbox" id="staySignedIn" />
-        <label for="staySignedIn">Stay signed in</label>
-      </div>
-
-      <a href="forgot-password.html" class="forgot-link">Forgot Password?</a>
-      <p class="required-note">* indicates a required field</p>
-
-      <div class="actions-row">
-        <button
-          type="button"
-          class="btn-link"
-          onclick="window.location.href='login.html'">
-          Already have an account? Log In
-        </button>
-        <button type="submit" class="btn-submit">REGISTER</button>
-      </div>
-    </form>
-
-    <div id="message" class="info-message" style="display:none;"></div>
-  </div>
 </body>
 </html>
