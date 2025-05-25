@@ -1,88 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>User Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Bootstrap CSS for modern buttons/table -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome (if you use icons in header) -->
+  
+  <!-- Bootstrap CSS for layout and responsiveness -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Font Awesome (for optional icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Your custom styles -->
-  <link rel="stylesheet" href="style.css">
+  
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Shared header (Home, Login, Logout) -->
+  <!-- Header included from external file -->
   <div id="include-header"></div>
 
-  <div class="dashboard-container">
-    <div id="error-message" class="error-message" style="display:none;">
+  <!-- Dashboard container -->
+  <main class="dashboard-container container py-4">
+    <!-- Error message (shown if user not logged in) -->
+    <div id="error-message" class="alert alert-danger text-center d-none">
       You are not logged in. <a href="login.html">Go to login</a>
     </div>
 
-    <!-- Profile Section -->
-    <div class="profile-section">
-      <div class="avatar-container">
-        <img id="userAvatar" src="default-avatar.png" alt="Profile Picture">
+    <!-- Profile section -->
+    <section class="profile-section text-center mb-4">
+      <div class="avatar-container mb-2">
+        <img id="userAvatar" src="default-avatar.png" alt="Profile Picture" class="rounded-circle" width="100" height="100" />
       </div>
       <div class="profile-info">
         <h2>Welcome, <span id="dashboard-username">User</span>!</h2>
         <p>Email: <span id="account-email">user@example.com</span></p>
       </div>
-    </div>
+    </section>
 
-    <!-- Quiz History -->
-    <div class="dashboard-section quiz-history">
-      <h3>Quiz History</h3>
+    <!-- Quiz history -->
+    <section class="dashboard-section quiz-history mb-4">
+      <h3 class="mb-3">Quiz History</h3>
       <div class="table-responsive">
-        <table class="table table-striped align-middle">
-          <thead>
+        <table class="table table-bordered table-hover align-middle">
+          <thead class="table-light">
             <tr>
-              <th>Date & Time</th>
-              <th>Manual</th>
-              <th>Score</th>
+              <th scope="col">Date & Time</th>
+              <th scope="col">Manual</th>
+              <th scope="col">Score</th>
             </tr>
           </thead>
           <tbody id="quizHistoryBody">
-            <!-- Populated by JS -->
+            <!-- Populated by dashboard.js -->
           </tbody>
         </table>
       </div>
-    </div>
+    </section>
 
-    <!-- Available Quizzes -->
-    <div class="dashboard-section" id="quiz-section">
-      <h3>Available Quizzes</h3>
-      <div class="quiz-list">
-        <button class="manual-btn" data-manual="irwm" aria-label="Start quiz for Indian Railway Works Manual">1. Indian Railway Works Manual</button>
-        <button class="manual-btn" data-manual="irpwm" aria-label="Start quiz for Indian Railway P-way Manual">2. Indian Railway P-way Manual</button>
-        <button class="manual-btn" data-manual="irdim" aria-label="Start quiz for Indian Railway Schedule of Dimensions">3. Indian Railway Schedule of Dimensions</button>
-        <button class="manual-btn" data-manual="irec" aria-label="Start quiz for Indian Railway Engineering Code">4. Indian Railway Engineering Code</button>
-        <button class="manual-btn" data-manual="stm" aria-label="Start quiz for Small Track Machine Manual">5. Small Track Machine Manual</button>
-        <button class="manual-btn" data-manual="usfd" aria-label="Start quiz for USFD Manual">6. USFD Manual</button>
-        <button class="manual-btn" data-manual="fbwm" aria-label="Start quiz for FBW Manual">7. FBW Manual</button>
-        <button class="manual-btn" data-manual="store" aria-label="Start quiz for Store Manual">8. Store Manual</button>
-        <button class="manual-btn" data-manual="account" aria-label="Start quiz for Account Manual">9. Account Manual</button>
+    <!-- Available quizzes -->
+    <section class="dashboard-section" id="quiz-section">
+      <h3 class="mb-3">Available Quizzes</h3>
+      <div class="quiz-list d-grid gap-2">
+        <button class="btn btn-outline-primary manual-btn" data-manual="irwm" aria-label="Start quiz for Indian Railway Works Manual">1. Indian Railway Works Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="irpwm" aria-label="Start quiz for Indian Railway P-way Manual">2. Indian Railway P-way Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="irdim" aria-label="Start quiz for Indian Railway Schedule of Dimensions">3. Indian Railway Schedule of Dimensions</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="irec" aria-label="Start quiz for Indian Railway Engineering Code">4. Indian Railway Engineering Code</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="stm" aria-label="Start quiz for Small Track Machine Manual">5. Small Track Machine Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="usfd" aria-label="Start quiz for USFD Manual">6. USFD Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="fbwm" aria-label="Start quiz for FBW Manual">7. FBW Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="store" aria-label="Start quiz for Store Manual">8. Store Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="account" aria-label="Start quiz for Account Manual">9. Account Manual</button>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
-  <!-- Header injection -->
+  <!-- Load external header -->
   <script type="module">
-    (async function includeHeader() {
+    (async function loadHeader() {
       try {
-        const resp = await fetch('header.html');
-        if (!resp.ok) throw new Error('Header not found');
-        document.getElementById('include-header').innerHTML = await resp.text();
-      } catch (e) {
-        document.getElementById('include-header').innerHTML =
-          '<div class="error" style="background:#ffe0e0;color:#b00;padding:1em;">Header failed to load.</div>';
+        const response = await fetch("header.html");
+        if (!response.ok) throw new Error("Failed to fetch header");
+        const html = await response.text();
+        document.getElementById("include-header").innerHTML = html;
+      } catch (error) {
+        document.getElementById("include-header").innerHTML = 
+          '<div class="alert alert-warning text-center">Could not load header.</div>';
+        console.error("Header load error:", error);
       }
     })();
   </script>
-  <!-- Bootstrap JS Bundle (for responsive tables/buttons if needed) -->
+
+  <!-- Bootstrap JS (for dropdowns/toggles if needed) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Firebase dashboard.js as module -->
+
+  <!-- Firebase logic -->
   <script type="module" src="dashboard.js"></script>
 </body>
 </html>
