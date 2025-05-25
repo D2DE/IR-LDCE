@@ -58,7 +58,7 @@
       border: none;
       background-color: #1976d2;
       color: white;
-      display: none; /* initially hidden */
+      display: none;
     }
   </style>
 </head>
@@ -66,7 +66,6 @@
   <div id="loading">Checking authentication...</div>
   <div class="app" style="display:none; position: relative;">
     <div class="quiz-timer" id="quizTimer">--:--</div>
-
     <div class="quiz">
       <h2 id="question">Question will appear here</h2>
       <div id="answer-buttons"></div>
@@ -85,7 +84,7 @@
       apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
       authDomain: "quiz-app-1b48b.firebaseapp.com",
       projectId: "quiz-app-1b48b",
-      storageBucket: "quiz-app-1b48b.firebasestorage.app",
+      storageBucket: "quiz-app-1b48b.appspot.com",
       messagingSenderId: "765334603137",
       appId: "1:765334603137:web:1c8a13f6086a6773c2d480",
       measurementId: "G-YQJQWJ12N7"
@@ -98,11 +97,15 @@
     window.firebaseAuth = auth;
     window.firebaseDb = db;
 
+    // Make currentUser available globally
+    window.currentUser = null;
+
     onAuthStateChanged(auth, async (user) => {
       if (!user) {
         const returnUrl = encodeURIComponent(window.location.pathname + window.location.search);
         window.location.href = `login.html?redirect=${returnUrl}`;
       } else {
+        window.currentUser = user;
         document.getElementById('loading').style.display = 'none';
         document.querySelector('.app').style.display = 'block';
 
@@ -121,7 +124,6 @@
 
   <!-- Main Quiz Logic -->
   <script>
-    // Example question data format matching your JSON:
     const questions = [
       {
         question: "Which is the largest animal in the world?",
@@ -141,12 +143,11 @@
           { text: "Africa", correct: false }
         ]
       }
-      // Add more questions as needed
     ];
 
     let currentIndex = 0;
     let score = 0;
-    const quizDuration = 60; // total time in seconds
+    const quizDuration = 60;
     let timerInterval;
 
     const questionElem = document.getElementById("question");
@@ -168,7 +169,7 @@
       questionElem.textContent = q.question;
       answersDiv.innerHTML = "";
 
-      q.answers.forEach((answer, idx) => {
+      q.answers.forEach((answer) => {
         const btn = document.createElement("button");
         btn.textContent = answer.text;
         btn.classList.add("answer-btn");
@@ -179,8 +180,6 @@
 
     function selectAnswer(selectedBtn, isCorrect) {
       const q = questions[currentIndex];
-
-      // Disable all buttons after selection
       const allBtns = answersDiv.querySelectorAll('button');
       allBtns.forEach(btn => btn.disabled = true);
 
@@ -190,7 +189,6 @@
       } else {
         score -= 1 / 3;
         selectedBtn.classList.add('wrong');
-        // Highlight correct answer
         allBtns.forEach(btn => {
           if (btn.textContent === q.answers.find(a => a.correct).text) {
             btn.classList.add('correct');
@@ -226,9 +224,27 @@
       }, 1000);
     }
 
-    function endQuiz() {
+    async function endQuiz() {
       clearInterval(timerInterval);
       const quizDiv = document.querySelector(".quiz");
+      const totalQuestions = questions.length;
+      const manualName = new URLSearchParams(window.location.search).get("manual") || "General";
+
+      if (window.firebaseDb && window.currentUser) {
+        const { getFirestore, collection, addDoc, serverTimestamp } = await import("https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js");
+        const db = window.firebaseDb;
+        try {
+          await addDoc(collection(db, "users", window.currentUser.uid, "quizHistory"), {
+            score: parseFloat(score.toFixed(2)),
+            totalQuestions,
+            manual: manualName,
+            timestamp: serverTimestamp()
+          });
+        } catch (err) {
+          console.error("Error saving quiz result:", err);
+        }
+      }
+
       quizDiv.innerHTML = `
         <div id="result">Your Score: ${score.toFixed(2)}</div>
         <button id="home-btn" style="margin: 10px; padding: 10px 20px;">Home</button>
@@ -236,11 +252,11 @@
       `;
 
       document.getElementById('home-btn').addEventListener('click', () => {
-        window.location.href = 'index.html'; // Adjust to your home URL
+        window.location.href = 'index.html';
       });
-      
+
       document.getElementById('dashboard-btn').addEventListener('click', () => {
-        window.location.href = 'dashboard.html'; // Adjust to your dashboard URL
+        window.location.href = 'dashboard.html';
       });
     }
   </script>
