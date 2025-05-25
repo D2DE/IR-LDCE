@@ -25,8 +25,7 @@ window.initQuiz = function () {
     let currentQuestionIndex = 0;
     let score = 0;
 
-    // Total quiz timer variables
-    const quizDuration = 600; // total quiz time in seconds (10 minutes)
+    const quizDuration = 600; // 10 minutes in seconds
     let totalTimeLeft = quizDuration;
     let totalTimer;
 
@@ -61,7 +60,7 @@ window.initQuiz = function () {
             updateTimerDisplay();
             if (totalTimeLeft <= 0) {
                 clearInterval(totalTimer);
-                alert("Time is up! Quiz will be submitted.");
+                alert("⏰ Time is up! Quiz will be submitted.");
                 showScore();
             }
         }, 1000);
@@ -70,14 +69,30 @@ window.initQuiz = function () {
     function updateTimerDisplay() {
         const mins = Math.floor(totalTimeLeft / 60);
         const secs = totalTimeLeft % 60;
-        timerElement.textContent = `🕒 Time left: ${mins}:${secs.toString().padStart(2, '0')}`;
+        const percent = (totalTimeLeft / quizDuration) * 100;
+
+        timerElement.innerHTML = `
+            <div style="position: relative; width: 80px; height: 80px;">
+                <svg width="80" height="80">
+                    <circle r="35" cx="40" cy="40" fill="transparent" stroke="#ddd" stroke-width="6"/>
+                    <circle r="35" cx="40" cy="40" fill="transparent" stroke="#007bff" stroke-width="6"
+                        stroke-dasharray="${2 * Math.PI * 35}"
+                        stroke-dashoffset="${((100 - percent) / 100) * 2 * Math.PI * 35}"
+                        transform="rotate(-90 40 40)"/>
+                </svg>
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                            font-size: 14px; font-weight: bold;">
+                    ${mins}:${secs.toString().padStart(2, '0')}
+                </div>
+            </div>
+        `;
     }
 
     function startQuiz() {
         currentQuestionIndex = 0;
         score = 0;
         nextButton.innerHTML = "Next";
-        startTotalTimer();  // start total quiz timer here
+        startTotalTimer();
         showQuestion();
     }
 
@@ -118,10 +133,8 @@ window.initQuiz = function () {
     }
 
     function resetState() {
-        // We do NOT clear the total quiz timer here anymore
         nextButton.style.display = "none";
         answerButtons.innerHTML = "";
-        // Do NOT reset timerElement here, it shows total timer
     }
 
     function selectAnswer(e) {
@@ -134,7 +147,7 @@ window.initQuiz = function () {
         if (isCorrect) {
             score += 1;
         } else {
-            score -= 1 / 3;  // subtract 1/3 point for wrong answer
+            score -= 1 / 3;
         }
 
         const allButtons = answerButtons.querySelectorAll("button");
@@ -151,7 +164,7 @@ window.initQuiz = function () {
     }
 
     function showScore() {
-        clearInterval(totalTimer);  // stop the total timer when quiz ends
+        clearInterval(totalTimer);
         resetState();
         questionElement.innerHTML = `
             <div class="alert alert-info" role="alert">
