@@ -1,46 +1,89 @@
 <!-- header.html -->
 <header class="site-header">
-  <!-- Top orange bar -->
+  <!-- Top yellow bar -->
   <div class="bg-warning py-2">
-    <div class="container header-container d-flex justify-content-between align-items-center flex-wrap">
-      <div class="left-group">
-        <a href="index.html" class="text-dark me-3"><i class="fas fa-home"></i> Home</a>
-        <a href="https://indianrail.gov.in" target="_blank" class="text-dark">Railway Official Website</a>
+    <div class="container-fluid d-flex justify-content-between align-items-center px-3">
+      <!-- Left: Home, Railway Official Website -->
+      <div class="d-flex align-items-center">
+        <a href="index.html" class="text-dark fw-bold me-3"><i class="fas fa-home"></i> Home</a>
+        <a href="https://indianrail.gov.in" target="_blank" class="text-dark fw-bold">Railway Official Website</a>
       </div>
-      <div class="right-group">
-        <a href="about.html" class="text-dark me-3">About Us</a>
-        <a href="register.html" id="registerLink" class="text-dark me-3">Register</a>
-        <a href="login.html" id="loginLink" class="text-dark me-3">Login</a>
-        <button id="logoutButton" class="btn btn-outline-dark btn-sm" style="display:none;">Logout</button>
+      <!-- Right: About Us, Register, Login, Logout -->
+      <div class="d-flex align-items-center">
+        <a href="about.html" class="text-dark fw-bold me-3 d-none d-lg-inline">About Us</a>
+        <a href="register.html" id="registerLink" class="text-dark fw-bold me-3 d-none d-lg-inline">Register</a>
+        <a href="login.html" id="loginLink" class="text-dark fw-bold me-3 d-none d-lg-inline">Login</a>
+        <button id="logoutButton" class="btn btn-outline-dark btn-sm fw-bold d-none d-lg-inline" style="display:none;">Logout</button>
       </div>
-      <button class="hamburger navbar-toggler d-lg-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- Hamburger for mobile -->
+      <button class="navbar-toggler d-lg-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
   </div>
 
-  <!-- White navbar under orange bar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-main">
-    <div class="container header-container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="logo.png" alt="IR-LDCE Logo" style="height:48px;max-width:120px;width:auto;object-fit:contain;display:inline-block;" />
+  <!-- White navbar under yellow bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-main border-bottom">
+    <div class="container-fluid px-3">
+      <!-- Left: Logo + IR-LDCE -->
+      <a class="navbar-brand d-flex align-items-center me-auto" href="index.html">
+        <img src="logo.png" alt="IR-LDCE Logo" style="height:48px;max-width:120px;width:auto;object-fit:contain;" />
         <span class="ms-2 fw-bold">IR-LDCE</span>
       </a>
-      <div class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-links">
+      <!-- Right: Categories, Daily Dose, Dashboard -->
+      <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+        <ul class="navbar-nav mb-2 mb-lg-0 align-items-center">
           <li class="nav-item">
-            <a class="nav-link" href="categories.html">CATEGORIES</a>
+            <a class="nav-link fw-bold" href="categories.html">CATEGORIES</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="daily-dose.html">DAILY DOSE</a>
-               <div id="dashboardBtnContainer">
-        <button id="dashboardBtn" type="button">
-          <i class="fa fa-user-circle"></i> Dashboard
-        </button>
-      </div>
+            <a class="nav-link fw-bold" href="daily-dose.html">DAILY DOSE</a>
+          </li>
+          <li class="nav-item">
+            <button id="dashboardBtn" type="button" class="btn btn-outline-dark btn-sm ms-lg-2 fw-bold">
+              <i class="fa fa-user-circle"></i> Dashboard
+            </button>
+          </li>
+          <!-- Mobile only: About Us, Register, Login, Logout -->
+          <li class="nav-item d-lg-none mt-2">
+            <a href="about.html" class="nav-link fw-bold">About Us</a>
+          </li>
+          <li class="nav-item d-lg-none">
+            <a href="register.html" id="registerLinkMobile" class="nav-link fw-bold">Register</a>
+          </li>
+          <li class="nav-item d-lg-none">
+            <a href="login.html" id="loginLinkMobile" class="nav-link fw-bold">Login</a>
+          </li>
+          <li class="nav-item d-lg-none">
+            <button id="logoutButtonMobile" class="btn btn-outline-dark btn-sm fw-bold w-100 mt-1" style="display:none;">Logout</button>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 </header>
+
+<!-- Optional: Custom CSS for better spacing/alignment -->
+<style>
+  .site-header .navbar-brand img {
+    vertical-align: middle;
+  }
+  .site-header .navbar-main .navbar-nav .nav-link {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+  @media (max-width: 991.98px) {
+    .site-header .navbar-main .navbar-nav {
+      width: 100%;
+    }
+    .site-header .navbar-main .navbar-nav .nav-item {
+      width: 100%;
+    }
+    .site-header .navbar-main .navbar-nav .nav-link,
+    .site-header .navbar-main .navbar-nav .btn {
+      width: 100%;
+      text-align: left;
+      margin-left: 0;
+    }
+  }
+</style>
