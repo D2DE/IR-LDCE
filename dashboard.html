@@ -82,33 +82,30 @@
     const auth = getAuth(app);
 
     function updateHeaderUI(user) {
-      // Desktop
       const registerLink = document.getElementById('registerLink');
       const loginLink = document.getElementById('loginLink');
       const logoutButton = document.getElementById('logoutButton');
-      // Mobile
       const registerLinkMobile = document.getElementById('registerLinkMobile');
       const loginLinkMobile = document.getElementById('loginLinkMobile');
       const logoutButtonMobile = document.getElementById('logoutButtonMobile');
-      // Dashboard button
       const dashboardBtn = document.getElementById('dashboardBtn');
 
       if (user) {
-        if (registerLink) registerLink.style.display = 'none';
-        if (loginLink) loginLink.style.display = 'none';
-        if (logoutButton) logoutButton.style.display = '';
-        if (registerLinkMobile) registerLinkMobile.style.display = 'none';
-        if (loginLinkMobile) loginLinkMobile.style.display = 'none';
-        if (logoutButtonMobile) logoutButtonMobile.style.display = '';
-        if (dashboardBtn) dashboardBtn.style.display = '';
+        registerLink.style.display = 'none';
+        loginLink.style.display = 'none';
+        logoutButton.style.display = '';
+        registerLinkMobile.style.display = 'none';
+        loginLinkMobile.style.display = 'none';
+        logoutButtonMobile.style.display = '';
+        dashboardBtn.style.display = '';
       } else {
-        if (registerLink) registerLink.style.display = '';
-        if (loginLink) loginLink.style.display = '';
-        if (logoutButton) logoutButton.style.display = 'none';
-        if (registerLinkMobile) registerLinkMobile.style.display = '';
-        if (loginLinkMobile) loginLinkMobile.style.display = '';
-        if (logoutButtonMobile) logoutButtonMobile.style.display = 'none';
-        if (dashboardBtn) dashboardBtn.style.display = 'none';
+        registerLink.style.display = '';
+        loginLink.style.display = '';
+        logoutButton.style.display = 'none';
+        registerLinkMobile.style.display = '';
+        loginLinkMobile.style.display = '';
+        logoutButtonMobile.style.display = 'none';
+        dashboardBtn.style.display = 'none';
       }
     }
 
@@ -116,32 +113,14 @@
       onAuthStateChanged(auth, function(user) {
         updateHeaderUI(user);
 
-        // Dashboard button
         const dashboardBtn = document.getElementById('dashboardBtn');
-        if (dashboardBtn) {
-          dashboardBtn.onclick = function() {
-            window.location.href = 'dashboard.html';
-          };
-        }
+        if (dashboardBtn) dashboardBtn.onclick = () => window.location.href = 'dashboard.html';
 
-        // Logout buttons
         const logoutButton = document.getElementById('logoutButton');
-        if (logoutButton) {
-          logoutButton.onclick = function() {
-            signOut(auth).then(function() {
-              window.location.href = 'index.html';
-            });
-          };
-        }
+        if (logoutButton) logoutButton.onclick = () => signOut(auth).then(() => window.location.href = 'index.html');
+
         const logoutButtonMobile = document.getElementById('logoutButtonMobile');
-        if (logoutButtonMobile) {
-          logoutButtonMobile.onclick = function() {
-            signOut(auth).then(function() {
-              window.location.href = 'index.html';
-            });
-          };
-        }
-        // Login/Register links: let them go to their respective pages
+        if (logoutButtonMobile) logoutButtonMobile.onclick = () => signOut(auth).then(() => window.location.href = 'index.html');
       });
     });
   </script>
@@ -171,28 +150,27 @@
               <th scope="col">Score</th>
             </tr>
           </thead>
-          <tbody id="quizHistoryBody">
-            <!-- Populated by dashboard.js -->
-          </tbody>
+          <tbody id="quizHistoryBody"></tbody>
         </table>
       </div>
     </section>
     <section class="dashboard-section" id="quiz-section">
       <h3 class="mb-3 text-center">Available Quizzes</h3>
       <div class="quiz-list d-grid gap-2">
-        <button class="btn btn-outline-primary manual-btn" data-manual="irwm" aria-label="Start quiz for Indian Railway Works Manual">1. Indian Railway Works Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="irpwm" aria-label="Start quiz for Indian Railway P-way Manual">2. Indian Railway P-way Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="irdim" aria-label="Start quiz for Indian Railway Schedule of Dimensions">3. Indian Railway Schedule of Dimensions</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="irec" aria-label="Start quiz for Indian Railway Engineering Code">4. Indian Railway Engineering Code</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="stm" aria-label="Start quiz for Small Track Machine Manual">5. Small Track Machine Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="usfd" aria-label="Start quiz for USFD Manual">6. USFD Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="fbwm" aria-label="Start quiz for FBW Manual">7. FBW Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="store" aria-label="Start quiz for Store Manual">8. Store Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="account" aria-label="Start quiz for Account Manual">9. Account Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="pyq2022" aria-label="Start quiz for 2022 30% Main">10. PYQ 30% Main 2022</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="irwm">1. Indian Railway Works Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="irpwm">2. Indian Railway P-way Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="irdim">3. Indian Railway Schedule of Dimensions</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="irec">4. Indian Railway Engineering Code</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="stm">5. Small Track Machine Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="usfd">6. USFD Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="fbwm">7. FBW Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="store">8. Store Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="account">9. Account Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="pyq2022">10. PYQ 30% Main 2022</button>
       </div>
     </section>
   </main>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="dashboard.js"></script>
 </body>
