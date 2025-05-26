@@ -73,6 +73,19 @@
     </section>
   </main>
 
+  <!-- Protect dashboard: Only for logged-in users -->
+  <script>
+    // Check login status before showing dashboard
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+      // Option 1: Redirect immediately
+      window.location.href = 'login.html';
+
+      // Option 2: If you want to show error instead of redirect, comment above line and uncomment below:
+      // document.querySelector('main').classList.add('d-none');
+      // document.getElementById('error-message').classList.remove('d-none');
+    }
+  </script>
+
   <!-- Load external header -->
   <script type="module">
     (async function loadHeader() {
