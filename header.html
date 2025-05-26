@@ -159,14 +159,30 @@
       });
     }
 
-    // For demo: simulate login on login/register click
+    // For demo: simulate login on login/register click and redirect to dashboard
     const loginLink = document.getElementById('loginLink');
-    if (loginLink) loginLink.addEventListener('click', function() { setLoggedIn(true); });
+    if (loginLink) loginLink.addEventListener('click', function(e) {
+      setLoggedIn(true);
+      e.preventDefault();
+      window.location.href = 'dashboard.html';
+    });
     const registerLink = document.getElementById('registerLink');
-    if (registerLink) registerLink.addEventListener('click', function() { setLoggedIn(true); });
+    if (registerLink) registerLink.addEventListener('click', function(e) {
+      setLoggedIn(true);
+      e.preventDefault();
+      window.location.href = 'dashboard.html';
+    });
     const loginLinkMobile = document.getElementById('loginLinkMobile');
-    if (loginLinkMobile) loginLinkMobile.addEventListener('click', function() { setLoggedIn(true); });
+    if (loginLinkMobile) loginLinkMobile.addEventListener('click', function(e) {
+      setLoggedIn(true);
+      e.preventDefault();
+      window.location.href = 'dashboard.html';
+    });
     const registerLinkMobile = document.getElementById('registerLinkMobile');
-    if (registerLinkMobile) registerLinkMobile.addEventListener('click', function() { setLoggedIn(true); });
+    if (registerLinkMobile) registerLinkMobile.addEventListener('click', function(e) {
+      setLoggedIn(true);
+      e.preventDefault();
+      window.location.href = 'dashboard.html';
+    });
   });
 </script>
