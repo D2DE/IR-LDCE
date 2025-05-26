@@ -2,19 +2,42 @@
   {
     "question": "The reduced bearing at a place is measured as N25°47'W. The whole circle bearing will be",
     "answers": [
-      {"text": "25° 47'","correct": false},
-      {"text": "225° 47'","correct": false},
-      {"text": "154° 13'","correct": false},
-      {"text": "334° 13'","correct": true}
+      {
+        "text": "25° 47'",
+        "correct": false
+      },
+      {
+        "text": "225° 47'",
+        "correct": false
+      },
+      {
+        "text": "154° 13'",
+        "correct": false
+      },
+      {
+        "text": "334° 13'",
+        "correct": true
+      }
     ]
   },
   {
     "question": "For the beam shown above, the value of reactions at the Support \"A\" and \"B\" will be",
     "answers": [
-      {"text": "A: 6.75 kN, B: 9.25 kN","correct": true},
-      {"text": "A: 9.75 kN, B: 6.25 kN","correct": false},
-      {"text": "A: 9.25 kN, B: 6.75 kN","correct": false},
-      {"text": "A: 6.25 kN, B: 9.75 kN","correct": false
+      {
+        "text": "A: 6.75 kN, B: 9.25 kN",
+        "correct": true
+      },
+      {
+        "text": "A: 9.75 kN, B: 6.25 kN",
+        "correct": false
+      },
+      {
+        "text": "A: 9.25 kN, B: 6.75 kN",
+        "correct": false
+      },
+      {
+        "text": "A: 6.25 kN, B: 9.75 kN",
+        "correct": false
       }
     ]
   },
@@ -94,7 +117,7 @@
       },
       {
         "text": "Poisson's Ratio",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Modulus of Elasticity",
@@ -107,7 +130,7 @@
     "answers": [
       {
         "text": "Liquid limit - Plastic Limit",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Liquid limit - Shrinkage limit",
@@ -132,7 +155,7 @@
       },
       {
         "text": "1",
-        "correct": false
+        "correct": true
       },
       {
         "text": "> 1",
@@ -161,7 +184,7 @@
       },
       {
         "text": "Maximum rainfall in that area",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -178,7 +201,7 @@
       },
       {
         "text": "Discharge and Time",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Maximum rainfall and Time",
@@ -195,7 +218,7 @@
       },
       {
         "text": "Residual chlorine",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Biochemical Oxygen Demand",
@@ -224,7 +247,7 @@
       },
       {
         "text": "Dissolved gases",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -233,7 +256,7 @@
     "answers": [
       {
         "text": "Higher than",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Lower than",
@@ -266,7 +289,7 @@
       },
       {
         "text": "Preliminary Engineering cum Traffic Survey",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -283,7 +306,7 @@
       },
       {
         "text": "172 mm",
-        "correct": false
+        "correct": true
       },
       {
         "text": "180 mm",
@@ -300,7 +323,7 @@
       },
       {
         "text": "4 to 6 years",
-        "correct": false
+        "correct": true
       },
       {
         "text": "2 to 4 years",
@@ -321,7 +344,7 @@
       },
       {
         "text": "00:00 to 04:00 Hrs.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "01:00 to 05:00 Hrs.",
@@ -342,7 +365,7 @@
       },
       {
         "text": "+0.5 mm, -0.5 mm",
-        "correct": false
+        "correct": true
       },
       {
         "text": "+0.4 mm, 0.0 mm",
@@ -371,7 +394,7 @@
       },
       {
         "text": "Speed of the train",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -392,7 +415,7 @@
       },
       {
         "text": "Location of water table",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -409,7 +432,7 @@
       },
       {
         "text": "Once in a week",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Once in 15 days",
@@ -426,7 +449,7 @@
       },
       {
         "text": "Ultimate Tensile Strength",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Yield Strength",
@@ -451,7 +474,7 @@
       },
       {
         "text": "Stock Rail Joint to Actual Nose of Crossing",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Heel of Switch to Heel of Crossing",
@@ -476,7 +499,7 @@
       },
       {
         "text": "13160 mm",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -489,7 +512,7 @@
       },
       {
         "text": "18.3 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "30.5 m",
@@ -506,7 +529,7 @@
     "answers": [
       {
         "text": "Bridge in Sound Condition",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Bridge not existing",
@@ -535,7 +558,7 @@
       },
       {
         "text": "Viaduct",
-        "correct": false
+        "correct": true
       },
       {
         "text": "River crossing",
@@ -552,7 +575,7 @@
       },
       {
         "text": "20 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "15 m",
@@ -569,7 +592,7 @@
     "answers": [
       {
         "text": "Every year",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Once in 3 years",
@@ -590,7 +613,7 @@
     "answers": [
       {
         "text": "SSE in-charge of TRC",
-        "correct": false
+        "correct": true
       },
       {
         "text": "SSE (P.Way) in-charge of the Section",
@@ -619,7 +642,7 @@
       },
       {
         "text": "Senior Divisional Engineer",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Principal Chief Engineer",
@@ -632,7 +655,7 @@
     "answers": [
       {
         "text": "Once in a year",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Once in two years",
@@ -665,7 +688,7 @@
       },
       {
         "text": "I",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -678,7 +701,7 @@
       },
       {
         "text": "Assistant Divisional Engineer",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Assistant Personal Officer",
@@ -699,7 +722,7 @@
       },
       {
         "text": "Darcy's law",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Hazen's law",
@@ -716,7 +739,7 @@
     "answers": [
       {
         "text": "Chloride attack",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sulphate attack",
@@ -749,7 +772,7 @@
       },
       {
         "text": "Gravel",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -770,7 +793,7 @@
       },
       {
         "text": "All of the above",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -783,7 +806,7 @@
       },
       {
         "text": "165 mm",
-        "correct": false
+        "correct": true
       },
       {
         "text": "100 mm",
@@ -800,7 +823,7 @@
     "answers": [
       {
         "text": "175 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "220 m",
@@ -825,7 +848,7 @@
       },
       {
         "text": "1 in 400",
-        "correct": false
+        "correct": true
       },
       {
         "text": "1 in 1000",
@@ -850,7 +873,7 @@
       },
       {
         "text": "400 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "500 m",
@@ -867,7 +890,7 @@
       },
       {
         "text": "200 mm",
-        "correct": false
+        "correct": true
       },
       {
         "text": "250 mm",
@@ -888,7 +911,7 @@
       },
       {
         "text": "2.5 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "3.0 m",
@@ -909,7 +932,7 @@
       },
       {
         "text": "1.0 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "1.5 m",
@@ -930,7 +953,7 @@
       },
       {
         "text": "6 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "8 m",
@@ -951,7 +974,7 @@
       },
       {
         "text": "120 mm",
-        "correct": false
+        "correct": true
       },
       {
         "text": "150 mm",
@@ -972,7 +995,7 @@
       },
       {
         "text": "2.5 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "3.0 m",
@@ -997,7 +1020,7 @@
       },
       {
         "text": "5.5 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "6.0 m",
@@ -1010,7 +1033,7 @@
     "answers": [
       {
         "text": "4.265 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "4.275 m",
@@ -1035,7 +1058,7 @@
       },
       {
         "text": "4.0 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "5.0 m",
@@ -1056,7 +1079,7 @@
       },
       {
         "text": "840 mm",
-        "correct": false
+        "correct": true
       },
       {
         "text": "920 mm",
@@ -1077,7 +1100,7 @@
       },
       {
         "text": "7.5 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "8.0 m",
@@ -1098,7 +1121,7 @@
       },
       {
         "text": "4.5 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "5.0 m",
@@ -1119,7 +1142,7 @@
       },
       {
         "text": "150 mm",
-        "correct": false
+        "correct": true
       },
       {
         "text": "200 mm",
@@ -1140,7 +1163,7 @@
       },
       {
         "text": "6.7 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "7.0 m",
@@ -1157,7 +1180,7 @@
     "answers": [
       {
         "text": "11.0 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "11.5 m",
@@ -1182,7 +1205,7 @@
       },
       {
         "text": "200 mm",
-        "correct": false
+        "correct": true
       },
       {
         "text": "250 mm",
@@ -1203,7 +1226,7 @@
       },
       {
         "text": "1.0 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "1.5 m",
@@ -1220,7 +1243,7 @@
     "answers": [
       {
         "text": "3.35 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "3.50 m",
@@ -1245,7 +1268,7 @@
       },
       {
         "text": "2.0 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "2.5 m",
@@ -1266,7 +1289,7 @@
       },
       {
         "text": "2.4 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "2.6 m",
@@ -1291,7 +1314,7 @@
       },
       {
         "text": "150 mm",
-        "correct": false
+        "correct": true
       },
       {
         "text": "200 mm",
@@ -1308,7 +1331,7 @@
       },
       {
         "text": "3.5 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "4.0 m",
@@ -1329,7 +1352,7 @@
       },
       {
         "text": "6.5 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "7.0 m",
@@ -1350,7 +1373,7 @@
       },
       {
         "text": "2.5 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "3.0 m",
@@ -1371,7 +1394,7 @@
       },
       {
         "text": "3.0 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "3.5 m",
@@ -1392,7 +1415,7 @@
       },
       {
         "text": "2.2 m",
-        "correct": false
+        "correct": true
       },
       {
         "text": "2.4 m",
@@ -1413,7 +1436,7 @@
       },
       {
         "text": "350 mm",
-        "correct": false
+        "correct": true
       },
       {
         "text": "400 mm",
@@ -1434,7 +1457,7 @@
       },
       {
         "text": "700 mm",
-        "correct": false
+        "correct": true
       },
       {
         "text": "800 mm",
@@ -1463,7 +1486,7 @@
       },
       {
         "text": "Zero",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -1472,7 +1495,7 @@
     "answers": [
       {
         "text": "PCE of Railway",
-        "correct": false
+        "correct": true
       },
       {
         "text": "PCSO of Railway",
@@ -1493,7 +1516,7 @@
     "answers": [
       {
         "text": "4265 mm",
-        "correct": false
+        "correct": true
       },
       {
         "text": "4425 mm",
@@ -1522,7 +1545,7 @@
       },
       {
         "text": "1680 mm",
-        "correct": false
+        "correct": true
       },
       {
         "text": "1750 mm",
@@ -1547,7 +1570,7 @@
       },
       {
         "text": "Twist",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -1556,7 +1579,7 @@
     "answers": [
       {
         "text": "0.25 g",
-        "correct": false
+        "correct": true
       },
       {
         "text": "0.20 g",
@@ -1585,7 +1608,7 @@
       },
       {
         "text": "Yearly",
-        "correct": false
+        "correct": true
       },
       {
         "text": "One time",
@@ -1602,7 +1625,7 @@
       },
       {
         "text": "ADEN",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sr.DEN",
@@ -1619,7 +1642,7 @@
     "answers": [
       {
         "text": "Engineering Department",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Safety Department",
@@ -1644,7 +1667,7 @@
       },
       {
         "text": "50 °C",
-        "correct": false
+        "correct": true
       },
       {
         "text": "45 °C",
@@ -1673,7 +1696,7 @@
       },
       {
         "text": "Before onset of rains once a year",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -1690,7 +1713,7 @@
       },
       {
         "text": "09-32 CSM",
-        "correct": false
+        "correct": true
       },
       {
         "text": "VPR-02M",
@@ -1703,7 +1726,7 @@
     "answers": [
       {
         "text": "150 mm",
-        "correct": false
+        "correct": true
       },
       {
         "text": "200 mm",
@@ -1732,7 +1755,7 @@
       },
       {
         "text": "100 mm",
-        "correct": false
+        "correct": true
       },
       {
         "text": "200 mm",
@@ -1757,7 +1780,7 @@
       },
       {
         "text": "3400 mm",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -1778,7 +1801,7 @@
       },
       {
         "text": "Delhi",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -1787,7 +1810,7 @@
     "answers": [
       {
         "text": "Nominated members of either house of Parliament",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Vice President",
@@ -1816,7 +1839,7 @@
       },
       {
         "text": "Sarnath",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sanchi",
@@ -1833,7 +1856,7 @@
       },
       {
         "text": "Ustad Ahmad Lahori",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Ustad Amir Khusro",
@@ -1854,7 +1877,7 @@
       },
       {
         "text": "When Earth is between Moon and Sun",
-        "correct": false
+        "correct": true
       },
       {
         "text": "When Moon is between Earth and Sun",
@@ -1871,7 +1894,7 @@
     "answers": [
       {
         "text": "Harnaz Kaur Sandhu",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sini Shetty",
@@ -1904,7 +1927,7 @@
       },
       {
         "text": "U Thant",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -1917,7 +1940,7 @@
       },
       {
         "text": "Atal Bihari Vajpayee",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Pranab Mukherjee",
@@ -1938,7 +1961,7 @@
       },
       {
         "text": "Major Ramaswamy Parameswaran",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Grenadier Yogendra Singh Yadav",
@@ -1967,7 +1990,7 @@
       },
       {
         "text": "Dr. Vikram Sarabhai",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -1976,7 +1999,7 @@
     "answers": [
       {
         "text": "Virat Kohli",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sachin Tendulkar",
@@ -2005,7 +2028,7 @@
       },
       {
         "text": "Mrs. S. Bandaranaike",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Mrs. Benazir Bhutto",
@@ -2018,7 +2041,7 @@
     "answers": [
       {
         "text": "Alam Ara",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Naujwan",
@@ -2043,7 +2066,7 @@
       },
       {
         "text": "Kavaratti",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Havelock Island",
@@ -2068,7 +2091,7 @@
       },
       {
         "text": "Rajasthan",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Maharashtra",
@@ -2093,7 +2116,7 @@
       },
       {
         "text": "Kanchenjunga",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -2106,7 +2129,7 @@
       },
       {
         "text": "Asia",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Europe",
@@ -2135,7 +2158,7 @@
       },
       {
         "text": "Iqbal Singh Lalpura",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -2152,7 +2175,7 @@
       },
       {
         "text": "Netaji Subhash Chandra Bose",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Mahatma Gandhi",
@@ -2165,7 +2188,7 @@
     "answers": [
       {
         "text": "Air India",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Vistara",
@@ -2194,7 +2217,7 @@
       },
       {
         "text": "Pacific Ocean",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Arabian Ocean",
@@ -2219,7 +2242,7 @@
       },
       {
         "text": "India",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -2232,7 +2255,7 @@
       },
       {
         "text": "Sher-e-Punjab",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sher-e-Kashmir",
@@ -2249,7 +2272,7 @@
     "answers": [
       {
         "text": "Silver Medal",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Gold Medal",
@@ -2282,7 +2305,7 @@
       },
       {
         "text": "Washington DC",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -2291,7 +2314,7 @@
     "answers": [
       {
         "text": "1951-1952",
-        "correct": false
+        "correct": true
       },
       {
         "text": "1947-1948",
@@ -2324,7 +2347,7 @@
       },
       {
         "text": "Justice Fathima Beewi",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -2337,7 +2360,7 @@
       },
       {
         "text": "1853",
-        "correct": false
+        "correct": true
       },
       {
         "text": "1848",
@@ -2362,7 +2385,7 @@
       },
       {
         "text": "Vivek Express",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Basuki Express",
@@ -2387,7 +2410,7 @@
       },
       {
         "text": "Vande Bharat Express",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -2400,7 +2423,7 @@
       },
       {
         "text": "Kuno national park",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Kanha national park",
@@ -2425,7 +2448,7 @@
       },
       {
         "text": "Hirakud dam",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Bhakra nangal dam",
@@ -2438,7 +2461,7 @@
     "answers": [
       {
         "text": "Vatican city",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Monaco",
@@ -2467,7 +2490,7 @@
       },
       {
         "text": "R. Venkataramani",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Tushar Mehta",
@@ -2480,7 +2503,7 @@
     "answers": [
       {
         "text": "1857",
-        "correct": false
+        "correct": true
       },
       {
         "text": "1877",
@@ -2513,7 +2536,7 @@
       },
       {
         "text": "Nagaland",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -2526,7 +2549,7 @@
       },
       {
         "text": "State Legislature",
-        "correct": false
+        "correct": true
       },
       {
         "text": "President",
@@ -2555,7 +2578,7 @@
       },
       {
         "text": "Rajasthani",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -2572,7 +2595,7 @@
       },
       {
         "text": "Mysuru",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Patna",
@@ -2585,7 +2608,7 @@
     "answers": [
       {
         "text": "B. G. Kher",
-        "correct": false
+        "correct": true
       },
       {
         "text": "G. B. Pant",
@@ -2614,7 +2637,7 @@
       },
       {
         "text": "2025-09-14 00:00:00",
-        "correct": false
+        "correct": true
       },
       {
         "text": "2025-11-27 00:00:00",
@@ -2627,7 +2650,7 @@
     "answers": [
       {
         "text": "Maithili Sharan Gupt Award",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Prem Chand Award",
@@ -2660,7 +2683,7 @@
       },
       {
         "text": "\"Ka\" Region",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -2673,7 +2696,7 @@
       },
       {
         "text": "Hindi and English",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Only English",
@@ -2702,7 +2725,7 @@
       },
       {
         "text": "1",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -2711,7 +2734,7 @@
     "answers": [
       {
         "text": "Devnagri",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Roman",
@@ -2740,7 +2763,7 @@
       },
       {
         "text": "22",
-        "correct": false
+        "correct": true
       },
       {
         "text": "24",
@@ -2757,7 +2780,7 @@
       },
       {
         "text": "Once in three months",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Once in six months",
@@ -2778,7 +2801,7 @@
       },
       {
         "text": "Prime Minister",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Home Minister",
@@ -2795,7 +2818,7 @@
     "answers": [
       {
         "text": "Hindi",
-        "correct": false
+        "correct": true
       },
       {
         "text": "English",
@@ -2824,7 +2847,7 @@
       },
       {
         "text": "Both Hindi and English",
-        "correct": false
+        "correct": true
       },
       {
         "text": "None of the above",
@@ -2837,7 +2860,7 @@
     "answers": [
       {
         "text": "Article 343",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Article 344",
@@ -2866,7 +2889,7 @@
       },
       {
         "text": "Article 345",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Article 346",
@@ -2879,7 +2902,7 @@
     "answers": [
       {
         "text": "Article 348",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Article 349",
@@ -2900,7 +2923,7 @@
     "answers": [
       {
         "text": "Article 351",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Article 352",
@@ -2933,7 +2956,7 @@
       },
       {
         "text": "Delhi",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -2942,7 +2965,7 @@
     "answers": [
       {
         "text": "Nominated members of either house of Parliament",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Vice President",
@@ -2971,7 +2994,7 @@
       },
       {
         "text": "Sarnath",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sanchi",
@@ -2988,7 +3011,7 @@
       },
       {
         "text": "Ustad Ahmad Lahori",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Ustad Amir Khusro",
@@ -3009,7 +3032,7 @@
       },
       {
         "text": "When Earth is between Moon and Sun",
-        "correct": false
+        "correct": true
       },
       {
         "text": "When Moon is between Earth and Sun",
@@ -3026,7 +3049,7 @@
     "answers": [
       {
         "text": "Harnaz Kaur Sandhu",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sini Shetty",
@@ -3059,7 +3082,7 @@
       },
       {
         "text": "U Thant",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -3072,7 +3095,7 @@
       },
       {
         "text": "Atal Bihari Vajpayee",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Pranab Mukherjee",
@@ -3093,7 +3116,7 @@
       },
       {
         "text": "Major Ramaswamy Parameswaran",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Grenadier Yogendra Singh Yadav",
@@ -3122,7 +3145,7 @@
       },
       {
         "text": "Dr. Vikram Sarabhai",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -3131,7 +3154,7 @@
     "answers": [
       {
         "text": "Virat Kohli",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sachin Tendulkar",
@@ -3160,7 +3183,7 @@
       },
       {
         "text": "Mrs. S. Bandaranaike",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Mrs. Benazir Bhutto",
@@ -3173,7 +3196,7 @@
     "answers": [
       {
         "text": "Alam Ara",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Naujwan",
@@ -3198,7 +3221,7 @@
       },
       {
         "text": "Kavaratti",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Havelock Island",
@@ -3223,7 +3246,7 @@
       },
       {
         "text": "Rajasthan",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Maharashtra",
@@ -3248,7 +3271,7 @@
       },
       {
         "text": "Kanchenjunga",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -3261,7 +3284,7 @@
       },
       {
         "text": "Asia",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Europe",
@@ -3290,7 +3313,7 @@
       },
       {
         "text": "Iqbal Singh Lalpura",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -3307,7 +3330,7 @@
       },
       {
         "text": "Netaji Subhash Chandra Bose",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Mahatma Gandhi",
@@ -3320,7 +3343,7 @@
     "answers": [
       {
         "text": "Air India",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Vistara",
@@ -3349,7 +3372,7 @@
       },
       {
         "text": "Pacific Ocean",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Arabian Ocean",
@@ -3374,7 +3397,7 @@
       },
       {
         "text": "India",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -3387,7 +3410,7 @@
       },
       {
         "text": "Sher-e-Punjab",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sher-e-Kashmir",
@@ -3404,7 +3427,7 @@
     "answers": [
       {
         "text": "Silver Medal",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Gold Medal",
@@ -3437,7 +3460,7 @@
       },
       {
         "text": "Washington DC",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -3446,7 +3469,7 @@
     "answers": [
       {
         "text": "1951-1952",
-        "correct": false
+        "correct": true
       },
       {
         "text": "1947-1948",
@@ -3479,7 +3502,7 @@
       },
       {
         "text": "Justice Fathima Beewi",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -3492,7 +3515,7 @@
       },
       {
         "text": "1853",
-        "correct": false
+        "correct": true
       },
       {
         "text": "1848",
@@ -3517,7 +3540,7 @@
       },
       {
         "text": "Vivek Express",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Basuki Express",
@@ -3542,7 +3565,7 @@
       },
       {
         "text": "Vande Bharat Express",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -3555,7 +3578,7 @@
       },
       {
         "text": "Kuno national park",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Kanha national park",
@@ -3580,7 +3603,7 @@
       },
       {
         "text": "Hirakud dam",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Bhakra nangal dam",
@@ -3593,7 +3616,7 @@
     "answers": [
       {
         "text": "Vatican city",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Monaco",
@@ -3622,7 +3645,7 @@
       },
       {
         "text": "R. Venkataramani",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Tushar Mehta",
@@ -3635,7 +3658,7 @@
     "answers": [
       {
         "text": "1857",
-        "correct": false
+        "correct": true
       },
       {
         "text": "1877",
