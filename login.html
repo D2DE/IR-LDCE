@@ -172,7 +172,7 @@
         await signInWithEmailAndPassword(auth, email, password);
         window.location.href = "dashboard.html";
       } catch (error) {
-        errorDiv.textContent = error.message;
+        errorDiv.textContent = error.message.replace("Firebase:", "");
         errorDiv.style.display = "block";
       }
     });
@@ -189,15 +189,19 @@
         const userRef = doc(db, "users", user.uid);
         const docSnap = await getDoc(userRef);
         if (!docSnap.exists()) {
+          // Use displayName or email prefix as username
+          const username = user.displayName || user.email.split('@')[0];
+          const avatarUrl = `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(username)}`;
           await setDoc(userRef, {
+            username,
             email: user.email,
-            name: user.displayName || '',
+            avatarUrl,
             createdAt: serverTimestamp(),
           });
         }
         window.location.href = "dashboard.html";
       } catch (error) {
-        errorDiv.textContent = error.message;
+        errorDiv.textContent = error.message.replace("Firebase:", "");
         errorDiv.style.display = "block";
       }
     });
