@@ -2,42 +2,19 @@
   {
     "question": "The reduced bearing at a place is measured as N25°47'W. The whole circle bearing will be",
     "answers": [
-      {
-        "text": "25° 47'",
-        "correct": false
-      },
-      {
-        "text": "225° 47'",
-        "correct": false
-      },
-      {
-        "text": "154° 13'",
-        "correct": false
-      },
-      {
-        "text": "334° 13'",
-        "correct": true
-      }
+      {"text": "25° 47'","correct": false},
+      {"text": "225° 47'","correct": false},
+      {"text": "154° 13'","correct": false},
+      {"text": "334° 13'","correct": true}
     ]
   },
   {
     "question": "For the beam shown above, the value of reactions at the Support \"A\" and \"B\" will be",
     "answers": [
-      {
-        "text": "A: 6.75 kN, B: 9.25 kN",
-        "correct": true
-      },
-      {
-        "text": "A: 9.75 kN, B: 6.25 kN",
-        "correct": false
-      },
-      {
-        "text": "A: 9.25 kN, B: 6.75 kN",
-        "correct": false
-      },
-      {
-        "text": "A: 6.25 kN, B: 9.75 kN",
-        "correct": false
+      {"text": "A: 6.75 kN, B: 9.25 kN","correct": true},
+      {"text": "A: 9.75 kN, B: 6.25 kN","correct": false},
+      {"text": "A: 9.25 kN, B: 6.75 kN","correct": false},
+      {"text": "A: 6.25 kN, B: 9.75 kN","correct": false
       }
     ]
   },
