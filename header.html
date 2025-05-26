@@ -94,10 +94,8 @@
   }
 </style>
 
-<!-- Login/Logout Toggle Logic -->
 <script>
   // Simulate login state using localStorage
-  // For real apps, replace this with your authentication logic
   function isLoggedIn() {
     return localStorage.getItem('isLoggedIn') === 'true';
   }
@@ -110,46 +108,65 @@
     const loggedIn = isLoggedIn();
 
     // Desktop
-    document.getElementById('registerLink').style.display = loggedIn ? 'none' : '';
-    document.getElementById('loginLink').style.display = loggedIn ? 'none' : '';
-    document.getElementById('logoutButton').style.display = loggedIn ? '' : 'none';
+    const registerLink = document.getElementById('registerLink');
+    const loginLink = document.getElementById('loginLink');
+    const logoutButton = document.getElementById('logoutButton');
+
+    if (registerLink) registerLink.style.display = loggedIn ? 'none' : '';
+    if (loginLink) loginLink.style.display = loggedIn ? 'none' : '';
+    if (logoutButton) logoutButton.style.display = loggedIn ? '' : 'none';
 
     // Mobile
-    document.getElementById('registerLinkMobile').style.display = loggedIn ? 'none' : '';
-    document.getElementById('loginLinkMobile').style.display = loggedIn ? 'none' : '';
-    document.getElementById('logoutButtonMobile').style.display = loggedIn ? '' : 'none';
+    const registerLinkMobile = document.getElementById('registerLinkMobile');
+    const loginLinkMobile = document.getElementById('loginLinkMobile');
+    const logoutButtonMobile = document.getElementById('logoutButtonMobile');
+
+    if (registerLinkMobile) registerLinkMobile.style.display = loggedIn ? 'none' : '';
+    if (loginLinkMobile) loginLinkMobile.style.display = loggedIn ? 'none' : '';
+    if (logoutButtonMobile) logoutButtonMobile.style.display = loggedIn ? '' : 'none';
+
+    // Dashboard button: only visible if logged in
+    const dashboardBtn = document.getElementById('dashboardBtn');
+    if (dashboardBtn) dashboardBtn.style.display = loggedIn ? '' : 'none';
   }
 
-  // Attach event listeners for logout
   document.addEventListener('DOMContentLoaded', function() {
-    // Initial UI update
     updateAuthUI();
 
+    // Dashboard button click handler
+    const dashboardBtn = document.getElementById('dashboardBtn');
+    if (dashboardBtn) {
+      dashboardBtn.addEventListener('click', function() {
+        window.location.href = 'dashboard.html';
+      });
+    }
+
     // Logout buttons
-    document.getElementById('logoutButton').addEventListener('click', function() {
-      setLoggedIn(false);
-      updateAuthUI();
-      // Optionally redirect to home or login page
-      window.location.href = 'index.html';
-    });
-    document.getElementById('logoutButtonMobile').addEventListener('click', function() {
-      setLoggedIn(false);
-      updateAuthUI();
-      window.location.href = 'index.html';
-    });
+    const logoutButton = document.getElementById('logoutButton');
+    if (logoutButton) {
+      logoutButton.addEventListener('click', function() {
+        setLoggedIn(false);
+        updateAuthUI();
+        window.location.href = 'index.html';
+      });
+    }
+    const logoutButtonMobile = document.getElementById('logoutButtonMobile');
+    if (logoutButtonMobile) {
+      logoutButtonMobile.addEventListener('click', function() {
+        setLoggedIn(false);
+        updateAuthUI();
+        window.location.href = 'index.html';
+      });
+    }
 
     // For demo: simulate login on login/register click
-    document.getElementById('loginLink').addEventListener('click', function() {
-      setLoggedIn(true);
-    });
-    document.getElementById('registerLink').addEventListener('click', function() {
-      setLoggedIn(true);
-    });
-    document.getElementById('loginLinkMobile').addEventListener('click', function() {
-      setLoggedIn(true);
-    });
-    document.getElementById('registerLinkMobile').addEventListener('click', function() {
-      setLoggedIn(true);
-    });
+    const loginLink = document.getElementById('loginLink');
+    if (loginLink) loginLink.addEventListener('click', function() { setLoggedIn(true); });
+    const registerLink = document.getElementById('registerLink');
+    if (registerLink) registerLink.addEventListener('click', function() { setLoggedIn(true); });
+    const loginLinkMobile = document.getElementById('loginLinkMobile');
+    if (loginLinkMobile) loginLinkMobile.addEventListener('click', function() { setLoggedIn(true); });
+    const registerLinkMobile = document.getElementById('registerLinkMobile');
+    if (registerLinkMobile) registerLinkMobile.addEventListener('click', function() { setLoggedIn(true); });
   });
 </script>
