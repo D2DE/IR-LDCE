@@ -31,7 +31,7 @@
           <a href="about.html" class="text-dark fw-bold me-3 d-none d-lg-inline">About Us</a>
           <a href="register.html" id="registerLink" class="text-dark fw-bold me-3 d-none d-lg-inline">Register</a>
           <a href="login.html" id="loginLink" class="text-dark fw-bold me-3 d-none d-lg-inline">Login</a>
-          <button id="logoutButton" class="btn btn-outline-dark btn-sm fw-bold d-none d-lg-inline" style="display:none;">Logout</button>
+          <button id="logoutButton" class="btn btn-outline-dark btn-sm fw-bold d-none d-lg-inline">Logout</button>
         </div>
         <button class="navbar-toggler d-lg-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -49,14 +49,14 @@
             <li class="nav-item"><a class="nav-link fw-bold" href="categories.html">CATEGORIES</a></li>
             <li class="nav-item"><a class="nav-link fw-bold" href="daily-dose.html">DAILY DOSE</a></li>
             <li class="nav-item">
-              <button id="dashboardBtn" type="button" class="btn btn-outline-dark btn-sm ms-lg-2 fw-bold" style="display:none;">
+              <button id="dashboardBtn" type="button" class="btn btn-outline-dark btn-sm ms-lg-2 fw-bold d-none">
                 <i class="fa fa-user-circle"></i> Dashboard
               </button>
             </li>
             <li class="nav-item d-lg-none mt-2"><a href="about.html" class="nav-link fw-bold">About Us</a></li>
             <li class="nav-item d-lg-none"><a href="register.html" id="registerLinkMobile" class="nav-link fw-bold">Register</a></li>
             <li class="nav-item d-lg-none"><a href="login.html" id="loginLinkMobile" class="nav-link fw-bold">Login</a></li>
-            <li class="nav-item d-lg-none"><button id="logoutButtonMobile" class="btn btn-outline-dark btn-sm fw-bold w-100 mt-1" style="display:none;">Logout</button></li>
+            <li class="nav-item d-lg-none"><button id="logoutButtonMobile" class="btn btn-outline-dark btn-sm fw-bold w-100 mt-1 d-none">Logout</button></li>
           </ul>
         </div>
       </div>
@@ -64,7 +64,7 @@
   </header>
   <!-- HEADER END -->
 
-  <!-- HEADER SCRIPT -->
+  <!-- FIREBASE AUTH LOGIC -->
   <script type="module">
     import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
     import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
@@ -78,72 +78,60 @@
       appId: "1:765334603137:web:1c8a13f6086a6773c2d480"
     };
 
-    // Avoid double initialization if using modules elsewhere
     const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    function updateHeaderUI(user) {
-      // Desktop
-      const registerLink = document.getElementById('registerLink');
-      const loginLink = document.getElementById('loginLink');
-      const logoutButton = document.getElementById('logoutButton');
-      // Mobile
-      const registerLinkMobile = document.getElementById('registerLinkMobile');
-      const loginLinkMobile = document.getElementById('loginLinkMobile');
-      const logoutButtonMobile = document.getElementById('logoutButtonMobile');
-      // Dashboard button
-      const dashboardBtn = document.getElementById('dashboardBtn');
+    function toggleUI(user) {
+      const elements = {
+        registerLink: document.getElementById('registerLink'),
+        loginLink: document.getElementById('loginLink'),
+        logoutButton: document.getElementById('logoutButton'),
+        registerLinkMobile: document.getElementById('registerLinkMobile'),
+        loginLinkMobile: document.getElementById('loginLinkMobile'),
+        logoutButtonMobile: document.getElementById('logoutButtonMobile'),
+        dashboardBtn: document.getElementById('dashboardBtn')
+      };
+
+      const show = el => el && el.classList.remove('d-none');
+      const hide = el => el && el.classList.add('d-none');
 
       if (user) {
-        if (registerLink) registerLink.style.display = 'none';
-        if (loginLink) loginLink.style.display = 'none';
-        if (logoutButton) logoutButton.style.display = '';
-        if (registerLinkMobile) registerLinkMobile.style.display = 'none';
-        if (loginLinkMobile) loginLinkMobile.style.display = 'none';
-        if (logoutButtonMobile) logoutButtonMobile.style.display = '';
-        if (dashboardBtn) dashboardBtn.style.display = '';
+        hide(elements.registerLink);
+        hide(elements.loginLink);
+        show(elements.logoutButton);
+        hide(elements.registerLinkMobile);
+        hide(elements.loginLinkMobile);
+        show(elements.logoutButtonMobile);
+        show(elements.dashboardBtn);
       } else {
-        if (registerLink) registerLink.style.display = '';
-        if (loginLink) loginLink.style.display = '';
-        if (logoutButton) logoutButton.style.display = 'none';
-        if (registerLinkMobile) registerLinkMobile.style.display = '';
-        if (loginLinkMobile) loginLinkMobile.style.display = '';
-        if (logoutButtonMobile) logoutButtonMobile.style.display = 'none';
-        if (dashboardBtn) dashboardBtn.style.display = 'none';
+        show(elements.registerLink);
+        show(elements.loginLink);
+        hide(elements.logoutButton);
+        show(elements.registerLinkMobile);
+        show(elements.loginLinkMobile);
+        hide(elements.logoutButtonMobile);
+        hide(elements.dashboardBtn);
       }
     }
 
-    // Ensure DOM is ready before querying elements
-    window.addEventListener('DOMContentLoaded', function() {
-      onAuthStateChanged(auth, function(user) {
-        updateHeaderUI(user);
+    window.addEventListener('DOMContentLoaded', () => {
+      onAuthStateChanged(auth, user => {
+        toggleUI(user);
 
-        // Dashboard button
         const dashboardBtn = document.getElementById('dashboardBtn');
         if (dashboardBtn) {
-          dashboardBtn.onclick = function() {
-            window.location.href = 'dashboard.html';
-          };
+          dashboardBtn.onclick = () => window.location.href = 'dashboard.html';
         }
 
-        // Logout buttons
-        const logoutButton = document.getElementById('logoutButton');
-        if (logoutButton) {
-          logoutButton.onclick = function() {
-            signOut(auth).then(function() {
-              window.location.href = 'index.html';
-            });
-          };
+        const logoutBtn = document.getElementById('logoutButton');
+        if (logoutBtn) {
+          logoutBtn.onclick = () => signOut(auth).then(() => window.location.href = 'index.html');
         }
-        const logoutButtonMobile = document.getElementById('logoutButtonMobile');
-        if (logoutButtonMobile) {
-          logoutButtonMobile.onclick = function() {
-            signOut(auth).then(function() {
-              window.location.href = 'index.html';
-            });
-          };
+
+        const logoutMobileBtn = document.getElementById('logoutButtonMobile');
+        if (logoutMobileBtn) {
+          logoutMobileBtn.onclick = () => signOut(auth).then(() => window.location.href = 'index.html');
         }
-        // Login/Register links: let them go to their respective pages
       });
     });
   </script>
@@ -154,16 +142,16 @@
     <p>This is the landing page for the LDCE exam preparation portal.</p>
     <h3 class="mb-3 text-center">Available Quizzes</h3>
     <div class="quiz-list d-grid gap-2">
-      <button class="btn btn-outline-primary manual-btn" data-manual="irwm" aria-label="Start quiz for Indian Railway Works Manual">1. Indian Railway Works Manual</button>
-      <button class="btn btn-outline-primary manual-btn" data-manual="irpwm" aria-label="Start quiz for Indian Railway P-way Manual">2. Indian Railway P-way Manual</button>
-      <button class="btn btn-outline-primary manual-btn" data-manual="irdim" aria-label="Start quiz for Indian Railway Schedule of Dimensions">3. Indian Railway Schedule of Dimensions</button>
-      <button class="btn btn-outline-primary manual-btn" data-manual="irec" aria-label="Start quiz for Indian Railway Engineering Code">4. Indian Railway Engineering Code</button>
-      <button class="btn btn-outline-primary manual-btn" data-manual="stm" aria-label="Start quiz for Small Track Machine Manual">5. Small Track Machine Manual</button>
-      <button class="btn btn-outline-primary manual-btn" data-manual="usfd" aria-label="Start quiz for USFD Manual">6. USFD Manual</button>
-      <button class="btn btn-outline-primary manual-btn" data-manual="fbwm" aria-label="Start quiz for FBW Manual">7. FBW Manual</button>
-      <button class="btn btn-outline-primary manual-btn" data-manual="store" aria-label="Start quiz for Store Manual">8. Store Manual</button>
-      <button class="btn btn-outline-primary manual-btn" data-manual="account" aria-label="Start quiz for Account Manual">9. Account Manual</button>
-      <button class="btn btn-outline-primary manual-btn" data-manual="pyq2022" aria-label="Start quiz for 2022 30% Main">10. PYQ 30% Main 2022</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="irwm">1. Indian Railway Works Manual</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="irpwm">2. Indian Railway P-way Manual</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="irdim">3. Indian Railway Schedule of Dimensions</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="irec">4. Indian Railway Engineering Code</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="stm">5. Small Track Machine Manual</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="usfd">6. USFD Manual</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="fbwm">7. FBW Manual</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="store">8. Store Manual</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="account">9. Account Manual</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="pyq2022">10. PYQ 30% Main 2022</button>
     </div>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
