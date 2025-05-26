@@ -16,7 +16,7 @@
       },
       {
         "text": "334° 13'",
-        "correct": false
+        "correct": true
       }
     ]
   },
@@ -25,7 +25,7 @@
     "answers": [
       {
         "text": "A: 6.75 kN, B: 9.25 kN",
-        "correct": false
+        "correct": true
       },
       {
         "text": "A: 9.75 kN, B: 6.25 kN",
@@ -46,7 +46,7 @@
     "answers": [
       {
         "text": "5.25 kN, from \"A\" to \"C\"",
-        "correct": false
+        "correct": true
       },
       {
         "text": "4.75 kN, from \"A\" to \"C\"",
@@ -71,7 +71,7 @@
       },
       {
         "text": "21 kN-m, at \"C\"",
-        "correct": false
+        "correct": true
       },
       {
         "text": "18 kN-m, at \"B\"",
@@ -96,7 +96,7 @@
       },
       {
         "text": "Turned and Fitted Bolt",
-        "correct": false
+        "correct": true
       },
       {
         "text": "HSFG Bolt",
