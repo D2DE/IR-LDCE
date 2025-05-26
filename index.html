@@ -50,7 +50,7 @@
         const html = await response.text();
         document.getElementById("include-header").innerHTML = html;
       } catch (error) {
-        document.getElementById("include-header").innerHTML = 
+        document.getElementById("include-header").innerHTML =
           '<div class="alert alert-warning text-center">Could not load header.</div>';
         console.error("Header load error:", error);
       }
