@@ -49,8 +49,11 @@
       color: white;
       border-color: #f44336;
     }
-    #next-btn {
+    .center-button {
+      text-align: center;
       margin-top: 15px;
+    }
+    #next-btn, #submit-btn {
       padding: 10px 20px;
       font-size: 1.1em;
       cursor: pointer;
@@ -69,28 +72,27 @@
     <div class="quiz">
       <h2 id="question">Question will appear here</h2>
       <div id="answer-buttons"></div>
-      <button id="next-btn">Next</button>
+      <div class="center-button">
+        <button id="next-btn">Next</button>
+        <button id="submit-btn">Submit Quiz</button>
+      </div>
       <div id="result"></div>
     </div>
   </div>
 
   <!-- Firebase Auth State Listener Module -->
   <script type="module">
-    import { auth } from './firebase-auth.js'; // your auth export
+    import { auth } from './firebase-auth.js';
     import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
     onAuthStateChanged(auth, (user) => {
       if (!user) {
-        // Not logged in, redirect to login page (adjust URL if needed)
         const returnUrl = encodeURIComponent(window.location.pathname + window.location.search);
         window.location.href = `login.html?redirect=${returnUrl}`;
       } else {
-        // Logged in, show quiz UI and start quiz
         window.currentUser = user;
         document.getElementById('loading').style.display = 'none';
         document.querySelector('.app').style.display = 'block';
-
-        // Call the global initQuiz() defined below
         initQuiz();
       }
     });
@@ -107,21 +109,20 @@
     const questionElem = document.getElementById("question");
     const answersDiv = document.getElementById("answer-buttons");
     const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
     const quizTimer = document.getElementById("quizTimer");
 
     async function initQuiz() {
       currentIndex = 0;
       score = 0;
       nextBtn.style.display = 'none';
+      submitBtn.style.display = 'none';
 
-      // Get manual param from URL, fallback to 'general'
       const manual = new URLSearchParams(window.location.search).get("manual") || "general";
 
       try {
-        // Load questions JSON file from same directory e.g. "irwm.json"
         const response = await fetch(`${manual}-questions.json`);
         if (!response.ok) throw new Error(`Failed to load ${manual}.json`);
-
         questions = await response.json();
 
         if (!Array.isArray(questions) || questions.length === 0) {
@@ -140,6 +141,7 @@
 
     function showQuestion() {
       nextBtn.style.display = 'none';
+      submitBtn.style.display = 'none';
       const q = questions[currentIndex];
       questionElem.textContent = q.question;
       answersDiv.innerHTML = "";
@@ -171,17 +173,21 @@
         });
       }
 
-      nextBtn.style.display = 'inline-block';
+      if (currentIndex < questions.length - 1) {
+        nextBtn.style.display = 'inline-block';
+      } else {
+        submitBtn.style.display = 'inline-block';
+      }
     }
 
     nextBtn.addEventListener("click", () => {
       currentIndex++;
       if (currentIndex < questions.length) {
         showQuestion();
-      } else {
-        endQuiz();
       }
     });
+
+    submitBtn.addEventListener("click", endQuiz);
 
     function startTimer() {
       let remaining = quizDuration;
@@ -226,14 +232,4 @@
         <button id="dashboard-btn" style="margin: 10px; padding: 10px 20px;">Dashboard</button>
       `;
 
-      document.getElementById('home-btn').addEventListener('click', () => {
-        window.location.href = 'index.html';
-      });
-
-      document.getElementById('dashboard-btn').addEventListener('click', () => {
-        window.location.href = 'dashboard.html';
-      });
-    }
-  </script>
-</body>
-</html>
+      document
