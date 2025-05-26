@@ -16,11 +16,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Check localStorage-based login
-function isLoggedInLocalStorage() {
-  return localStorage.getItem('isLoggedIn') === 'true';
-}
-
 // Format Firestore timestamp into readable string
 function formatDateTime(ts) {
   if (!ts) return "";
@@ -37,53 +32,14 @@ const emailSpan = document.getElementById('account-email');
 const avatarImg = document.getElementById('userAvatar');
 const historyBody = document.getElementById('quizHistoryBody');
 
-// Show demo dashboard for localStorage auth
-function showDemoDashboard() {
-  errorDiv.style.display = 'none';
-  dashboardContainer && (dashboardContainer.style.display = 'block');
-  
-  // Show demo data
-  usernameSpan.textContent = "Demo User";
-  emailSpan.textContent = "demo@example.com";
-  avatarImg.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=demo";
-  
-  // Show demo quiz history
-  historyBody.innerHTML = `
-    <tr><td colspan="3" class="text-center text-muted">Demo mode - No quiz history available.</td></tr>
-  `;
-  
-  // Setup quiz buttons
-  document.querySelectorAll('.manual-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const manual = btn.dataset.manual;
-      if (manual) {
-        window.location.href = `quiz.html?manual=${encodeURIComponent(manual)}`;
-      }
-    });
-  });
-}
-
-// Show error (not logged in)
-function showNotLoggedIn() {
-  errorDiv.style.display = 'block';
-  dashboardContainer && (dashboardContainer.style.display = 'none');
-}
-
 // Handle auth state
 onAuthStateChanged(auth, async (user) => {
-  // First check localStorage auth (for demo login from header)
-  if (!user && !isLoggedInLocalStorage()) {
-    showNotLoggedIn();
+  if (!user) {
+    errorDiv.style.display = 'block';
+    dashboardContainer && (dashboardContainer.style.display = 'none');
     return;
   }
-  
-  // If localStorage login but no Firebase user, show demo dashboard
-  if (!user && isLoggedInLocalStorage()) {
-    showDemoDashboard();
-    return;
-  }
-  
-  // If Firebase user exists, show full dashboard
+
   errorDiv.style.display = 'none';
   dashboardContainer && (dashboardContainer.style.display = 'block');
 
