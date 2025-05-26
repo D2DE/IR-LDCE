@@ -20,75 +20,41 @@
   <div id="include-header"></div>
 
   <!-- Main Content -->
- <main class="container mt-5" style="text-align: center;">
-  <h1>Welcome to IR-LDCE</h1>
-  <p>This is the landing page for the LDCE exam preparation portal.</p>
-</main>
+  <main class="container mt-5" style="text-align: center;">
+    <h1>Welcome to IR-LDCE</h1>
+    <p>This is the landing page for the LDCE exam preparation portal.</p>
     <h3 class="mb-3 text-center">Available Quizzes</h3>
-      <div class="quiz-list d-grid gap-2">
-        <button class="btn btn-outline-primary manual-btn" data-manual="irwm" aria-label="Start quiz for Indian Railway Works Manual">1. Indian Railway Works Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="irpwm" aria-label="Start quiz for Indian Railway P-way Manual">2. Indian Railway P-way Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="irdim" aria-label="Start quiz for Indian Railway Schedule of Dimensions">3. Indian Railway Schedule of Dimensions</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="irec" aria-label="Start quiz for Indian Railway Engineering Code">4. Indian Railway Engineering Code</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="stm" aria-label="Start quiz for Small Track Machine Manual">5. Small Track Machine Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="usfd" aria-label="Start quiz for USFD Manual">6. USFD Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="fbwm" aria-label="Start quiz for FBW Manual">7. FBW Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="store" aria-label="Start quiz for Store Manual">8. Store Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="account" aria-label="Start quiz for Account Manual">9. Account Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="pyq2022" aria-label="Start quiz for 2022 30% Main">10. PYQ 30% Main 2022</button>
-      </div>
+    <div class="quiz-list d-grid gap-2">
+      <button class="btn btn-outline-primary manual-btn" data-manual="irwm" aria-label="Start quiz for Indian Railway Works Manual">1. Indian Railway Works Manual</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="irpwm" aria-label="Start quiz for Indian Railway P-way Manual">2. Indian Railway P-way Manual</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="irdim" aria-label="Start quiz for Indian Railway Schedule of Dimensions">3. Indian Railway Schedule of Dimensions</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="irec" aria-label="Start quiz for Indian Railway Engineering Code">4. Indian Railway Engineering Code</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="stm" aria-label="Start quiz for Small Track Machine Manual">5. Small Track Machine Manual</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="usfd" aria-label="Start quiz for USFD Manual">6. USFD Manual</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="fbwm" aria-label="Start quiz for FBW Manual">7. FBW Manual</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="store" aria-label="Start quiz for Store Manual">8. Store Manual</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="account" aria-label="Start quiz for Account Manual">9. Account Manual</button>
+      <button class="btn btn-outline-primary manual-btn" data-manual="pyq2022" aria-label="Start quiz for 2022 30% Main">10. PYQ 30% Main 2022</button>
+    </div>
+  </main>
+
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Firebase SDKs -->
+  <!-- Load header dynamically -->
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-    // Your Firebase config
-    const firebaseConfig = {
-      apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
-      authDomain: "quiz-app-1b48b.firebaseapp.com",
-      projectId: "quiz-app-1b48b",
-      storageBucket: "quiz-app-1b48b.appspot.com",
-      messagingSenderId: "765334603137",
-      appId: "1:765334603137:web:1c8a13f6086a6773c2d480",
-      measurementId: "G-YQJQWJ12N7"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    // Load header and setup auth-based visibility
-    async function includeHeaderAndSetupAuth() {
-      const response = await fetch("header.html");
-      const html = await response.text();
-      document.getElementById("include-header").innerHTML = html;
-
-      const loginLink = document.getElementById("loginLink");
-      const registerLink = document.getElementById("registerLink");
-      const logoutButton = document.getElementById("logoutButton");
-
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          loginLink.style.display = "none";
-          registerLink.style.display = "none";
-          logoutButton.style.display = "inline-block";
-        } else {
-          loginLink.style.display = "inline-block";
-          registerLink.style.display = "inline-block";
-          logoutButton.style.display = "none";
-        }
-      });
-
-      if (logoutButton) {
-        logoutButton.addEventListener("click", () => {
-          signOut(auth);
-        });
+    (async function loadHeader() {
+      try {
+        const response = await fetch("header.html");
+        if (!response.ok) throw new Error("Failed to fetch header");
+        const html = await response.text();
+        document.getElementById("include-header").innerHTML = html;
+      } catch (error) {
+        document.getElementById("include-header").innerHTML = 
+          '<div class="alert alert-warning text-center">Could not load header.</div>';
+        console.error("Header load error:", error);
       }
-    }
-
-    includeHeaderAndSetupAuth();
+    })();
   </script>
 </body>
 </html>
