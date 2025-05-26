@@ -5,6 +5,7 @@
   <title>Register - Quiz App</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* Your existing CSS remains unchanged */
     body {
       background: #f5f7fa;
       font-family: Arial, sans-serif;
@@ -134,17 +135,22 @@
       }
 
       try {
+        // 1. Create Firebase Auth user
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        // Update display name
+        
+        // 2. Update Firebase profile with display name
         await updateProfile(userCredential.user, { displayName: name });
 
-        // Save user data in Firestore
+        // 3. Create user document in Firestore (matches dashboard.js expectations)
+        const avatarUrl = `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(name)}`;
         await setDoc(doc(db, "users", userCredential.user.uid), {
-          name,
+          username: name,
           email,
-          createdAt: serverTimestamp(),
+          avatarUrl,
+          createdAt: serverTimestamp()
         });
 
+        // 4. Redirect to dashboard
         window.location.href = "dashboard.html";
       } catch (error) {
         errorDiv.textContent = error.message;
