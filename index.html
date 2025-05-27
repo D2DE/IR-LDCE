@@ -65,80 +65,98 @@
 </header>
 <!-- HEADER END -->
 
-<!-- FIREBASE AUTH LOGIC -->
-<script type="module">
-  import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+  <!-- FIREBASE AUTH LOGIC -->
+  <script type="module">
+    import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
-    authDomain: "quiz-app-1b48b.firebaseapp.com",
-    projectId: "quiz-app-1b48b",
-    storageBucket: "quiz-app-1b48b.appspot.com",
-    messagingSenderId: "765334603137",
-    appId: "1:765334603137:web:1c8a13f6086a6773c2d480"
-  };
-
-  const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-
-  function toggleUI(user) {
-    const elements = {
-      registerLink: document.getElementById('registerLink'),
-      loginLink: document.getElementById('loginLink'),
-      logoutButton: document.getElementById('logoutButton'),
-      registerLinkMobile: document.getElementById('registerLinkMobile'),
-      loginLinkMobile: document.getElementById('loginLinkMobile'),
-      logoutButtonMobile: document.getElementById('logoutButtonMobile'),
-      dashboardBtn: document.getElementById('dashboardBtn'),
-      aboutLink: document.querySelector('a[href="about.html"]'),
-      aboutLinkMobile: document.querySelector('.d-lg-none a[href="about.html"]')
+    const firebaseConfig = {
+      apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
+      authDomain: "quiz-app-1b48b.firebaseapp.com",
+      projectId: "quiz-app-1b48b",
+      storageBucket: "quiz-app-1b48b.appspot.com",
+      messagingSenderId: "765334603137",
+      appId: "1:765334603137:web:1c8a13f6086a6773c2d480"
     };
 
-    const show = el => el && (el.style.display = '');
-    const hide = el => el && (el.style.display = 'none');
+    const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-    if (user) {
-      hide(elements.registerLink);
-      hide(elements.loginLink);
-      show(elements.logoutButton);
-      hide(elements.registerLinkMobile);
-      hide(elements.loginLinkMobile);
-      show(elements.logoutButtonMobile);
-      show(elements.dashboardBtn);
-      show(elements.aboutLink);
-      show(elements.aboutLinkMobile);
-    } else {
-      show(elements.registerLink);
-      show(elements.loginLink);
-      hide(elements.logoutButton);
-      show(elements.registerLinkMobile);
-      show(elements.loginLinkMobile);
-      hide(elements.logoutButtonMobile);
-      hide(elements.dashboardBtn);
-      show(elements.aboutLink);
-      show(elements.aboutLinkMobile);
+    function toggleUI(user) {
+      const elements = {
+        registerLink: document.getElementById('registerLink'),
+        loginLink: document.getElementById('loginLink'),
+        logoutButton: document.getElementById('logoutButton'),
+        registerLinkMobile: document.getElementById('registerLinkMobile'),
+        loginLinkMobile: document.getElementById('loginLinkMobile'),
+        logoutButtonMobile: document.getElementById('logoutButtonMobile'),
+        dashboardBtn: document.getElementById('dashboardBtn')
+      };
+
+      const show = el => el && el.classList.remove('d-none');
+      const hide = el => el && el.classList.add('d-none');
+
+      if (user) {
+        hide(elements.registerLink);
+        hide(elements.loginLink);
+        show(elements.logoutButton);
+        hide(elements.registerLinkMobile);
+        hide(elements.loginLinkMobile);
+        show(elements.logoutButtonMobile);
+        show(elements.dashboardBtn);
+      } else {
+        show(elements.registerLink);
+        show(elements.loginLink);
+        hide(elements.logoutButton);
+        show(elements.registerLinkMobile);
+        show(elements.loginLinkMobile);
+        hide(elements.logoutButtonMobile);
+        hide(elements.dashboardBtn);
+      }
     }
-  }
 
-  window.addEventListener('DOMContentLoaded', () => {
-    onAuthStateChanged(auth, user => {
-      toggleUI(user);
+    window.addEventListener('DOMContentLoaded', () => {
+      onAuthStateChanged(auth, user => {
+        toggleUI(user);
 
-      const dashboardBtn = document.getElementById('dashboardBtn');
-      if (dashboardBtn) {
-        dashboardBtn.onclick = () => window.location.href = 'dashboard.html';
-      }
+        const dashboardBtn = document.getElementById('dashboardBtn');
+        if (dashboardBtn) {
+          dashboardBtn.onclick = () => window.location.href = 'dashboard.html';
+        }
 
-      const logoutBtn = document.getElementById('logoutButton');
-      if (logoutBtn) {
-        logoutBtn.onclick = () => signOut(auth).then(() => window.location.href = 'index.html');
-      }
+        const logoutBtn = document.getElementById('logoutButton');
+        if (logoutBtn) {
+          logoutBtn.onclick = () => signOut(auth).then(() => window.location.href = 'index.html');
+        }
 
-      const logoutMobileBtn = document.getElementById('logoutButtonMobile');
-      if (logoutMobileBtn) {
-        logoutMobileBtn.onclick = () => signOut(auth).then(() => window.location.href = 'index.html');
-      }
+        const logoutMobileBtn = document.getElementById('logoutButtonMobile');
+        if (logoutMobileBtn) {
+          logoutMobileBtn.onclick = () => signOut(auth).then(() => window.location.href = 'index.html');
+        }
+      });
     });
-  });
-</script>
+  </script>
+
+  <!-- MAIN CONTENT -->
+  <main class="container mt-5" style="text-align: center;">
+    <h1>Welcome to IR-LDCE</h1>
+    <p>This is the landing page for the LDCE exam preparation portal.</p>
+    <h3 class="mb-3 text-center">Available Quizzes</h3>
+   <div class="quiz-list d-grid gap-2">
+        <button class="btn btn-outline-primary manual-btn" data-manual="irwm">1. Indian Railway Works Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="irpwm">2. Indian Railway P-way Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="irdim">3. Indian Railway Schedule of Dimensions</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="irec">4. Indian Railway Engineering Code</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="stm">5. Small Track Machine Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="usfd">6. USFD Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="fbwm">7. FBW Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="store">8. Store Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="account">9. Account Manual</button>
+        <button class="btn btn-outline-primary manual-btn" data-manual="pyq2022">10. PYQ 30% Main 2022</button>
+     <button class="btn btn-outline-primary manual-btn" data-manual="pyq2021">11. PYQ 30% Main 2021</button>
+      </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>
