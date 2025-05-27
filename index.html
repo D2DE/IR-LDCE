@@ -1,166 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>IR-LDCE Quiz</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .site-header .navbar-brand img { vertical-align: middle; }
-    .site-header .navbar-main .navbar-nav .nav-link { font-weight: bold; letter-spacing: 0.5px; }
-    @media (max-width: 991.98px) {
-      .site-header .navbar-main .navbar-nav { width: 100%; }
-      .site-header .navbar-main .navbar-nav .nav-item { width: 100%; }
-      .site-header .navbar-main .navbar-nav .nav-link,
-      .site-header .navbar-main .navbar-nav .btn { width: 100%; text-align: left; margin-left: 0; }
-    }
-  </style>
-</head>
-<body>
-  <!-- HEADER START -->
-  <!-- In HEADER START section -->
-<button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" 
-        data-bs-target="#mainNavbar" aria-controls="mainNavbar">
-  <span class="navbar-toggler-icon"></span> <!-- Use Bootstrap's default icon -->
-</button>
-  <header class="site-header">
-    <div class="bg-warning py-2">
-      <div class="container-fluid d-flex justify-content-between align-items-center px-3">
-        <div class="d-flex align-items-center">
-          <a href="index.html" class="text-dark fw-bold me-3"><i class="fas fa-home"></i> Home</a>
-          <a href="https://indianrail.gov.in" target="_blank" class="text-dark fw-bold">Railway Official Website</a>
-        </div>
-        <div class="d-flex align-items-center">
-          <a href="about.html" class="text-dark fw-bold me-3 d-none d-lg-inline">About Us</a>
-          <a href="register.html" id="registerLink" class="text-dark fw-bold me-3 d-none d-lg-inline">Register</a>
-          <a href="login.html" id="loginLink" class="text-dark fw-bold me-3 d-none d-lg-inline">Login</a>
-          <button id="logoutButton" class="btn btn-outline-dark btn-sm fw-bold d-none d-lg-inline">Logout</button>
-        </div>
-        <button class="navbar-toggler d-lg-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<!-- HEADER START -->
+<header class="site-header">
+  <div class="bg-warning py-2">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-3">
+      <div class="d-flex align-items-center">
+        <a href="index.html" class="text-dark fw-bold me-3"><i class="fas fa-home"></i> Home</a>
+        <a href="https://indianrail.gov.in" target="_blank" class="text-dark fw-bold">Railway Official Website</a>
+      </div>
+      <div class="d-flex align-items-center">
+        <a href="about.html" class="text-dark fw-bold me-3 d-none d-lg-inline">About Us</a>
+        <a href="register.html" id="registerLink" class="text-dark fw-bold me-3">Register</a>
+        <a href="login.html" id="loginLink" class="text-dark fw-bold me-3">Login</a>
+        <button id="logoutButton" class="btn btn-outline-dark btn-sm fw-bold d-none">Logout</button>
+      </div>
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#mainNavbar" aria-controls="mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-main border-bottom">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand d-flex align-items-center me-auto" href="index.html">
+        <img src="logo.png" alt="IR-LDCE Logo" style="height:48px;max-width:120px;width:auto;object-fit:contain;" />
+        <span class="ms-2 fw-bold">IR-LDCE</span>
+      </a>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+        <ul class="navbar-nav mb-2 mb-lg-0 align-items-center">
+          <li class="nav-item"><a class="nav-link fw-bold" href="categories.html">CATEGORIES</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="daily-dose.html">DAILY DOSE</a></li>
+          <li class="nav-item">
+            <button id="dashboardBtn" type="button" class="btn btn-outline-dark btn-sm ms-lg-2 fw-bold d-none">
+              <i class="fa fa-user-circle"></i> Dashboard
+            </button>
+          </li>
+          <li class="nav-item d-lg-none mt-2"><a href="about.html" class="nav-link fw-bold">About Us</a></li>
+          <li class="nav-item d-lg-none"><a href="register.html" id="registerLinkMobile" class="nav-link fw-bold">Register</a></li>
+          <li class="nav-item d-lg-none"><a href="login.html" id="loginLinkMobile" class="nav-link fw-bold">Login</a></li>
+          <li class="nav-item d-lg-none"><button id="logoutButtonMobile" class="btn btn-outline-dark btn-sm fw-bold w-100 mt-1 d-none">Logout</button></li>
+        </ul>
       </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-main border-bottom">
-      <div class="container-fluid px-3">
-        <a class="navbar-brand d-flex align-items-center me-auto" href="index.html">
-          <img src="logo.png" alt="IR-LDCE Logo" style="height:48px;max-width:120px;width:auto;object-fit:contain;" />
-          <span class="ms-2 fw-bold">IR-LDCE</span>
-        </a>
-        <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
-          <ul class="navbar-nav mb-2 mb-lg-0 align-items-center">
-            <li class="nav-item"><a class="nav-link fw-bold" href="categories.html">CATEGORIES</a></li>
-            <li class="nav-item"><a class="nav-link fw-bold" href="daily-dose.html">DAILY DOSE</a></li>
-            <li class="nav-item">
-              <button id="dashboardBtn" type="button" class="btn btn-outline-dark btn-sm ms-lg-2 fw-bold d-none">
-                <i class="fa fa-user-circle"></i> Dashboard
-              </button>
-            </li>
-            <li class="nav-item d-lg-none mt-2"><a href="about.html" class="nav-link fw-bold">About Us</a></li>
-            <li class="nav-item d-lg-none"><a href="register.html" id="registerLinkMobile" class="nav-link fw-bold">Register</a></li>
-            <li class="nav-item d-lg-none"><a href="login.html" id="loginLinkMobile" class="nav-link fw-bold">Login</a></li>
-            <li class="nav-item d-lg-none"><button id="logoutButtonMobile" class="btn btn-outline-dark btn-sm fw-bold w-100 mt-1 d-none">Logout</button></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <!-- HEADER END -->
+  </nav>
+</header>
+<!-- HEADER END -->
 
-  <!-- FIREBASE AUTH LOGIC -->
-  <script type="module">
-    import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+<!-- FIREBASE AUTH LOGIC -->
+<script type="module">
+  import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
-      authDomain: "quiz-app-1b48b.firebaseapp.com",
-      projectId: "quiz-app-1b48b",
-      storageBucket: "quiz-app-1b48b.appspot.com",
-      messagingSenderId: "765334603137",
-      appId: "1:765334603137:web:1c8a13f6086a6773c2d480"
+  const firebaseConfig = {
+    apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
+    authDomain: "quiz-app-1b48b.firebaseapp.com",
+    projectId: "quiz-app-1b48b",
+    storageBucket: "quiz-app-1b48b.appspot.com",
+    messagingSenderId: "765334603137",
+    appId: "1:765334603137:web:1c8a13f6086a6773c2d480"
+  };
+
+  const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  function toggleUI(user) {
+    const elements = {
+      registerLink: document.getElementById('registerLink'),
+      loginLink: document.getElementById('loginLink'),
+      logoutButton: document.getElementById('logoutButton'),
+      registerLinkMobile: document.getElementById('registerLinkMobile'),
+      loginLinkMobile: document.getElementById('loginLinkMobile'),
+      logoutButtonMobile: document.getElementById('logoutButtonMobile'),
+      dashboardBtn: document.getElementById('dashboardBtn'),
+      aboutLink: document.querySelector('a[href="about.html"]'),
+      aboutLinkMobile: document.querySelector('.d-lg-none a[href="about.html"]')
     };
 
-    const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+    const show = el => el && (el.style.display = '');
+    const hide = el => el && (el.style.display = 'none');
 
-    function toggleUI(user) {
-      const elements = {
-        registerLink: document.getElementById('registerLink'),
-        loginLink: document.getElementById('loginLink'),
-        logoutButton: document.getElementById('logoutButton'),
-        registerLinkMobile: document.getElementById('registerLinkMobile'),
-        loginLinkMobile: document.getElementById('loginLinkMobile'),
-        logoutButtonMobile: document.getElementById('logoutButtonMobile'),
-        dashboardBtn: document.getElementById('dashboardBtn')
-      };
-
-      const show = el => el && el.classList.remove('d-none');
-      const hide = el => el && el.classList.add('d-none');
-
-      if (user) {
-        hide(elements.registerLink);
-        hide(elements.loginLink);
-        show(elements.logoutButton);
-        hide(elements.registerLinkMobile);
-        hide(elements.loginLinkMobile);
-        show(elements.logoutButtonMobile);
-        show(elements.dashboardBtn);
-      } else {
-        show(elements.registerLink);
-        show(elements.loginLink);
-        hide(elements.logoutButton);
-        show(elements.registerLinkMobile);
-        show(elements.loginLinkMobile);
-        hide(elements.logoutButtonMobile);
-        hide(elements.dashboardBtn);
-      }
+    if (user) {
+      hide(elements.registerLink);
+      hide(elements.loginLink);
+      show(elements.logoutButton);
+      hide(elements.registerLinkMobile);
+      hide(elements.loginLinkMobile);
+      show(elements.logoutButtonMobile);
+      show(elements.dashboardBtn);
+      show(elements.aboutLink);
+      show(elements.aboutLinkMobile);
+    } else {
+      show(elements.registerLink);
+      show(elements.loginLink);
+      hide(elements.logoutButton);
+      show(elements.registerLinkMobile);
+      show(elements.loginLinkMobile);
+      hide(elements.logoutButtonMobile);
+      hide(elements.dashboardBtn);
+      show(elements.aboutLink);
+      show(elements.aboutLinkMobile);
     }
+  }
 
-    window.addEventListener('DOMContentLoaded', () => {
-      onAuthStateChanged(auth, user => {
-        toggleUI(user);
+  window.addEventListener('DOMContentLoaded', () => {
+    onAuthStateChanged(auth, user => {
+      toggleUI(user);
 
-        const dashboardBtn = document.getElementById('dashboardBtn');
-        if (dashboardBtn) {
-          dashboardBtn.onclick = () => window.location.href = 'dashboard.html';
-        }
+      const dashboardBtn = document.getElementById('dashboardBtn');
+      if (dashboardBtn) {
+        dashboardBtn.onclick = () => window.location.href = 'dashboard.html';
+      }
 
-        const logoutBtn = document.getElementById('logoutButton');
-        if (logoutBtn) {
-          logoutBtn.onclick = () => signOut(auth).then(() => window.location.href = 'index.html');
-        }
+      const logoutBtn = document.getElementById('logoutButton');
+      if (logoutBtn) {
+        logoutBtn.onclick = () => signOut(auth).then(() => window.location.href = 'index.html');
+      }
 
-        const logoutMobileBtn = document.getElementById('logoutButtonMobile');
-        if (logoutMobileBtn) {
-          logoutMobileBtn.onclick = () => signOut(auth).then(() => window.location.href = 'index.html');
-        }
-      });
+      const logoutMobileBtn = document.getElementById('logoutButtonMobile');
+      if (logoutMobileBtn) {
+        logoutMobileBtn.onclick = () => signOut(auth).then(() => window.location.href = 'index.html');
+      }
     });
-  </script>
-
-  <!-- MAIN CONTENT -->
-  <main class="container mt-5" style="text-align: center;">
-    <h1>Welcome to IR-LDCE</h1>
-    <p>This is the landing page for the LDCE exam preparation portal.</p>
-    <h3 class="mb-3 text-center">Available Quizzes</h3>
-   <div class="quiz-list d-grid gap-2">
-        <button class="btn btn-outline-primary manual-btn" data-manual="irwm">1. Indian Railway Works Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="irpwm">2. Indian Railway P-way Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="irdim">3. Indian Railway Schedule of Dimensions</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="irec">4. Indian Railway Engineering Code</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="stm">5. Small Track Machine Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="usfd">6. USFD Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="fbwm">7. FBW Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="store">8. Store Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="account">9. Account Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="pyq2022">10. PYQ 30% Main 2022</button>
-     <button class="btn btn-outline-primary manual-btn" data-manual="pyq2021">11. PYQ 30% Main 2021</button>
-      </div>
-  </main>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script type="module" src="dashboard.js"></script>
-</body>
-</html>
+  });
+</script>
