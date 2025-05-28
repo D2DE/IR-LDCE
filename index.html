@@ -125,11 +125,55 @@
 <header>
   <nav>
     <div class="logo">IR-LDCE</div>
-    <div class="d-flex align-items-center">
-      <a href="register.html" id="registerLink" class="text-dark fw-bold me-3 d-none d-lg-inline">Register</a>
-          <a href="login.html" id="loginLink" class="text-dark fw-bold me-3 d-none d-lg-inline">Login</a>
-          <button id="logoutButton" class="btn btn-outline-dark btn-sm fw-bold d-none d-lg-inline">Logout</button>
-        </div>
+   <!-- Firebase SDK (Make sure to include this in your page) -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<!-- Firebase Configuration -->
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
+    authDomain: "quiz-app-1b48b.firebaseapp.com",
+    projectId: "quiz-app-1b48b",
+    appId: "1:765334603137:web:1c8a13f6086a6773c2d480"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<!-- UI Section -->
+<div class="d-flex align-items-center">
+  <a href="login.html" id="loginLink" class="text-dark fw-bold me-3">Login</a>
+  <button id="logoutButton" class="btn btn-outline-dark btn-sm fw-bold" style="display: none;">Logout</button>
+</div>
+
+<!-- Auth State Handling -->
+<script>
+  const auth = firebase.auth();
+
+  const loginLink = document.getElementById("loginLink");
+  const logoutButton = document.getElementById("logoutButton");
+
+  // Listen for auth state changes
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      loginLink.style.display = "none";
+      logoutButton.style.display = "inline-block";
+    } else {
+      loginLink.style.display = "inline";
+      logoutButton.style.display = "none";
+    }
+  });
+
+  // Handle logout
+  logoutButton.addEventListener("click", () => {
+    auth.signOut().then(() => {
+      console.log("User signed out");
+    }).catch((error) => {
+      console.error("Sign out error", error);
+    });
+  });
+</script>
+
     <div class="hamburger" onclick="toggleMenu()">
       <div></div>
       <div></div>
