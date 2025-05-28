@@ -139,7 +139,55 @@
   };
   firebase.initializeApp(firebaseConfig);
 </script>
+<script>
+  function showToast(message, isError = false) {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.className = "toast-message show" + (isError ? " error" : "");
 
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 3000);
+  }
+
+  // Monitor auth state to update UI
+  firebase.auth().onAuthStateChanged(function(user) {
+    const loginLink = document.getElementById("loginLink");
+    const logoutButton = document.getElementById("logoutButton");
+    const dashboardButton = document.getElementById("dashboardButton");
+
+    if (user) {
+      loginLink.style.display = "none";
+      logoutButton.style.display = "inline-block";
+      dashboardButton.style.display = "inline-block";
+
+      // Redirect if just logged in
+      if (window.location.pathname.includes("login.html")) {
+        showToast("Successfully logged in!");
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 1500);
+      }
+    } else {
+      loginLink.style.display = "inline-block";
+      logoutButton.style.display = "none";
+      dashboardButton.style.display = "none";
+    }
+  });
+
+  // Logout logic
+  document.getElementById("logoutButton").addEventListener("click", function () {
+    firebase.auth().signOut().then(() => {
+      showToast("Successfully logged out!");
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 1500);
+    }).catch((error) => {
+      showToast("Logout error!", true);
+      console.error("Logout error:", error);
+    });
+  });
+</script>
 <!-- UI Section -->
 <style>
   .btn-white-black {
@@ -289,6 +337,31 @@
     document.getElementById('navMenu').classList.toggle('active');
   }
 </script>
+  <style>
+  .toast-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease;
+    z-index: 9999;
+  }
 
+  .toast-message.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .toast-message.error {
+    background-color: #dc3545;
+  }
+</style>
+<div id="toast" class="toast-message"></div>
 </body>
 </html>
