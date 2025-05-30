@@ -118,6 +118,32 @@
       text-align: center;
       padding: 20px;
     }
+    /* New Quiz Section Styles */
+    .quiz-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    .quiz-card {
+      background-color: #1976d2;
+      color: white;
+      font-weight: bold;
+      padding: 15px 20px;
+      border-radius: 8px;
+      text-align: center;
+      min-width: 240px;
+      flex: 1 1 240px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    .quiz-card:hover {
+      background-color: #125ca4;
+    }
   </style>
 </head>
 <body>
@@ -203,10 +229,16 @@
       <li><a href="index.html"> 🏠 Home</a></li>
       <li><a href="categories.html"> 📐 MCQ Categories</a></li>
       <li><a href="manual-quizzes.html"> 📊 Manual Based MCQ</a></li>
+      <li><a href="pyq-quizzes.html"> 📄 PYQ Based MCQ</a></li>
       <li><a href="establishment.html"> 🔄 Establishment MCQ</a></li>
       <li><a href="current-affairs.html"> 🌐 Current Affairs</a></li>
       <li><a href="gk.html"> 💡 General Knowledge</a></li>
     </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </nav>
 </header>
 
