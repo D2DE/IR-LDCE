@@ -201,6 +201,7 @@
   const loginLink = document.getElementById("loginLink");
   const logoutButton = document.getElementById("logoutButton");
   const dashboardLink = document.getElementById("dashboardLink");
+  const mobileDashboardLink = document.getElementById("mobileDashboardLink");
 
   // Listen for auth state changes
   auth.onAuthStateChanged((user) => {
@@ -208,10 +209,12 @@
       loginLink.style.display = "none";
       logoutButton.style.display = "inline-block";
       dashboardLink.style.display = "inline-block";
+      mobileDashboardLink.style.display = "inline";
     } else {
       loginLink.style.display = "inline";
       logoutButton.style.display = "none";
       dashboardLink.style.display = "none";
+      mobileDashboardLink.style.display = "none";
     }
   });
 
@@ -238,6 +241,7 @@
       <li><a href="establishment.html"> 🔄 Establishment MCQ</a></li>
       <li><a href="current-affairs.html"> 🌐 Current Affairs</a></li>
       <li><a href="gk.html"> 💡 General Knowledge</a></li>
+      <li><a href="dashboard.html" id="mobileDashboardLink" style="display: none;">📊 Dashboard</a></li>
     </ul>
   </nav>
 </header>
