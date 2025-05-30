@@ -224,18 +224,6 @@
       </div>
     </div>
   </div>
-  <script type="module">
-    // Inject header.html
-    (async function includeHeader() {
-      try {
-        const resp = await fetch('header.html');
-        if (!resp.ok) throw new Error('Header not found');
-        document.getElementById('include-header').innerHTML = await resp.text();
-      } catch (e) {
-        document.getElementById('include-header').innerHTML =
-          '<div class="error" style="background:#ffe0e0;color:#b00;padding:1em;">Header failed to load.</div>';
-      }
-    })();
 
     // Quiz button handlers
     document.addEventListener('DOMContentLoaded', () => {
