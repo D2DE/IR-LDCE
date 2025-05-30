@@ -11,7 +11,6 @@
       background-color: #f5f7fa;
     }
 
-    /* Header & Navigation */
     header {
       background-color: #004080;
       color: white;
@@ -23,6 +22,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -42,6 +42,25 @@
       color: white;
       text-decoration: none;
       font-weight: 500;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .auth-buttons button {
+      background: white;
+      color: #004080;
+      border: none;
+      padding: 6px 12px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .auth-buttons button:hover {
+      background-color: #ddd;
     }
 
     .hamburger {
@@ -78,7 +97,6 @@
       }
     }
 
-    /* Main Content */
     main {
       display: flex;
       flex-wrap: wrap;
@@ -111,7 +129,6 @@
       color: #004080;
     }
 
-    /* Footer */
     footer {
       background-color: #004080;
       color: white;
@@ -119,7 +136,6 @@
       padding: 20px;
     }
 
-    /* New Quiz Section Styles */
     .quiz-list {
       display: flex;
       flex-wrap: wrap;
@@ -145,6 +161,11 @@
     .quiz-card:hover {
       background-color: #125ca4;
     }
+
+    /* Hide buttons by default to prevent flicker */
+    #login-btn, #dashboard-btn, #logout-btn {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -161,6 +182,11 @@
       <li><a href="current-affairs.html"> 🌐 Current Affairs</a></li>
       <li><a href="gk.html"> 💡 General Knowledge</a></li>
     </ul>
+    <div class="auth-buttons">
+      <button id="login-btn" onclick="window.location.href='login.html'">Login</button>
+      <button id="dashboard-btn" onclick="window.location.href='dashboard.html'">Dashboard</button>
+      <button id="logout-btn">Logout</button>
+    </div>
     <div class="hamburger" onclick="toggleMenu()">
       <div></div>
       <div></div>
@@ -176,7 +202,6 @@
       <p>IR-LDCE provides hundreds of Manual Based questions, technical questions, and online test practice material for exams like LDCE-AEN and placement interviews.</p>
     </div>
 
-    <!-- Updated Quiz Grid Starts Here -->
     <h2 style="text-align: center;">Available Quizzes</h2>
     <div class="quiz-list">
       <div class="quiz-card">1. Indian Railway Works Manual</div>
@@ -190,7 +215,6 @@
       <div class="quiz-card">9. Account Manual</div>
       <div class="quiz-card">10. PYQ 30% Main 2022</div>
     </div>
-    <!-- Updated Quiz Grid Ends Here -->
 
     <div class="card">
       <h3>Latest Questions</h3>
@@ -219,10 +243,16 @@
   &copy; 2025 IR-LDCE. All Rights Reserved.
 </footer>
 
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+<script src="firebase-config.js"></script>
+<script src="script.js"></script>
+
 <script>
   function toggleMenu() {
     document.getElementById('navMenu').classList.toggle('active');
   }
 </script>
+
 </body>
 </html>
