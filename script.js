@@ -8,7 +8,7 @@ const manualNames = {
     fbwm: "FBW Manual",
     store: "Store Manual",
     account: "Account Manual",
-    pyq2022: "PYQ 30% Main 2022"
+    pyq2022: "PYQ 30% Main 2022",
     pyq2021: "PYQ 30% Main 2021"
 };
 
