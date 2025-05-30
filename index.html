@@ -118,6 +118,33 @@
       text-align: center;
       padding: 20px;
     }
+
+    /* New Quiz Section Styles */
+    .quiz-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    .quiz-card {
+      background-color: #1976d2;
+      color: white;
+      font-weight: bold;
+      padding: 15px 20px;
+      border-radius: 8px;
+      text-align: center;
+      min-width: 240px;
+      flex: 1 1 240px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    .quiz-card:hover {
+      background-color: #125ca4;
+    }
   </style>
 </head>
 <body>
@@ -149,20 +176,21 @@
       <p>IR-LDCE provides hundreds of Manual Based questions, technical questions, and online test practice material for exams like LDCE-AEN and placement interviews.</p>
     </div>
 
-<h2 class="mb-4 text-center text-primary" style="font-size: 2rem;">Available Quizzes</h2>
-<div class="quiz-list">
-  <div class="quiz-card">1. Indian Railway Works Manual</div>
-  <div class="quiz-card">2. Indian Railway P-way Manual</div>
-  <div class="quiz-card">3. Indian Railway Schedule of Dimensions</div>
-  <div class="quiz-card">4. Indian Railway Engineering Code</div>
-  <div class="quiz-card">5. Small Track Machine Manual</div>
-  <div class="quiz-card">6. USFD Manual</div>
-  <div class="quiz-card">7. FBW Manual</div>
-  <div class="quiz-card">8. Store Manual</div>
-  <div class="quiz-card">9. Account Manual</div>
-  <div class="quiz-card">10. PYQ 30% Main 2022</div>
-  <div class="quiz-card">11. PYQ 30% Main 2021</div>
-</div>
+    <!-- Updated Quiz Grid Starts Here -->
+    <h2 style="text-align: center;">Available Quizzes</h2>
+    <div class="quiz-list">
+      <div class="quiz-card">1. Indian Railway Works Manual</div>
+      <div class="quiz-card">2. Indian Railway P-way Manual</div>
+      <div class="quiz-card">3. Indian Railway Schedule of Dimensions</div>
+      <div class="quiz-card">4. Indian Railway Engineering Code</div>
+      <div class="quiz-card">5. Small Track Machine Manual</div>
+      <div class="quiz-card">6. USFD Manual</div>
+      <div class="quiz-card">7. FBW Manual</div>
+      <div class="quiz-card">8. Store Manual</div>
+      <div class="quiz-card">9. Account Manual</div>
+      <div class="quiz-card">10. PYQ 30% Main 2022</div>
+    </div>
+    <!-- Updated Quiz Grid Ends Here -->
 
     <div class="card">
       <h3>Latest Questions</h3>
