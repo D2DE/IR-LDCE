@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IR-LDCE Homepage</title>
+  <title>User Dashboard</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -118,6 +118,39 @@
       text-align: center;
       padding: 20px;
     }
+    .quiz-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.manual-btn {
+  background-color: #1976d2;
+  color: white;
+  font-weight: bold;
+  padding: 18px 20px;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 320px;
+  flex: 1 1 320px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+  cursor: pointer;
+  border: none;
+  font-size: 1.15rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  transition: background 0.2s, box-shadow 0.2s;
+  display: block;
+}
+
+.manual-btn:hover {
+  background-color: #125ca4;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
   </style>
 </head>
 <body>
@@ -242,17 +275,17 @@
     <section class="dashboard-section" id="quiz-section">
       <h3 class="mb-3 text-center">Available Quizzes</h3>
       <div class="quiz-list d-grid gap-2">
-        <button class="btn btn-outline-primary manual-btn" data-manual="irwm">1. Indian Railway Works Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="irpwm">2. Indian Railway P-way Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="irdim">3. Indian Railway Schedule of Dimensions</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="irec">4. Indian Railway Engineering Code</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="stm">5. Small Track Machine Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="usfd">6. USFD Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="fbwm">7. FBW Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="store">8. Store Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="account">9. Account Manual</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="pyq2022">10. PYQ 30% Main 2022</button>
-        <button class="btn btn-outline-primary manual-btn" data-manual="pyq2021">11. PYQ 30% Main 2021</button>
+        <button class="manual-btn" data-manual="irwm">1. Indian Railway Works Manual</button>
+        <button class="manual-btn" data-manual="irpwm">2. Indian Railway P-way Manual</button>
+        <button class="manual-btn" data-manual="irdim">3. Indian Railway Schedule of Dimensions</button>
+        <button class="manual-btn" data-manual="irec">4. Indian Railway Engineering Code</button>
+        <button class="manual-btn" data-manual="stm">5. Small Track Machine Manual</button>
+        <button class="manual-btn" data-manual="usfd">6. USFD Manual</button>
+        <button class="manual-btn" data-manual="fbwm">7. FBW Manual</button>
+        <button class="manual-btn" data-manual="store">8. Store Manual</button>
+        <button class="manual-btn" data-manual="account">9. Account Manual</button>
+        <button class="manual-btn" data-manual="pyq2022">10. PYQ 30% Main 2022</button>
+        <button class="manual-btn" data-manual="pyq2021">11. PYQ 30% Main 2021</button>
       </div>
     </section>
   </main>
