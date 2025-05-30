@@ -188,8 +188,10 @@
 
 <div class="d-flex align-items-center">
   <a href="login.html" id="loginLink" class="btn btn-sm btn-white-black me-3">Login</a>
-  <button id="logoutButton" class="btn btn-sm btn-white-black" style="display: none;">Logout</button>
+  <button id="logoutButton" class="btn btn-sm btn-white-black me-3" style="display: none;">Logout</button>
+  <a href="dashboard.html" id="dashboardLink" class="btn btn-sm btn-white-black" style="display: none;">Dashboard</a>
 </div>
+
 
 
 <!-- Auth State Handling -->
@@ -198,15 +200,18 @@
 
   const loginLink = document.getElementById("loginLink");
   const logoutButton = document.getElementById("logoutButton");
+  const dashboardLink = document.getElementById("dashboardLink");
 
   // Listen for auth state changes
   auth.onAuthStateChanged((user) => {
     if (user) {
       loginLink.style.display = "none";
       logoutButton.style.display = "inline-block";
+      dashboardLink.style.display = "inline-block";
     } else {
       loginLink.style.display = "inline";
       logoutButton.style.display = "none";
+      dashboardLink.style.display = "none";
     }
   });
 
