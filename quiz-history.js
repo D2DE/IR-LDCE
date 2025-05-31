@@ -29,9 +29,24 @@ const mobileDashboardLink = document.getElementById('mobileDashboardLink');
 function formatDateTime(ts) {
   if (!ts) return "";
   const d = ts.toDate ? ts.toDate() : new Date(ts);
-  return d.toLocaleDateString() + ", " +
-         d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+  // Format DD/MM/YY
+  let day = d.getDate();
+  let month = d.getMonth() + 1; // Months are zero-indexed
+  let year = d.getFullYear() % 100; // Get last 2 digits of year
+  if (day < 10) day = '0' + day;
+  if (month < 10) month = '0' + month;
+  if (year < 10) year = '0' + year;
+  // Format time as HH:MM AM/PM
+  let hours = d.getHours();
+  let minutes = d.getMinutes();
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  const timeStr = `${hours}:${minutes} ${ampm}`;
+  return `${day}/${month}/${year}, ${timeStr}`;
 }
+
 
 // Load quiz history function
 async function loadQuizHistory(user) {
