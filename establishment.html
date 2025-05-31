@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IR-LDCE Homepage</title>
+  <title>IR-LDCE Establishment</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       background-color: #f5f7fa;
     }
-
     /* Header & Navigation */
     header {
       background-color: #004080;
@@ -18,79 +17,68 @@
       padding: 15px 20px;
       position: relative;
     }
-
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
     .logo {
       font-size: 1.8rem;
       font-weight: bold;
     }
-
+    /* Menu styles for hamburger (always visible) */
     ul.menu {
       list-style: none;
-      display: flex;
-      gap: 20px;
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: #004080;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      padding: 10px 0;
       margin: 0;
-      padding: 0;
+      z-index: 1000;
     }
-
+    ul.menu.active {
+      display: flex;
+    }
     ul.menu li a {
       color: white;
       text-decoration: none;
+      padding: 10px 20px;
+      display: block;
       font-weight: 500;
     }
-
+    ul.menu li a:hover {
+      background: rgba(255,255,255,0.1);
+    }
     .hamburger {
-      display: none;
+      display: flex;
       flex-direction: column;
       cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
     }
-
     .hamburger div {
       width: 25px;
       height: 3px;
       background: white;
       margin: 4px 0;
     }
-
-    @media (max-width: 768px) {
-      ul.menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background: #004080;
-        width: 100%;
-        padding: 10px 0;
-      }
-
-      ul.menu.active {
-        display: flex;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-    }
-
     /* Main Content */
     main {
       display: flex;
       flex-wrap: wrap;
       padding: 20px;
     }
-
     .content {
       flex: 3;
       min-width: 250px;
       padding: 20px;
     }
-
     .sidebar {
       flex: 1;
       min-width: 200px;
@@ -98,7 +86,6 @@
       background-color: #e0ecff;
       border-left: 20px solid #ccc;
     }
-
     .card {
       background-color: white;
       margin-bottom: 20px;
@@ -106,11 +93,9 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       border-radius: 8px;
     }
-
     h2 {
       color: #004080;
     }
-
     /* Footer */
     footer {
       background-color: #004080;
@@ -127,7 +112,6 @@
       margin-top: 20px;
       margin-bottom: 40px;
     }
-
     .quiz-card {
       background-color: #1976d2;
       color: white;
@@ -140,9 +124,16 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       cursor: pointer;
     }
-
     .quiz-card:hover {
       background-color: #125ca4;
+    }
+    /* Button group styles */
+    .d-flex {
+      display: flex;
+      align-items: center;
+    }
+    .me-3 {
+      margin-right: 1rem;
     }
   </style>
 </head>
@@ -151,53 +142,107 @@
 <header>
   <nav>
     <div class="logo">IR-LDCE</div>
-   <!-- Firebase SDK (Make sure to include this in your page) -->
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
+        authDomain: "quiz-app-1b48b.firebaseapp.com",
+        projectId: "quiz-app-1b48b",
+        appId: "1:765334603137:web:1c8a13f6086a6773c2d480"
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <style>
+      .btn-white-black {
+        background-color: white;
+        color: black;
+        border: 1px solid #ccc;
+        font-weight: bold;
+        border-radius: 6px;
+        padding: 6px 12px;
+        transition: background-color 0.3s, color 0.3s;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .btn-white-black:hover {
+        background-color: #f0f0f0;
+        color: #000;
+      }
+    </style>
+    <div class="d-flex align-items-center">
+      <a href="login.html" id="loginLink" class="btn btn-sm btn-white-black me-3">Login</a>
+      <button id="logoutButton" class="btn btn-sm btn-white-black me-3" style="display: none;">Logout</button>
+      <a href="dashboard.html" id="dashboardLink" class="btn btn-sm btn-white-black" style="display: none;">Dashboard</a>
+    </div>
+    <button class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+    <ul class="menu" id="navMenu">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="categories.html">📐 MCQ Categories</a></li>
+      <li><a href="manual-quizzes.html">📊 Manual Based MCQ</a></li>
+      <li><a href="pyq-quizzes.html">📄 PYQ Based MCQ</a></li>
+      <li><a href="establishment.html">🔄 Establishment MCQ</a></li>
+      <li><a href="current-affairs.html">🌐 Current Affairs</a></li>
+      <li><a href="gk.html">💡 General Knowledge</a></li>
+      <li><a href="dashboard.html" id="mobileDashboardLink" style="display: none;">📊 Dashboard</a></li>
+    </ul>
+  </nav>
+</header>
 
-<!-- Firebase Configuration -->
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
-    authDomain: "quiz-app-1b48b.firebaseapp.com",
-    projectId: "quiz-app-1b48b",
-    appId: "1:765334603137:web:1c8a13f6086a6773c2d480"
-  };
-  firebase.initializeApp(firebaseConfig);
-</script>
+<main>
+  <div class="content">
+    <div class="card">
+      <h2>Welcome to IR-LDCE</h2>
+      <p>IR-LDCE provides hundreds of Manual Based questions, technical questions, and online test practice material for exams like LDCE-AEN and placement interviews.</p>
+    </div>
+    <h2 style="text-align: center;">Available MCQ</h2>
+    <div class="quiz-list">
+      <div class="quiz-card">1. Indian Railway Works Manual</div>
+      <div class="quiz-card">2. Indian Railway P-way Manual</div>
+      <div class="quiz-card">3. Indian Railway Schedule of Dimensions</div>
+      <div class="quiz-card">4. Indian Railway Engineering Code</div>
+      <div class="quiz-card">5. Small Track Machine Manual</div>
+      <div class="quiz-card">6. USFD Manual</div>
+      <div class="quiz-card">7. FBW Manual</div>
+      <div class="quiz-card">8. Store Manual</div>
+      <div class="quiz-card">9. Account Manual</div>
+      <div class="quiz-card">10. PYQ 30% Main 2022</div>
+      <div class="quiz-card">11. PYQ 30% Main 2021</div>
+    </div>
+    <div class="card">
+      <h3>Latest Questions</h3>
+      <ul>
+        <li>Under Development</li>
+        <li>Under Development</li>
+        <li>Under Development</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="sidebar">
+    <div class="card">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Quantitative Aptitude</a></li>
+        <li><a href="#">Logical Reasoning</a></li>
+        <li><a href="#">HR Interview</a></li>
+        <li><a href="#">Online Tests</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
 
-<!-- UI Section -->
-<style>
-  .btn-white-black {
-    background-color: white;
-    color: black;
-    border: 1px solid #ccc;
-    font-weight: bold;
-    border-radius: 6px;
-    padding: 6px 12px;
-    transition: background-color 0.3s, color 0.3s;
-    text-decoration: none;
-    display: inline-block;
-  }
-
-  .btn-white-black:hover {
-    background-color: #f0f0f0;
-    color: #000;
-  }
-</style>
-
-<div class="d-flex align-items-center">
-  <a href="login.html" id="loginLink" class="btn btn-sm btn-white-black me-3">Login</a>
-  <button id="logoutButton" class="btn btn-sm btn-white-black me-3" style="display: none;">Logout</button>
-  <a href="dashboard.html" id="dashboardLink" class="btn btn-sm btn-white-black" style="display: none;">Dashboard</a>
-</div>
-
-
+<footer>
+  &copy; 2025 IR-LDCE. All Rights Reserved.
+</footer>
 
 <!-- Auth State Handling -->
 <script>
   const auth = firebase.auth();
-
   const loginLink = document.getElementById("loginLink");
   const logoutButton = document.getElementById("logoutButton");
   const dashboardLink = document.getElementById("dashboardLink");
@@ -228,20 +273,11 @@
   });
 </script>
 
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <ul class="menu" id="navMenu">
-      <li><a href="index.html"> 🏠 Home</a></li>
-      <li><a href="categories.html"> 📐 MCQ Categories</a></li>
-      <li><a href="manual-quizzes.html"> 📊 Manual Based MCQ</a></li>
-      <li><a href="pyq-quizzes.html"> 📄 PYQ Based MCQ</a></li>
-      <li><a href="establishment.html"> 🔄 Establishment MCQ</a></li>
-      <li><a href="current-affairs.html"> 🌐 Current Affairs</a></li>
-      <li><a href="gk.html"> 💡 General Knowledge</a></li>
-      <li><a href="dashboard.html" id="mobileDashboardLink" style="display: none;">📊 Dashboard</a></li>
-    </ul>
-  </nav>
-</header>
+<script>
+  // Toggle menu on hamburger click
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('navMenu').classList.toggle('active');
+  });
+</script>
+</body>
+</html>
