@@ -21,6 +21,9 @@ const errorDiv = document.getElementById('error-message');
 const historyBody = document.getElementById('quizHistoryBody');
 const loginLink = document.getElementById('loginLink');
 const logoutButton = document.getElementById('logoutButton');
+const dashboardLink = document.getElementById('dashboardLink');
+const mobileDashboardLink = document.getElementById('mobileDashboardLink');
+
 
 // Format Firestore timestamp into readable string
 function formatDateTime(ts) {
@@ -80,6 +83,8 @@ auth.onAuthStateChanged((user) => {
     errorDiv.classList.add('d-none');
     loginLink.style.display = "none";
     logoutButton.style.display = "inline-block";
+    dashboardLink.style.display = "inline-block";
+    if (mobileDashboardLink) mobileDashboardLink.style.display = "inline";
     
     // Load quiz history
     loadQuizHistory(user);
@@ -88,6 +93,8 @@ auth.onAuthStateChanged((user) => {
     errorDiv.classList.remove('d-none');
     loginLink.style.display = "inline-block";
     logoutButton.style.display = "none";
+    dashboardLink.style.display = "none";
+    if (mobileDashboardLink) mobileDashboardLink.style.display = "none";
     
     // Clear history table
     historyBody.innerHTML = `<tr><td colspan="3" class="text-center text-muted">Please log in to view your quiz history.</td></tr>`;
