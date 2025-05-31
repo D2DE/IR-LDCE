@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quiz History</title>
   <style>
-    /* Copy all your main styles from dashboard.html, including .manual-btn if needed */
-     body {
+    body {
       font-family: Arial, sans-serif;
       margin: 0;
       background-color: #f5f7fa;
@@ -119,141 +118,179 @@
       text-align: center;
       padding: 20px;
     }
+
     .quiz-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-
-.manual-btn {
-  background-color: #1976d2;
-  color: white;
-  font-weight: bold;
-  padding: 18px 20px;
-  border-radius: 12px;
-  text-align: center;
-  min-width: 320px;
-  flex: 1 1 320px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
-  cursor: pointer;
-  border: none;
-  font-size: 1.15rem;
-  margin-bottom: 0;
-  margin-top: 0;
-  transition: background 0.2s, box-shadow 0.2s;
-  display: block;
-}
-
-.manual-btn:hover {
-  background-color: #125ca4;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-}
-
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f5f7fa;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 40px;
     }
-    /* ...rest of your styles... */
+
+    .manual-btn {
+      background-color: #1976d2;
+      color: white;
+      font-weight: bold;
+      padding: 18px 20px;
+      border-radius: 12px;
+      text-align: center;
+      min-width: 320px;
+      flex: 1 1 320px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+      cursor: pointer;
+      border: none;
+      font-size: 1.15rem;
+      margin-bottom: 0;
+      margin-top: 0;
+      transition: background 0.2s, box-shadow 0.2s;
+      display: block;
+    }
+
+    .manual-btn:hover {
+      background-color: #125ca4;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+
+    .btn-white-black {
+      background-color: white;
+      color: black;
+      border: 1px solid #ccc;
+      font-weight: bold;
+      border-radius: 6px;
+      padding: 6px 12px;
+      transition: background-color 0.3s, color 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-white-black:hover {
+      background-color: #f0f0f0;
+      color: #000;
+    }
+
+    .alert {
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+    }
+
+    .alert-danger {
+      color: #721c24;
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+    }
+
+    .d-none {
+      display: none !important;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .py-4 {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .mb-3 {
+      margin-bottom: 1rem;
+    }
+
+    .mb-4 {
+      margin-bottom: 1.5rem;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1rem;
+    }
+
+    .table th,
+    .table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .table-bordered {
+      border: 1px solid #dee2e6;
+    }
+
+    .table-bordered th,
+    .table-bordered td {
+      border: 1px solid #dee2e6;
+    }
+
+    .table-hover tbody tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    .table-light {
+      background-color: #f8f9fa;
+    }
+
+    .align-middle {
+      vertical-align: middle;
+    }
+
+    .text-muted {
+      color: #6c757d;
+    }
+
+    .text-danger {
+      color: #dc3545;
+    }
   </style>
 </head>
 <body>
+  <!-- Firebase SDK v9 compat -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
   <header>
-    <!-- Copy your header/nav from dashboard.html -->
-      <nav>
-    <div class="logo">IR-LDCE</div>
-   <!-- Firebase SDK (Make sure to include this in your page) -->
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-
-<!-- Firebase Configuration -->
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
-    authDomain: "quiz-app-1b48b.firebaseapp.com",
-    projectId: "quiz-app-1b48b",
-    appId: "1:765334603137:web:1c8a13f6086a6773c2d480"
-  };
-  firebase.initializeApp(firebaseConfig);
-</script>
-
-<!-- UI Section -->
-<style>
-  .btn-white-black {
-    background-color: white;
-    color: black;
-    border: 1px solid #ccc;
-    font-weight: bold;
-    border-radius: 6px;
-    padding: 6px 12px;
-    transition: background-color 0.3s, color 0.3s;
-    text-decoration: none;
-    display: inline-block;
-  }
-
-  .btn-white-black:hover {
-    background-color: #f0f0f0;
-    color: #000;
-  }
-</style>
-
-<div class="d-flex align-items-center">
-  <a href="login.html" id="loginLink" class="btn btn-sm btn-white-black me-3">Login</a>
-  <button id="logoutButton" class="btn btn-sm btn-white-black" style="display: none;">Logout</button>
-</div>
-
-<!-- Auth State Handling -->
-<script>
-  const auth = firebase.auth();
-
-  const loginLink = document.getElementById("loginLink");
-  const logoutButton = document.getElementById("logoutButton");
-
-  // Listen for auth state changes
-  auth.onAuthStateChanged((user) => {
-    if (user) {
-      loginLink.style.display = "none";
-      logoutButton.style.display = "inline-block";
-    } else {
-      loginLink.style.display = "inline";
-      logoutButton.style.display = "none";
-    }
-  });
-
-  // Handle logout
-  logoutButton.addEventListener("click", () => {
-    auth.signOut().then(() => {
-      console.log("User signed out");
-    }).catch((error) => {
-      console.error("Sign out error", error);
-    });
-  });
-</script>
-
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <ul class="menu" id="navMenu">
-      <li><a href="index.html"> 🏠 Home</a></li>
-      <li><a href="categories.html"> 📐 MCQ Categories</a></li>
-      <li><a href="manual-quizzes.html"> 📊 Manual Based MCQ</a></li>
-      <li><a href="pyq-quizzes.html"> 📄 PYQ Based MCQ</a></li>
-      <li><a href="establishment.html"> 🔄 Establishment MCQ</a></li>
-      <li><a href="current-affairs.html"> 🌐 Current Affairs</a></li>
-      <li><a href="gk.html"> 💡 General Knowledge</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <div class="logo">IR-LDCE</div>
+      <div class="d-flex align-items-center">
+        <a href="login.html" id="loginLink" class="btn-white-black me-3">Login</a>
+        <button id="logoutButton" class="btn-white-black" style="display: none;">Logout</button>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="menu" id="navMenu">
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="categories.html">📐 MCQ Categories</a></li>
+        <li><a href="manual-quizzes.html">📊 Manual Based MCQ</a></li>
+        <li><a href="pyq-quizzes.html">📄 PYQ Based MCQ</a></li>
+        <li><a href="establishment.html">🔄 Establishment MCQ</a></li>
+        <li><a href="current-affairs.html">🌐 Current Affairs</a></li>
+        <li><a href="gk.html">💡 General Knowledge</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main class="dashboard-container container py-4">
     <div id="error-message" class="alert alert-danger text-center d-none">
       You are not logged in. <a href="login.html">Go to login</a>
     </div>
+    
     <section class="dashboard-section quiz-history mb-4">
       <h3 class="mb-3">Quiz History</h3>
       <div class="table-responsive">
@@ -265,17 +302,27 @@
               <th scope="col">Score</th>
             </tr>
           </thead>
-          <tbody id="quizHistoryBody"></tbody>
+          <tbody id="quizHistoryBody">
+            <tr>
+              <td colspan="3" class="text-center text-muted">Loading...</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </section>
   </main>
 
-  <!-- Include your JS, e.g., -->
-  <script type="module" src="quiz-history.js.js"></script>
-  <!-- Or, for best practice, create a new JS file for quiz-history.js and copy the quiz history logic there. -->
   <footer>
     &copy; 2025 IR-LDCE. All Rights Reserved.
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const navMenu = document.getElementById('navMenu');
+      navMenu.classList.toggle('active');
+    }
+  </script>
+  
+  <script src="quiz-history.js"></script>
 </body>
 </html>
