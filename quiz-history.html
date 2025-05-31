@@ -209,6 +209,17 @@
       margin-bottom: 1.5rem;
     }
 
+    .center-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
     .table-responsive {
       overflow-x: auto;
     }
@@ -293,25 +304,25 @@
       You are not logged in. <a href="login.html">Go to login</a>
     </div>
     
-    <section class="dashboard-section quiz-history mb-4">
-      <h3 class="mb-3">Quiz History</h3>
-      <div class="table-responsive">
-        <table class="table table-bordered table-hover align-middle">
-          <thead class="table-light">
-            <tr>
-              <th scope="col">Date & Time</th>
-              <th scope="col">Manual</th>
-              <th scope="col">Score</th>
-            </tr>
-          </thead>
-          <tbody id="quizHistoryBody">
-            <tr>
-              <td colspan="3" class="text-center text-muted">Loading...</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <section class="dashboard-section quiz-history mb-4 center-section">
+  <h3 class="mb-3" style="text-align:center;">Quiz History</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle center-table">
+      <thead class="table-light">
+        <tr>
+          <th scope="col">Date & Time</th>
+          <th scope="col">Manual</th>
+          <th scope="col">Score</th>
+        </tr>
+      </thead>
+      <tbody id="quizHistoryBody">
+        <tr>
+          <td colspan="3" class="text-center text-muted">Loading...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
   </main>
 
   <footer>
