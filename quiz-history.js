@@ -1,8 +1,3 @@
-// Import Firebase modules and initialize as before
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore, collection, query, orderBy, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
 // Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
@@ -13,9 +8,19 @@ const firebaseConfig = {
   appId: "1:765334603137:web:1c8a13f6086a6773c2d480"
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+// Initialize Firebase (v9 compat)
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+// Set auth persistence
+auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+
+// DOM references
+const errorDiv = document.getElementById('error-message');
+const historyBody = document.getElementById('quizHistoryBody');
+const loginLink = document.getElementById('loginLink');
+const logoutButton = document.getElementById('logoutButton');
 
 // Format Firestore timestamp into readable string
 function formatDateTime(ts) {
@@ -25,26 +30,14 @@ function formatDateTime(ts) {
          d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
 }
 
-// DOM references
-const errorDiv = document.getElementById('error-message');
-const historyBody = document.getElementById('quizHistoryBody');
-
-// Handle auth state
-onAuthStateChanged(auth, async (user) => {
-  if (!user) {
-    errorDiv.style.display = 'block';
-    return;
-  }
-
-  errorDiv.style.display = 'none';
-
-  // Load quiz history
+// Load quiz history function
+async function loadQuizHistory(user) {
   try {
-    const quizQuery = query(
-      collection(db, "users", user.uid, "quizHistory"),
-      orderBy("timestamp", "desc")
-    );
-    const snapshot = await getDocs(quizQuery);
+    console.log("Loading quiz history for user:", user.uid);
+    
+    const quizHistoryRef = db.collection("users").doc(user.uid).collection("quizHistory");
+    const snapshot = await quizHistoryRef.orderBy("timestamp", "desc").get();
+    
     historyBody.innerHTML = "";
 
     if (snapshot.empty) {
@@ -64,4 +57,41 @@ onAuthStateChanged(auth, async (user) => {
     console.error("Quiz history error:", err);
     historyBody.innerHTML = `<tr><td colspan="3" class="text-danger">Failed to load quiz history.</td></tr>`;
   }
+}
+
+// Handle logout
+function handleLogout() {
+  auth.signOut().then(() => {
+    console.log("User signed out successfully");
+  }).catch((error) => {
+    console.error("Sign out error:", error);
+  });
+}
+
+// Set up event listeners
+logoutButton.addEventListener("click", handleLogout);
+
+// Handle auth state changes (v9 compat style)
+auth.onAuthStateChanged((user) => {
+  console.log("Auth state changed:", user ? `User: ${user.email}` : "No user");
+  
+  if (user) {
+    // User is signed in
+    errorDiv.classList.add('d-none');
+    loginLink.style.display = "none";
+    logoutButton.style.display = "inline-block";
+    
+    // Load quiz history
+    loadQuizHistory(user);
+  } else {
+    // User is signed out
+    errorDiv.classList.remove('d-none');
+    loginLink.style.display = "inline-block";
+    logoutButton.style.display = "none";
+    
+    // Clear history table
+    historyBody.innerHTML = `<tr><td colspan="3" class="text-center text-muted">Please log in to view your quiz history.</td></tr>`;
+  }
 });
+
+console.log("Quiz history script loaded with Firebase v9 compat");
