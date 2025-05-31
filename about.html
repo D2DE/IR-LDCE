@@ -3,212 +3,261 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us &ndash; IR Manuals Quiz</title>
-
-  <!-- Your global stylesheet -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-
+  <title>About Us – IR-LDCE</title>
   <style>
-    /* Make the about graphic fill the width and scale its height */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f7fa;
+    }
+    /* Header & Navigation */
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 15px 20px;
+      position: relative;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+    /* Menu styles for hamburger (always visible) */
+    ul.menu {
+      list-style: none;
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: #004080;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      padding: 10px 0;
+      margin: 0;
+      z-index: 1000;
+    }
+    ul.menu.active {
+      display: flex;
+    }
+    ul.menu li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+      font-weight: 500;
+    }
+    ul.menu li a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+    }
+    /* Main Content */
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+    .content {
+      flex: 3;
+      min-width: 250px;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .sidebar {
+      flex: 1;
+      min-width: 200px;
+      padding: 20px;
+      background-color: #e0ecff;
+      border-left: 20px solid #ccc;
+    }
+    h2 {
+      color: #004080;
+      margin-top: 0;
+    }
+    /* Footer */
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    /* About content styles */
     .about-hero {
       width: 100%;
       height: auto;
       display: block;
-      margin: 0;
-      padding: 0;
+      margin-bottom: 20px;
+      border-radius: 8px;
     }
-    /* Optional container to center & pad */
-    .hero-container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+    /* Button group styles */
+    .d-flex {
+      display: flex;
+      align-items: center;
     }
-    /* Header styles */
-    .site-header .navbar-brand img {
-      vertical-align: middle;
+    .me-3 {
+      margin-right: 1rem;
     }
-    .site-header .navbar-main .navbar-nav .nav-link {
+    .btn-white-black {
+      background-color: white;
+      color: black;
+      border: 1px solid #ccc;
       font-weight: bold;
-      letter-spacing: 0.5px;
+      border-radius: 6px;
+      padding: 6px 12px;
+      transition: background-color 0.3s, color 0.3s;
+      text-decoration: none;
+      display: inline-block;
     }
-    @media (max-width: 991.98px) {
-      .site-header .navbar-main .navbar-nav {
-        width: 100%;
-      }
-      .site-header .navbar-main .navbar-nav .nav-item {
-        width: 100%;
-      }
-      .site-header .navbar-main .navbar-nav .nav-link,
-      .site-header .navbar-main .navbar-nav .btn {
-        width: 100%;
-        text-align: left;
-        margin-left: 0;
-      }
+    .btn-white-black:hover {
+      background-color: #f0f0f0;
+      color: #000;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header START -->
-  <header class="site-header">
-    <!-- Top yellow bar -->
-    <div class="bg-warning py-2">
-      <div class="container-fluid d-flex justify-content-between align-items-center px-3">
-        <!-- Left: Home, Railway Official Website -->
-        <div class="d-flex align-items-center">
-          <a href="index.html" class="text-dark fw-bold me-3"><i class="fas fa-home"></i> Home</a>
-          <a href="https://indianrail.gov.in" target="_blank" class="text-dark fw-bold">Railway Official Website</a>
-        </div>
-        <!-- Right: About Us, Register, Login, Logout -->
-        <div class="d-flex align-items-center">
-          <a href="about.html" class="text-dark fw-bold me-3 d-none d-lg-inline">About Us</a>
-          <a href="register.html" id="registerLink" class="text-dark fw-bold me-3 d-none d-lg-inline">Register</a>
-          <a href="login.html" id="loginLink" class="text-dark fw-bold me-3 d-none d-lg-inline">Login</a>
-          <button id="logoutButton" class="btn btn-outline-dark btn-sm fw-bold d-none d-lg-inline" style="display:none;">Logout</button>
-        </div>
-        <!-- Hamburger for mobile -->
-        <button class="navbar-toggler d-lg-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
+<header>
+  <nav>
+    <a href="index.html" class="logo">IR-LDCE</a>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
+        authDomain: "quiz-app-1b48b.firebaseapp.com",
+        projectId: "quiz-app-1b48b",
+        appId: "1:765334603137:web:1c8a13f6086a6773c2d480"
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <style>
+      .btn-white-black {
+        background-color: white;
+        color: black;
+        border: 1px solid #ccc;
+        font-weight: bold;
+        border-radius: 6px;
+        padding: 6px 12px;
+        transition: background-color 0.3s, color 0.3s;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .btn-white-black:hover {
+        background-color: #f0f0f0;
+        color: #000;
+      }
+    </style>
+    <div class="d-flex align-items-center">
+      <a href="login.html" id="loginLink" class="btn btn-sm btn-white-black me-3">Login</a>
+      <button id="logoutButton" class="btn btn-sm btn-white-black me-3" style="display: none;">Logout</button>
+      <a href="dashboard.html" id="dashboardLink" class="btn btn-sm btn-white-black" style="display: none;">Dashboard</a>
     </div>
+    <button class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+    <ul class="menu" id="navMenu">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="categories.html">📐 MCQ Categories</a></li>
+      <li><a href="manual-quizzes.html">📊 Manual Based MCQ</a></li>
+      <li><a href="pyq-quizzes.html">📄 PYQ Based MCQ</a></li>
+      <li><a href="establishment.html">🔄 Establishment MCQ</a></li>
+      <li><a href="current-affairs.html">🌐 Current Affairs</a></li>
+      <li><a href="gk.html">💡 General Knowledge</a></li>
+      <li><a href="dashboard.html" id="mobileDashboardLink" style="display: none;">📊 Dashboard</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <!-- White navbar under yellow bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-main border-bottom">
-      <div class="container-fluid px-3">
-        <!-- Left: Logo + IR-LDCE -->
-        <a class="navbar-brand d-flex align-items-center me-auto" href="index.html">
-          <img src="logo.png" alt="IR-LDCE Logo" style="height:48px;max-width:120px;width:auto;object-fit:contain;" />
-          <span class="ms-2 fw-bold">IR-LDCE</span>
-        </a>
-        <!-- Right: Categories, Daily Dose, Dashboard -->
-        <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
-          <ul class="navbar-nav mb-2 mb-lg-0 align-items-center">
-            <li class="nav-item">
-              <a class="nav-link fw-bold" href="categories.html">CATEGORIES</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fw-bold" href="daily-dose.html">DAILY DOSE</a>
-            </li>
-            <li class="nav-item">
-              <button id="dashboardBtn" type="button" class="btn btn-outline-dark btn-sm ms-lg-2 fw-bold" style="display:none;">
-                <i class="fa fa-user-circle"></i> Dashboard
-              </button>
-            </li>
-            <!-- Mobile only: About Us, Register, Login, Logout -->
-            <li class="nav-item d-lg-none mt-2">
-              <a href="about.html" class="nav-link fw-bold">About Us</a>
-            </li>
-            <li class="nav-item d-lg-none">
-              <a href="register.html" id="registerLinkMobile" class="nav-link fw-bold">Register</a>
-            </li>
-            <li class="nav-item d-lg-none">
-              <a href="login.html" id="loginLinkMobile" class="nav-link fw-bold">Login</a>
-            </li>
-            <li class="nav-item d-lg-none">
-              <button id="logoutButtonMobile" class="btn btn-outline-dark btn-sm fw-bold w-100 mt-1" style="display:none;">Logout</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <!-- Header END -->
-
-  <!-- Firebase Auth logic for header -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
-      authDomain: "quiz-app-1b48b.firebaseapp.com",
-      projectId: "quiz-app-1b48b",
-      storageBucket: "quiz-app-1b48b.appspot.com",
-      messagingSenderId: "765334603137",
-      appId: "1:765334603137:web:1c8a13f6086a6773c2d480"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    function updateHeaderUI(user) {
-      // Desktop
-      const registerLink = document.getElementById('registerLink');
-      const loginLink = document.getElementById('loginLink');
-      const logoutButton = document.getElementById('logoutButton');
-      // Mobile
-      const registerLinkMobile = document.getElementById('registerLinkMobile');
-      const loginLinkMobile = document.getElementById('loginLinkMobile');
-      const logoutButtonMobile = document.getElementById('logoutButtonMobile');
-      // Dashboard button
-      const dashboardBtn = document.getElementById('dashboardBtn');
-
-      if (user) {
-        if (registerLink) registerLink.style.display = 'none';
-        if (loginLink) loginLink.style.display = 'none';
-        if (logoutButton) logoutButton.style.display = '';
-        if (registerLinkMobile) registerLinkMobile.style.display = 'none';
-        if (loginLinkMobile) loginLinkMobile.style.display = 'none';
-        if (logoutButtonMobile) logoutButtonMobile.style.display = '';
-        if (dashboardBtn) dashboardBtn.style.display = '';
-      } else {
-        if (registerLink) registerLink.style.display = '';
-        if (loginLink) loginLink.style.display = '';
-        if (logoutButton) logoutButton.style.display = 'none';
-        if (registerLinkMobile) registerLinkMobile.style.display = '';
-        if (loginLinkMobile) loginLinkMobile.style.display = '';
-        if (logoutButtonMobile) logoutButtonMobile.style.display = 'none';
-        if (dashboardBtn) dashboardBtn.style.display = 'none';
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      // Monitor Firebase Auth state
-      onAuthStateChanged(auth, function(user) {
-        updateHeaderUI(user);
-      });
-
-      // Dashboard button
-      const dashboardBtn = document.getElementById('dashboardBtn');
-      if (dashboardBtn) {
-        dashboardBtn.addEventListener('click', function() {
-          window.location.href = 'dashboard.html';
-        });
-      }
-
-      // Logout buttons
-      const logoutButton = document.getElementById('logoutButton');
-      if (logoutButton) {
-        logoutButton.addEventListener('click', function() {
-          signOut(auth).then(function() {
-            window.location.href = 'index.html';
-          });
-        });
-      }
-      const logoutButtonMobile = document.getElementById('logoutButtonMobile');
-      if (logoutButtonMobile) {
-        logoutButtonMobile.addEventListener('click', function() {
-          signOut(auth).then(function() {
-            window.location.href = 'index.html';
-          });
-        });
-      }
-      // Login/Register links: let them go to their respective pages
-    });
-  </script>
-
-  <!-- Hero image with your About-Us content baked in -->
-  <div class="hero-container">
+<main>
+  <div class="content">
     <img src="about.png" alt="About Us" class="about-hero"/>
+    <h2>About IR Manuals Quiz</h2>
+    <p>
+      Welcome to IR Manuals Quiz, your trusted source for comprehensive manual-based quizzes and technical question practice for exams like LDCE-AEN and placement interviews. Our platform provides a wide range of quizzes covering various manuals and topics to help you prepare effectively.
+    </p>
+    <p>
+      We are committed to delivering quality content and a user-friendly experience to support your learning journey.
+    </p>
   </div>
+  <!-- Optional: Add a sidebar if you want -->
+  <aside class="sidebar">
+    <div class="card">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
 
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<footer>
+  &copy; 2025 IR-LDCE. All Rights Reserved.
+</footer>
+
+<!-- Auth State Handling -->
+<script>
+  const auth = firebase.auth();
+  const loginLink = document.getElementById("loginLink");
+  const logoutButton = document.getElementById("logoutButton");
+  const dashboardLink = document.getElementById("dashboardLink");
+  const mobileDashboardLink = document.getElementById("mobileDashboardLink");
+
+  // Listen for auth state changes
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      loginLink.style.display = "none";
+      logoutButton.style.display = "inline-block";
+      dashboardLink.style.display = "inline-block";
+      mobileDashboardLink.style.display = "inline";
+    } else {
+      loginLink.style.display = "inline";
+      logoutButton.style.display = "none";
+      dashboardLink.style.display = "none";
+      mobileDashboardLink.style.display = "none";
+    }
+  });
+
+  // Handle logout
+  logoutButton.addEventListener("click", () => {
+    auth.signOut().then(() => {
+      console.log("User signed out");
+    }).catch((error) => {
+      console.error("Sign out error", error);
+    });
+  });
+</script>
+
+<script>
+  // Toggle menu on hamburger click
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('navMenu').classList.toggle('active');
+  });
+</script>
 </body>
 </html>
