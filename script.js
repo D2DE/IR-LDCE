@@ -1,199 +1,223 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-import {
-  getAuth,
-  onAuthStateChanged,
-  signOut,
-} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  getDoc,
-  setDoc,
-  doc,
-  serverTimestamp,
-} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyB5yTVihZxy-uOUq7DgSS8--5Ht7CIe8z8",
-  authDomain: "mcq-exam-portal-3ae5b.firebaseapp.com",
-  projectId: "mcq-exam-portal-3ae5b",
-  storageBucket: "mcq-exam-portal-3ae5b.appspot.com",
-  messagingSenderId: "468215394057",
-  appId: "1:468215394057:web:a6c74c38f71df20d7e05ff",
+const manualNames = {
+  irwm: "Indian Railway Works Manual",
+  irpwm: "Indian Railway P-way Manual",
+  irdim: "Indian Railway Schedule of Dimensions",
+  irec: "Indian Railway Engineering Code",
+  stm: "Small Track Machine Manual",
+  usfd: "USFD Manual",
+  fbwm: "FBW Manual",
+  store: "Store Manual",
+  account: "Account Manual",
+  pyq2022: "PYQ 30% Main 2022",
+  pyq2021: "PYQ 30% Main 2021"
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+window.initQuiz = function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const manual = urlParams.get('manual');
+  const jsonFile = manual ? `https://d2de.github.io/IR-LDCE/${manual}-questions.json` : null;
 
-let quizId = new URLSearchParams(window.location.search).get("quizId");
-let questions = [];
-let currentIndex = 0;
-let answers = [];
-let timeLeft = 600; // 10 minutes
-let timerInterval;
+  let questions = [];
+  let currentQuestionIndex = 0;
+  let score = 0;
+  const quizDuration = 600; // 10 minutes
+  let totalTimeLeft = quizDuration;
+  let totalTimer;
 
-const quizContainer = document.getElementById("quiz-container");
-const indexContainer = document.getElementById("index-container");
-const timerCircle = document.getElementById("timer-circle");
-const timerText = document.getElementById("timer-text");
+  const questionElement = document.getElementById("question");
+  const answerButtons = document.getElementById("answer-buttons");
+  const nextButton = document.getElementById("next-btn");
+  const headingElement = document.querySelector('.app h1');
+  const timerElement = document.getElementById("timer");
 
-onAuthStateChanged(auth, async (user) => {
-  if (user) {
-    const quizDoc = await getDoc(doc(db, "quizzes", quizId));
-    if (quizDoc.exists()) {
-      questions = quizDoc.data().questions || [];
-      answers = new Array(questions.length).fill(null);
-      renderIndex();
-      renderQuestion();
-      startTimer();
-    } else {
-      alert("Quiz not found");
+  if (manual && manualNames[manual]) {
+    headingElement.textContent = `${manualNames[manual]} Quiz`;
+  } else {
+    headingElement.textContent = "Quiz";
+  }
+
+  async function loadQuestions() {
+    if (!jsonFile) {
+      questionElement.innerHTML = "No manual selected.<br><a href='index.html'>Go back</a>";
+      nextButton.style.display = "none";
+      return;
     }
-  } else {
-    window.location.href = "login.html";
+
+    try {
+      const response = await fetch(jsonFile);
+      if (!response.ok) throw new Error("Failed to load questions");
+      questions = await response.json();
+      startQuiz();
+    } catch (error) {
+      questionElement.innerHTML = "Error loading questions.<br><a href='index.html'>Go back</a>";
+      console.error(error);
+    }
   }
-});
 
-function renderIndex() {
-  indexContainer.innerHTML = "";
-  questions.forEach((_, i) => {
-    const btn = document.createElement("button");
-    btn.className = "index-btn";
-    btn.textContent = i + 1;
-    btn.onclick = () => {
-      currentIndex = i;
-      renderQuestion();
-    };
-    indexContainer.appendChild(btn);
-  });
-}
-
-function renderQuestion() {
-  const q = questions[currentIndex];
-  quizContainer.innerHTML = `
-    <h2>Q${currentIndex + 1}: ${q.question}</h2>
-    <div id="options">
-      ${q.options
-        .map(
-          (opt, i) => `
-        <label>
-          <input type="radio" name="option" value="${i}" ${
-            answers[currentIndex] === i ? "checked" : ""
-          }>
-          ${opt}
-        </label><br>
-      `
-        )
-        .join("")}
-    </div>
-    <div class="actions">
-      <button onclick="prevQuestion()">Previous</button>
-      <button onclick="nextQuestion()">Next</button>
-      <button onclick="markForReview()">Mark for Review</button>
-      <button onclick="clearResponse()">Clear</button>
-    </div>
-    <button onclick="submitQuiz()" class="submit-btn">Submit Quiz</button>
-  `;
-
-  const options = document.getElementsByName("option");
-  options.forEach((opt) => {
-    opt.onchange = () => {
-      answers[currentIndex] = parseInt(opt.value);
-      updateIndexButtonState(currentIndex);
-    };
-  });
-
-  updateIndexButtonState(currentIndex);
-}
-
-function updateIndexButtonState(index) {
-  const btn = indexContainer.children[index];
-  if (answers[index] !== null) {
-    btn.style.backgroundColor = "#4caf50"; // attempted
-  } else {
-    btn.style.backgroundColor = "#ff9800"; // unattempted
-  }
-}
-
-function nextQuestion() {
-  if (currentIndex < questions.length - 1) {
-    currentIndex++;
-    renderQuestion();
-  }
-}
-
-function prevQuestion() {
-  if (currentIndex > 0) {
-    currentIndex--;
-    renderQuestion();
-  }
-}
-
-function markForReview() {
-  const btn = indexContainer.children[currentIndex];
-  btn.style.backgroundColor = "#9c27b0"; // marked for review
-  nextQuestion();
-}
-
-function clearResponse() {
-  answers[currentIndex] = null;
-  renderQuestion();
-  updateIndexButtonState(currentIndex);
-}
-
-function startTimer() {
-  timerInterval = setInterval(() => {
-    timeLeft--;
+  function startTotalTimer() {
     updateTimerDisplay();
-    if (timeLeft <= 0) {
-      clearInterval(timerInterval);
-      submitQuiz();
+    totalTimer = setInterval(() => {
+      totalTimeLeft--;
+      updateTimerDisplay();
+      if (totalTimeLeft <= 0) {
+        clearInterval(totalTimer);
+        alert("⏰ Time is up! Quiz will be submitted.");
+        showScore();
+      }
+    }, 1000);
+  }
+
+  function updateTimerDisplay() {
+    const mins = Math.floor(totalTimeLeft / 60);
+    const secs = totalTimeLeft % 60;
+    const percent = (totalTimeLeft / quizDuration) * 100;
+
+    timerElement.innerHTML = `
+      <div style="position: relative; width: 80px; height: 80px;">
+        <svg width="80" height="80">
+          <circle r="35" cx="40" cy="40" fill="transparent" stroke="#ddd" stroke-width="6"/>
+          <circle r="35" cx="40" cy="40" fill="transparent" stroke="#007bff" stroke-width="6"
+            stroke-dasharray="${2 * Math.PI * 35}"
+            stroke-dashoffset="${((100 - percent) / 100) * 2 * Math.PI * 35}"
+            transform="rotate(-90 40 40)"/>
+        </svg>
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                    font-size: 14px; font-weight: bold;">
+          ${mins}:${secs.toString().padStart(2, '0')}
+        </div>
+      </div>
+    `;
+  }
+
+  function startQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    nextButton.innerHTML = "Next";
+    startTotalTimer();
+    showQuestion();
+  }
+
+  function showQuestion() {
+    resetState();
+
+    const currentQuestion = questions[currentQuestionIndex];
+    const questionNo = currentQuestionIndex + 1;
+    let html = `<strong>${questionNo}. ${currentQuestion.question}</strong>`;
+    if (currentQuestion.image) {
+      html += `<div><img src="${currentQuestion.image}" alt="question image" style="max-height:200px;" class="img-fluid my-2"></div>`;
     }
-  }, 1000);
-  updateTimerDisplay();
-}
 
-function updateTimerDisplay() {
-  const minutes = Math.floor(timeLeft / 60);
-  const seconds = timeLeft % 60;
-  timerText.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    questionElement.innerHTML = html;
 
-  const percent = (timeLeft / 600) * 100;
-  const angle = (percent / 100) * 360;
-  timerCircle.style.background = `conic-gradient(#03a9f4 ${angle}deg, #e0e0e0 0deg)`;
-}
+    const ul = document.createElement("ul");
+    ul.className = "list-unstyled";
 
-async function submitQuiz() {
-  clearInterval(timerInterval);
+    currentQuestion.answers.forEach(answer => {
+      const li = document.createElement("li");
+      li.className = "mb-2";
 
-  const user = auth.currentUser;
-  let correct = 0;
-  let wrong = 0;
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "btn btn-outline-primary w-100 text-start d-flex align-items-center";
+      button.setAttribute("tabindex", 0);
+      button.setAttribute("aria-label", answer.text);
+      button.innerHTML = answer.image
+        ? `<span>${answer.text}</span><img src="${answer.image}" alt="option image" class="ms-auto" style="max-height:40px;">`
+        : answer.text;
 
-  questions.forEach((q, i) => {
-    if (answers[i] === q.answer) {
-      correct++;
-    } else if (answers[i] !== null) {
-      wrong++;
+      if (answer.correct) button.dataset.correct = "true";
+      button.addEventListener("click", selectAnswer);
+      li.appendChild(button);
+      ul.appendChild(li);
+    });
+
+    answerButtons.appendChild(ul);
+  }
+
+  function resetState() {
+    nextButton.style.display = "none";
+    answerButtons.innerHTML = "";
+  }
+
+  function selectAnswer(e) {
+    const selectedBtn = e.target.closest("button");
+    const isCorrect = selectedBtn.dataset.correct === "true";
+
+    selectedBtn.classList.remove("btn-outline-primary");
+    selectedBtn.classList.add(isCorrect ? "btn-success" : "btn-danger");
+
+    if (isCorrect) {
+      score += 1;
+    } else {
+      score -= 1 / 3;
+    }
+
+    const allButtons = answerButtons.querySelectorAll("button");
+    allButtons.forEach(button => {
+      if (button.dataset.correct === "true") {
+        button.classList.remove("btn-outline-primary");
+        button.classList.add("btn-success");
+      }
+      button.disabled = true;
+    });
+
+    nextButton.style.display = "block";
+    nextButton.focus();
+  }
+
+  function showScore() {
+    clearInterval(totalTimer);
+    resetState();
+
+    questionElement.innerHTML = `
+      <div class="alert alert-info" role="alert">
+        You scored <strong>${score.toFixed(2)}</strong> out of <strong>${questions.length}</strong>!
+      </div>
+      <a href="index.html" class="btn btn-secondary mt-2">Back to Manuals</a>
+    `;
+
+    nextButton.innerHTML = "Play Again";
+    nextButton.style.display = "block";
+
+    saveQuizResult();
+  }
+
+  function handleNextButton() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+      showQuestion();
+    } else {
+      showScore();
+    }
+  }
+
+  nextButton.addEventListener("click", () => {
+    if (currentQuestionIndex < questions.length) {
+      handleNextButton();
+    } else {
+      startQuiz();
     }
   });
 
-  const total = questions.length;
-  const score = correct - wrong / 3;
+  async function saveQuizResult() {
+    try {
+      const auth = window.firebaseAuth;
+      const db = window.firebaseDb;
+      const user = auth.currentUser;
+      if (!user) return;
 
-  await setDoc(doc(db, "quizHistory", `${user.uid}_${quizId}_${Date.now()}`), {
-    userId: user.uid,
-    quizId,
-    answers,
-    correct,
-    wrong,
-    total,
-    score,
-    submittedAt: serverTimestamp(),
-  });
+      const { collection, addDoc, serverTimestamp } = await import("https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js");
 
-  alert(`Quiz submitted!\nScore: ${score.toFixed(2)}\nCorrect: ${correct}\nWrong: ${wrong}`);
-  window.location.href = "dashboard.html";
-}
+      await addDoc(collection(db, "users", user.uid, "quizHistory"), {
+        manual: manual,
+        score: score,
+        totalQuestions: questions.length,
+        timestamp: serverTimestamp()
+      });
+    } catch (err) {
+      console.warn("Skipping Firebase saving:", err.message);
+    }
+  }
+
+  loadQuestions();
+};
