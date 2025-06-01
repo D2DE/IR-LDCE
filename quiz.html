@@ -221,22 +221,33 @@
       }
     }
 
-    function showQuestion() {
-      if (quizEnded) return;
-      nextBtn.style.display = 'none';
-      questionElem.textContent = questions[currentIndex].question;
-      answersDiv.innerHTML = "";
+function showQuestion() {
+  if (quizEnded) return;
+  nextBtn.style.display = 'none';
+  questionElem.textContent = questions[currentIndex].question;
+  answersDiv.innerHTML = "";
 
-      questions[currentIndex].answers.forEach(answer => {
-        const btn = document.createElement("button");
-        btn.textContent = answer.text;
-        btn.classList.add("answer-btn");
-        btn.onclick = () => selectAnswer(btn, answer.correct);
-        answersDiv.appendChild(btn);
-      });
+  const currentStatus = questionStatus[currentIndex];
 
-      updateIndexBar();
+  questions[currentIndex].answers.forEach(answer => {
+    const btn = document.createElement("button");
+    btn.textContent = answer.text;
+    btn.classList.add("answer-btn");
+
+    // Disable and show correct answer if question is already attempted
+    if (currentStatus === "attempted") {
+      btn.disabled = true;
+      if (answer.correct) btn.classList.add('correct');
+    } else {
+      // Only allow clicking if not attempted
+      btn.onclick = () => selectAnswer(btn, answer.correct);
     }
+
+    answersDiv.appendChild(btn);
+  });
+
+  updateIndexBar();
+}
 
     function selectAnswer(selectedBtn, isCorrect) {
       if (quizEnded) return;
@@ -377,32 +388,6 @@
       });
     }
   </script>
-  function showQuestion() {
-  if (quizEnded) return;
-  nextBtn.style.display = 'none';
-  questionElem.textContent = questions[currentIndex].question;
-  answersDiv.innerHTML = "";
-
-  const currentStatus = questionStatus[currentIndex];
-
-  questions[currentIndex].answers.forEach(answer => {
-    const btn = document.createElement("button");
-    btn.textContent = answer.text;
-    btn.classList.add("answer-btn");
-
-    // Disable buttons if question is already attempted
-    if (currentStatus === "attempted") {
-      btn.disabled = true;
-      if (answer.correct) btn.classList.add('correct'); // Highlight correct answer
-    } else {
-      btn.onclick = () => selectAnswer(btn, answer.correct);
-    }
-
-    answersDiv.appendChild(btn);
-  });
-
-  updateIndexBar();
-}
-
+  
 </body>
 </html>
