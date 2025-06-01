@@ -113,6 +113,18 @@
       vertical-align: middle;
       margin: 0 8px;
     }
+    .forgot-link {
+  font-size: 0.9em;
+  color: #1976d2;
+  text-align: right;
+  display: block;
+  margin-top: -8px;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+.forgot-link:hover {
+  text-decoration: underline;
+}
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
@@ -135,6 +147,7 @@
       <input type="email" id="email" name="email" required placeholder="Enter your email" autocomplete="username" />
       <label for="password">Password</label>
       <input type="password" id="password" name="password" required placeholder="Enter your password" autocomplete="current-password" />
+      <a href="#" id="forgotPasswordLink" class="forgot-link">Forgot Password?</a>
       <button type="submit">Login</button>
     </form>
     <div class="signup-link">
@@ -205,6 +218,30 @@
         errorDiv.style.display = "block";
       }
     });
+    import { sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+document.getElementById('forgotPasswordLink').addEventListener('click', async (e) => {
+  e.preventDefault();
+  const email = document.getElementById('email').value.trim();
+  const errorDiv = document.getElementById('error-message');
+
+  if (!email) {
+    errorDiv.textContent = "Please enter your email above to reset your password.";
+    errorDiv.style.display = "block";
+    return;
+  }
+
+  try {
+    await sendPasswordResetEmail(auth, email);
+    errorDiv.style.color = "green";
+    errorDiv.textContent = "Password reset email sent! Check your inbox.";
+    errorDiv.style.display = "block";
+  } catch (error) {
+    errorDiv.style.color = "#b00";
+    errorDiv.textContent = error.message.replace("Firebase:", "");
+    errorDiv.style.display = "block";
+  }
+});
   </script>
 </body>
 </html>
