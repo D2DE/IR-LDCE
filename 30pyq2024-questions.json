@@ -1,0 +1,3656 @@
+[
+  {
+    "question": "Velocity of flow is proportional to the first power of hydraulic gradient in Darcy’s law. This law is applicable to:",
+    "answers": [
+      {
+        "text": "Transitional flow in porous media",
+        "correct": false
+      },
+      {
+        "text": "Laminar flow in porous media",
+        "correct": true
+      },
+      {
+        "text": "Laminar as well as turbulent flow in porous media",
+        "correct": false
+      },
+      {
+        "text": "Turbulent flow in porous media",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "A body floating in a liquid is in a stable state of equilibrium if its",
+    "answers": [
+      {
+        "text": "Metacentre lies above its centre of gravity",
+        "correct": true
+      },
+      {
+        "text": "Metacentre lies below its centre of gravity",
+        "correct": false
+      },
+      {
+        "text": "Metacentre coincides with its centre of gravity",
+        "correct": false
+      },
+      {
+        "text": "Centre of gravity is below its centre of buoyancy",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In a soil investigation, SPT was conducted at 3 m depth. Number of blows for three successive 150 mm penetrations were 8, 6 and 9. The SPT N-value at 3 m depth is",
+    "answers": [
+      {
+        "text": "17",
+        "correct": false
+      },
+      {
+        "text": "15",
+        "correct": true
+      },
+      {
+        "text": "14",
+        "correct": false
+      },
+      {
+        "text": "23",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "As per IS 456:2000, the pH value of water for concrete mix shall NOT be less than",
+    "answers": [
+      {
+        "text": "4.5",
+        "correct": false
+      },
+      {
+        "text": "6",
+        "correct": true
+      },
+      {
+        "text": "5.5",
+        "correct": false
+      },
+      {
+        "text": "5",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following is NOT a correct statement?",
+    "answers": [
+      {
+        "text": "First reading from a level station is a “Fore Sight”",
+        "correct": true
+      },
+      {
+        "text": "Planimeter is used for measuring “area”",
+        "correct": false
+      },
+      {
+        "text": "Contours of different elevations may intersect on an overhang",
+        "correct": false
+      },
+      {
+        "text": "Basic principle of surveying is whole to parts",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "As per Unified Soil Classification System (USCS), the soil type represented by MH is",
+    "answers": [
+      {
+        "text": "Silt of high plasticity with liquid limit > 50 %",
+        "correct": true
+      },
+      {
+        "text": "Silt of low plasticity with liquid limit < 50 %",
+        "correct": false
+      },
+      {
+        "text": "Clay of high plasticity with liquid limit < 50 %",
+        "correct": false
+      },
+      {
+        "text": "Clay of low plasticity with liquid limit > 50 %",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "A lake has maximum depth 60 m. Atmospheric pressure is 91 kPa; unit weight of water is 9 790 N/m³. Absolute pressure at maximum depth is (kPa)",
+    "answers": [
+      {
+        "text": "597.5",
+        "correct": false
+      },
+      {
+        "text": "768.4",
+        "correct": false
+      },
+      {
+        "text": "678.4",
+        "correct": true
+      },
+      {
+        "text": "634.45",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "A 12-hour unit hydrograph (1 cm excess rainfall) is triangular with base 144 hr and peak discharge 23 m³/s. Catchment area (km²) is",
+    "answers": [
+      {
+        "text": "828",
+        "correct": false
+      },
+      {
+        "text": "596",
+        "correct": true
+      },
+      {
+        "text": "662",
+        "correct": false
+      },
+      {
+        "text": "934",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "An uncompacted soil heap has volume 10 000 m³ and void ratio 1. If compacted to 7 500 m³, void ratio becomes",
+    "answers": [
+      {
+        "text": "0.3",
+        "correct": false
+      },
+      {
+        "text": "0.5",
+        "correct": true
+      },
+      {
+        "text": "0.6",
+        "correct": false
+      },
+      {
+        "text": "0.75",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Read the following statements relating to flexure of reinforced concrete beams: \nI. In over-reinforced sections, the failure strain in concrete reaches earlier than the yield strain in steel. \nII. In under-reinforced sections, steel reaches yielding at a load lower than the load at which the concrete reaches failure strain. \nIII. Over-reinforced beams are recommended for use as compared to the under-reinforced beams. \nIV. In balanced sections, the concrete reaches failure strain earlier than the yield strain in tensile steel. Each of the above statements is either True or False. Which one of the following combinations is correct:",
+    "answers": [
+      {
+        "text": "I (True),\n II (True),\nIII (False), \nIV (False)",
+        "correct": false
+      },
+      {
+        "text": "I (True), II (True), III (False), IV (True)",
+        "correct": false
+      },
+      {
+        "text": "I (False), II (False), III (True), IV (False)",
+        "correct": false
+      },
+      {
+        "text": "I (False), II (True), III (True), IV (False)",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Match the entries in Column X (Cement compounds) and Column Y (Cement properties) and find out the correct combinations: \nI. C3S \nII. C2S \nIII. C3A Column Y: P. Early age strength Q. Later age strength R. Flash setting S. Highest heat of hydration T. Lowest heat of hydration",
+    "answers": [
+      {
+        "text": "(I)-(P), (II)-(Q) and (T), (III)-(R) and (S)",
+        "correct": true
+      },
+      {
+        "text": "(I)-(Q) and (T), (II)-(P) and (S), (III)-(R)",
+        "correct": false
+      },
+      {
+        "text": "(I)-(P), (II)-(Q) and (R), (III)-(T)",
+        "correct": false
+      },
+      {
+        "text": "(I)-(T), (II)-(S), (III)-(P) and (Q)",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Consider a beam PQ fixed at P, hinged at Q, and subjected to a load F as shown in figure. The static and kinematic degrees of indeterminacy, respectively, are:",
+    "answers": [
+      {
+        "text": "2 and 1",
+        "correct": true
+      },
+      {
+        "text": "2 and 0",
+        "correct": false
+      },
+      {
+        "text": "1 and 2",
+        "correct": false
+      },
+      {
+        "text": "2 and 2",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In a triaxial Unconsolidated Undrained (UU) test on a saturated clay sample, the cell pressure was 100 kPa. If the deviatoric stress at failure was 150 kPa, then the undrained shear strength of the soil is (kPa):",
+    "answers": [
+      {
+        "text": "100",
+        "correct": false
+      },
+      {
+        "text": "50",
+        "correct": false
+      },
+      {
+        "text": "75",
+        "correct": true
+      },
+      {
+        "text": "25",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "An ant walks in a straight line on a plane leaving behind a trace of its movement. The initial position of the ant is at point P facing east. The ant first turns 72° anticlockwise at P, and then does the following two steps in sequence exactly FIVE times before halting: 1. Moves forward for 10 cm 2. Turns 144° clockwise. The pattern made by the trace left behind by the ant is:",
+    "answers": [
+      {
+        "text": "Option 1",
+        "correct": false
+      },
+      {
+        "text": "Option 2",
+        "correct": false
+      },
+      {
+        "text": "Option 3",
+        "correct": true
+      },
+      {
+        "text": "Option 4",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "A cantilever beam PQ of uniform flexural rigidity (EI) is subjected to a concentrated moment M as shown in the figure. The deflection at the free end Q is:",
+    "answers": [
+      {
+        "text": "3ML2/4EI3ML2/4EI",
+        "correct": false
+      },
+      {
+        "text": "ML2/6EIML2/6EI",
+        "correct": false
+      },
+      {
+        "text": "3ML2/8EI3ML2/8EI",
+        "correct": true
+      },
+      {
+        "text": "ML2/4EIML2/4EI",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "If Q = Peak Runoff (in m³/sec), I = Rainfall Intensity (in mm/hour), C = Runoff Co-efficient, A = Area of catchment (in km²):",
+    "answers": [
+      {
+        "text": "Q=0.0278CIAQ=0.0278CIA",
+        "correct": false
+      },
+      {
+        "text": "Q=0.278CIAQ=0.278CIA",
+        "correct": true
+      },
+      {
+        "text": "Q=0.00278CIAQ=0.00278CIA",
+        "correct": false
+      },
+      {
+        "text": "Q=CIAQ=CIA",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In case of bids in two-packet system, the correct option is:",
+    "answers": [
+      {
+        "text": "Either of the bids (Technical and Financial) can be opened first",
+        "correct": false
+      },
+      {
+        "text": "Financial bid is opened first",
+        "correct": false
+      },
+      {
+        "text": "Both bids (Financial and Technical) are opened simultaneously",
+        "correct": false
+      },
+      {
+        "text": "Technical bid is opened first",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "As per IRPWM 2020, what is the service life in terms of total GMT of traffic carried for considering TRR (P) on important bridges in case of 60 kg 90 UTS rail?",
+    "answers": [
+      {
+        "text": "350",
+        "correct": false
+      },
+      {
+        "text": "525",
+        "correct": false
+      },
+      {
+        "text": "800",
+        "correct": false
+      },
+      {
+        "text": "400",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "As per IRPWM 2020, what is maximum vertical wear for considering renewal of 60 kg 90 UTS rails?",
+    "answers": [
+      {
+        "text": "13 mm",
+        "correct": true
+      },
+      {
+        "text": "12 mm",
+        "correct": false
+      },
+      {
+        "text": "8 mm",
+        "correct": false
+      },
+      {
+        "text": "None of the given options",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Diameter of bolt holes for connecting fish plates in 52 kg rail is",
+    "answers": [
+      {
+        "text": "32 mm",
+        "correct": true
+      },
+      {
+        "text": "29 mm",
+        "correct": false
+      },
+      {
+        "text": "27 mm",
+        "correct": false
+      },
+      {
+        "text": "25 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "As per IRPWM 2020, the design toe load of ERC-MK-V is",
+    "answers": [
+      {
+        "text": "850–1100 kg",
+        "correct": false
+      },
+      {
+        "text": "1200–1500 kg",
+        "correct": true
+      },
+      {
+        "text": "690 kg",
+        "correct": false
+      },
+      {
+        "text": "650–1100 kg",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "For machine-crushed ballast, ballast retained on 40 mm mesh sieve should not exceed (for payment without deduction)",
+    "answers": [
+      {
+        "text": "0.05",
+        "correct": false
+      },
+      {
+        "text": "0.2",
+        "correct": false
+      },
+      {
+        "text": "0.3",
+        "correct": false
+      },
+      {
+        "text": "0.6",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "As per IRPWM 2020, minimum formation width for single-line straight track (excluding side drains) is",
+    "answers": [
+      {
+        "text": "13 160 mm",
+        "correct": false
+      },
+      {
+        "text": "7 850 mm",
+        "correct": true
+      },
+      {
+        "text": "13 610 mm",
+        "correct": false
+      },
+      {
+        "text": "16 310 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "As per IRPWM 2020, maximum design gap of 60 kg/m rail section double-gap SEJ is",
+    "answers": [
+      {
+        "text": "65 mm",
+        "correct": true
+      },
+      {
+        "text": "160 mm",
+        "correct": false
+      },
+      {
+        "text": "40 mm",
+        "correct": false
+      },
+      {
+        "text": "80 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "To ensure exact gauge, gauge tie plates are provided at",
+    "answers": [
+      {
+        "text": "Toe of the switch",
+        "correct": true
+      },
+      {
+        "text": "Toe of the crossing",
+        "correct": false
+      },
+      {
+        "text": "Heel of the switch",
+        "correct": false
+      },
+      {
+        "text": "Stock rail joint",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "As per IRPWM 2020, location of JOH for 10 125 mm curved switch on PSC, BG, 60 kg is",
+    "answers": [
+      {
+        "text": "476.5 mm",
+        "correct": false
+      },
+      {
+        "text": "3 229 mm",
+        "correct": false
+      },
+      {
+        "text": "1 682 mm",
+        "correct": false
+      },
+      {
+        "text": "5 836 mm",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "In PSC BG turnout, gauge and cross-level should be recorded at ___ ahead & behind of ANC",
+    "answers": [
+      {
+        "text": "1 000 mm",
+        "correct": true
+      },
+      {
+        "text": "500 mm",
+        "correct": false
+      },
+      {
+        "text": "250 mm",
+        "correct": false
+      },
+      {
+        "text": "None of these",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "A tongue rail is classified as worn/damaged when chipped/cracked lengths aggregate to ___ mm within 1 000 mm",
+    "answers": [
+      {
+        "text": "100 mm",
+        "correct": false
+      },
+      {
+        "text": "150 mm",
+        "correct": false
+      },
+      {
+        "text": "200 mm",
+        "correct": true
+      },
+      {
+        "text": "250 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "As per IRPWM 2020, no fish-plated joint should be located on the girder or within ___ of either abutment",
+    "answers": [
+      {
+        "text": "13 m",
+        "correct": false
+      },
+      {
+        "text": "4 m",
+        "correct": false
+      },
+      {
+        "text": "13.3 m",
+        "correct": false
+      },
+      {
+        "text": "6 m",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Frequency of inspection of channel sleepers on bridges by SSE/P.Way (Sectional) is:",
+    "answers": [
+      {
+        "text": "Once in 6 months",
+        "correct": true
+      },
+      {
+        "text": "Once in year before monsoon",
+        "correct": false
+      },
+      {
+        "text": "Once in every quarter",
+        "correct": false
+      },
+      {
+        "text": "Twice in 6 months",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In brand marking on rails following details are included: (i) Grade of steel, (ii) Process of steel making, (iii) IRS specifications, (iv) Identification mark of manufacturer. Which is correct?",
+    "answers": [
+      {
+        "text": "Only (i) & (ii)",
+        "correct": false
+      },
+      {
+        "text": "All above",
+        "correct": false
+      },
+      {
+        "text": "Above all except (ii)",
+        "correct": false
+      },
+      {
+        "text": "Above all except (iii)",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "In specifications of track ballast, in normal cases: (i) Maximum aggregate impact value 20%, (ii) Maximum water absorption 1%, (iii) Maximum retention on 65 mm sieve 5%. Which is correct?",
+    "answers": [
+      {
+        "text": "Only (i) & (ii)",
+        "correct": false
+      },
+      {
+        "text": "Only (i) & (iii)",
+        "correct": false
+      },
+      {
+        "text": "Above all",
+        "correct": true
+      },
+      {
+        "text": "Only (ii)",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "There are three parallel tracks under a Road Over Bridge (ROB), the distance of nearest centre line of track from left side abutment is 7m and distance of nearest centre line of track from right side abutment is 9m. In this case, Guard rails are to be provided",
+    "answers": [
+      {
+        "text": "On all three tracks",
+        "correct": false
+      },
+      {
+        "text": "On both outer tracks",
+        "correct": false
+      },
+      {
+        "text": "Not required on any track",
+        "correct": false
+      },
+      {
+        "text": "Only on track near left side abutment",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "In LWR/CWR track, minimum level of supervision for “Packing or renewal of single isolated sleeper not requiring lifting or slewing of track” is:",
+    "answers": [
+      {
+        "text": "Keyman",
+        "correct": false
+      },
+      {
+        "text": "SSE (P. Way)",
+        "correct": false
+      },
+      {
+        "text": "Gang Mate",
+        "correct": true
+      },
+      {
+        "text": "JE (P. Way)",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "After detection of a DFWR defect, the type of painting on both faces of weld (in rail head) is:",
+    "answers": [
+      {
+        "text": "One cross with red paint",
+        "correct": false
+      },
+      {
+        "text": "Two cross with red paint",
+        "correct": true
+      },
+      {
+        "text": "Three cross with red paint",
+        "correct": false
+      },
+      {
+        "text": "Three cross with green paint",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Free rail while stacking shall be supported at least at:",
+    "answers": [
+      {
+        "text": "2 points",
+        "correct": false
+      },
+      {
+        "text": "3 points",
+        "correct": false
+      },
+      {
+        "text": "4 points",
+        "correct": true
+      },
+      {
+        "text": "5 points",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Sensitive setting of USFD instrument is to be done:",
+    "answers": [
+      {
+        "text": "Once in a week",
+        "correct": false
+      },
+      {
+        "text": "Every day before conducting ultrasonic test",
+        "correct": false
+      },
+      {
+        "text": "Once in a month",
+        "correct": false
+      },
+      {
+        "text": "None of the given options",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Kidney cracks in rail originate generally at an angle of ___ below the running surface.",
+    "answers": [
+      {
+        "text": "18°–23°",
+        "correct": true
+      },
+      {
+        "text": "13°–18°",
+        "correct": false
+      },
+      {
+        "text": "23°–27°",
+        "correct": false
+      },
+      {
+        "text": "None of the given options",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Bending of rail ends due to loose packing under a joint and loose fish bolts is known as:",
+    "answers": [
+      {
+        "text": "Buckling",
+        "correct": false
+      },
+      {
+        "text": "Hogging",
+        "correct": true
+      },
+      {
+        "text": "Creeping",
+        "correct": false
+      },
+      {
+        "text": "Yielding",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The diameter of holes in fish plate for Broad Gauge is:",
+    "answers": [
+      {
+        "text": "27 mm",
+        "correct": true
+      },
+      {
+        "text": "20 mm",
+        "correct": false
+      },
+      {
+        "text": "32 mm",
+        "correct": false
+      },
+      {
+        "text": "25 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The Catch Water drain are provided in the:",
+    "answers": [
+      {
+        "text": "Formation in the embankment",
+        "correct": false
+      },
+      {
+        "text": "Formation in cutting",
+        "correct": true
+      },
+      {
+        "text": "Zero fill formation",
+        "correct": false
+      },
+      {
+        "text": "None of the given options",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "If R is the radius of a circular curve, the versine on a chord of length C will be:",
+    "answers": [
+      {
+        "text": "C2/(4R)C2/(4R)",
+        "correct": false
+      },
+      {
+        "text": "C/(8R)C/(8R)",
+        "correct": false
+      },
+      {
+        "text": "C2/(8R)C2/(8R)",
+        "correct": true
+      },
+      {
+        "text": "C/(4R)C/(4R)",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "As per IRBM, the minimum spacing of end bearing piles shall be ____ times the diameter of pile shaft.",
+    "answers": [
+      {
+        "text": "3",
+        "correct": false
+      },
+      {
+        "text": "2",
+        "correct": false
+      },
+      {
+        "text": "2.5",
+        "correct": true
+      },
+      {
+        "text": "3.5",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In case of water level crossing danger level in bridges, ____.",
+    "answers": [
+      {
+        "text": "Speed restriction be imposed",
+        "correct": false
+      },
+      {
+        "text": "Traffic be suspended till water recedes",
+        "correct": false
+      },
+      {
+        "text": "Traffic be suspended till a responsible person inspects and declares it safe for running traffic",
+        "correct": true
+      },
+      {
+        "text": "Bridge watchman be posted",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Minimum thickness of metallising layer, as per IRBM, shall not be less than ____ microns.",
+    "answers": [
+      {
+        "text": "115",
+        "correct": true
+      },
+      {
+        "text": "110",
+        "correct": false
+      },
+      {
+        "text": "150",
+        "correct": false
+      },
+      {
+        "text": "175",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Coefficient of friction is minimum in ____.",
+    "answers": [
+      {
+        "text": "Mild steel over mild steel",
+        "correct": false
+      },
+      {
+        "text": "Mild steel over phosphor bronze",
+        "correct": false
+      },
+      {
+        "text": "PTFE over stainless steel",
+        "correct": false
+      },
+      {
+        "text": "PTFE over PTFE",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "For an open web through girder, mark the correct statement.",
+    "answers": [
+      {
+        "text": "Sleepers rest on the cross girders directly",
+        "correct": false
+      },
+      {
+        "text": "Sleepers rest on the stringers directly",
+        "correct": true
+      },
+      {
+        "text": "Sleepers rest on the bottom chord members directly",
+        "correct": false
+      },
+      {
+        "text": "None of the given options",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "URN of 20364244 for a major bridge means bed block needs ____.",
+    "answers": [
+      {
+        "text": "Immediate repairs",
+        "correct": false
+      },
+      {
+        "text": "Special repairs",
+        "correct": false
+      },
+      {
+        "text": "Replacement",
+        "correct": false
+      },
+      {
+        "text": "Routine maintenance",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Elastomeric bearings are reinforced to have ____.",
+    "answers": [
+      {
+        "text": "Higher shear capacity",
+        "correct": false
+      },
+      {
+        "text": "Higher rotational capacity",
+        "correct": false
+      },
+      {
+        "text": "Reduce bulging",
+        "correct": true
+      },
+      {
+        "text": "None of the given options",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "With respect to HSFG bolts, choose the incorrect statement",
+    "answers": [
+      {
+        "text": "They shall be inspected visually for detecting broken & loose bolts",
+        "correct": false
+      },
+      {
+        "text": "Hitting them to check loosening is not allowed",
+        "correct": false
+      },
+      {
+        "text": "Their retightening is not allowed",
+        "correct": false
+      },
+      {
+        "text": "They shall be painted once in three years",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "For jacketing, dowel bars should be taken inside the masonry to a depth not less than",
+    "answers": [
+      {
+        "text": "150 mm",
+        "correct": false
+      },
+      {
+        "text": "300 mm",
+        "correct": false
+      },
+      {
+        "text": "200 mm",
+        "correct": false
+      },
+      {
+        "text": "250 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the role of tooth bar in rocker & roller bearing?",
+    "answers": [
+      {
+        "text": "To arrest movement of rollers beyond permissible limit",
+        "correct": true
+      },
+      {
+        "text": "Connecting all rollers",
+        "correct": false
+      },
+      {
+        "text": "Maintain clear gap between rollers",
+        "correct": false
+      },
+      {
+        "text": "All of the given options",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "As per IRBM, clearing of water way of bridges is carried out by",
+    "answers": [
+      {
+        "text": "Permanent Way Inspector",
+        "correct": false
+      },
+      {
+        "text": "Inspector of Works",
+        "correct": false
+      },
+      {
+        "text": "Bridge Inspector",
+        "correct": false
+      },
+      {
+        "text": "Inspector nominated by HQ",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Name boards at important bridges should be fixed at either approach at a distance of about ___ from the abutment",
+    "answers": [
+      {
+        "text": "25 m",
+        "correct": false
+      },
+      {
+        "text": "15 m",
+        "correct": false
+      },
+      {
+        "text": "10 m",
+        "correct": false
+      },
+      {
+        "text": "50 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "While riveting a loose joint, not more than ___ rivets should be cut at a time",
+    "answers": [
+      {
+        "text": "0.4",
+        "correct": false
+      },
+      {
+        "text": "0.3",
+        "correct": false
+      },
+      {
+        "text": "0.1",
+        "correct": false
+      },
+      {
+        "text": "0.2",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Marginal Bunds are provided ___",
+    "answers": [
+      {
+        "text": "To guide the river flow",
+        "correct": false
+      },
+      {
+        "text": "To contain the spread of the river",
+        "correct": false
+      },
+      {
+        "text": "To block one or more channels of the river",
+        "correct": false
+      },
+      {
+        "text": "All of the given options",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Rocker bearing permits ___ movement",
+    "answers": [
+      {
+        "text": "Longitudinal",
+        "correct": false
+      },
+      {
+        "text": "Lateral",
+        "correct": false
+      },
+      {
+        "text": "Rotational",
+        "correct": false
+      },
+      {
+        "text": "None of the given options",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Considering the grade compensation on curves, the steepest gradient permissible on a 2.5° curve for a BG line with ruling gradient of 1 in 200 is",
+    "answers": [
+      {
+        "text": "1 in 150",
+        "correct": false
+      },
+      {
+        "text": "1 in 250",
+        "correct": true
+      },
+      {
+        "text": "1 in 300",
+        "correct": false
+      },
+      {
+        "text": "1 in 350",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The ___ estimate is prepared mainly for examining the justification of any work proposal with cost implications and obtaining administrative approval",
+    "answers": [
+      {
+        "text": "Supplementary",
+        "correct": false
+      },
+      {
+        "text": "Part",
+        "correct": false
+      },
+      {
+        "text": "Revised",
+        "correct": false
+      },
+      {
+        "text": "Abstract",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "For officers’ quarters, frequency of interior distempering is:",
+    "answers": [
+      {
+        "text": "Once in a year",
+        "correct": false
+      },
+      {
+        "text": "Once in two years",
+        "correct": true
+      },
+      {
+        "text": "There is no such periodicity",
+        "correct": false
+      },
+      {
+        "text": "Once in three years",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "As per IRWM, minimum height of plinth from the surrounding ground is:",
+    "answers": [
+      {
+        "text": "450 mm",
+        "correct": true
+      },
+      {
+        "text": "600 mm",
+        "correct": false
+      },
+      {
+        "text": "500 mm",
+        "correct": false
+      },
+      {
+        "text": "300 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Frequency of periodical inspection of structures (workshops, running sheds, platform covers, FOBs) by ADEN is:",
+    "answers": [
+      {
+        "text": "Every year",
+        "correct": false
+      },
+      {
+        "text": "Once in three years",
+        "correct": false
+      },
+      {
+        "text": "One fifth every year on programmed basis",
+        "correct": true
+      },
+      {
+        "text": "As and when required",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "As per IRWM, maximum desirable limit for total hardness as CaCO₃ (mg/L) for drinking water is:",
+    "answers": [
+      {
+        "text": "300",
+        "correct": true
+      },
+      {
+        "text": "100",
+        "correct": false
+      },
+      {
+        "text": "100–150",
+        "correct": false
+      },
+      {
+        "text": "150–200",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "A pipe installed in house drainage to preserve water seal of traps is called:",
+    "answers": [
+      {
+        "text": "Vent pipe",
+        "correct": false
+      },
+      {
+        "text": "Anti-siphonage pipe",
+        "correct": true
+      },
+      {
+        "text": "Waste pipe",
+        "correct": false
+      },
+      {
+        "text": "Soil pipe",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "As per IRWM, recommended maximum velocity of flow in a sewer is:",
+    "answers": [
+      {
+        "text": "5 m/s",
+        "correct": false
+      },
+      {
+        "text": "2 m/s",
+        "correct": true
+      },
+      {
+        "text": "4 m/s",
+        "correct": false
+      },
+      {
+        "text": "1 m/s",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Recuperation test is carried out to determine:",
+    "answers": [
+      {
+        "text": "Turbidity of well water",
+        "correct": false
+      },
+      {
+        "text": "pH value of well water",
+        "correct": false
+      },
+      {
+        "text": "Yield of well",
+        "correct": true
+      },
+      {
+        "text": "Depth of water table",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Presence of which condition can lead to water hammer in a pipeline:",
+    "answers": [
+      {
+        "text": "Rapid valve operation",
+        "correct": false
+      },
+      {
+        "text": "Rapid pump start/stop",
+        "correct": false
+      },
+      {
+        "text": "Sudden power interruption",
+        "correct": false
+      },
+      {
+        "text": "All the given options",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "As per IRWM, distance between two boundary pillars shall not exceed:",
+    "answers": [
+      {
+        "text": "200 m",
+        "correct": false
+      },
+      {
+        "text": "100 m",
+        "correct": false
+      },
+      {
+        "text": "50 m",
+        "correct": true
+      },
+      {
+        "text": "250 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "As per IRWM, frequency of inspection of encroachments by Section Engineer (Works) is once in:",
+    "answers": [
+      {
+        "text": "1 year",
+        "correct": false
+      },
+      {
+        "text": "6 months",
+        "correct": false
+      },
+      {
+        "text": "3 months",
+        "correct": true
+      },
+      {
+        "text": "1 month",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In case of temporary diversion, the super elevation provided is:",
+    "answers": [
+      {
+        "text": "50 mm",
+        "correct": false
+      },
+      {
+        "text": "30 mm",
+        "correct": false
+      },
+      {
+        "text": "20 mm",
+        "correct": false
+      },
+      {
+        "text": "Zero",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "The speed potential of an existing BG section is to be increased to 110 kmph. The sanction can be granted by:",
+    "answers": [
+      {
+        "text": "PCE of Railway",
+        "correct": true
+      },
+      {
+        "text": "PCSO of Railway",
+        "correct": false
+      },
+      {
+        "text": "PCOM of Railway",
+        "correct": false
+      },
+      {
+        "text": "CRS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "For existing lines, minimum distance centre to centre of straight tracks is ___ mm.",
+    "answers": [
+      {
+        "text": "4265 mm",
+        "correct": true
+      },
+      {
+        "text": "4425 mm",
+        "correct": false
+      },
+      {
+        "text": "4695 mm",
+        "correct": false
+      },
+      {
+        "text": "5300 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Maximum horizontal distance from centre of track to face of passenger platform coping shall be ___ mm.",
+    "answers": [
+      {
+        "text": "1780 mm",
+        "correct": false
+      },
+      {
+        "text": "1700 mm",
+        "correct": false
+      },
+      {
+        "text": "1680 mm",
+        "correct": true
+      },
+      {
+        "text": "1750 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which parameter is not directly measured by Track Recording Car, but calculated from some other measured values:",
+    "answers": [
+      {
+        "text": "Vertical acceleration",
+        "correct": false
+      },
+      {
+        "text": "Unevenness",
+        "correct": false
+      },
+      {
+        "text": "Alignment",
+        "correct": false
+      },
+      {
+        "text": "Twist",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Based on TRC and OMS recording results, the Urgent Maintenance Limit (UML) for Peak Vertical Acceleration for speeds 110–130 kmph is:",
+    "answers": [
+      {
+        "text": "0.25 g",
+        "correct": true
+      },
+      {
+        "text": "0.20 g",
+        "correct": false
+      },
+      {
+        "text": "0.15 g",
+        "correct": false
+      },
+      {
+        "text": "0.30 g",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The life of detonators can be extended from 5 years to 8 years, on a ___ basis, subject to testing as per the stipulated procedure.",
+    "answers": [
+      {
+        "text": "3 monthly",
+        "correct": false
+      },
+      {
+        "text": "6 monthly",
+        "correct": false
+      },
+      {
+        "text": "Yearly",
+        "correct": true
+      },
+      {
+        "text": "One time",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the minimum level of functionary authorised to issue Competency Certificate to Motor Trolley Driver for using Motor Trolley?",
+    "answers": [
+      {
+        "text": "SSE/P.Way (in-charge)",
+        "correct": false
+      },
+      {
+        "text": "ADEN",
+        "correct": true
+      },
+      {
+        "text": "Sr.DEN",
+        "correct": false
+      },
+      {
+        "text": "Sr.DSO",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Maintenance of the level crossings located within the outermost stop signals is done by:",
+    "answers": [
+      {
+        "text": "Engineering Department",
+        "correct": true
+      },
+      {
+        "text": "Safety Department",
+        "correct": false
+      },
+      {
+        "text": "Commercial Department",
+        "correct": false
+      },
+      {
+        "text": "Operating Department",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Maximum temperature of air inside tunnels needs to be limited to ___ °C, considering passengers and workmen comfort.",
+    "answers": [
+      {
+        "text": "40 °C",
+        "correct": false
+      },
+      {
+        "text": "50 °C",
+        "correct": true
+      },
+      {
+        "text": "45 °C",
+        "correct": false
+      },
+      {
+        "text": "60 °C",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Each cutting should be inspected by the ADEN ___.",
+    "answers": [
+      {
+        "text": "After monsoon once a year",
+        "correct": false
+      },
+      {
+        "text": "Anytime in a year",
+        "correct": false
+      },
+      {
+        "text": "Once every 2 years",
+        "correct": false
+      },
+      {
+        "text": "Before onset of rains once a year",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Which of the following tamping machines has a satellite unit?",
+    "answers": [
+      {
+        "text": "08-32 DUOMATIC",
+        "correct": false
+      },
+      {
+        "text": "09-275 UNIMAT",
+        "correct": false
+      },
+      {
+        "text": "09-32 CSM",
+        "correct": true
+      },
+      {
+        "text": "VPR-02M",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Minimum clean ballast cushion required for quality output from tamping machine is ___.",
+    "answers": [
+      {
+        "text": "150 mm",
+        "correct": true
+      },
+      {
+        "text": "200 mm",
+        "correct": false
+      },
+      {
+        "text": "250 mm",
+        "correct": false
+      },
+      {
+        "text": "100 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Lifting of track up to ___ in one pass can be done by ballast cleaning machines presently available on Indian Railways.",
+    "answers": [
+      {
+        "text": "50 mm",
+        "correct": false
+      },
+      {
+        "text": "150 mm",
+        "correct": false
+      },
+      {
+        "text": "100 mm",
+        "correct": true
+      },
+      {
+        "text": "200 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The gauge of auxiliary track in track relaying by PQRS machine is:",
+    "answers": [
+      {
+        "text": "3100 mm",
+        "correct": false
+      },
+      {
+        "text": "3200 mm",
+        "correct": false
+      },
+      {
+        "text": "3300 mm",
+        "correct": false
+      },
+      {
+        "text": "3400 mm",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Who is the author of Kumarsambhava?",
+    "answers": [
+      {
+        "text": "Panini",
+        "correct": false
+      },
+      {
+        "text": "Kalhana",
+        "correct": false
+      },
+      {
+        "text": "Kalidas",
+        "correct": true
+      },
+      {
+        "text": "Jaideva",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who was the president of the Constituent Assembly of India which drafted the Constitution?",
+    "answers": [
+      {
+        "text": "V. K. Krishna Menon",
+        "correct": false
+      },
+      {
+        "text": "Dr. Rajendra Prasad",
+        "correct": true
+      },
+      {
+        "text": "Dr. B.R. Ambedkar",
+        "correct": false
+      },
+      {
+        "text": "H.C. Mukherjee",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Firozabad City was built by which dynasty?",
+    "answers": [
+      {
+        "text": "Mamluk Dynasty",
+        "correct": false
+      },
+      {
+        "text": "Khilji Dynasty",
+        "correct": false
+      },
+      {
+        "text": "Lodhi Dynasty",
+        "correct": false
+      },
+      {
+        "text": "Tughlaq Dynasty",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Harappa village is located in which country?",
+    "answers": [
+      {
+        "text": "Pakistan",
+        "correct": true
+      },
+      {
+        "text": "India",
+        "correct": false
+      },
+      {
+        "text": "Afghanistan",
+        "correct": false
+      },
+      {
+        "text": "Iran",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who painted the Mona Lisa?",
+    "answers": [
+      {
+        "text": "Michelangelo di Lodovico",
+        "correct": false
+      },
+      {
+        "text": "Artemisia Gentileschi",
+        "correct": false
+      },
+      {
+        "text": "Euphranor",
+        "correct": false
+      },
+      {
+        "text": "Leonardo da Vinci",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Nalanda University was established during the _____ Empire.",
+    "answers": [
+      {
+        "text": "Magadh Empire",
+        "correct": false
+      },
+      {
+        "text": "Gupta Empire",
+        "correct": true
+      },
+      {
+        "text": "Pala Empire",
+        "correct": false
+      },
+      {
+        "text": "Chola Empire",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Goa gained independence in which year?",
+    "answers": [
+      {
+        "text": "1947",
+        "correct": false
+      },
+      {
+        "text": "1950",
+        "correct": false
+      },
+      {
+        "text": "1961",
+        "correct": true
+      },
+      {
+        "text": "1966",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The early classical Tamil literature, the Sangams, is believed to be how old?",
+    "answers": [
+      {
+        "text": "500–1000 years",
+        "correct": false
+      },
+      {
+        "text": "800–1300 years",
+        "correct": false
+      },
+      {
+        "text": "1500–2000 years",
+        "correct": true
+      },
+      {
+        "text": "Over 2500 years",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Mohenjo-Daro is related to which civilization?",
+    "answers": [
+      {
+        "text": "Egyptian Civilization",
+        "correct": false
+      },
+      {
+        "text": "Sindhu Ghati Civilization",
+        "correct": true
+      },
+      {
+        "text": "Mesopotamian Civilization",
+        "correct": false
+      },
+      {
+        "text": "Vedic Civilization",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is the largest mammal in the world?",
+    "answers": [
+      {
+        "text": "Ostrich",
+        "correct": false
+      },
+      {
+        "text": "African Elephant",
+        "correct": false
+      },
+      {
+        "text": "White Rhinoceros",
+        "correct": false
+      },
+      {
+        "text": "Blue Whale",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Total length of Indian Coastline, including Andaman & Nicobar island and Lakshadweep islands, is about",
+    "answers": [
+      {
+        "text": "7500 Km",
+        "correct": true
+      },
+      {
+        "text": "9800 Km",
+        "correct": false
+      },
+      {
+        "text": "15200 Km",
+        "correct": false
+      },
+      {
+        "text": "5000 Km",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following is the wettest place in India?",
+    "answers": [
+      {
+        "text": "Mahabaleshwar",
+        "correct": false
+      },
+      {
+        "text": "Cherrapunji",
+        "correct": false
+      },
+      {
+        "text": "Mawsynram",
+        "correct": true
+      },
+      {
+        "text": "Udhagamandalam",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is the longest river in the world?",
+    "answers": [
+      {
+        "text": "Amazon",
+        "correct": false
+      },
+      {
+        "text": "Brahmaputra",
+        "correct": false
+      },
+      {
+        "text": "Nile",
+        "correct": true
+      },
+      {
+        "text": "Indus",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When was Vikramsamvat started?",
+    "answers": [
+      {
+        "text": "76 AD",
+        "correct": false
+      },
+      {
+        "text": "57 BC",
+        "correct": true
+      },
+      {
+        "text": "76 BC",
+        "correct": false
+      },
+      {
+        "text": "57 AD",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Our National animal is",
+    "answers": [
+      {
+        "text": "Lion",
+        "correct": false
+      },
+      {
+        "text": "Tiger",
+        "correct": true
+      },
+      {
+        "text": "Panther",
+        "correct": false
+      },
+      {
+        "text": "Cheetah",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Kathakali is the dance form of which state?",
+    "answers": [
+      {
+        "text": "Karnataka",
+        "correct": false
+      },
+      {
+        "text": "Kerala",
+        "correct": true
+      },
+      {
+        "text": "Telangana",
+        "correct": false
+      },
+      {
+        "text": "Tamil Nadu",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The National emblem of India is adapted from",
+    "answers": [
+      {
+        "text": "Ashoka pillar in Mehrauli",
+        "correct": false
+      },
+      {
+        "text": "Ashoka pillar in Rajgir",
+        "correct": false
+      },
+      {
+        "text": "Ashoka pillar in Sarnath",
+        "correct": true
+      },
+      {
+        "text": "Ashoka pillar in Gaya",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Hindu Calendar is based on the following:",
+    "answers": [
+      {
+        "text": "Lunar",
+        "correct": false
+      },
+      {
+        "text": "Solar",
+        "correct": false
+      },
+      {
+        "text": "Both Lunar and Solar",
+        "correct": false
+      },
+      {
+        "text": "None of the given options",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Sushruta from ancient India was",
+    "answers": [
+      {
+        "text": "A Philosopher",
+        "correct": false
+      },
+      {
+        "text": "A Doctor",
+        "correct": true
+      },
+      {
+        "text": "A Saint",
+        "correct": false
+      },
+      {
+        "text": "A Political stalwart",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The Hindu months are based on the movement of",
+    "answers": [
+      {
+        "text": "Grahas",
+        "correct": false
+      },
+      {
+        "text": "Surya",
+        "correct": false
+      },
+      {
+        "text": "Nakshatra",
+        "correct": false
+      },
+      {
+        "text": "Chandrma",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "The National flower of India is",
+    "answers": [
+      {
+        "text": "Rose",
+        "correct": false
+      },
+      {
+        "text": "Lotus",
+        "correct": true
+      },
+      {
+        "text": "Jasmine",
+        "correct": false
+      },
+      {
+        "text": "Sunflower",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Taj Mahal is a type of",
+    "answers": [
+      {
+        "text": "Palace",
+        "correct": false
+      },
+      {
+        "text": "Mausoleum",
+        "correct": true
+      },
+      {
+        "text": "Fort",
+        "correct": false
+      },
+      {
+        "text": "Royal Court",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The Panchatantra, an ancient Indian collection of stories, is written by",
+    "answers": [
+      {
+        "text": "Vishnu Sharma",
+        "correct": true
+      },
+      {
+        "text": "Shivanand Shastry",
+        "correct": false
+      },
+      {
+        "text": "Pankaj Tripathy",
+        "correct": false
+      },
+      {
+        "text": "Harsha Vardhana",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which country is known as the \"Land of the Rising Sun\"?",
+    "answers": [
+      {
+        "text": "Thailand",
+        "correct": false
+      },
+      {
+        "text": "Japan",
+        "correct": true
+      },
+      {
+        "text": "Norway",
+        "correct": false
+      },
+      {
+        "text": "Sweden",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who is the author of Ain-I-Akbari?",
+    "answers": [
+      {
+        "text": "Abul Fazl",
+        "correct": true
+      },
+      {
+        "text": "Abdul Qadir Badayuni",
+        "correct": false
+      },
+      {
+        "text": "Muhammad Tahir",
+        "correct": false
+      },
+      {
+        "text": "Abdul Hamid Lahori",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is the largest desert in India?",
+    "answers": [
+      {
+        "text": "Sahara",
+        "correct": false
+      },
+      {
+        "text": "Thar",
+        "correct": true
+      },
+      {
+        "text": "Rann of Kutch",
+        "correct": false
+      },
+      {
+        "text": "Nubra Valley",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the name of India's first indigenous aircraft carrier?",
+    "answers": [
+      {
+        "text": "INS Vikrant",
+        "correct": true
+      },
+      {
+        "text": "INS Vikramaditya",
+        "correct": false
+      },
+      {
+        "text": "INS Arihant",
+        "correct": false
+      },
+      {
+        "text": "INS Chakra",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the currency of Sweden?",
+    "answers": [
+      {
+        "text": "Yuan",
+        "correct": false
+      },
+      {
+        "text": "Euro",
+        "correct": false
+      },
+      {
+        "text": "Krona",
+        "correct": true
+      },
+      {
+        "text": "Baht",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the highest mountain peak in India, excluding Pakistan Occupied Kashmir?",
+    "answers": [
+      {
+        "text": "K2",
+        "correct": false
+      },
+      {
+        "text": "Kanchenjunga",
+        "correct": true
+      },
+      {
+        "text": "Mount Everest",
+        "correct": false
+      },
+      {
+        "text": "Nanda Devi",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The Ambubachi Mela is held in the state of",
+    "answers": [
+      {
+        "text": "Nagaland",
+        "correct": false
+      },
+      {
+        "text": "West Bengal",
+        "correct": false
+      },
+      {
+        "text": "Odisha",
+        "correct": false
+      },
+      {
+        "text": "Assam",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "The award conferred in our country by the Government for most conspicuous bravery or some act of daring or pre-eminent act of valour or self-sacrifice, away from the battlefield, is",
+    "answers": [
+      {
+        "text": "Vir Chakra",
+        "correct": false
+      },
+      {
+        "text": "Shaurya Chakra",
+        "correct": false
+      },
+      {
+        "text": "Ashoka Chakra",
+        "correct": true
+      },
+      {
+        "text": "Paramvir Chakra",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Jnanpith Award is given for writing in ______ languages in our country.",
+    "answers": [
+      {
+        "text": "20",
+        "correct": false
+      },
+      {
+        "text": "22",
+        "correct": false
+      },
+      {
+        "text": "24",
+        "correct": false
+      },
+      {
+        "text": "28",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which gas do plants absorb during photosynthesis?",
+    "answers": [
+      {
+        "text": "Nitrogen",
+        "correct": false
+      },
+      {
+        "text": "Carbon dioxide",
+        "correct": true
+      },
+      {
+        "text": "Oxygen",
+        "correct": false
+      },
+      {
+        "text": "Methane",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which country is known as the \"Land of the Midnight Sun\"?",
+    "answers": [
+      {
+        "text": "Norway",
+        "correct": true
+      },
+      {
+        "text": "Finland",
+        "correct": false
+      },
+      {
+        "text": "France",
+        "correct": false
+      },
+      {
+        "text": "South Korea",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the name of the smallest planet in the solar system?",
+    "answers": [
+      {
+        "text": "Venus",
+        "correct": false
+      },
+      {
+        "text": "Mars",
+        "correct": false
+      },
+      {
+        "text": "Mercury",
+        "correct": true
+      },
+      {
+        "text": "Neptune",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the percentage of Carbon dioxide in atmosphere?",
+    "answers": [
+      {
+        "text": "0.2",
+        "correct": false
+      },
+      {
+        "text": "0.004",
+        "correct": false
+      },
+      {
+        "text": "0.09",
+        "correct": false
+      },
+      {
+        "text": "0.0004",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "What is the name of the smallest country in the world by area?",
+    "answers": [
+      {
+        "text": "Vatican City",
+        "correct": true
+      },
+      {
+        "text": "Ecuador",
+        "correct": false
+      },
+      {
+        "text": "Cuba",
+        "correct": false
+      },
+      {
+        "text": "Norway",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which river is known as the \"Cradle of Civilization\"?",
+    "answers": [
+      {
+        "text": "Amazon river",
+        "correct": false
+      },
+      {
+        "text": "Tigris-Euphrates river",
+        "correct": true
+      },
+      {
+        "text": "Nile river",
+        "correct": false
+      },
+      {
+        "text": "Indus river",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Kaziranga national park is in ______.",
+    "answers": [
+      {
+        "text": "Odisha",
+        "correct": false
+      },
+      {
+        "text": "Karnataka",
+        "correct": false
+      },
+      {
+        "text": "Madhya Pradesh",
+        "correct": false
+      },
+      {
+        "text": "Assam",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Aizawl is the capital of ______.",
+    "answers": [
+      {
+        "text": "Tripura",
+        "correct": false
+      },
+      {
+        "text": "Nagaland",
+        "correct": false
+      },
+      {
+        "text": "Arunachal Pradesh",
+        "correct": false
+      },
+      {
+        "text": "Mizoram",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Into how many Regions Indian states have been classified, according to Official Languages Rules?",
+    "answers": [
+      {
+        "text": "4",
+        "correct": false
+      },
+      {
+        "text": "3",
+        "correct": true
+      },
+      {
+        "text": "5",
+        "correct": false
+      },
+      {
+        "text": "6",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When is \"Hindi Day\" celebrated every year?",
+    "answers": [
+      {
+        "text": "2025-09-14 00:00:00",
+        "correct": true
+      },
+      {
+        "text": "2025-10-26 00:00:00",
+        "correct": false
+      },
+      {
+        "text": "2025-05-01 00:00:00",
+        "correct": false
+      },
+      {
+        "text": "2025-06-12 00:00:00",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Dadar and Nagar Haveli comes under Region ______ as per Official Language Rules.",
+    "answers": [
+      {
+        "text": "A",
+        "correct": false
+      },
+      {
+        "text": "B",
+        "correct": true
+      },
+      {
+        "text": "C",
+        "correct": false
+      },
+      {
+        "text": "D",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The Central Hindi Committee comes under ______.",
+    "answers": [
+      {
+        "text": "Ministry of Defence",
+        "correct": false
+      },
+      {
+        "text": "Ministry of Home Affairs",
+        "correct": true
+      },
+      {
+        "text": "Ministry of Education",
+        "correct": false
+      },
+      {
+        "text": "Ministry of Personnel, Public Grievances and Pensions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When was the Parliamentary Committee on Official Language constituted?",
+    "answers": [
+      {
+        "text": "1950",
+        "correct": false
+      },
+      {
+        "text": "1960",
+        "correct": false
+      },
+      {
+        "text": "1976",
+        "correct": true
+      },
+      {
+        "text": "1979",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who is made as the Chairman of the Town Official Language Implementation Committee constituted in major cities?",
+    "answers": [
+      {
+        "text": "Mayor of the city",
+        "correct": false
+      },
+      {
+        "text": "Member of Parliament of related constituency",
+        "correct": false
+      },
+      {
+        "text": "MLA of related constituency",
+        "correct": false
+      },
+      {
+        "text": "Senior most Central Govt. Officer of the City",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "What are all the four Hindi courses, prescribed for Central Govt. employees?",
+    "answers": [
+      {
+        "text": "Prarambh, Pravesh, Pragya and Parangat",
+        "correct": false
+      },
+      {
+        "text": "Prabodh, Praveen, Pragya and Parangat",
+        "correct": true
+      },
+      {
+        "text": "Pravesh, Praveen, Prarambh and Pragya",
+        "correct": false
+      },
+      {
+        "text": "Pravesh, Prarambh, Pragya and Praveen",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the employees, with mother tongues as following, will belong to states classified under Category \"C\":",
+    "answers": [
+      {
+        "text": "Marathi, Kannada, Bengali or Telugu",
+        "correct": false
+      },
+      {
+        "text": "Kannada, Guajarati, Oriya or Bengali",
+        "correct": false
+      },
+      {
+        "text": "Guajarati, Bengali, Oriya or Assamese",
+        "correct": false
+      },
+      {
+        "text": "Bengali, Oriya, Kannada or Assamese",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "In which course, a Category \"C\" Central Government employee defined under Hindi Teaching Scheme, is required to be trained?",
+    "answers": [
+      {
+        "text": "Prarambh",
+        "correct": false
+      },
+      {
+        "text": "Pragya",
+        "correct": false
+      },
+      {
+        "text": "Prabodh",
+        "correct": false
+      },
+      {
+        "text": "Praveen",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "What is the amount of Cash Award for passing \"Prabodh\" with 60% or more but less than 70% of marks?",
+    "answers": [
+      {
+        "text": "Rs. 800",
+        "correct": true
+      },
+      {
+        "text": "Rs. 1200",
+        "correct": false
+      },
+      {
+        "text": "Rs. 600",
+        "correct": false
+      },
+      {
+        "text": "Rs. 1500",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the name of the award given for writing original books in Hindi on technical Railway subjects?",
+    "answers": [
+      {
+        "text": "Ramdhari Singh Dinkar Puraskar",
+        "correct": false
+      },
+      {
+        "text": "Lal Bahadur Shastri Puraskar",
+        "correct": true
+      },
+      {
+        "text": "Maithili Saran Gupta Puraskar",
+        "correct": false
+      },
+      {
+        "text": "Premchand Puraskar",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the amount of prize money given under Rajbhasha Individual Cash Award Scheme?",
+    "answers": [
+      {
+        "text": "Rs. 2000",
+        "correct": false
+      },
+      {
+        "text": "Rs. 2500",
+        "correct": false
+      },
+      {
+        "text": "Rs. 3500",
+        "correct": false
+      },
+      {
+        "text": "Rs. 3000",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "What is the target fixed for issuing both in English and Hindi, the documents coming under Section 3(3) of Official Language Act?",
+    "answers": [
+      {
+        "text": "0.5",
+        "correct": false
+      },
+      {
+        "text": "0.8",
+        "correct": false
+      },
+      {
+        "text": "1",
+        "correct": true
+      },
+      {
+        "text": "0.7",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When is the 'World Hindi Day' observed?",
+    "answers": [
+      {
+        "text": "10th June",
+        "correct": false
+      },
+      {
+        "text": "10th Jan",
+        "correct": true
+      },
+      {
+        "text": "10th July",
+        "correct": false
+      },
+      {
+        "text": "10th Oct",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the additional weightage given to a Non-Hindi speaking employee for assessing awards under 10,000 words Award Scheme?",
+    "answers": [
+      {
+        "text": "0.1",
+        "correct": false
+      },
+      {
+        "text": "0.2",
+        "correct": true
+      },
+      {
+        "text": "0.25",
+        "correct": false
+      },
+      {
+        "text": "0.3",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Normal time frame for disposal of RTI request is maximum",
+    "answers": [
+      {
+        "text": "30 days",
+        "correct": true
+      },
+      {
+        "text": "35 days",
+        "correct": false
+      },
+      {
+        "text": "40 days",
+        "correct": false
+      },
+      {
+        "text": "45 days",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "___ cannot be combined with any other kind of leave, but it can be followed by the Quarantine leave",
+    "answers": [
+      {
+        "text": "Leave on Average Pay",
+        "correct": false
+      },
+      {
+        "text": "Casual leave",
+        "correct": true
+      },
+      {
+        "text": "Extra Ordinary Leave",
+        "correct": false
+      },
+      {
+        "text": "Leave on Half Average Pay",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Leave account of Group \"A\" and Group \"B\" Railway servants is maintained by",
+    "answers": [
+      {
+        "text": "Personnel Officer",
+        "correct": false
+      },
+      {
+        "text": "Head of Office",
+        "correct": false
+      },
+      {
+        "text": "Accounts Officer",
+        "correct": true
+      },
+      {
+        "text": "Officer nominated by Head of Office",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The admissible Joining Time in cases of transfer from one station to another having distance of more than 1000 kms but less than 2000 kms, and also involving change of residence, is",
+    "answers": [
+      {
+        "text": "8 days",
+        "correct": false
+      },
+      {
+        "text": "10 days",
+        "correct": false
+      },
+      {
+        "text": "12 days",
+        "correct": true
+      },
+      {
+        "text": "15 days",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "During the period of suspension, a Railway servant is getting Subsistence Allowance equal to 50% of his Basic Pay. The Railway servant will be entitled to Dearness Allowance equal to ___ of normal Dearness Allowance",
+    "answers": [
+      {
+        "text": "1",
+        "correct": false
+      },
+      {
+        "text": "0.75",
+        "correct": false
+      },
+      {
+        "text": "0.6",
+        "correct": false
+      },
+      {
+        "text": "0.5",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "The rate of Travelling Allowance (as Daily Allowance), admissible to officers of Level 14 and above in 7th CPC, is presently",
+    "answers": [
+      {
+        "text": "Rs. 1000",
+        "correct": false
+      },
+      {
+        "text": "Rs. 1500",
+        "correct": true
+      },
+      {
+        "text": "Rs. 1200",
+        "correct": false
+      },
+      {
+        "text": "Rs. 1800",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following is not a National Holiday for Central Government offices",
+    "answers": [
+      {
+        "text": "Dr. B. R. Ambedkar's Birthday",
+        "correct": true
+      },
+      {
+        "text": "Republic Day",
+        "correct": false
+      },
+      {
+        "text": "Independence Day",
+        "correct": false
+      },
+      {
+        "text": "Mahatma Gandhi's Birthday",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The meetings of Permanent Negotiating Machinery (PNM) with the recognised Unions should be held at least once in ___ months, at the Divisional level",
+    "answers": [
+      {
+        "text": "Four",
+        "correct": false
+      },
+      {
+        "text": "Three",
+        "correct": false
+      },
+      {
+        "text": "Two",
+        "correct": true
+      },
+      {
+        "text": "One",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The present maximum limit of Death-cum-Retirement Gratuity for Central Government employee is",
+    "answers": [
+      {
+        "text": "Rs. 10 Lakh",
+        "correct": false
+      },
+      {
+        "text": "Rs. 25 Lakh",
+        "correct": true
+      },
+      {
+        "text": "Rs. 15 Lakh",
+        "correct": false
+      },
+      {
+        "text": "Rs. 20 Lakh",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "If a Railway employee does not insure a house built by taking House Building Advance, till full recovery of the advance with interest thereon",
+    "answers": [
+      {
+        "text": "Penal interest of 2% over and above the existing rate of interest will be levied",
+        "correct": true
+      },
+      {
+        "text": "The advance amount given will be withdrawn",
+        "correct": false
+      },
+      {
+        "text": "Penal interest of 3% over and above the existing rate of interest will be levied",
+        "correct": false
+      },
+      {
+        "text": "Disciplinary action will be taken against the employee",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Reimbursement of Children Education Allowance (CEA) for Divyang children is ___ more than the normal rates of CEA",
+    "answers": [
+      {
+        "text": "0.5",
+        "correct": false
+      },
+      {
+        "text": "0.75",
+        "correct": false
+      },
+      {
+        "text": "0.25",
+        "correct": false
+      },
+      {
+        "text": "1",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Quantum of additional pension payable to the old pensioners of the age more than 100 years is ___ of the normal pension amount",
+    "answers": [
+      {
+        "text": "0.4",
+        "correct": false
+      },
+      {
+        "text": "0.3",
+        "correct": false
+      },
+      {
+        "text": "1",
+        "correct": true
+      },
+      {
+        "text": "0.5",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following activity will not amount to violation of the Railway Services (Conduct) Rules-1966, by a Gazetted Railway Officer",
+    "answers": [
+      {
+        "text": "Not ensuring integrity and devotion to duty of all Railway servant working under his control and authority",
+        "correct": false
+      },
+      {
+        "text": "Being associated with any organization which takes part in politics",
+        "correct": false
+      },
+      {
+        "text": "Working as office bearer of any association of non-gazetted Railway servants",
+        "correct": false
+      },
+      {
+        "text": "Wearing of plain black badges at work",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "A Railway servant is deemed to have been placed under suspension, if he is detained in custody on criminal or other charges, for a period exceeding",
+    "answers": [
+      {
+        "text": "24 Hours",
+        "correct": false
+      },
+      {
+        "text": "48 Hours",
+        "correct": true
+      },
+      {
+        "text": "72 Hours",
+        "correct": false
+      },
+      {
+        "text": "96 Hours",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In a case of a Minor Penalty charge sheet also, an inquiry is required to be held before imposing the punishment, if the penalty proposed",
+    "answers": [
+      {
+        "text": "Is not accepted by the employee",
+        "correct": false
+      },
+      {
+        "text": "Is likely to adversely affect the pension of the employee",
+        "correct": true
+      },
+      {
+        "text": "Is for withholding increments of pay for a period of three years",
+        "correct": false
+      },
+      {
+        "text": "Is for recovery of any amount from his pay",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which one of the following is not considered a \"family member\" as per the Railway Servants (Pass) Rules",
+    "answers": [
+      {
+        "text": "Working Spouse",
+        "correct": false
+      },
+      {
+        "text": "Unmarried but working Daughter of age 24 years",
+        "correct": false
+      },
+      {
+        "text": "Son of age 25 years studying in recognised educational institute",
+        "correct": false
+      },
+      {
+        "text": "Working Son of age 19 years",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Which of the following activity of Group \"C\" staff of Indian Railway is presently not being handled through HRMS software",
+    "answers": [
+      {
+        "text": "Leave sanction",
+        "correct": false
+      },
+      {
+        "text": "Issue of Passes and PTOs",
+        "correct": false
+      },
+      {
+        "text": "Claims of Travelling Allowance",
+        "correct": true
+      },
+      {
+        "text": "Annual Performance Appraisal Report (APAR)",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The House Rent Allowance (HRA) admissible to a Railway employee residing in \"Y\" Class City is presently ___ of his Basic Pay",
+    "answers": [
+      {
+        "text": "0.2",
+        "correct": true
+      },
+      {
+        "text": "0.18",
+        "correct": false
+      },
+      {
+        "text": "0.16",
+        "correct": false
+      },
+      {
+        "text": "0.24",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Sanction of works under \"works Programme\" is processed through",
+    "answers": [
+      {
+        "text": "TMS",
+        "correct": false
+      },
+      {
+        "text": "IRPSM",
+        "correct": true
+      },
+      {
+        "text": "IREPS",
+        "correct": false
+      },
+      {
+        "text": "HRMS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the full form of DRF",
+    "answers": [
+      {
+        "text": "Depreciation Revenue Fund",
+        "correct": false
+      },
+      {
+        "text": "Depreciation Reserve Fund",
+        "correct": true
+      },
+      {
+        "text": "Development Revenue Fund",
+        "correct": false
+      },
+      {
+        "text": "Development Rail Fund",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "\"Bridge Work\" is chargeable in Plan Head",
+    "answers": [
+      {
+        "text": "30",
+        "correct": false
+      },
+      {
+        "text": "31",
+        "correct": false
+      },
+      {
+        "text": "32",
+        "correct": true
+      },
+      {
+        "text": "33",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Who is the \"Plan Head Coordinator\" for \"Traffic Facility\" works?",
+    "answers": [
+      {
+        "text": "PCE",
+        "correct": false
+      },
+      {
+        "text": "PCOM",
+        "correct": true
+      },
+      {
+        "text": "PCCM",
+        "correct": false
+      },
+      {
+        "text": "PCPO",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "\"Revenue\" expenditure for \"Maintenance of P. Way\" is booked under Demand Number",
+    "answers": [
+      {
+        "text": "6",
+        "correct": false
+      },
+      {
+        "text": "7",
+        "correct": false
+      },
+      {
+        "text": "4",
+        "correct": true
+      },
+      {
+        "text": "9",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Purpose of taking \"Bid Security\" in tenders is",
+    "answers": [
+      {
+        "text": "For due performance of contract during execution",
+        "correct": false
+      },
+      {
+        "text": "To keep tender offer open till such date as specified in tender",
+        "correct": true
+      },
+      {
+        "text": "For fulfilment of maintenance requirements",
+        "correct": false
+      },
+      {
+        "text": "To execute work with good quality",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Maximum \"Liquidated Damage\" for extension of time, for delay due to contractor, is limited to ___ of contract value",
+    "answers": [
+      {
+        "text": "0.1",
+        "correct": false
+      },
+      {
+        "text": "0.05",
+        "correct": true
+      },
+      {
+        "text": "0.03",
+        "correct": false
+      },
+      {
+        "text": "0.07",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "As far as SSOR items are concerned, the limit of 25% for normal variation would apply to",
+    "answers": [
+      {
+        "text": "Individual items of SSOR",
+        "correct": false
+      },
+      {
+        "text": "Value of SSOR schedule as a whole",
+        "correct": true
+      },
+      {
+        "text": "Total value of important SSOR items",
+        "correct": false
+      },
+      {
+        "text": "Total value of SSOR items for foundation",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "PL number used for codification of \"Stock Items\" is a ___ code",
+    "answers": [
+      {
+        "text": "6 digit",
+        "correct": false
+      },
+      {
+        "text": "7 digit",
+        "correct": false
+      },
+      {
+        "text": "8 digit",
+        "correct": true
+      },
+      {
+        "text": "9 digit",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "\"Dead Surplus Stores\" are stores items which have not been issued for the past ___ and not likely to be utilised in any Railway within the next ___",
+    "answers": [
+      {
+        "text": "6 months, 1 year",
+        "correct": false
+      },
+      {
+        "text": "12 months, 1 year",
+        "correct": false
+      },
+      {
+        "text": "18 months, 2 years",
+        "correct": false
+      },
+      {
+        "text": "24 months, 2 years",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "For incurring expenditure on which of the following work, financial justification needs to be given",
+    "answers": [
+      {
+        "text": "Works on consideration of safety",
+        "correct": false
+      },
+      {
+        "text": "Works of New Lines",
+        "correct": true
+      },
+      {
+        "text": "Customer Amenity Works",
+        "correct": false
+      },
+      {
+        "text": "Labour Welfare Works",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The cost of replacements and renewals of existing assets is charged to",
+    "answers": [
+      {
+        "text": "Capital Fund",
+        "correct": false
+      },
+      {
+        "text": "Development Fund",
+        "correct": false
+      },
+      {
+        "text": "Revenue Fund",
+        "correct": false
+      },
+      {
+        "text": "Depreciation Reserve Fund",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "___ of any Audit Inspection Report pertains to minor routine matters, not considered as important matter",
+    "answers": [
+      {
+        "text": "Part - III",
+        "correct": false
+      },
+      {
+        "text": "Part - IV",
+        "correct": false
+      },
+      {
+        "text": "Part - II",
+        "correct": true
+      },
+      {
+        "text": "Part - I",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The report of Comptroller and Auditor General of India, presented to the Parliament, is taken up for consideration by the ___",
+    "answers": [
+      {
+        "text": "Public Accounts Committee",
+        "correct": true
+      },
+      {
+        "text": "Estimates Committee",
+        "correct": false
+      },
+      {
+        "text": "Public Undertakings Committee",
+        "correct": false
+      },
+      {
+        "text": "Committee on Finance",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Earnings from \"Goods Traffic\" is classified under",
+    "answers": [
+      {
+        "text": "Abstract - G",
+        "correct": false
+      },
+      {
+        "text": "Abstract - X",
+        "correct": false
+      },
+      {
+        "text": "Abstract - Y",
+        "correct": true
+      },
+      {
+        "text": "Abstract - Z",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Full form of AIMS, used in Indian Railway is",
+    "answers": [
+      {
+        "text": "All India Management System",
+        "correct": false
+      },
+      {
+        "text": "Accounting Information Management System",
+        "correct": true
+      },
+      {
+        "text": "Accounting Information Monitoring System",
+        "correct": false
+      },
+      {
+        "text": "All India Monitoring System",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "General Financial Rules (GFR) are framed by",
+    "answers": [
+      {
+        "text": "Comptroller and Auditor General of India",
+        "correct": false
+      },
+      {
+        "text": "NITI Aayog",
+        "correct": false
+      },
+      {
+        "text": "Ministry of Commerce",
+        "correct": false
+      },
+      {
+        "text": "Ministry of Finance",
+        "correct": true
+      }
+    ]
+  }
+]
