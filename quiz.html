@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz App</title>
   <style>
     body {
@@ -17,7 +17,7 @@
       padding: 20px;
       background: white;
       border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       display: none;
     }
     #loading {
@@ -88,10 +88,7 @@
     .quiz-index-dot.skipped {
       background: #ffb6b6;
     }
-    .quiz-index-dot.review {
-      background: #ffe066;
-    }
-    #next-btn, #skip-btn, #submit-btn, #mark-review-btn {
+    #next-btn, #skip-btn, #submit-btn {
       padding: 10px 20px;
       margin: 5px;
       border: none;
@@ -111,10 +108,6 @@
       background: #4caf50;
       color: white;
     }
-    #mark-review-btn {
-      background: #ffc107;
-      color: black;
-    }
     #result {
       font-size: 1.5rem;
       margin: 20px 0;
@@ -128,6 +121,7 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
   <script>
+    // Firebase Config (replace with your config)
     const firebaseConfig = {
       apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
       authDomain: "quiz-app-1b48b.firebaseapp.com",
@@ -137,16 +131,19 @@
       appId: "1:765334603137:web:1c8a13f6086a6773c2d480"
     };
 
+    // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+    window.firebaseDb = firebase.firestore(); // <-- Set Firestore instance
     const auth = firebase.auth();
-    firebase.firestore().settings({ ignoreUndefinedProperties: true });
-    window.firebaseDb = firebase.firestore();
 
+    // Auth State Listener
     auth.onAuthStateChanged((user) => {
       if (!user) {
+        // Not logged in, redirect to login page
         const returnUrl = encodeURIComponent(window.location.pathname + window.location.search);
         window.location.href = `login.html?redirect=${returnUrl}`;
       } else {
+        // Logged in, show quiz UI and start quiz
         window.currentUser = user;
         document.getElementById('loading').style.display = 'none';
         document.querySelector('.app').style.display = 'block';
@@ -157,17 +154,224 @@
 
   <div id="loading">Loading...</div>
   <div class="app">
-    <div id="quizTimer"></div>
+    <div id="quizTimer" style="display: none;"></div>
     <div id="quizIndexBar"></div>
-    <h1 style="text-align:center"></h1>
     <div id="question"></div>
     <div id="answer-buttons"></div>
-    <button id="next-btn">Next</button>
-    <button id="skip-btn">Skip</button>
-    <button id="mark-review-btn">Mark for Review</button>
-    <button id="submit-btn" onclick="confirmSubmit()">Submit</button>
+    <button id="next-btn" style="display: none;">Next</button>
+    <button id="skip-btn" style="display: none;">Skip</button>
+    <button id="submit-btn" style="display: none;">Submit</button>
     <div id="result"></div>
   </div>
-  <script src="script.js"></script>
+
+  <script>
+    let questions = [];
+    let currentIndex = 0;
+    let score = 0;
+    let quizDuration = 600; // Will be set dynamically
+    let timerInterval;
+    let questionStatus = []; // "not", "attempted", "skipped"
+    let quizEnded = false;
+
+    const questionElem = document.getElementById("question");
+    const answersDiv = document.getElementById("answer-buttons");
+    const nextBtn = document.getElementById("next-btn");
+    const skipBtn = document.getElementById("skip-btn");
+    const submitBtn = document.getElementById("submit-btn");
+    const quizTimer = document.getElementById("quizTimer");
+    const quizIndexBar = document.getElementById("quizIndexBar");
+    const resultDiv = document.getElementById("result");
+
+    async function initQuiz() {
+      currentIndex = 0;
+      score = 0;
+      quizEnded = false;
+      nextBtn.style.display = 'none';
+      skipBtn.style.display = 'inline-block';
+      submitBtn.style.display = 'inline-block';
+      resultDiv.innerHTML = '';
+
+      // Get manual param from URL, fallback to 'general'
+      const manual = new URLSearchParams(window.location.search).get("manual") || "general";
+
+      try {
+        const response = await fetch(`${manual}-questions.json`);
+        if (!response.ok) throw new Error(`Failed to load ${manual}-questions.json`);
+
+        questions = await response.json();
+
+        if (!Array.isArray(questions) || questions.length === 0) {
+          throw new Error("No questions found in JSON");
+        }
+
+        // Set quiz duration dynamically: 30 seconds per question
+        quizDuration = questions.length * 30;
+
+        questionStatus = Array(questions.length).fill("not");
+        showQuestion();
+        updateIndexBar();
+        startTimer();
+      } catch (err) {
+        questionElem.textContent = `Error loading questions: ${err.message}`;
+        answersDiv.innerHTML = "";
+        nextBtn.style.display = 'none';
+        skipBtn.style.display = 'none';
+        submitBtn.style.display = 'none';
+        quizTimer.style.display = 'none';
+      }
+    }
+
+    function showQuestion() {
+      if (quizEnded) return;
+      nextBtn.style.display = 'none';
+      questionElem.textContent = questions[currentIndex].question;
+      answersDiv.innerHTML = "";
+
+      questions[currentIndex].answers.forEach(answer => {
+        const btn = document.createElement("button");
+        btn.textContent = answer.text;
+        btn.classList.add("answer-btn");
+        btn.onclick = () => selectAnswer(btn, answer.correct);
+        answersDiv.appendChild(btn);
+      });
+
+      updateIndexBar();
+    }
+
+    function selectAnswer(selectedBtn, isCorrect) {
+      if (quizEnded) return;
+      const q = questions[currentIndex];
+      const allBtns = answersDiv.querySelectorAll('button');
+      allBtns.forEach(btn => btn.disabled = true);
+
+      if (isCorrect) {
+        score += 1;
+        selectedBtn.classList.add('correct');
+      } else {
+        score -= 1 / 3;
+        selectedBtn.classList.add('wrong');
+        allBtns.forEach(btn => {
+          if (btn.textContent === q.answers.find(a => a.correct).text) {
+            btn.classList.add('correct');
+          }
+        });
+      }
+      questionStatus[currentIndex] = "attempted";
+      nextBtn.style.display = 'inline-block';
+      skipBtn.style.display = 'inline-block';
+      updateIndexBar();
+    }
+
+    nextBtn.addEventListener("click", () => {
+      if (quizEnded) return;
+      goToNext();
+    });
+
+    skipBtn.addEventListener("click", () => {
+      if (quizEnded) return;
+      if (questionStatus[currentIndex] !== "attempted") {
+        questionStatus[currentIndex] = "skipped";
+      }
+      goToNext();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (quizEnded) return;
+      endQuiz();
+    });
+
+    function goToNext() {
+      if (currentIndex < questions.length - 1) {
+        currentIndex++;
+        showQuestion();
+      } else {
+        endQuiz();
+      }
+    }
+
+    function updateIndexBar() {
+      quizIndexBar.innerHTML = '';
+      questions.forEach((q, idx) => {
+        const dot = document.createElement('div');
+        dot.className = 'quiz-index-dot';
+        if (idx === currentIndex) dot.classList.add('current');
+        if (questionStatus[idx] === "attempted") dot.classList.add('attempted');
+        else if (questionStatus[idx] === "skipped") dot.classList.add('skipped');
+        dot.textContent = idx + 1;
+        dot.onclick = () => {
+          if (!quizEnded) {
+            currentIndex = idx;
+            showQuestion();
+          }
+        };
+        quizIndexBar.appendChild(dot);
+      });
+    }
+
+    function startTimer() {
+      let remaining = quizDuration;
+      quizTimer.style.display = 'flex';
+      timerInterval = setInterval(() => {
+        const minutes = String(Math.floor(remaining / 60)).padStart(2, "0");
+        const seconds = String(remaining % 60).padStart(2, "0");
+        quizTimer.textContent = `${minutes}:${seconds}`;
+
+        if (remaining <= 0) {
+          clearInterval(timerInterval);
+          endQuiz();
+        }
+        remaining--;
+      }, 1000);
+    }
+
+    async function endQuiz() {
+      quizEnded = true;
+      clearInterval(timerInterval);
+      nextBtn.style.display = 'none';
+      skipBtn.style.display = 'none';
+      submitBtn.style.display = 'none';
+      quizTimer.style.display = 'none';
+
+      const quizDiv = document.querySelector(".app");
+      const totalQuestions = questions.length;
+      const manualName = new URLSearchParams(window.location.search).get("manual") || "General";
+
+      if (window.firebaseDb && window.currentUser) {
+        try {
+          await window.firebaseDb
+            .collection("users")
+            .doc(window.currentUser.uid)
+            .collection("quizHistory")
+            .add({
+              score: parseFloat(score.toFixed(2)),
+              totalQuestions,
+              manual: manualName,
+              timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            });
+        } catch (err) {
+          console.error("Error saving quiz result:", err);
+        }
+      }
+
+      quizDiv.innerHTML = `
+        <div id="result">Your Score: ${score.toFixed(2)}</div>
+        <button id="home-btn" style="margin: 10px; padding: 10px 20px;">Home</button>
+        <button id="dashboard-btn" style="margin: 10px; padding: 10px 20px;">Dashboard</button>
+        <button id="history-btn" style="margin: 10px; padding: 10px 20px;">Attempt History</button>
+      `;
+
+      document.getElementById('home-btn').addEventListener('click', () => {
+        window.location.href = 'index.html';
+      });
+
+      document.getElementById('dashboard-btn').addEventListener('click', () => {
+        window.location.href = 'dashboard.html';
+      });
+      
+      document.getElementById('history-btn').addEventListener('click', () => {
+        window.location.href = 'quiz-history.html';
+      });
+    }
+  </script>
 </body>
 </html>
