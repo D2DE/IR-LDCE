@@ -250,7 +250,7 @@ function showQuestion() {
 }
 
     function selectAnswer(selectedBtn, isCorrect) {
-      if (quizEnded) return;
+       if (quizEnded || questionStatus[currentIndex] === "attempted") return;
       const q = questions[currentIndex];
       const allBtns = answersDiv.querySelectorAll('button');
       allBtns.forEach(btn => btn.disabled = true);
