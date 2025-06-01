@@ -272,6 +272,28 @@
     <a href="quiz-history.html" class="manual-btn history-btn">Quiz History</a>
   </section>
 
+  <section class="dashboard-section card" id="change-password-section" style="max-width: 400px; margin: 20px auto;">
+  <h3>Change Password</h3>
+  <form id="change-password-form">
+    <div style="margin-bottom: 12px;">
+      <label for="current-password">Current Password:</label><br />
+      <input type="password" id="current-password" required style="width: 100%; padding: 8px;" />
+    </div>
+    <div style="margin-bottom: 12px;">
+      <label for="new-password">New Password:</label><br />
+      <input type="password" id="new-password" required style="width: 100%; padding: 8px;" />
+    </div>
+    <div style="margin-bottom: 12px;">
+      <label for="confirm-password">Confirm New Password:</label><br />
+      <input type="password" id="confirm-password" required style="width: 100%; padding: 8px;" />
+    </div>
+    <button type="submit" style="background-color: #004080; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer;">
+      Change Password
+    </button>
+  </form>
+  <div id="change-password-message" style="margin-top: 12px; color: red;"></div>
+</section>
+
   <section class="dashboard-section" id="quiz-section">
     <div style="text-align: center;">
       <h3 class="mb-3" style="font-size: 2rem;">Available Quizzes</h3>
