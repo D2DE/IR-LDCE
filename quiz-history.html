@@ -358,6 +358,29 @@
     </nav>
   </header>
 
+    <!-- Auth State Handling -->
+<script>
+  const auth = firebase.auth();
+
+  const loginLink = document.getElementById("loginLink");
+  const logoutButton = document.getElementById("logoutButton");
+  const dashboardLink = document.getElementById("dashboardLink");
+  const mobileDashboardLink = document.getElementById("mobileDashboardLink");
+
+  // Listen for auth state changes
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      loginLink.style.display = "none";
+      logoutButton.style.display = "inline-block";
+      dashboardLink.style.display = "inline-block";
+      mobileDashboardLink.style.display = "inline";
+    } else {
+      loginLink.style.display = "inline";
+      logoutButton.style.display = "none";
+      dashboardLink.style.display = "none";
+      mobileDashboardLink.style.display = "none";
+    }
+  });
 <main class="dashboard-container container py-4">
   <div id="error-message" class="alert alert-danger text-center d-none">
     You are not logged in. <a href="login.html">Go to login</a>
@@ -389,29 +412,6 @@
     &copy; 2025 IR-LDCE. All Rights Reserved.
   </footer>
 
-  <!-- Auth State Handling -->
-<script>
-  const auth = firebase.auth();
-
-  const loginLink = document.getElementById("loginLink");
-  const logoutButton = document.getElementById("logoutButton");
-  const dashboardLink = document.getElementById("dashboardLink");
-  const mobileDashboardLink = document.getElementById("mobileDashboardLink");
-
-  // Listen for auth state changes
-  auth.onAuthStateChanged((user) => {
-    if (user) {
-      loginLink.style.display = "none";
-      logoutButton.style.display = "inline-block";
-      dashboardLink.style.display = "inline-block";
-      mobileDashboardLink.style.display = "inline";
-    } else {
-      loginLink.style.display = "inline";
-      logoutButton.style.display = "none";
-      dashboardLink.style.display = "none";
-      mobileDashboardLink.style.display = "none";
-    }
-  });
 
   // Handle logout
   logoutButton.addEventListener("click", () => {
