@@ -357,6 +357,7 @@
         <div id="result">Your Score: ${score.toFixed(2)}</div>
         <button id="home-btn" style="margin: 10px; padding: 10px 20px;">Home</button>
         <button id="dashboard-btn" style="margin: 10px; padding: 10px 20px;">Dashboard</button>
+        <button id="history-btn" style="margin: 10px; padding: 10px 20px;">Attempt History</button>
       `;
 
       document.getElementById('home-btn').addEventListener('click', () => {
@@ -365,6 +366,10 @@
 
       document.getElementById('dashboard-btn').addEventListener('click', () => {
         window.location.href = 'dashboard.html';
+      });
+      
+      document.getElementById('history-btn').addEventListener('click', () => {
+        window.location.href = 'quiz-history.html';
       });
     }
   </script>
