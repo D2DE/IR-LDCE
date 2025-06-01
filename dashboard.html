@@ -23,11 +23,11 @@
       align-items: center;
     }
     .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-}
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
     ul.menu {
       list-style: none;
       display: none;
@@ -160,6 +160,26 @@
       background-color: #125ca4;
       box-shadow: 0 4px 16px rgba(0,0,0,0.18);
     }
+    .change-password-btn {
+      background-color: #008080;
+      color: white;
+      font-weight: bold;
+      padding: 18px 20px;
+      border-radius: 12px;
+      text-align: center;
+      min-width: 180px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+      cursor: pointer;
+      border: none;
+      font-size: 1.15rem;
+      transition: background 0.2s, box-shadow 0.2s;
+      margin-left: 1rem;
+      display: inline-block;
+    }
+    .change-password-btn:hover {
+      background-color: #006666;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
     .avatar-container.text-center {
       text-align: center;
     }
@@ -195,6 +215,77 @@
     .mb-3 {
       margin-bottom: 1rem;
     }
+    /* Modal Styles */
+    #changePasswordModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+    #changePasswordModal .modal-content {
+      background: #fff;
+      padding: 20px 25px;
+      border-radius: 8px;
+      max-width: 400px;
+      width: 90%;
+      position: relative;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    #changePasswordModal h3 {
+      margin-top: 0;
+      color: #004080;
+      margin-bottom: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+    #changePasswordModal label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+    }
+    #changePasswordModal input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    #changePasswordModal button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    #changePasswordModal #submitChangePassword {
+      background-color: #004080;
+      color: white;
+      margin-right: 10px;
+      transition: background-color 0.3s ease;
+    }
+    #changePasswordModal #submitChangePassword:hover {
+      background-color: #002a57;
+    }
+    #changePasswordModal #cancelChangePassword {
+      background-color: #ccc;
+      color: #333;
+    }
+    #changePasswordModal #cancelChangePassword:hover {
+      background-color: #aaa;
+    }
+    #change-password-message {
+      margin-top: 10px;
+      color: red;
+      font-weight: 600;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -210,152 +301,172 @@
         apiKey: "AIzaSyCRhKq7k4v2MdiE5xT4H7-Yb7SLQ5mvTn8",
         authDomain: "quiz-app-1b48b.firebaseapp.com",
         projectId: "quiz-app-1b48b",
-        appId: "1:765334603137:web:1c8a13f6086a6773c2d480"
+        storageBucket: "quiz-app-1b48b.appspot.com",
+        messagingSenderId: "874957055128",
+        appId: "1:874957055128:web:8f3efec8c2a3a179c020ed"
       };
       firebase.initializeApp(firebaseConfig);
     </script>
-    <style>
-      .btn-white-black {
-        background-color: white;
-        color: black;
-        border: 1px solid #ccc;
-        font-weight: bold;
-        border-radius: 6px;
-        padding: 6px 12px;
-        transition: background-color 0.3s, color 0.3s;
-        text-decoration: none;
-        display: inline-block;
-      }
-      .btn-white-black:hover {
-        background-color: #f0f0f0;
-        color: #000;
-      }
-    </style>
-    <div class="d-flex align-items-center">
-      <a href="login.html" id="loginLink" class="btn btn-sm btn-white-black me-3">Login</a>
-      <button id="logoutButton" class="btn btn-sm btn-white-black me-3" style="display: none;">Logout</button>
-      <a href="dashboard.html" id="dashboardLink" class="btn btn-sm btn-white-black" style="display: none;">Dashboard</a>
-    </div>
-    <button class="hamburger" id="hamburger">
+
+    <button class="hamburger" id="menu-btn" aria-label="Toggle Menu">
       <div></div>
       <div></div>
       <div></div>
     </button>
-    <ul class="menu" id="navMenu">
-      <li><a href="index.html">🏠 Home</a></li>
-      <li><a href="categories.html">📐 MCQ Categories</a></li>
-      <li><a href="manual-quizzes.html">📊 Manual Based MCQ</a></li>
-      <li><a href="pyq-quizzes.html">📄 PYQ Based MCQ</a></li>
-      <li><a href="establishment.html">🔄 Establishment MCQ</a></li>
-      <li><a href="current-affairs.html">🌐 Current Affairs</a></li>
-      <li><a href="gk.html">💡 General Knowledge</a></li>
-      <li><a href="dashboard.html" id="mobileDashboardLink" style="display: none;">📊 Dashboard</a></li>
-      <li><a href="contact.html">📧 Contact Us</a></li>
+
+    <ul class="menu" id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="#" id="logout-link">Logout</a></li>
     </ul>
   </nav>
 </header>
 
-<main class="dashboard-container container py-4">
-  <div id="error-message" class="alert alert-danger text-center d-none">
-    You are not logged in. <a href="login.html">Go to login</a>
-  </div>
+<main class="container py-4">
+
   <section class="profile-section flex-container">
-    <div class="avatar-container text-center">
-      <div class="mb-2">
-        <img id="userAvatar" src="default-avatar.png" alt="Profile Picture" class="rounded-circle" width="100" height="100" />
-      </div>
-      <div class="profile-info">
-        <h2>Welcome, <span id="dashboard-username">User</span>!</h2>
-        <p>Email: <span id="account-email">user@example.com</span></p>
-      </div>
-    </div>
-    <a href="quiz-history.html" class="manual-btn history-btn">Quiz History</a>
+    <img src="images/avatar1.png" alt="Avatar" width="40" height="40" class="me-3" />
+    <h2 id="userName"></h2>
+    <button class="change-password-btn" id="openChangePassword">Change Password</button>
+    <a href="quiz-history.html" class="history-btn">History</a>
   </section>
 
-  <section class="dashboard-section card" id="change-password-section" style="max-width: 400px; margin: 20px auto;">
-  <h3>Change Password</h3>
-  <form id="change-password-form">
-    <div style="margin-bottom: 12px;">
-      <label for="current-password">Current Password:</label><br />
-      <input type="password" id="current-password" required style="width: 100%; padding: 8px;" />
-    </div>
-    <div style="margin-bottom: 12px;">
-      <label for="new-password">New Password:</label><br />
-      <input type="password" id="new-password" required style="width: 100%; padding: 8px;" />
-    </div>
-    <div style="margin-bottom: 12px;">
-      <label for="confirm-password">Confirm New Password:</label><br />
-      <input type="password" id="confirm-password" required style="width: 100%; padding: 8px;" />
-    </div>
-    <button type="submit" style="background-color: #004080; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer;">
-      Change Password
-    </button>
-  </form>
-  <div id="change-password-message" style="margin-top: 12px; color: red;"></div>
-</section>
-
-  <section class="dashboard-section" id="quiz-section">
-    <div style="text-align: center;">
-      <h3 class="mb-3" style="font-size: 2rem;">Available Quizzes</h3>
-    </div>
-    <div class="quiz-list">
-      <button class="manual-btn" data-manual="irwm">1. Indian Railway Works Manual</button>
-      <button class="manual-btn" data-manual="irpwm">2. Indian Railway P-way Manual</button>
-      <button class="manual-btn" data-manual="irdim">3. Indian Railway Schedule of Dimensions</button>
-      <button class="manual-btn" data-manual="irec">4. Indian Railway Engineering Code</button>
-      <button class="manual-btn" data-manual="stm">5. Small Track Machine Manual</button>
-      <button class="manual-btn" data-manual="usfd">6. USFD Manual</button>
-      <button class="manual-btn" data-manual="fbwm">7. FBW Manual</button>
-      <button class="manual-btn" data-manual="store">8. Store Manual</button>
-      <button class="manual-btn" data-manual="account">9. Account Manual</button>
-      <button class="manual-btn" data-manual="pyq2022">10. PYQ 30% Main 2022</button>
-      <button class="manual-btn" data-manual="pyq2021">11. PYQ 30% Main 2021</button>
-    </div>
+  <section class="content">
+    <h2>Your Quizzes</h2>
+    <div id="quizList" class="quiz-list"></div>
   </section>
+
+  <aside class="sidebar">
+    <h3>How to Use</h3>
+    <p>Welcome to the quiz dashboard! Here you can:</p>
+    <ul>
+      <li>View and start quizzes</li>
+      <li>Check your quiz history</li>
+      <li>Change your account password</li>
+    </ul>
+  </aside>
+
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script type="module" src="dashboard.js"></script>
 <footer>
-  &copy; 2025 IR-LDCE. All Rights Reserved.
+  &copy; 2025 IR-LDCE. All rights reserved.
 </footer>
 
+<!-- Change Password Modal -->
+<div id="changePasswordModal" role="dialog" aria-modal="true" aria-labelledby="changePasswordTitle" tabindex="-1">
+  <div class="modal-content">
+    <h3 id="changePasswordTitle">Change Password</h3>
+    <form id="changePasswordForm" novalidate>
+      <label for="currentPassword">Current Password</label>
+      <input type="password" id="currentPassword" name="currentPassword" required autocomplete="current-password" />
+      <label for="newPassword">New Password</label>
+      <input type="password" id="newPassword" name="newPassword" required autocomplete="new-password" minlength="6" />
+      <label for="confirmPassword">Confirm New Password</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required autocomplete="new-password" minlength="6" />
+      <div style="text-align:center;">
+        <button type="submit" id="submitChangePassword">Change Password</button>
+        <button type="button" id="cancelChangePassword">Cancel</button>
+      </div>
+      <div id="change-password-message" role="alert" aria-live="assertive"></div>
+    </form>
+  </div>
+</div>
+
 <script>
-  // Toggle menu on hamburger click
-  document.getElementById('hamburger').addEventListener('click', function() {
-    document.getElementById('navMenu').classList.toggle('active');
+  // Hamburger menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('active');
   });
 
-  // Auth State Handling
-  const auth = firebase.auth();
-  const loginLink = document.getElementById("loginLink");
-  const logoutButton = document.getElementById("logoutButton");
-  const dashboardLink = document.getElementById("dashboardLink");
-  const mobileDashboardLink = document.getElementById("mobileDashboardLink");
+  // Firebase auth logout
+  const logoutLink = document.getElementById('logout-link');
+  logoutLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    firebase.auth().signOut().then(() => {
+      window.location.href = "index.html";
+    });
+  });
 
-  // Listen for auth state changes
-  auth.onAuthStateChanged((user) => {
+  // Show user info (example)
+  firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      loginLink.style.display = "none";
-      logoutButton.style.display = "inline-block";
-      dashboardLink.style.display = "inline-block";
-      mobileDashboardLink.style.display = "inline";
+      document.getElementById('userName').textContent = user.displayName || user.email;
+      // You can also load quizzes here or from external JS file
     } else {
-      loginLink.style.display = "inline";
-      logoutButton.style.display = "none";
-      dashboardLink.style.display = "none";
-      mobileDashboardLink.style.display = "none";
+      // Not logged in, redirect to login page
+      window.location.href = "index.html";
     }
   });
 
-  // Handle logout
-  logoutButton.addEventListener("click", () => {
-    auth.signOut().then(() => {
-      console.log("User signed out");
-    }).catch((error) => {
-      console.error("Sign out error", error);
-    });
+  // Change Password Modal Logic
+  const changePasswordModal = document.getElementById('changePasswordModal');
+  const openChangePasswordBtn = document.getElementById('openChangePassword');
+  const cancelChangePasswordBtn = document.getElementById('cancelChangePassword');
+  const changePasswordForm = document.getElementById('changePasswordForm');
+  const changePasswordMessage = document.getElementById('change-password-message');
+
+  openChangePasswordBtn.addEventListener('click', () => {
+    changePasswordMessage.textContent = '';
+    changePasswordForm.reset();
+    changePasswordModal.style.display = 'flex';
+    document.getElementById('currentPassword').focus();
+  });
+
+  cancelChangePasswordBtn.addEventListener('click', () => {
+    changePasswordModal.style.display = 'none';
+  });
+
+  // Close modal on outside click
+  window.addEventListener('click', (e) => {
+    if (e.target === changePasswordModal) {
+      changePasswordModal.style.display = 'none';
+    }
+  });
+
+  // Handle change password form submit
+  changePasswordForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    changePasswordMessage.textContent = '';
+
+    const currentPassword = changePasswordForm.currentPassword.value;
+    const newPassword = changePasswordForm.newPassword.value;
+    const confirmPassword = changePasswordForm.confirmPassword.value;
+
+    if (newPassword !== confirmPassword) {
+      changePasswordMessage.textContent = 'New password and confirmation do not match.';
+      return;
+    }
+
+    if (newPassword.length < 6) {
+      changePasswordMessage.textContent = 'New password must be at least 6 characters.';
+      return;
+    }
+
+    // Reauthenticate user with current password
+    const user = firebase.auth().currentUser;
+    if (!user || !user.email) {
+      changePasswordMessage.textContent = 'User not authenticated. Please log in again.';
+      return;
+    }
+
+    const credential = firebase.auth.EmailAuthProvider.credential(user.email, currentPassword);
+
+    try {
+      await user.reauthenticateWithCredential(credential);
+      await user.updatePassword(newPassword);
+      changePasswordMessage.style.color = 'green';
+      changePasswordMessage.textContent = 'Password changed successfully.';
+      setTimeout(() => {
+        changePasswordModal.style.display = 'none';
+      }, 2000);
+    } catch (error) {
+      changePasswordMessage.style.color = 'red';
+      changePasswordMessage.textContent = error.message || 'Error changing password.';
+    }
   });
 </script>
+
 </body>
 </html>
