@@ -1,0 +1,2333 @@
+[
+  {
+    "question": "SL No",
+    "answers": [
+      {
+        "text": "Questions",
+        "correct": false
+      },
+      {
+        "text": "Option-1",
+        "correct": false
+      },
+      {
+        "text": "Option-2",
+        "correct": false
+      },
+      {
+        "text": "Option-3",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "1",
+    "answers": [
+      {
+        "text": "The reduced level of \"Point A\" is 100m and the backsight reading on \"Point A\" is 2.455m. With same setting of levelling instrument, the foresight reading of inverted staff on \"Point B\" on the ceiling is 2.745m. The reduced level of \"Point B\" will be________.",
+        "correct": false
+      },
+      {
+        "text": "94.80 m",
+        "correct": false
+      },
+      {
+        "text": "99.71 m",
+        "correct": false
+      },
+      {
+        "text": "100.29 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "2",
+    "answers": [
+      {
+        "text": "The term \"LIDAR\" is related to which field?",
+        "correct": false
+      },
+      {
+        "text": "Track laying technique",
+        "correct": false
+      },
+      {
+        "text": "Surveying technique",
+        "correct": false
+      },
+      {
+        "text": "Bridge construction technique",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "3",
+    "answers": [
+      {
+        "text": "Shear buckling of web in a plate girder is prevented by using________.",
+        "correct": false
+      },
+      {
+        "text": "Vertical intermediate stiffener",
+        "correct": false
+      },
+      {
+        "text": "Horizontal stiffener at neutral axis",
+        "correct": false
+      },
+      {
+        "text": "Bearing stiffener",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "4",
+    "answers": [
+      {
+        "text": "A bending moment is applied at the centre point of a simply supported beam. What will be the shape of shear force diagram for this beam?",
+        "correct": false
+      },
+      {
+        "text": "Cubic parabola",
+        "correct": false
+      },
+      {
+        "text": "Parabola",
+        "correct": false
+      },
+      {
+        "text": "Triangular",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "5",
+    "answers": [
+      {
+        "text": "Finer grinding of cement used in concrete ________",
+        "correct": false
+      },
+      {
+        "text": "Affects only the early development of concrete strength",
+        "correct": false
+      },
+      {
+        "text": "Affects only the ultimate strength of concrete",
+        "correct": false
+      },
+      {
+        "text": "Affects both early development and ultimate strength of concrete",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "6",
+    "answers": [
+      {
+        "text": "As per IRS: Concrete Bridge Code, which of the following is not an \"environment exposure condition\" for the concrete.",
+        "correct": false
+      },
+      {
+        "text": "Extreme",
+        "correct": false
+      },
+      {
+        "text": "Severe",
+        "correct": false
+      },
+      {
+        "text": "Mild",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "7",
+    "answers": [
+      {
+        "text": "As per IRS: Steel Bridge Code, the ratio of deflection to the length of girder for a main girder normally shall not exceed ________",
+        "correct": false
+      },
+      {
+        "text": "1/325",
+        "correct": false
+      },
+      {
+        "text": "1/425",
+        "correct": false
+      },
+      {
+        "text": "1/550",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "8",
+    "answers": [
+      {
+        "text": "Vicat's apparatus is used to determine which of the following properties for Cement ?",
+        "correct": false
+      },
+      {
+        "text": "Soundness",
+        "correct": false
+      },
+      {
+        "text": "Setting time",
+        "correct": false
+      },
+      {
+        "text": "Compressive strength",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "9",
+    "answers": [
+      {
+        "text": "Slacked lime mainly consists of ________",
+        "correct": false
+      },
+      {
+        "text": "Calcium carbonate",
+        "correct": false
+      },
+      {
+        "text": "Calcium bicarbonate",
+        "correct": false
+      },
+      {
+        "text": "Calcium oxide",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "10",
+    "answers": [
+      {
+        "text": "The resultant active earth pressure on the wall of height \"H\" exerted by a backfill acts at :",
+        "correct": false
+      },
+      {
+        "text": "\"H/4\" above the base",
+        "correct": false
+      },
+      {
+        "text": "\"H/2\" above the base",
+        "correct": false
+      },
+      {
+        "text": "\"H/3\" above the base",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "11",
+    "answers": [
+      {
+        "text": "Out of the following, which soil will have least value of angle of internal friction ?",
+        "correct": false
+      },
+      {
+        "text": "Clay",
+        "correct": false
+      },
+      {
+        "text": "Dense sand",
+        "correct": false
+      },
+      {
+        "text": "Loose sand",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "12",
+    "answers": [
+      {
+        "text": "Plate load test is done to determine ________.",
+        "correct": false
+      },
+      {
+        "text": "Density of soil",
+        "correct": false
+      },
+      {
+        "text": "Coefficient of earth pressure",
+        "correct": false
+      },
+      {
+        "text": "Bearing capacity of soil",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "13",
+    "answers": [
+      {
+        "text": "When several contours lines coincide at one place, it indicates ________ at that place.",
+        "correct": false
+      },
+      {
+        "text": "A vertical cliff",
+        "correct": false
+      },
+      {
+        "text": "Undulating ground",
+        "correct": false
+      },
+      {
+        "text": "Stagnant Water",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "14",
+    "answers": [
+      {
+        "text": "The value of gradient compensation given for curvature is generally ________ per degree of curvature.",
+        "correct": false
+      },
+      {
+        "text": "0.0006",
+        "correct": false
+      },
+      {
+        "text": "0.0005",
+        "correct": false
+      },
+      {
+        "text": "0.0004",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "15",
+    "answers": [
+      {
+        "text": "As per IRPWM, the top of guard rail in bridges on straight track should not be lower than the top of running rail by ________.",
+        "correct": false
+      },
+      {
+        "text": "25 mm",
+        "correct": false
+      },
+      {
+        "text": "35 mm",
+        "correct": false
+      },
+      {
+        "text": "50 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "16",
+    "answers": [
+      {
+        "text": "As per IRPWM, which of the following is not a criterion for identification of weak formation at any location:",
+        "correct": false
+      },
+      {
+        "text": "Speed restrictions due to weak formation",
+        "correct": false
+      },
+      {
+        "text": "Requiring more than normal track attention",
+        "correct": false
+      },
+      {
+        "text": "Number of rail and weld fractures",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "17",
+    "answers": [
+      {
+        "text": "Which of the following equipment is used to measure rail temperature during A.T. welding.",
+        "correct": false
+      },
+      {
+        "text": "Elcometer",
+        "correct": false
+      },
+      {
+        "text": "Pyrometer",
+        "correct": false
+      },
+      {
+        "text": "Anemometer",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "18",
+    "answers": [
+      {
+        "text": "As per IRPWM, what is the minimum duration of traffic block required for ensuring a good quality AT weld ?",
+        "correct": false
+      },
+      {
+        "text": "70-75 minute",
+        "correct": false
+      },
+      {
+        "text": "50-60 minute",
+        "correct": false
+      },
+      {
+        "text": "30-40 minute",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "19",
+    "answers": [
+      {
+        "text": "In B.G., what is the maximum degree of curve on which conventional SEJ can be installed ?",
+        "correct": false
+      },
+      {
+        "text": "4.0 degree",
+        "correct": false
+      },
+      {
+        "text": "2.0 degree",
+        "correct": false
+      },
+      {
+        "text": "1.0 degree",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "20",
+    "answers": [
+      {
+        "text": "Which of the following is not a type of \"traction bond\" provided in electrified track :",
+        "correct": false
+      },
+      {
+        "text": "Longitudinal rail bond",
+        "correct": false
+      },
+      {
+        "text": "Cross bond",
+        "correct": false
+      },
+      {
+        "text": "Strong bond",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "21",
+    "answers": [
+      {
+        "text": "As per IRPWM, the criteria for deep screening of main lines is based on ________.",
+        "correct": false
+      },
+      {
+        "text": "GMT carried after last deep screening",
+        "correct": false
+      },
+      {
+        "text": "Clean ballast cushion",
+        "correct": false
+      },
+      {
+        "text": "Number of rail fractures after last deep screening",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "22",
+    "answers": [
+      {
+        "text": "The degree of any curve in B.G. is the angle subtended at the centre of the circle by a chord of length ________.",
+        "correct": false
+      },
+      {
+        "text": "30.5m",
+        "correct": false
+      },
+      {
+        "text": "20m",
+        "correct": false
+      },
+      {
+        "text": "10m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "23",
+    "answers": [
+      {
+        "text": "As per IRPWM, the permissible speed on turnout with 1:12 ordinary curved switch in B.G. is ________.",
+        "correct": false
+      },
+      {
+        "text": "15 kmph",
+        "correct": false
+      },
+      {
+        "text": "20 kmph",
+        "correct": false
+      },
+      {
+        "text": "30 kmph",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "24",
+    "answers": [
+      {
+        "text": "What class of welding electrodes are to be used for reconditioning of switches and crossings in turnouts ?",
+        "correct": false
+      },
+      {
+        "text": "H3B and H3C",
+        "correct": false
+      },
+      {
+        "text": "H3A and H3C",
+        "correct": false
+      },
+      {
+        "text": "H3B and H3D",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "25",
+    "answers": [
+      {
+        "text": "In Track Recording Car (TRC), use of contact type gauge sensor is made for maximum recording speed up to ________.",
+        "correct": false
+      },
+      {
+        "text": "160 kmph",
+        "correct": false
+      },
+      {
+        "text": "130 kmph",
+        "correct": false
+      },
+      {
+        "text": "80 kmph",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "26",
+    "answers": [
+      {
+        "text": "Any block section should be planned for through tamping if as per the TRC results the percentage of blocks exceeding PML is more than ________.",
+        "correct": false
+      },
+      {
+        "text": "0.5",
+        "correct": false
+      },
+      {
+        "text": "0.4",
+        "correct": false
+      },
+      {
+        "text": "0.25",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "27",
+    "answers": [
+      {
+        "text": "The maximum horizontal distance stipulated from centre of track to face of passenger platform coping for B.G. Line, as per Schedule-I of IRSOD, is ________.",
+        "correct": false
+      },
+      {
+        "text": "1660 mm",
+        "correct": false
+      },
+      {
+        "text": "1670 mm",
+        "correct": false
+      },
+      {
+        "text": "1680 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "28",
+    "answers": [
+      {
+        "text": "The applications to Commissioner of Railway Safety, for sanction of any work, are required to be signed by minimum ________ level officer.",
+        "correct": false
+      },
+      {
+        "text": "Senior Administrative Grade",
+        "correct": false
+      },
+      {
+        "text": "Senior Scale",
+        "correct": false
+      },
+      {
+        "text": "Junior Scale",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "29",
+    "answers": [
+      {
+        "text": "Concrete sleepers are considered for renewal if they have developed notches more than ________ at rail seat.",
+        "correct": false
+      },
+      {
+        "text": "5 mm",
+        "correct": false
+      },
+      {
+        "text": "3 mm",
+        "correct": false
+      },
+      {
+        "text": "6 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "30",
+    "answers": [
+      {
+        "text": "In relaying of Point and Crossings, at least ________ rail length on either side of the turnout should have the same section of rail as the turnout .",
+        "correct": false
+      },
+      {
+        "text": "2",
+        "correct": false
+      },
+      {
+        "text": "3",
+        "correct": false
+      },
+      {
+        "text": "1",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "31",
+    "answers": [
+      {
+        "text": "What is the maximum life of detonators, after extension of their life also ?",
+        "correct": false
+      },
+      {
+        "text": "8 years",
+        "correct": false
+      },
+      {
+        "text": "7 years",
+        "correct": false
+      },
+      {
+        "text": "10 years",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "32",
+    "answers": [
+      {
+        "text": "The periodicity for taking census of traffic at level crossings is ________.",
+        "correct": false
+      },
+      {
+        "text": "Once in 2 years",
+        "correct": false
+      },
+      {
+        "text": "Once in 4 years",
+        "correct": false
+      },
+      {
+        "text": "Once in 5 years",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "33",
+    "answers": [
+      {
+        "text": "At the approach of all level crossings, whistle boards along the track should be erected at ________ from the level crossing",
+        "correct": false
+      },
+      {
+        "text": "1200 m",
+        "correct": false
+      },
+      {
+        "text": "800 m",
+        "correct": false
+      },
+      {
+        "text": "600 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "34",
+    "answers": [
+      {
+        "text": "As per IRPWM, which of the following information is not required to be marked on the motor trolley :",
+        "correct": false
+      },
+      {
+        "text": "Trolley No.",
+        "correct": false
+      },
+      {
+        "text": "Permissible speed",
+        "correct": false
+      },
+      {
+        "text": "Headquarters of the official in-charge",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "35",
+    "answers": [
+      {
+        "text": "Trollies in all cases shall be manned by ________ men.",
+        "correct": false
+      },
+      {
+        "text": "3",
+        "correct": false
+      },
+      {
+        "text": "5",
+        "correct": false
+      },
+      {
+        "text": "2",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "36",
+    "answers": [
+      {
+        "text": "Who enters the details of \"Railway Affecting Tanks (RAT)\" in BMS ?",
+        "correct": false
+      },
+      {
+        "text": "Assistant Divisional Engineer",
+        "correct": false
+      },
+      {
+        "text": "SSE (P.Way)",
+        "correct": false
+      },
+      {
+        "text": "Sr. Divisional Engineer",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "37",
+    "answers": [
+      {
+        "text": "As per IRBM, who is responsible for maintenance of superstructure of all pre-stressed concrete bridges ?",
+        "correct": false
+      },
+      {
+        "text": "SSE (P.Way)",
+        "correct": false
+      },
+      {
+        "text": "SSE (Works)",
+        "correct": false
+      },
+      {
+        "text": "SSE (Bridge)",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "38",
+    "answers": [
+      {
+        "text": "As per IRBM, the grouting pressure in cement pressure grouting, for repair of masonry bridges, shall be ________.",
+        "correct": false
+      },
+      {
+        "text": "2 to 4 kg per sq.cm.",
+        "correct": false
+      },
+      {
+        "text": "5 to 10 kg per sq.cm.",
+        "correct": false
+      },
+      {
+        "text": "10 to 15 kg per sq.cm.",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "39",
+    "answers": [
+      {
+        "text": "The minimum vertical clearance above rail level for Foot Over Bridge (FOB) is ________.",
+        "correct": false
+      },
+      {
+        "text": "5.50 m",
+        "correct": false
+      },
+      {
+        "text": "5.80 m",
+        "correct": false
+      },
+      {
+        "text": "6.00 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "40",
+    "answers": [
+      {
+        "text": "The minimum depth of foundation for a bridge pier in alluvial soil is ________.",
+        "correct": false
+      },
+      {
+        "text": "1.5 m",
+        "correct": false
+      },
+      {
+        "text": "2.5 m",
+        "correct": false
+      },
+      {
+        "text": "3.0 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "41",
+    "answers": [
+      {
+        "text": "The minimum width of ballast cushion under sleeper for BG track is ________.",
+        "correct": false
+      },
+      {
+        "text": "150 mm",
+        "correct": false
+      },
+      {
+        "text": "200 mm",
+        "correct": false
+      },
+      {
+        "text": "250 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "42",
+    "answers": [
+      {
+        "text": "The minimum width of formation for BG single line is ________.",
+        "correct": false
+      },
+      {
+        "text": "6.1 m",
+        "correct": false
+      },
+      {
+        "text": "6.7 m",
+        "correct": false
+      },
+      {
+        "text": "7.0 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "43",
+    "answers": [
+      {
+        "text": "The minimum width of formation for BG double line is ________.",
+        "correct": false
+      },
+      {
+        "text": "11.0 m",
+        "correct": false
+      },
+      {
+        "text": "11.5 m",
+        "correct": false
+      },
+      {
+        "text": "12.0 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "44",
+    "answers": [
+      {
+        "text": "The minimum depth of ballast under points and crossings is ________.",
+        "correct": false
+      },
+      {
+        "text": "150 mm",
+        "correct": false
+      },
+      {
+        "text": "200 mm",
+        "correct": false
+      },
+      {
+        "text": "250 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "45",
+    "answers": [
+      {
+        "text": "The minimum height of embankment for BG track is ________.",
+        "correct": false
+      },
+      {
+        "text": "0.5 m",
+        "correct": false
+      },
+      {
+        "text": "1.0 m",
+        "correct": false
+      },
+      {
+        "text": "1.5 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "46",
+    "answers": [
+      {
+        "text": "The minimum width of ballast section for BG track is ________.",
+        "correct": false
+      },
+      {
+        "text": "3.35 m",
+        "correct": false
+      },
+      {
+        "text": "3.50 m",
+        "correct": false
+      },
+      {
+        "text": "3.60 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "47",
+    "answers": [
+      {
+        "text": "The minimum width of a subway for pedestrian traffic is ________.",
+        "correct": false
+      },
+      {
+        "text": "1.5 m",
+        "correct": false
+      },
+      {
+        "text": "2.0 m",
+        "correct": false
+      },
+      {
+        "text": "2.5 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "48",
+    "answers": [
+      {
+        "text": "The minimum height of a subway above floor level is ________.",
+        "correct": false
+      },
+      {
+        "text": "2.2 m",
+        "correct": false
+      },
+      {
+        "text": "2.4 m",
+        "correct": false
+      },
+      {
+        "text": "2.6 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "49",
+    "answers": [
+      {
+        "text": "The minimum thickness of RCC slab for a subway is ________.",
+        "correct": false
+      },
+      {
+        "text": "100 mm",
+        "correct": false
+      },
+      {
+        "text": "120 mm",
+        "correct": false
+      },
+      {
+        "text": "150 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "50",
+    "answers": [
+      {
+        "text": "The minimum width of a level crossing for a single line is ________.",
+        "correct": false
+      },
+      {
+        "text": "3.0 m",
+        "correct": false
+      },
+      {
+        "text": "3.5 m",
+        "correct": false
+      },
+      {
+        "text": "4.0 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "51",
+    "answers": [
+      {
+        "text": "The minimum width of a level crossing for a double line is ________.",
+        "correct": false
+      },
+      {
+        "text": "6.0 m",
+        "correct": false
+      },
+      {
+        "text": "6.5 m",
+        "correct": false
+      },
+      {
+        "text": "7.0 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "52",
+    "answers": [
+      {
+        "text": "The minimum width of a cattle guard for BG track is ________.",
+        "correct": false
+      },
+      {
+        "text": "2.0 m",
+        "correct": false
+      },
+      {
+        "text": "2.5 m",
+        "correct": false
+      },
+      {
+        "text": "3.0 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "53",
+    "answers": [
+      {
+        "text": "The minimum width of a gang hut is ________.",
+        "correct": false
+      },
+      {
+        "text": "2.5 m",
+        "correct": false
+      },
+      {
+        "text": "3.0 m",
+        "correct": false
+      },
+      {
+        "text": "3.5 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "54",
+    "answers": [
+      {
+        "text": "The minimum height of a gang hut above ground level is ________.",
+        "correct": false
+      },
+      {
+        "text": "2.0 m",
+        "correct": false
+      },
+      {
+        "text": "2.2 m",
+        "correct": false
+      },
+      {
+        "text": "2.4 m",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "55",
+    "answers": [
+      {
+        "text": "The minimum width of a bridge inspection ladder is ________.",
+        "correct": false
+      },
+      {
+        "text": "300 mm",
+        "correct": false
+      },
+      {
+        "text": "350 mm",
+        "correct": false
+      },
+      {
+        "text": "400 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "56",
+    "answers": [
+      {
+        "text": "The minimum width of a bridge inspection platform is ________.",
+        "correct": false
+      },
+      {
+        "text": "600 mm",
+        "correct": false
+      },
+      {
+        "text": "700 mm",
+        "correct": false
+      },
+      {
+        "text": "800 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "57",
+    "answers": [
+      {
+        "text": "In case of temporary diversion, the super elevation provided is:",
+        "correct": false
+      },
+      {
+        "text": "50 mm",
+        "correct": false
+      },
+      {
+        "text": "30 mm",
+        "correct": false
+      },
+      {
+        "text": "20 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "58",
+    "answers": [
+      {
+        "text": "The speed potential of an existing BG section is to be increased to 110 kmph. The sanction can be granted by:",
+        "correct": false
+      },
+      {
+        "text": "PCE of Railway",
+        "correct": false
+      },
+      {
+        "text": "PCSO of Railway",
+        "correct": false
+      },
+      {
+        "text": "PCOM of Railway",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "59",
+    "answers": [
+      {
+        "text": "For existing lines, minimum distance centre to centre of straight tracks is ___ mm.",
+        "correct": false
+      },
+      {
+        "text": "4265 mm",
+        "correct": false
+      },
+      {
+        "text": "4425 mm",
+        "correct": false
+      },
+      {
+        "text": "4695 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "60",
+    "answers": [
+      {
+        "text": "Maximum horizontal distance from centre of track to face of passenger platform coping shall be ___ mm.",
+        "correct": false
+      },
+      {
+        "text": "1780 mm",
+        "correct": false
+      },
+      {
+        "text": "1700 mm",
+        "correct": false
+      },
+      {
+        "text": "1680 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "61",
+    "answers": [
+      {
+        "text": "Which parameter is not directly measured by Track Recording Car, but calculated from some other measured values:",
+        "correct": false
+      },
+      {
+        "text": "Vertical acceleration",
+        "correct": false
+      },
+      {
+        "text": "Unevenness",
+        "correct": false
+      },
+      {
+        "text": "Alignment",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "62",
+    "answers": [
+      {
+        "text": "Based on TRC and OMS recording results, the Urgent Maintenance Limit (UML) for Peak Vertical Acceleration for speeds 110–130 kmph is:",
+        "correct": false
+      },
+      {
+        "text": "0.25 g",
+        "correct": false
+      },
+      {
+        "text": "0.20 g",
+        "correct": false
+      },
+      {
+        "text": "0.15 g",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "63",
+    "answers": [
+      {
+        "text": "The life of detonators can be extended from 5 years to 8 years, on a ___ basis, subject to testing as per the stipulated procedure.",
+        "correct": false
+      },
+      {
+        "text": "3 monthly",
+        "correct": false
+      },
+      {
+        "text": "6 monthly",
+        "correct": false
+      },
+      {
+        "text": "Yearly",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "64",
+    "answers": [
+      {
+        "text": "What is the minimum level of functionary authorised to issue Competency Certificate to Motor Trolley Driver for using Motor Trolley?",
+        "correct": false
+      },
+      {
+        "text": "SSE/P.Way (in-charge)",
+        "correct": false
+      },
+      {
+        "text": "ADEN",
+        "correct": false
+      },
+      {
+        "text": "Sr.DEN",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "65",
+    "answers": [
+      {
+        "text": "Maintenance of the level crossings located within the outermost stop signals is done by:",
+        "correct": false
+      },
+      {
+        "text": "Engineering Department",
+        "correct": false
+      },
+      {
+        "text": "Safety Department",
+        "correct": false
+      },
+      {
+        "text": "Commercial Department",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "66",
+    "answers": [
+      {
+        "text": "Maximum temperature of air inside tunnels needs to be limited to ___ °C, considering passengers and workmen comfort.",
+        "correct": false
+      },
+      {
+        "text": "40 °C",
+        "correct": false
+      },
+      {
+        "text": "50 °C",
+        "correct": false
+      },
+      {
+        "text": "45 °C",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "67",
+    "answers": [
+      {
+        "text": "Each cutting should be inspected by the ADEN ___.",
+        "correct": false
+      },
+      {
+        "text": "After monsoon once a year",
+        "correct": false
+      },
+      {
+        "text": "Anytime in a year",
+        "correct": false
+      },
+      {
+        "text": "Once every 2 years",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "68",
+    "answers": [
+      {
+        "text": "Which of the following tamping machines has a satellite unit?",
+        "correct": false
+      },
+      {
+        "text": "08-32 DUOMATIC",
+        "correct": false
+      },
+      {
+        "text": "09-275 UNIMAT",
+        "correct": false
+      },
+      {
+        "text": "09-32 CSM",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "69",
+    "answers": [
+      {
+        "text": "Minimum clean ballast cushion required for quality output from tamping machine is ___.",
+        "correct": false
+      },
+      {
+        "text": "150 mm",
+        "correct": false
+      },
+      {
+        "text": "200 mm",
+        "correct": false
+      },
+      {
+        "text": "250 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "70",
+    "answers": [
+      {
+        "text": "Lifting of track up to ___ in one pass can be done by ballast cleaning machines presently available on Indian Railways.",
+        "correct": false
+      },
+      {
+        "text": "50 mm",
+        "correct": false
+      },
+      {
+        "text": "150 mm",
+        "correct": false
+      },
+      {
+        "text": "100 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "71",
+    "answers": [
+      {
+        "text": "The gauge of auxiliary track in track relaying by PQRS machine is:",
+        "correct": false
+      },
+      {
+        "text": "3100 mm",
+        "correct": false
+      },
+      {
+        "text": "3200 mm",
+        "correct": false
+      },
+      {
+        "text": "3300 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "72",
+    "answers": [
+      {
+        "text": "The diameter of bolt holes for connecting fish plates in 52 kg rail is",
+        "correct": false
+      },
+      {
+        "text": "32 mm",
+        "correct": false
+      },
+      {
+        "text": "29 mm",
+        "correct": false
+      },
+      {
+        "text": "27 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "73",
+    "answers": [
+      {
+        "text": "As per IRPWM 2020, the design toe load of ERC-MK-V is",
+        "correct": false
+      },
+      {
+        "text": "850–1100 kg",
+        "correct": false
+      },
+      {
+        "text": "1200–1500 kg",
+        "correct": false
+      },
+      {
+        "text": "690 kg",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "74",
+    "answers": [
+      {
+        "text": "For machine-crushed ballast, ballast retained on 40 mm mesh sieve should not exceed (for payment without deduction)",
+        "correct": false
+      },
+      {
+        "text": "0.05",
+        "correct": false
+      },
+      {
+        "text": "0.2",
+        "correct": false
+      },
+      {
+        "text": "0.3",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "75",
+    "answers": [
+      {
+        "text": "As per IRPWM 2020, minimum formation width for single-line straight track (excluding side drains) is",
+        "correct": false
+      },
+      {
+        "text": "13 160 mm",
+        "correct": false
+      },
+      {
+        "text": "7 850 mm",
+        "correct": false
+      },
+      {
+        "text": "13 610 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "76",
+    "answers": [
+      {
+        "text": "As per IRPWM 2020, maximum design gap of 60 kg/m rail section double-gap SEJ is",
+        "correct": false
+      },
+      {
+        "text": "65 mm",
+        "correct": false
+      },
+      {
+        "text": "160 mm",
+        "correct": false
+      },
+      {
+        "text": "40 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "77",
+    "answers": [
+      {
+        "text": "To ensure exact gauge, gauge tie plates are provided at",
+        "correct": false
+      },
+      {
+        "text": "Toe of the switch",
+        "correct": false
+      },
+      {
+        "text": "Toe of the crossing",
+        "correct": false
+      },
+      {
+        "text": "Heel of the switch",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "78",
+    "answers": [
+      {
+        "text": "As per IRPWM 2020, location of JOH for 10 125 mm curved switch on PSC, BG, 60 kg is",
+        "correct": false
+      },
+      {
+        "text": "476.5 mm",
+        "correct": false
+      },
+      {
+        "text": "3 229 mm",
+        "correct": false
+      },
+      {
+        "text": "1 682 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "79",
+    "answers": [
+      {
+        "text": "In PSC BG turnout, gauge and cross-level should be recorded at ___ ahead & behind of ANC",
+        "correct": false
+      },
+      {
+        "text": "1 000 mm",
+        "correct": false
+      },
+      {
+        "text": "500 mm",
+        "correct": false
+      },
+      {
+        "text": "250 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "80",
+    "answers": [
+      {
+        "text": "A tongue rail is classified as worn/damaged when chipped/cracked lengths aggregate to ___ mm within 1 000 mm",
+        "correct": false
+      },
+      {
+        "text": "100 mm",
+        "correct": false
+      },
+      {
+        "text": "150 mm",
+        "correct": false
+      },
+      {
+        "text": "200 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "1",
+    "answers": [
+      {
+        "text": "The total number of Leave on average pay (LAP) that can be encashed by a Railway Employee during entire service shall not exceed",
+        "correct": false
+      },
+      {
+        "text": "90 days",
+        "correct": false
+      },
+      {
+        "text": "75 days",
+        "correct": false
+      },
+      {
+        "text": "60 days",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "2",
+    "answers": [
+      {
+        "text": "A Group \"B\" Railway officer can accept a gift up to ___ on occasion of religious function from near relatives (no official dealings) without reporting to Government",
+        "correct": false
+      },
+      {
+        "text": "Rs. 15000",
+        "correct": false
+      },
+      {
+        "text": "Rs. 100000",
+        "correct": false
+      },
+      {
+        "text": "Rs. 50000",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "3",
+    "answers": [
+      {
+        "text": "Who is NOT considered \"family member\" as per Pass Rules?",
+        "correct": false
+      },
+      {
+        "text": "Son aged 24 years studying in recognized institute",
+        "correct": false
+      },
+      {
+        "text": "Unmarried daughter of age 25 years",
+        "correct": false
+      },
+      {
+        "text": "Widowed daughter dependent on Railway employee",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "4",
+    "answers": [
+      {
+        "text": "Current rate of House Rent Allowance (HRA) for \"Y\" Class city (of Basic Pay)",
+        "correct": false
+      },
+      {
+        "text": "0.27",
+        "correct": false
+      },
+      {
+        "text": "0.18",
+        "correct": false
+      },
+      {
+        "text": "0.16",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "5",
+    "answers": [
+      {
+        "text": "Which is NOT a \"National Holiday\" for Railway offices?",
+        "correct": false
+      },
+      {
+        "text": "Republic Day",
+        "correct": false
+      },
+      {
+        "text": "Independence Day",
+        "correct": false
+      },
+      {
+        "text": "Mahatma Gandhi's Birthday",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "6",
+    "answers": [
+      {
+        "text": "Minimum frequency of meetings between Divisional Officers and recognized Unions at divisional level",
+        "correct": false
+      },
+      {
+        "text": "1 month",
+        "correct": false
+      },
+      {
+        "text": "3 months",
+        "correct": false
+      },
+      {
+        "text": "2 months",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "7",
+    "answers": [
+      {
+        "text": "Maximum time for appealing against penalty imposed on Railway employee (from date of order delivery)",
+        "correct": false
+      },
+      {
+        "text": "30 days",
+        "correct": false
+      },
+      {
+        "text": "45 days",
+        "correct": false
+      },
+      {
+        "text": "15 days",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "8",
+    "answers": [
+      {
+        "text": "Up to which highest grade are officers issued \"Bronze Pass\" as Duty Pass?",
+        "correct": false
+      },
+      {
+        "text": "Selection Grade",
+        "correct": false
+      },
+      {
+        "text": "Senior Administrative Grade",
+        "correct": false
+      },
+      {
+        "text": "Senior Scale",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "9",
+    "answers": [
+      {
+        "text": "Railway employee is deemed under suspension if detained in police custody for period exceeding",
+        "correct": false
+      },
+      {
+        "text": "24 Hours",
+        "correct": false
+      },
+      {
+        "text": "48 Hours",
+        "correct": false
+      },
+      {
+        "text": "72 Hours",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "10",
+    "answers": [
+      {
+        "text": "Who appoints the Presenting Officer in a major penalty disciplinary action case?",
+        "correct": false
+      },
+      {
+        "text": "Inquiry Officer",
+        "correct": false
+      },
+      {
+        "text": "Appellate Authority",
+        "correct": false
+      },
+      {
+        "text": "Head of Department",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "11",
+    "answers": [
+      {
+        "text": "Request under RTI Act must be disposed within ___ of receipt",
+        "correct": false
+      },
+      {
+        "text": "15 days",
+        "correct": false
+      },
+      {
+        "text": "45 days",
+        "correct": false
+      },
+      {
+        "text": "30 days",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "12",
+    "answers": [
+      {
+        "text": "Online platform for Annual Performance Appraisal Report (APAR) of all Group \"C\" Railway employees",
+        "correct": false
+      },
+      {
+        "text": "HRMS",
+        "correct": false
+      },
+      {
+        "text": "SPARROW",
+        "correct": false
+      },
+      {
+        "text": "IPAS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "13",
+    "answers": [
+      {
+        "text": "As per Indian Railway Establishment Manual, selection for Group \"B\" posts should be held",
+        "correct": false
+      },
+      {
+        "text": "Once in a year",
+        "correct": false
+      },
+      {
+        "text": "Once in 2 years",
+        "correct": false
+      },
+      {
+        "text": "Twice in a year",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "14",
+    "answers": [
+      {
+        "text": "When can an extra Privilege Pass be issued in same calendar year after all due passes used?",
+        "correct": false
+      },
+      {
+        "text": "For journey commencing in next year",
+        "correct": false
+      },
+      {
+        "text": "With special permission from head of office",
+        "correct": false
+      },
+      {
+        "text": "Cannot be issued",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "15",
+    "answers": [
+      {
+        "text": "Full form of PREM",
+        "correct": false
+      },
+      {
+        "text": "Preserving Relation between Employees and Management",
+        "correct": false
+      },
+      {
+        "text": "Proper Representation of Employees in Management",
+        "correct": false
+      },
+      {
+        "text": "Participation of Railway Employees in Management",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "16",
+    "answers": [
+      {
+        "text": "Expenditure for replacement of overaged track is generally charged to which fund?",
+        "correct": false
+      },
+      {
+        "text": "Capital Fund",
+        "correct": false
+      },
+      {
+        "text": "Development Fund",
+        "correct": false
+      },
+      {
+        "text": "Deposit Fund",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "17",
+    "answers": [
+      {
+        "text": "Expenditure for Maintenance of Bridges is charged to Demand No. ___ of ordinary working expenses",
+        "correct": false
+      },
+      {
+        "text": "2",
+        "correct": false
+      },
+      {
+        "text": "3",
+        "correct": false
+      },
+      {
+        "text": "4",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "18",
+    "answers": [
+      {
+        "text": "Department responsible for finalising contracts related to \"Sale of P.Way Scrap\"",
+        "correct": false
+      },
+      {
+        "text": "Stores Department",
+        "correct": false
+      },
+      {
+        "text": "Finance Department",
+        "correct": false
+      },
+      {
+        "text": "Engineering Department",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "19",
+    "answers": [
+      {
+        "text": "Audit Inspection Report reply from a division office is sent to",
+        "correct": false
+      },
+      {
+        "text": "Audit Officer",
+        "correct": false
+      },
+      {
+        "text": "Accounts Officer",
+        "correct": false
+      },
+      {
+        "text": "Divisional Railway Manager",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "20",
+    "answers": [
+      {
+        "text": "Amount recovered from vendors for water supplied is accounted under which Sub major Head of Railway earning?",
+        "correct": false
+      },
+      {
+        "text": "Abstract \"X\" - Earnings from Coaching Traffic",
+        "correct": false
+      },
+      {
+        "text": "Abstract \"Z\" - Sundry other earnings",
+        "correct": false
+      },
+      {
+        "text": "Abstract \"Y\" - Earnings from Goods Traffic",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "21",
+    "answers": [
+      {
+        "text": "Earnest Money / Bid Security is deposited",
+        "correct": false
+      },
+      {
+        "text": "At the time of tender opening",
+        "correct": false
+      },
+      {
+        "text": "After issue of letter of acceptance",
+        "correct": false
+      },
+      {
+        "text": "At the time of signing contract agreement",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "22",
+    "answers": [
+      {
+        "text": "Reduction in value of any asset over time is called",
+        "correct": false
+      },
+      {
+        "text": "Appreciation",
+        "correct": false
+      },
+      {
+        "text": "Stagnation",
+        "correct": false
+      },
+      {
+        "text": "Depreciation",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "23",
+    "answers": [
+      {
+        "text": "On which type of contracts is GST not applicable?",
+        "correct": false
+      },
+      {
+        "text": "Supply contracts",
+        "correct": false
+      },
+      {
+        "text": "Works contracts",
+        "correct": false
+      },
+      {
+        "text": "Service contracts",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "24",
+    "answers": [
+      {
+        "text": "Certificate required for purchase of item when no other make/brand is suitable",
+        "correct": false
+      },
+      {
+        "text": "Proprietary Article Certificate",
+        "correct": false
+      },
+      {
+        "text": "Single Vendor Certificate",
+        "correct": false
+      },
+      {
+        "text": "Single Tender Certificate",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "25",
+    "answers": [
+      {
+        "text": "Purchase of new track machines is included in",
+        "correct": false
+      },
+      {
+        "text": "Works Program",
+        "correct": false
+      },
+      {
+        "text": "Rolling Stock Program",
+        "correct": false
+      },
+      {
+        "text": "Machinery & Plant Program",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "26",
+    "answers": [
+      {
+        "text": "Which is NOT a source of funding for Indian Railways' capital expenditure on projects?",
+        "correct": false
+      },
+      {
+        "text": "Extra Budgetary Resources",
+        "correct": false
+      },
+      {
+        "text": "Budgetary support from Central Govt",
+        "correct": false
+      },
+      {
+        "text": "Internal resources of Indian Railways",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "27",
+    "answers": [
+      {
+        "text": "Which category of expenditure necessarily requires approval of parliament?",
+        "correct": false
+      },
+      {
+        "text": "Voted expenditure",
+        "correct": false
+      },
+      {
+        "text": "Charged expenditure",
+        "correct": false
+      },
+      {
+        "text": "Special expenditure",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "28",
+    "answers": [
+      {
+        "text": "Primary Unit (PU) of expenditure for \"Contractual Payments\" is",
+        "correct": false
+      },
+      {
+        "text": "PU-27",
+        "correct": false
+      },
+      {
+        "text": "PU-28",
+        "correct": false
+      },
+      {
+        "text": "PU-32",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "29",
+    "answers": [
+      {
+        "text": "General Financial Rules are framed by",
+        "correct": false
+      },
+      {
+        "text": "Ministry of Home",
+        "correct": false
+      },
+      {
+        "text": "Ministry of Railways",
+        "correct": false
+      },
+      {
+        "text": "Ministry of Commerce",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "30",
+    "answers": [
+      {
+        "text": "In Indian Railways, all activities after award of Works Contracts are dealt on which online portal?",
+        "correct": false
+      },
+      {
+        "text": "IPAS",
+        "correct": false
+      },
+      {
+        "text": "IRPSM",
+        "correct": false
+      },
+      {
+        "text": "IR-WCMS",
+        "correct": false
+      }
+    ]
+  }
+]
