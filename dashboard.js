@@ -87,3 +87,81 @@ onAuthStateChanged(auth, async (user) => {
     });
   });
 });
+// CHANGE PASSWORD MODAL HANDLING
+
+// Get modal elements
+const changePwdBtn = document.getElementById('changePasswordBtn');
+const changePwdModal = document.getElementById('changePasswordModal');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const changePwdForm = document.getElementById('changePasswordForm');
+const currentPasswordInput = document.getElementById('currentPassword');
+const newPasswordInput = document.getElementById('newPassword');
+const changePwdMessage = document.getElementById('changePwdMessage');
+
+// Show modal on button click
+if (changePwdBtn && changePwdModal) {
+  changePwdBtn.addEventListener('click', () => {
+    changePwdMessage.textContent = '';
+    changePwdForm.reset();
+    changePwdModal.style.display = 'block';
+  });
+}
+
+// Close modal on close button click
+if (closeModalBtn && changePwdModal) {
+  closeModalBtn.addEventListener('click', () => {
+    changePwdModal.style.display = 'none';
+  });
+}
+
+// Close modal when clicking outside modal content
+window.addEventListener('click', (event) => {
+  if (event.target === changePwdModal) {
+    changePwdModal.style.display = 'none';
+  }
+});
+
+// Handle form submission
+if (changePwdForm) {
+  changePwdForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    changePwdMessage.textContent = '';
+
+    const user = auth.currentUser;
+    if (!user) {
+      changePwdMessage.style.color = 'red';
+      changePwdMessage.textContent = 'You must be logged in to change your password.';
+      return;
+    }
+
+    const currentPassword = currentPasswordInput.value;
+    const newPassword = newPasswordInput.value;
+
+    if (!currentPassword || !newPassword) {
+      changePwdMessage.style.color = 'red';
+      changePwdMessage.textContent = 'Please fill in all fields.';
+      return;
+    }
+
+    // Reauthenticate user before password update
+    try {
+      const credential = firebase.auth.EmailAuthProvider.credential(user.email, currentPassword);
+      await user.reauthenticateWithCredential(credential);
+
+      // Update password
+      await user.updatePassword(newPassword);
+
+      changePwdMessage.style.color = 'green';
+      changePwdMessage.textContent = 'Password changed successfully!';
+
+      // Clear form and close modal after short delay
+      setTimeout(() => {
+        changePwdModal.style.display = 'none';
+        changePwdForm.reset();
+      }, 2000);
+    } catch (error) {
+      changePwdMessage.style.color = 'red';
+      changePwdMessage.textContent = error.message || 'Failed to change password.';
+    }
+  });
+}
