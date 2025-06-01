@@ -256,6 +256,10 @@
           }
         });
       }
+      function selectAnswer(selectedBtn, isCorrect) {
+  if (quizEnded || questionStatus[currentIndex] === "attempted") return;
+  // ... rest of your existing code ...
+}
       questionStatus[currentIndex] = "attempted";
       nextBtn.style.display = 'inline-block';
       skipBtn.style.display = 'inline-block';
@@ -373,5 +377,32 @@
       });
     }
   </script>
+  function showQuestion() {
+  if (quizEnded) return;
+  nextBtn.style.display = 'none';
+  questionElem.textContent = questions[currentIndex].question;
+  answersDiv.innerHTML = "";
+
+  const currentStatus = questionStatus[currentIndex];
+
+  questions[currentIndex].answers.forEach(answer => {
+    const btn = document.createElement("button");
+    btn.textContent = answer.text;
+    btn.classList.add("answer-btn");
+
+    // Disable buttons if question is already attempted
+    if (currentStatus === "attempted") {
+      btn.disabled = true;
+      if (answer.correct) btn.classList.add('correct'); // Highlight correct answer
+    } else {
+      btn.onclick = () => selectAnswer(btn, answer.correct);
+    }
+
+    answersDiv.appendChild(btn);
+  });
+
+  updateIndexBar();
+}
+
 </body>
 </html>
