@@ -10,7 +10,8 @@ const manualNames = {
   account: "Account Manual",
   pyq2022: "PYQ 30% Main 2022",
   pyq2021: "PYQ 30% Main 2021",
-  30pyq2023: "PYQ 30% Main 2023"
+  30pyq2023: "PYQ 30% Main 2023",
+  30pyq2024: "PYQ 30% Main 2024"
 };
 
 window.initQuiz = function () {
