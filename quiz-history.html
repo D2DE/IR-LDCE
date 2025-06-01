@@ -211,25 +211,40 @@
       margin-bottom: 1.5rem;
     }
 
-    .quiz-history table {
+   .quiz-history table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
   table-layout: auto;
   word-break: break-word;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .quiz-history th, .quiz-history td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  font-size: 0.97em;
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 0.95em;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .quiz-history th {
-  background-color: #f5f5f5;
-  color: #002147;
+  background-color: #004080;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
 }
+
+.quiz-history tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.quiz-history tbody tr:hover {
+  background-color: #e6f0ff;
+}
+
 
     .align-middle {
       vertical-align: middle;
