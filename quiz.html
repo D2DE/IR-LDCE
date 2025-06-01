@@ -88,7 +88,10 @@
     .quiz-index-dot.skipped {
       background: #ffb6b6;
     }
-    #next-btn, #skip-btn, #submit-btn {
+    .quiz-index-dot.review {
+      background: #ffe066;
+    }
+    #next-btn, #skip-btn, #submit-btn, #mark-review-btn {
       padding: 10px 20px;
       margin: 5px;
       border: none;
@@ -107,6 +110,10 @@
     #submit-btn {
       background: #4caf50;
       color: white;
+    }
+    #mark-review-btn {
+      background: #ffc107;
+      color: black;
     }
     #result {
       font-size: 1.5rem;
@@ -156,10 +163,12 @@
   <div class="app">
     <div id="quizTimer" style="display: none;"></div>
     <div id="quizIndexBar"></div>
+    <h1 style="text-align:center"></h1>
     <div id="question"></div>
     <div id="answer-buttons"></div>
     <button id="next-btn" style="display: none;">Next</button>
     <button id="skip-btn" style="display: none;">Skip</button>
+    <button id="mark-review-btn">Mark for Review</button>
     <button id="submit-btn" style="display: none;">Submit</button>
     <div id="result"></div>
   </div>
