@@ -179,7 +179,7 @@
     let score = 0;
     let quizDuration = 600; // Will be set dynamically
     let timerInterval;
-    let questionStatus = []; // "not", "attempted", "skipped", "review"
+    let questionStatus = []; // "not", "attempted", "skipped"
     let quizEnded = false;
 
     const questionElem = document.getElementById("question");
@@ -190,7 +190,6 @@
     const quizTimer = document.getElementById("quizTimer");
     const quizIndexBar = document.getElementById("quizIndexBar");
     const resultDiv = document.getElementById("result");
-    const markReviewBtn = document.getElementById("mark-review-btn"); // <-- Added
 
     async function initQuiz() {
       currentIndex = 0;
@@ -252,7 +251,9 @@
       if (quizEnded) return;
       const q = questions[currentIndex];
       const allBtns = answersDiv.querySelectorAll('button');
-      allBtns.forEach(btn => btn.disabled = true);... if (isCorrect) {
+      allBtns.forEach(btn => btn.disabled = true);
+
+      if (isCorrect) {
         score += 1;
         selectedBtn.classList.add('correct');
       } else {
@@ -283,15 +284,6 @@
       goToNext();
     });
 
-    // --- ADDED: Mark for Review event listener ---
-    markReviewBtn.addEventListener("click", () => {
-      if (quizEnded) return;
-      if (questionStatus[currentIndex] !== "attempted") {
-        questionStatus[currentIndex] = "review";
-        updateIndexBar();
-      }
-    });
-
     submitBtn.addEventListener("click", () => {
       if (quizEnded) return;
       endQuiz();
@@ -314,7 +306,6 @@
         if (idx === currentIndex) dot.classList.add('current');
         if (questionStatus[idx] === "attempted") dot.classList.add('attempted');
         else if (questionStatus[idx] === "skipped") dot.classList.add('skipped');
-        else if (questionStatus[idx] === "review") dot.classList.add('review');
         dot.textContent = idx + 1;
         dot.onclick = () => {
           if (!quizEnded) {
@@ -390,6 +381,17 @@
         window.location.href = 'quiz-history.html';
       });
     }
+    // Add this line if you don't already have it (but you likely do)
+const markReviewBtn = document.getElementById("mark-review-btn");
+
+// Add this event listener after your other event listeners (next, skip, submit)
+markReviewBtn.addEventListener("click", () => {
+  if (quizEnded) return;
+  if (questionStatus[currentIndex] !== "attempted") {
+    questionStatus[currentIndex] = "review";
+    updateIndexBar();
+  }
+});
   </script>
 </body>
 </html>
