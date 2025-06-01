@@ -14,44 +14,55 @@ const manualNames = {
 
 window.initQuiz = function () {
   const urlParams = new URLSearchParams(window.location.search);
-  const manual = urlParams.get('manual');
+  const manual = urlParams.get("manual");
   const jsonFile = manual ? `https://d2de.github.io/IR-LDCE/${manual}-questions.json` : null;
 
   let questions = [];
   let currentQuestionIndex = 0;
   let score = 0;
-  const quizDuration = 600; // 10 minutes
+  const quizDuration = 600;
   let totalTimeLeft = quizDuration;
   let totalTimer;
+  const answersSelected = [];
+  const markedForReview = new Set();
 
   const questionElement = document.getElementById("question");
   const answerButtons = document.getElementById("answer-buttons");
   const nextButton = document.getElementById("next-btn");
-  const headingElement = document.querySelector('.app h1');
+  const markReviewButton = document.getElementById("mark-review-btn");
   const timerElement = document.getElementById("timer");
+  const reviewPanel = document.getElementById("review-panel");
+  const headingElement = document.querySelector(".app h1");
 
   if (manual && manualNames[manual]) {
     headingElement.textContent = `${manualNames[manual]} Quiz`;
-  } else {
-    headingElement.textContent = "Quiz";
   }
 
   async function loadQuestions() {
     if (!jsonFile) {
       questionElement.innerHTML = "No manual selected.<br><a href='index.html'>Go back</a>";
-      nextButton.style.display = "none";
       return;
     }
 
     try {
-      const response = await fetch(jsonFile);
-      if (!response.ok) throw new Error("Failed to load questions");
-      questions = await response.json();
+      const res = await fetch(jsonFile);
+      if (!res.ok) throw new Error("Unable to load questions.");
+      questions = await res.json();
       startQuiz();
-    } catch (error) {
+    } catch (err) {
       questionElement.innerHTML = "Error loading questions.<br><a href='index.html'>Go back</a>";
-      console.error(error);
+      console.error(err);
     }
+  }
+
+  function startQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    answersSelected.length = questions.length;
+    markedForReview.clear();
+    updateReviewPanel();
+    startTotalTimer();
+    showQuestion();
   }
 
   function startTotalTimer() {
@@ -61,7 +72,7 @@ window.initQuiz = function () {
       updateTimerDisplay();
       if (totalTimeLeft <= 0) {
         clearInterval(totalTimer);
-        alert("⏰ Time is up! Quiz will be submitted.");
+        alert("⏰ Time's up!");
         showScore();
       }
     }, 1000);
@@ -75,7 +86,7 @@ window.initQuiz = function () {
     timerElement.innerHTML = `
       <div style="position: relative; width: 80px; height: 80px;">
         <svg width="80" height="80">
-          <circle r="35" cx="40" cy="40" fill="transparent" stroke="#ddd" stroke-width="6"/>
+          <circle r="35" cx="40" cy="40" fill="transparent" stroke="#eee" stroke-width="6"/>
           <circle r="35" cx="40" cy="40" fill="transparent" stroke="#007bff" stroke-width="6"
             stroke-dasharray="${2 * Math.PI * 35}"
             stroke-dashoffset="${((100 - percent) / 100) * 2 * Math.PI * 35}"
@@ -83,28 +94,20 @@ window.initQuiz = function () {
         </svg>
         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
                     font-size: 14px; font-weight: bold;">
-          ${mins}:${secs.toString().padStart(2, '0')}
+          ${mins}:${secs.toString().padStart(2, "0")}
         </div>
-      </div>
-    `;
-  }
-
-  function startQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-    nextButton.innerHTML = "Next";
-    startTotalTimer();
-    showQuestion();
+      </div>`;
   }
 
   function showQuestion() {
     resetState();
+    updateReviewPanel();
 
-    const currentQuestion = questions[currentQuestionIndex];
+    const q = questions[currentQuestionIndex];
     const questionNo = currentQuestionIndex + 1;
-    let html = `<strong>${questionNo}. ${currentQuestion.question}</strong>`;
-    if (currentQuestion.image) {
-      html += `<div><img src="${currentQuestion.image}" alt="question image" style="max-height:200px;" class="img-fluid my-2"></div>`;
+    let html = `<strong>${questionNo}. ${q.question}</strong>`;
+    if (q.image) {
+      html += `<div><img src="${q.image}" alt="question image" class="img-fluid my-2" style="max-height:200px;"></div>`;
     }
 
     questionElement.innerHTML = html;
@@ -112,22 +115,25 @@ window.initQuiz = function () {
     const ul = document.createElement("ul");
     ul.className = "list-unstyled";
 
-    currentQuestion.answers.forEach(answer => {
+    q.answers.forEach((ans, idx) => {
       const li = document.createElement("li");
       li.className = "mb-2";
 
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "btn btn-outline-primary w-100 text-start d-flex align-items-center";
-      button.setAttribute("tabindex", 0);
-      button.setAttribute("aria-label", answer.text);
-      button.innerHTML = answer.image
-        ? `<span>${answer.text}</span><img src="${answer.image}" alt="option image" class="ms-auto" style="max-height:40px;">`
-        : answer.text;
+      const btn = document.createElement("button");
+      btn.className = "btn btn-outline-primary w-100 text-start";
+      btn.innerHTML = ans.image
+        ? `<span>${ans.text}</span><img src="${ans.image}" alt="option image" class="ms-auto" style="max-height:40px;">`
+        : ans.text;
 
-      if (answer.correct) button.dataset.correct = "true";
-      button.addEventListener("click", selectAnswer);
-      li.appendChild(button);
+      btn.dataset.correct = ans.correct;
+      btn.addEventListener("click", () => selectAnswer(idx, btn));
+
+      if (answersSelected[currentQuestionIndex] === idx) {
+        btn.classList.remove("btn-outline-primary");
+        btn.classList.add(ans.correct ? "btn-success" : "btn-danger");
+      }
+
+      li.appendChild(btn);
       ul.appendChild(li);
     });
 
@@ -136,68 +142,110 @@ window.initQuiz = function () {
 
   function resetState() {
     nextButton.style.display = "none";
+    markReviewButton.style.display = "inline-block";
     answerButtons.innerHTML = "";
   }
 
-  function selectAnswer(e) {
-    const selectedBtn = e.target.closest("button");
-    const isCorrect = selectedBtn.dataset.correct === "true";
+  function selectAnswer(index, button) {
+    answersSelected[currentQuestionIndex] = index;
+    const correct = button.dataset.correct === "true";
 
-    selectedBtn.classList.remove("btn-outline-primary");
-    selectedBtn.classList.add(isCorrect ? "btn-success" : "btn-danger");
+    if (correct) score += 1;
+    else score -= 1 / 3;
 
-    if (isCorrect) {
-      score += 1;
-    } else {
-      score -= 1 / 3;
-    }
-
-    const allButtons = answerButtons.querySelectorAll("button");
-    allButtons.forEach(button => {
-      if (button.dataset.correct === "true") {
-        button.classList.remove("btn-outline-primary");
-        button.classList.add("btn-success");
+    const buttons = answerButtons.querySelectorAll("button");
+    buttons.forEach((btn, i) => {
+      btn.disabled = true;
+      if (btn.dataset.correct === "true") {
+        btn.classList.add("btn-success");
+      } else if (i === index) {
+        btn.classList.add("btn-danger");
       }
-      button.disabled = true;
     });
 
-    nextButton.style.display = "block";
-    nextButton.focus();
+    nextButton.style.display = "inline-block";
+    updateReviewPanel();
   }
 
-  function showScore() {
-    clearInterval(totalTimer);
-    resetState();
-
-    questionElement.innerHTML = `
-      <div class="alert alert-info" role="alert">
-        You scored <strong>${score.toFixed(2)}</strong> out of <strong>${questions.length}</strong>!
-      </div>
-      <a href="index.html" class="btn btn-secondary mt-2">Back to Manuals</a>
-    `;
-
-    nextButton.innerHTML = "Play Again";
-    nextButton.style.display = "block";
-
-    saveQuizResult();
-  }
-
-  function handleNextButton() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
+  nextButton.addEventListener("click", () => {
+    if (currentQuestionIndex < questions.length - 1) {
+      currentQuestionIndex++;
       showQuestion();
+    } else {
+      confirmSubmit();
+    }
+  });
+
+  markReviewButton.addEventListener("click", () => {
+    markedForReview.add(currentQuestionIndex);
+    if (currentQuestionIndex < questions.length - 1) {
+      currentQuestionIndex++;
+      showQuestion();
+    } else {
+      confirmSubmit();
+    }
+  });
+
+  function confirmSubmit() {
+    const unanswered = answersSelected.filter((a) => a === undefined).length;
+    const marked = markedForReview.size;
+
+    if (unanswered > 0 || marked > 0) {
+      if (
+        confirm(
+          `You have ${unanswered} unanswered and ${marked} marked questions.\nSubmit anyway?`
+        )
+      ) {
+        showScore();
+      }
     } else {
       showScore();
     }
   }
 
-  nextButton.addEventListener("click", () => {
-    if (currentQuestionIndex < questions.length) {
-      handleNextButton();
-    } else {
-      startQuiz();
-    }
-  });
+  function showScore() {
+    clearInterval(totalTimer);
+    resetState();
+    updateReviewPanel();
+
+    questionElement.innerHTML = `
+      <div class="alert alert-info" role="alert">
+        You scored <strong>${score.toFixed(2)}</strong> out of <strong>${questions.length}</strong>!
+      </div>
+      <a href="index.html" class="btn btn-secondary mt-2">Back to Manuals</a>`;
+
+    nextButton.textContent = "Play Again";
+    nextButton.style.display = "inline-block";
+    markReviewButton.style.display = "none";
+
+    saveQuizResult();
+  }
+
+  function updateReviewPanel() {
+    if (!reviewPanel) return;
+
+    reviewPanel.innerHTML = "";
+    questions.forEach((_, idx) => {
+      const btn = document.createElement("button");
+      btn.className = "btn btn-sm mx-1 mb-2";
+
+      if (answersSelected[idx] !== undefined) {
+        btn.classList.add("btn-success");
+      } else if (markedForReview.has(idx)) {
+        btn.classList.add("btn-warning");
+      } else {
+        btn.classList.add("btn-secondary");
+      }
+
+      btn.textContent = idx + 1;
+      btn.addEventListener("click", () => {
+        currentQuestionIndex = idx;
+        showQuestion();
+      });
+
+      reviewPanel.appendChild(btn);
+    });
+  }
 
   async function saveQuizResult() {
     try {
@@ -209,8 +257,8 @@ window.initQuiz = function () {
       const { collection, addDoc, serverTimestamp } = await import("https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js");
 
       await addDoc(collection(db, "users", user.uid, "quizHistory"), {
-        manual: manual,
-        score: score,
+        manual,
+        score,
         totalQuestions: questions.length,
         timestamp: serverTimestamp()
       });
