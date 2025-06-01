@@ -11,7 +11,8 @@ const manualNames = {
   pyq2022: "PYQ 30% Main 2022",
   pyq2021: "PYQ 30% Main 2021",
   30pyq2023: "PYQ 30% Main 2023",
-  30pyq2024: "PYQ 30% Main 2024"
+  30pyq2024: "PYQ 30% Main 2024",
+  70pyq2023: "PYQ 70% Main 2023"
 };
 
 window.initQuiz = function () {
