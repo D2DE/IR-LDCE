@@ -14,7 +14,8 @@ const manualNames = {
   30pyq2024: "PYQ 30% Main 2024",
   70pyq2023: "PYQ 70% Main 2023",
   70pyq2023sup: "PYQ 70% Sup 2023",
-  70pyq2024main: "PYQ 70% Main 2024"
+  70pyq2024main: "PYQ 70% Main 2024",
+  nair-qb-2019: "NAIR Question Bank 2019"
 };
 
 window.initQuiz = function () {
