@@ -154,6 +154,7 @@
 
   <div id="loading">Loading...</div>
   <div class="app">
+    <div id="quizTitle" style="font-size: 1.5rem; font-weight: bold; text-align: center; margin-bottom: 10px;"></div>
     <div id="quizTimer" style="display: none;"></div>
     <div id="quizIndexBar"></div>
     <div id="question"></div>
@@ -195,6 +196,8 @@
 
       // Get manual param from URL, fallback to 'general'
       const manual = new URLSearchParams(window.location.search).get("manual") || "general";
+      document.getElementById("quizTitle").textContent = `Quiz: ${manual.charAt(0).toUpperCase() + manual.slice(1)}`;
+
 
       try {
         const response = await fetch(`${manual}-questions.json`);
@@ -373,6 +376,7 @@ function showQuestion() {
       const incorrectCount = isCorrectList.filter(v => v === false).length;
       
       quizDiv.innerHTML = `
+      <div id="quizTitle" style="font-size: 1.5rem; font-weight: bold; text-align: center; margin-bottom: 10px;">Quiz: ${manualName.charAt(0).toUpperCase() + manualName.slice(1)}</div>
         <div id="result">Your Score: ${score.toFixed(2)}</div>
          <table style="margin: 20px auto; width: 80%; border-collapse: collapse; border: 1px solid #ccc;">
     <tr>
