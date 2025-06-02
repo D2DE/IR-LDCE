@@ -419,16 +419,11 @@ function showQuestion() {
     </tr>
   </table>
         <button id="home-btn" style="margin: 10px; padding: 10px 20px;">Home</button>
-        <button id="dashboard-btn" style="margin: 10px; padding: 10px 20px;">Dashboard</button>
         <button id="history-btn" style="margin: 10px; padding: 10px 20px;">Attempt History</button>
       `;
 
       document.getElementById('home-btn').addEventListener('click', () => {
         window.location.href = 'index.html';
-      });
-
-      document.getElementById('dashboard-btn').addEventListener('click', () => {
-        window.location.href = 'dashboard.html';
       });
       
       document.getElementById('history-btn').addEventListener('click', () => {
