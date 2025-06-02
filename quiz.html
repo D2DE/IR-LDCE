@@ -398,21 +398,6 @@ function showQuestion() {
       const incorrectCount = isCorrectList.filter(v => v === false).length;
       
       quizDiv.innerHTML = `
-      <header style="
-  background-color: #1976d2;
-  color: white;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-">
-  <div style="font-size: 1.5rem; font-weight: bold;">Quiz App</div>
-  <nav>
-    <a href="dashboard.html" style="color: white; text-decoration: none; margin-right: 20px;">Dashboard</a>
-    <a href="#" onclick="logout()" style="color: white; text-decoration: none;">Logout</a>
-  </nav>
-</header>
       <div id="quizTitle">Quiz: ${manualName.charAt(0).toUpperCase() + manualName.slice(1)}</div>
       <div id="quizTitle" style="font-size: 1.5rem; font-weight: bold; text-align: center; margin-bottom: 10px;">Quiz: ${manualName.charAt(0).toUpperCase() + manualName.slice(1)}</div>
         <div id="result">Your Score: ${score.toFixed(2)}</div>
